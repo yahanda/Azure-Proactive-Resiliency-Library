@@ -3,26 +3,26 @@
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Azure/Azure-Proactive-Resiliency-Library.svg)](http://isitmaintained.com/project/Azure/Azure-Proactive-Resiliency-Library "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/Azure/Azure-Proactive-Resiliency-Library.svg)](http://isitmaintained.com/project/Azure/Azure-Proactive-Resiliency-Library "Percentage of issues still open")
 
-> **Please access the GitHub Pages site, unless looking to contribute, over at: [aka.ms/aprl](https://aka.ms/aprl)**
+> **GitHub Pagesサイトは、コントリビュートする予定がない限り、[yahanda.github.io/Azure-Proactive-Resiliency-Library-jp-translation](https://yahanda.github.io/Azure-Proactive-Resiliency-Library-jp-translation) からアクセスしてください。**
 
-Welcome to the home of the Azure Proactive Resiliency Library (APRL).
+Azure Proactive Resiliency Library (APRL) のホームへようこそ。
 
 <img src="docs/static/media/img/aprl-white.png" width=40%>
 
-This library is built with the intention of being a staging area for guidance and recommendations that can be used by customers, partners and the field in Well-Architected Framework reliability engagements/assessments; with the intent of the guidance and recommendations being promoted, once tested and validated with customers and partners, into the official [Well-Architected Framework documentation](https://aka.ms/waf).
+このライブラリは、Well-Architected Framework の信頼性エンゲージメント/アセスメントでお客様、パートナー様、およびフィールドが使用できるガイダンスと推奨事項のステージング領域となることを意図して構築されています。ガイダンスと推奨事項は、お客様やパートナー様とともにテストおよび検証された後、公式の [Well-Architected Framework ドキュメント](https://aka.ms/waf) に組み込まれることを目的としています。
 
-The library also contains supporting [Azure Resource Graph (ARG)](https://learn.microsoft.com/azure/governance/resource-graph/overview) queries, and sometimes [Azure PowerShell](https://learn.microsoft.com/powershell/azure/what-is-azure-powershell) or [Azure CLI](https://learn.microsoft.com/cli/azure/what-is-azure-cli) scripts, that can help customers, partners and the field identify resources that may or may not be compliant with the guidance and recommendations. The intent for these queries, in the long-term, is to make them part of the [Azure Advisor](https://learn.microsoft.com/azure/advisor/advisor-overview) service.
+このライブラリには、サポートする [Azure Resource Graph (ARG)](https://learn.microsoft.com/azure/governance/resource-graph/overview) クエリと、場合によっては [Azure PowerShell](https://learn.microsoft.com/powershell/azure/what-is-azure-powershell) または [Azure CLI](https://learn.microsoft.com/cli/azure/what-is-azure-cli) スクリプトも含まれており、お客様、パートナー様、およびフィールドが、ガイダンスと推奨事項に準拠している場合と準拠していない場合があるリソースを特定するのに役立ちます。これらのクエリの目的は、長期的には [Azure Advisor](https://learn.microsoft.com/azure/advisor/advisor-overview) サービスの一部にすることです。
 
 ## Contributing
 
-> The contribution guide can be found on the GitHub pages site here: [aka.ms/aprl/contribute](https://aka.ms/aprl/contribute)
+> コントリビューションガイドは、GitHub ページのサイト [aka.ms/aprl/contribute](https://aka.ms/aprl/contribute) でご覧いただけます。
 
-This project only currently accepts Pull Requests from Microsoft FTEs as of today. However, anyone is welcomed to create issues/features requests on the repo for the team to triage and action.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com).
+このプロジェクトは、現時点では Microsoft FTE からのプル リクエストのみを受け付けています。 ただし、チームがトリアージしてアクションを起こすために、リポジトリ上に問題や機能のリクエストを作成することはどなたでも歓迎されます。 ほとんどの投稿では、投稿を使用する権利をお客様が有しており、実際に当社に付与することを宣言する投稿者ライセンス契約 (CLA) に同意する必要があります。 詳細については、[https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)を参照してください。
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
+プル リクエストを送信すると、CLA ボットが CLA を提供する必要があるかどうかを自動的に判断し、PR を適切に装飾します (ステータス チェック、コメントなど)。 ボットが提供する指示に従ってください。 CLA を使用するすべてのリポジトリでこれを 1 回行うだけで済みます。
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+このプロジェクトは、[Microsoft オープンソース行動規範](https://opensource.microsoft.com/codeofconduct/) を採用しています。 詳細については、[行動規範 FAQ](https://opensource.microsoft.com/codeofconduct/faq/) を参照するか、追加の質問やコメントがある場合は [opencode@microsoft.com](mailto:opencode@microsoft.com) にお問い合わせください。
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.
+このプロジェクトには、プロジェクト、製品、またはサービスの商標またはロゴが含まれている場合があります。 Microsoft の商標またはロゴの許可された使用には、[Microsoft の商標およびブランド ガイドライン](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) が適用され、それに従わなければなりません。 このプロジェクトの修正バージョンで Microsoft の商標またはロゴを使用することは、混乱を引き起こしたり、Microsoft のスポンサーであることを暗示したりしてはなりません。 第三者の商標またはロゴの使用には、それらの第三者のポリシーが適用されます。
