@@ -25,7 +25,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### BA-1 - Monitor Batch Account quota
+### BA-1 - Batch アカウントのクォータを監視します
 
 **Category: Monitoring**
 
@@ -33,13 +33,13 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-To enable Cross-region disaster recovery and business continuity, ensure that the appropriate quotas are set for all user subscription Batch accounts. This will allocate the required number of cores made available upfront. Without enough allocated cores capacity a job execution will be interrupted with operational errors indicating "Quota Reached".
+リージョン間のディザスター リカバリーとビジネス継続性を有効にするには、すべてのユーザー サブスクリプション Batch アカウントに適切なクォータが設定されていることを確認します。これにより、必要な数のコアが前もって割り当てられます。十分なコア容量が割り当てられていないと、ジョブの実行が中断され、「クォータに達しました」という操作エラーが発生します。
 
-Pre-create all required services in each region, such as the Batch account and the storage account. There's often no charge for having accounts created, and charges accrue only when the account is used or when data is stored.
+各リージョンで必要なすべてのサービス (Batch アカウントやストレージ アカウントなど) を事前に作成します。多くの場合、アカウントの作成には料金はかからず、アカウントが使用されたとき、またはデータが保存されたときにのみ料金が発生します。
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/azure/reliability/reliability-batch#cross-region-disaster-recovery-and-business-continuity)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/reliability/reliability-batch#cross-region-disaster-recovery-and-business-continuity)
 
 **Resource Graph Query/Scripts**
 
@@ -51,7 +51,7 @@ Pre-create all required services in each region, such as the Batch account and t
 
 <br><br>
 
-### BA-3 - Create an Azure Batch pool across Availability Zones
+### BA-3 - 複数の Availability Zones にまたがる Azure Batch プールを作成します
 
 **Category: Availability**
 
@@ -59,12 +59,12 @@ Pre-create all required services in each region, such as the Batch account and t
 
 **Recommendation/Guidance**
 
-When you create an Azure Batch pool using Virtual Machine Configuration, you can choose to provision your Batch pool across Availability Zones. Creating your pool with this zonal policy helps protect your Batch compute nodes from Azure datacenter-level failures.
-For example, you could create your pool with zonal policy in an Azure region that supports three Availability Zones. If an Azure datacenter in one Availability Zone has an infrastructure failure, your Batch pool will still have healthy nodes in the other two Availability Zones, so the pool will remain available for task scheduling.
+仮想マシン構成を使用して Azure Batch プールを作成する場合は、複数の Availability Zones にまたがって Batch プールをプロビジョニングすることを選択できます。このゾーン ポリシーを使用してプールを作成すると、Azure データセンター レベルの障害から Batch コンピューティング ノードを保護するのに役立ちます。
+たとえば、ゾーン ポリシーを使用して、3 つの可用性ゾーンをサポートする Azure リージョンにプールを作成できます。1 つの可用性ゾーンの Azure データセンターでインフラストラクチャに障害が発生した場合でも、Batch プールには他の 2 つの可用性ゾーンに正常なノードが引き続き存在するため、プールは引き続きタスクのスケジュール設定に使用できます。
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/azure/batch/create-pool-availability-zones)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/batch/create-pool-availability-zones)
 
 **Resource Graph Query/Scripts**
 

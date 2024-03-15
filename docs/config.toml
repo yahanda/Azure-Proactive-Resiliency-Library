@@ -1,6 +1,6 @@
 theme = "ace-documentation"
 
-baseURL = 'https://azure.github.io/Azure-Proactive-Resiliency-Library'
+baseURL = 'https://yahanda.github.io/Azure-Proactive-Resiliency-Library-jp-translation'
 
 languageCode = 'en-us'
 title = 'Azure Proactive Resiliency Library (APRL)'
@@ -11,7 +11,7 @@ pygmentsStyle = "monokai"
 [params]
 disableReadmoreNav = true
 menushortcutsnewtab = true
-site_logo = "/Azure-Proactive-Resiliency-Library/media/img/aprl-white.png"
+site_logo = "/Azure-Proactive-Resiliency-Library-jp-translation/media/img/aprl-white.png"
 toc = false
 
 [markup]
@@ -29,5 +29,5 @@ weight = 1
 
 [[menu.shortcuts]]
 name = "Source Code <i class='fab fa-github'></i>"
-url = "https://aka.ms/aprl/repo"
+url = "https://github.com/yahanda/Azure-Proactive-Resiliency-Library-jp-translation"
 weight = 10

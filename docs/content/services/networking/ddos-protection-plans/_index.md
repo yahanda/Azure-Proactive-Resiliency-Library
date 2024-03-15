@@ -42,7 +42,7 @@ The metric names present different packet types, and bytes vs. packets, with a b
 
 **Resources**
 
-- [Monitoring Azure DDoS Protection](https://learn.microsoft.com/en-us/azure/ddos-protection/monitor-ddos-protection-reference)
+- [Monitoring Azure DDoS Protection](https://learn.microsoft.com/ja-jp/azure/ddos-protection/monitor-ddos-protection-reference)
 
 **Resource Graph Query/Scripts**
 

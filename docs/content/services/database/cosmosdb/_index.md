@@ -33,7 +33,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### COSMOS-1 - Configure at least two regions for high availability
+### COSMOS-1 - 高可用性のために少なくとも 2 つのリージョンを構成します
 
 **Category: Availability**
 
@@ -45,7 +45,7 @@ Azure implements multi-tier isolation approach with rack, DC, zone, and region i
 
 **Resources**
 
-- [Distribute data globally with Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/en-us/azure/cosmos-db/distribute-data-globally)
+- [Distribute data globally with Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/distribute-data-globally)
 
 **Resource Graph Query/Scripts**
 
@@ -57,7 +57,7 @@ Azure implements multi-tier isolation approach with rack, DC, zone, and region i
 
 <br><br>
 
-### COSMOS-2 - Enable service-managed failover for multi-region accounts with single write region
+### COSMOS-2 - 単一の書き込みリージョンを持つマルチリージョン アカウントのサービスマネージド フェールオーバーを有効にします
 
 **Category: Disaster Recovery**
 
@@ -69,7 +69,7 @@ Cosmos DB is a battle-tested service with extremely high uptime and resiliency, 
 
 **Resources**
 
-- [Manage an Azure Cosmos DB account by using the Azure portal | Microsoft Learn](https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-manage-database-account#automatic-failover)
+- [Manage an Azure Cosmos DB account by using the Azure portal | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/how-to-manage-database-account#automatic-failover)
 
 **Resource Graph Query/Scripts**
 
@@ -81,7 +81,7 @@ Cosmos DB is a battle-tested service with extremely high uptime and resiliency, 
 
 <br><br>
 
-### COSMOS-3 - Evaluate multi-region write capability
+### COSMOS-3 - 複数リージョンの書き込み機能を評価します
 
 **Category: Disaster Recovery**
 
@@ -93,8 +93,8 @@ Multi-region write capability enables you to design multi-region application tha
 
 **Resources**
 
-- [Distribute data globally with Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/en-us/azure/cosmos-db/distribute-data-globally)
-- [Conflict resolution types and resolution policies in Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/en-us/azure/cosmos-db/conflict-resolution-policies)
+- [Distribute data globally with Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/distribute-data-globally)
+- [Conflict resolution types and resolution policies in Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/conflict-resolution-policies)
 
 **Resource Graph Query/Scripts**
 
@@ -106,7 +106,7 @@ Multi-region write capability enables you to design multi-region application tha
 
 <br><br>
 
-### COSMOS-4 - Choose appropriate consistency mode reflecting data durability requirements
+### COSMOS-4 - データの持続性要件を反映した適切な整合性モードを選択します
 
 **Category: Disaster Recovery**
 
@@ -118,7 +118,7 @@ Within a globally distributed database environment, there is a direct relationsh
 
 **Resources**
 
-- [Consistency level choices - Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/en-us/azure/cosmos-db/consistency-levels)
+- [Consistency level choices - Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/consistency-levels)
 
 **Resource Graph Query/Scripts**
 
@@ -130,7 +130,7 @@ Within a globally distributed database environment, there is a direct relationsh
 
 <br><br>
 
-### COSMOS-5 - Configure continuous backup mode
+### COSMOS-5 - 継続的バックアップ モードを構成します
 
 **Category: Disaster Recovery**
 
@@ -142,7 +142,7 @@ Cosmos DB automatically backs up your data and there is no way to turn back ups 
 
 **Resources**
 
-- [Continuous backup with point in time restore feature in Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/en-us/azure/cosmos-db/continuous-backup-restore-introduction)
+- [Continuous backup with point in time restore feature in Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/continuous-backup-restore-introduction)
 
 **Resource Graph Query/Scripts**
 
@@ -154,7 +154,7 @@ Cosmos DB automatically backs up your data and there is no way to turn back ups 
 
 <br><br>
 
-### COSMOS-6 - Ensure query results are fully drained
+### COSMOS-6 - クエリ結果が完全にドレインされるようにします
 
 **Category: System Efficiency**
 
@@ -166,7 +166,7 @@ Cosmos DB limits single response to 4 MB. If your query requests a large amount 
 
 **Resources**
 
-- [Pagination in Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/query/pagination#handling-multiple-pages-of-results)
+- [Pagination in Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/nosql/query/pagination#handling-multiple-pages-of-results)
 
 **Resource Graph Query/Scripts**
 
@@ -178,7 +178,7 @@ Cosmos DB limits single response to 4 MB. If your query requests a large amount 
 
 <br><br>
 
-### COSMOS-7 - Maintain singleton pattern in your client
+### COSMOS-7 - クライアントでシングルトン パターンを維持します
 
 **Category: System Efficiency**
 
@@ -190,7 +190,7 @@ Not only is establishing a new database connection expensive, so is maintaining 
 
 **Resources**
 
-- [Designing resilient applications with Azure Cosmos DB SDKs | Microsoft Learn](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/conceptual-resilient-sdk-applications)
+- [Designing resilient applications with Azure Cosmos DB SDKs | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/nosql/conceptual-resilient-sdk-applications)
 **Resource Graph Query/Scripts**
 
 {{< collapse title="Show/Hide Query/Script" >}}
@@ -201,7 +201,7 @@ Not only is establishing a new database connection expensive, so is maintaining 
 
 <br><br>
 
-### COSMOS-8 - Implement retry logic in your client
+### COSMOS-8 - クライアントに再試行ロジックを実装します
 
 **Category: Application Resilience**
 
@@ -213,7 +213,7 @@ Cosmos DB SDKs by default handle large number of transient errors and automatica
 
 **Resources**
 
-- [Designing resilient applications with Azure Cosmos DB SDKs | Microsoft Learn](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/conceptual-resilient-sdk-applications)
+- [Designing resilient applications with Azure Cosmos DB SDKs | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/nosql/conceptual-resilient-sdk-applications)
 
 **Resource Graph Query/Scripts**
 
@@ -225,7 +225,7 @@ Cosmos DB SDKs by default handle large number of transient errors and automatica
 
 <br><br>
 
-### COSMOS-9 - Monitor Cosmos DB health and set up alerts
+### COSMOS-9 - Cosmos DB の正常性を監視し、アラートを設定します
 
 **Category: Monitoring**
 
@@ -237,7 +237,7 @@ It is good practice to monitor the availability and responsiveness of your Azure
 
 **Resources**
 
-- [Create alerts for Azure Cosmos DB using Azure Monitor | Microsoft Learn](https://learn.microsoft.com/en-us/azure/cosmos-db/create-alerts)
+- [Create alerts for Azure Cosmos DB using Azure Monitor | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/create-alerts)
 
 **Resource Graph Query/Scripts**
 

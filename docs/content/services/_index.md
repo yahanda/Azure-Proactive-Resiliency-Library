@@ -1,15 +1,15 @@
 +++
 title = "Azure Services"
-description = "The landing page for all Azure Services covered as part of APRL"
+description = "APRL の一部としてカバーされるすべての Azure サービスのランディング ページ"
 date = 2023-03-21T10:12:16Z
 weight = 1
 draft = false
 +++
 
-This page lists all of the Azure Services for which the APRL has guidance, recommendations and queries for. All of the services are grouped by the same categorization as the [Azure Portal](https://portal.azure.com/#allservices/category/All) uses.
+このページには、APRL がガイダンス、推奨事項、およびクエリを持っているすべての Azure サービスの一覧を示します。すべてのサービスは、[Azure Portal](https://portal.azure.com/#allservices/category/All) で使用されるのと同じ分類でグループ化されます。
 
-![Azure Portal Categories Screenshot](/Azure-Proactive-Resiliency-Library/media/img/azure-portal-categories-screenshot.png)
+![Azure Portal Categories Screenshot](/Azure-Proactive-Resiliency-Library-jp-translation/media/img/azure-portal-categories-screenshot.png)
 
-## Categories List
+## カテゴリー一覧
 
 {{< childpages >}}

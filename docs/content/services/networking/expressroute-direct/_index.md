@@ -39,7 +39,7 @@ In Azure ExpressRoute Direct, the "Admin State" refers to the administrative sta
 
 **Resources**
 
-- [How to configure ExpressRoute Direct: Change Admin State of links](https://learn.microsoft.com/en-us/azure/expressroute/expressroute-howto-erdirect#state)
+- [How to configure ExpressRoute Direct: Change Admin State of links](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-howto-erdirect#state)
 
 **Resource Graph Query/Scripts**
 
@@ -63,7 +63,7 @@ You can provision logical ExpressRoute circuits on top of your selected ExpressR
 
 **Resources**
 
-- [About ExpressRoute Direct: Circuit Sizes](https://learn.microsoft.com/en-us/azure/expressroute/expressroute-erdirect-about?source=recommendations#circuit-sizes)
+- [About ExpressRoute Direct: Circuit Sizes](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-erdirect-about?source=recommendations#circuit-sizes)
 
 **Resource Graph Query/Scripts**
 
@@ -87,7 +87,7 @@ Rate limiting is a feature that enables you to control the traffic volume betwee
 
 **Resources**
 
-- [Rate limiting for ExpressRoute Direct circuits (Preview)](https://learn.microsoft.com/en-us/azure/expressroute/rate-limit)
+- [Rate limiting for ExpressRoute Direct circuits (Preview)](https://learn.microsoft.com/ja-jp/azure/expressroute/rate-limit)
 
 **Resource Graph Query/Scripts**
 

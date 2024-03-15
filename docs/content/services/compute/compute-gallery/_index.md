@@ -27,7 +27,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### CG-1 - A minimum of three replicas should be kept for production image versions
+### CG-1 - 運用イメージ・バージョン用に少なくとも3つのレプリカを保持する必要があります
 
 **Category: Availability**
 
@@ -35,11 +35,11 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Keep a minimum of 3 replicas for production images.  In multi-VM deployment scenarios the VM deployments can be spread to different replicas reducing the chance of instance creation processing being throttled due to overloading of a single replica. For every 20 VMs that you create concurrently, we recommend you keep one replica. For example, if you create 1000 VMs concurrently, you should keep 50 replicas (you can have a maximum of 50 replicas per region). To update the replica count, please go to the gallery -> Image Definition -> Image Version -> Update replication.
+運用イメージ用に少なくとも 3 つのレプリカを保持します。 複数 VM デプロイのシナリオでは、VM デプロイを異なるレプリカに分散できるため、1 つのレプリカの過負荷によってインスタンス作成処理が調整される可能性が低くなります。同時に作成する 20 台の VM ごとに、1 つのレプリカを保持することをお勧めします。たとえば、1,000 個の VM を同時に作成する場合は、50 個のレプリカを保持する必要があります (リージョンごとに最大 50 個のレプリカを持つことができます)。レプリカ数を更新するには、ギャラリー -> イメージ定義 -> イメージ バージョン -> レプリケーションの更新 に移動してください。
 
 **Resources**
 
-- [Compute Gallery best practices](https://learn.microsoft.com/en-us/azure/virtual-machines/azure-compute-gallery#best-practices)
+- [Compute Gallery best practices](https://learn.microsoft.com/ja-jp/azure/virtual-machines/azure-compute-gallery#best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -51,7 +51,7 @@ Keep a minimum of 3 replicas for production images.  In multi-VM deployment scen
 
 <br><br>
 
-### CG-2 - Zone redundant storage should be used for image versions
+### CG-2 - イメージ バージョンにゾーン冗長ストレージを使用する必要があります
 
 **Category: Availability**
 
@@ -59,13 +59,13 @@ Keep a minimum of 3 replicas for production images.  In multi-VM deployment scen
 
 **Guidance**
 
-Use ZRS wherever available for high availability. You can configure ZRS in the replication tab when you create a version of the image or VM application. Azure Zone Redundant Storage (ZRS) provides resilience against an Availability Zone failure in the region. With the general availability of Azure Compute Gallery, you can choose to store your images in ZRS accounts in [regions with Availability Zones](https://learn.microsoft.com/en-us/azure/availability-zones/az-overview#azure-regions-with-availability-zones).
-You can also choose the account type for each of the target regions. The default storage account type is Standard_LRS, but it is recommended to select Standard_ZRS for regions with Availability Zones.
+高可用性のために、使用可能な場合は常に ZRS を使用します。ZRS は、イメージまたは VM アプリケーションのバージョンを作成するときに、 レプリケーション タブで構成できます。Azure Zone 冗長ストレージ (ZRS) は、リージョン内の可用性ゾーンの障害に対する回復性を提供します。Azure Compute Gallery の一般提供開始に伴い、[Availability Zones のあるリージョン](https://learn.microsoft.com/ja-jp/azure/availability-zones/az-overview#azure-regions-with-availability-zones) の ZRS アカウントにイメージを格納することを選択できます。
+また、対象地域ごとにアカウントの種類を選択することもできます。既定のストレージ アカウントの種類は Standard_LRS ですが、Availability Zones があるリージョンでは Standard_ZRS を選択することをお勧めします。
 
 **Resources**
 
-- [Compute Gallery best practices](https://learn.microsoft.com/en-us/azure/virtual-machines/azure-compute-gallery#best-practices)
-- [Zone-redundant storage](https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy#zone-redundant-storage)
+- [Compute Gallery best practices](https://learn.microsoft.com/ja-jp/azure/virtual-machines/azure-compute-gallery#best-practices)
+- [Zone-redundant storage](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-redundancy#zone-redundant-storage)
 
 **Resource Graph Query/Scripts**
 
@@ -77,7 +77,7 @@ You can also choose the account type for each of the target regions. The default
 
 <br><br>
 
-### CG-3 - Consider using hyper-V generation version 2 images where possible
+### CG-3 - 可能な場合は、Hyper-V 第 2 世代のイメージの使用を検討してください
 
 **Category: Availability**
 
@@ -85,13 +85,13 @@ You can also choose the account type for each of the target regions. The default
 
 **Guidance**
 
-We recommend that you create a generation 2 virtual machine to take advantage of features like Secure Boot, vTPM, trusted launch VMs, large boot volume. Your choice to create a generation 1 or generation 2 virtual machine depends on which guest operating system you want to install and the boot method you want to use to deploy the virtual machine. You can't change a virtual machine's generation after you've created it. So it is recommended to review the [considerations](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v#which-guest-operating-systems-are-supported) first.
+第 2 世代仮想マシンを作成して、セキュア ブート、vTPM、トラステッド起動 VM、大容量ブート ボリュームなどの機能を利用することをお勧めします。第 1 世代と第 2 世代のどちらの仮想マシンを作成するかは、インストールするゲスト OS と、仮想マシンの展開に使用する起動方法によって異なります。仮想マシンの作成後に仮想マシンの世代を変更することはできません。したがって、最初に[考慮事項](https://learn.microsoft.com/ja-jp/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v#which-guest-operating-systems-are-supported)を確認することをお勧めします。
 
 **Resources**
 
-- [Compute Gallery best practices](https://learn.microsoft.com/en-us/azure/virtual-machines/azure-compute-gallery#best-practices)
-- [Generation 1 vs Generation 2 in Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v)
-- [Images in Compute gallery](https://learn.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries?tabs=azure-cli)
+- [Compute Gallery best practices](https://learn.microsoft.com/ja-jp/azure/virtual-machines/azure-compute-gallery#best-practices)
+- [Generation 1 vs Generation 2 in Hyper-V](https://learn.microsoft.com/ja-jp/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v)
+- [Images in Compute gallery](https://learn.microsoft.com/ja-jp/azure/virtual-machines/shared-image-galleries?tabs=azure-cli)
 
 **Resource Graph Query/Scripts**
 

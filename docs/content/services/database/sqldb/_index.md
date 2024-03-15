@@ -31,7 +31,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### SQLDB-1 - Use Active Geo Replication to Create a Readable Secondary in Another Region
+### SQLDB-1 - アクティブ geo レプリケーションを使用して、別のリージョンに読み取り可能なセカンダリを作成します
 
 **Category: Disaster Recovery**
 
@@ -43,7 +43,7 @@ If your primary database fails, perform a manual failover to the secondary datab
 
 **Resources**
 
-- [Active Geo Replication](https://learn.microsoft.com/en-us/azure/azure-sql/database/active-geo-replication-overview)
+- [Active Geo Replication](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/active-geo-replication-overview)
 
 **Resource Graph Query/Scripts**
 
@@ -55,7 +55,7 @@ If your primary database fails, perform a manual failover to the secondary datab
 
 <br><br>
 
-### SQLDB-2 - Use Auto Failover Groups that can include one or multiple databases, typically used by the same application
+### SQLDB-2 - 1 つまたは複数のデータベース (通常は同じアプリケーションで使用) を含めることができる自動フェールオーバー グループを使用します
 
 **Category: Disaster Recovery**
 
@@ -67,8 +67,8 @@ You can use the readable secondary databases to offload read-only query workload
 
 **Resources**
 
-- [AutoFailover Groups](https://learn.microsoft.com/en-us/azure/azure-sql/database/auto-failover-group-overview?tabs=azure-powershell)
-- [DR Design](https://learn.microsoft.com/en-us/azure/azure-sql/database/designing-cloud-solutions-for-disaster-recovery)
+- [AutoFailover Groups](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/auto-failover-group-overview?tabs=azure-powershell)
+- [DR Design](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/designing-cloud-solutions-for-disaster-recovery)
 
 **Resource Graph Query/Scripts**
 
@@ -80,7 +80,7 @@ You can use the readable secondary databases to offload read-only query workload
 
 <br><br>
 
-### SQLDB-3 - Use a Zone-Redundant Database
+### SQLDB-3 - ゾーン冗長データベースを使用します
 
 **Category: Availability**
 
@@ -92,7 +92,7 @@ By default, the cluster of nodes for the premium availability model is created i
 
 **Resources**
 
--[Zone Redundant Databases](https://learn.microsoft.com/en-us/azure/azure-sql/database/high-availability-sla)
+-[Zone Redundant Databases](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/high-availability-sla)
 
 **Resource Graph Query/Scripts**
 
@@ -104,7 +104,7 @@ By default, the cluster of nodes for the premium availability model is created i
 
 <br><br>
 
-### SQLDB-4 - Implement Retry Logic
+### SQLDB-4 - 再試行ロジックを実装します
 
 **Category: Application Resilience**
 
@@ -116,7 +116,7 @@ Although Azure SQL Database is resilient when it concerns transitive infrastruct
 
 **Resources**
 
-- [How to Implement Retry Logic](https://learn.microsoft.com/en-us/azure/azure-sql/database/troubleshoot-common-connectivity-issues)
+- [How to Implement Retry Logic](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/troubleshoot-common-connectivity-issues)
 
 **Resource Graph Query/Scripts**
 
@@ -128,7 +128,7 @@ Although Azure SQL Database is resilient when it concerns transitive infrastruct
 
 <br><br>
 
-### SQLDB-5 - Monitor your Azure SQL Database in Near Real-Time to Detect Reliability Incidents
+### SQLDB-5 - Azure SQL Database をほぼリアルタイムで監視して信頼性インシデントを検出します
 
 **Category: Monitoring**
 
@@ -140,9 +140,9 @@ Use one of the available solutions to monitor SQL DB to detect potential reliabi
 
 **Resources**
 
-- [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/insights/azure-sql#analyze-data-and-create-alerts)
-- [Azure SQL Database Monitoring](https://learn.microsoft.com/en-us/azure/azure-sql/database/monitoring-sql-database-azure-monitor)
-- [Monitoring SQL Database Reference](https://learn.microsoft.com/en-us/azure/azure-sql/database/monitoring-sql-database-azure-monitor-reference)
+- [Azure Monitor](https://learn.microsoft.com/ja-jp/azure/azure-monitor/insights/azure-sql#analyze-data-and-create-alerts)
+- [Azure SQL Database Monitoring](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/monitoring-sql-database-azure-monitor)
+- [Monitoring SQL Database Reference](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/monitoring-sql-database-azure-monitor-reference)
 
 **Resource Graph Query/Scripts**
 
@@ -154,7 +154,7 @@ Use one of the available solutions to monitor SQL DB to detect potential reliabi
 
 <br><br>
 
-### SQLDB-6 - Back Up Your Keys
+### SQLDB-6 - キーをバックアップします
 
 **Category: Disaster Recovery**
 
@@ -166,8 +166,8 @@ It is highly recommended to use Azure Key Vault (AKV) to store encryption keys r
 
 **Resources**
 
-- [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/overview)
-- [Getting Started with Always Encrypted](https://learn.microsoft.com/en-us/azure/azure-sql/database/always-encrypted-landing?view=azuresql)
+- [Azure Key Vault](https://learn.microsoft.com/ja-jp/azure/key-vault/general/overview)
+- [Getting Started with Always Encrypted](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/always-encrypted-landing?view=azuresql)
 
 **Resource Graph Query/Scripts**
 

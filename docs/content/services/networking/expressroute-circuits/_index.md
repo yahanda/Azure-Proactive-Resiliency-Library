@@ -44,7 +44,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 Connect each ExpressRoute Gateway to a minimum of two circuits instantiated in different peering locations.
 **Resources**
 
-- [Designing for disaster recovery with ExpressRoute private peering](https://learn.microsoft.com/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering)
+- [Designing for disaster recovery with ExpressRoute private peering](https://learn.microsoft.com/ja-jp/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering)
 
 **Resource Graph Query/Scripts**
 
@@ -68,8 +68,8 @@ Microsoft (in the ExpressRoute direct model) or the ExpressRoute provider (in th
 
 **Resources**
 
-- [Designing for high availability with ExpressRoute](https://learn.microsoft.com/en-us/azure/expressroute/designing-for-high-availability-with-expressroute)
-- [Azure Well-Architected Framework review - Azure ExpressRoute - Design Checklist](https://learn.microsoft.com/azure/well-architected/services/networking/azure-expressroute#recommendations)
+- [Designing for high availability with ExpressRoute](https://learn.microsoft.com/ja-jp/azure/expressroute/designing-for-high-availability-with-expressroute)
+- [Azure Well-Architected Framework review - Azure ExpressRoute - Design Checklist](https://learn.microsoft.com/ja-jp/azure/well-architected/services/networking/azure-expressroute#recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -93,7 +93,7 @@ To improve high availability, it's recommended that you operate both the connect
 
 **Resources**
 
-- [Designing for high availability with ExpressRoute - Active-active connections](https://learn.microsoft.com/azure/expressroute/designing-for-high-availability-with-expressroute#active-active-connections)
+- [Designing for high availability with ExpressRoute - Active-active connections](https://learn.microsoft.com/ja-jp/azure/expressroute/designing-for-high-availability-with-expressroute#active-active-connections)
 
 **Resource Graph Query/Scripts**
 
@@ -117,7 +117,7 @@ When you enable Bidirectional Forwarding Detection (BFD) over ExpressRoute, you 
 
 **Resources**
 
-- [Configure BFD over ExpressRoute](https://learn.microsoft.com/azure/expressroute/expressroute-bfd)
+- [Configure BFD over ExpressRoute](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-bfd)
 
 **Resource Graph Query/Scripts**
 
@@ -145,9 +145,9 @@ For ExpressRoute Direct, configure Traffic Collection for ExpressRoute Direct to
 
 **Resources**
 
-- [Azure ExpressRoute Insights using Network Insights | Microsoft Learn](https://learn.microsoft.com/en-us/azure/expressroute/expressroute-network-insights)
-- [Monitoring Azure ExpressRoute](https://learn.microsoft.com/azure/expressroute/monitor-expressroute)
-- [Configure Traffic Collector for ExpressRoute Direct - Azure ExpressRoute | Microsoft Learn](https://learn.microsoft.com/en-us/azure/expressroute/how-to-configure-traffic-collector#deploy-expressroute-traffic-collector)
+- [Azure ExpressRoute Insights using Network Insights | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-network-insights)
+- [Monitoring Azure ExpressRoute](https://learn.microsoft.com/ja-jp/azure/expressroute/monitor-expressroute)
+- [Configure Traffic Collector for ExpressRoute Direct - Azure ExpressRoute | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/expressroute/how-to-configure-traffic-collector#deploy-expressroute-traffic-collector)
 
 **Resource Graph Query/Scripts**
 
@@ -171,7 +171,7 @@ ExpressRoute uses service health to notify about planned and unplanned maintenan
 
 **Resources**
 
-- [How to view and configure alerts for Azure ExpressRoute circuit maintenance](https://learn.microsoft.com/azure/expressroute/maintenance-alerts)
+- [How to view and configure alerts for Azure ExpressRoute circuit maintenance](https://learn.microsoft.com/ja-jp/azure/expressroute/maintenance-alerts)
 
 **Resource Graph Query/Scripts**
 
@@ -195,7 +195,7 @@ If you have not yet added a second ExpressRoute circuit for an ExpressRoute Gate
 
 **Resources**
 
-- [Using S2S VPN as a backup for ExpressRoute private peering](https://learn.microsoft.com/azure/expressroute/use-s2s-vpn-as-backup-for-expressroute-privatepeering)
+- [Using S2S VPN as a backup for ExpressRoute private peering](https://learn.microsoft.com/ja-jp/azure/expressroute/use-s2s-vpn-as-backup-for-expressroute-privatepeering)
 
 **Resource Graph Query/Scripts**
 

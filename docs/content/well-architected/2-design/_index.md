@@ -50,7 +50,7 @@ Consider if component proximity is required for application performance reasons.
 
 **Resources**
 
-- [Use Availability Zones](https://learn.microsoft.com/azure/reliability/availability-zones-overview#availability-zones)
+- [Use Availability Zones](https://learn.microsoft.com/ja-jp/azure/reliability/availability-zones-overview#availability-zones)
 
 <br><br>
 
@@ -70,8 +70,8 @@ An active-active configuration distributes requests across multiple active regio
 
 **Resources**
 
-- [Design reliable Azure applications](https://learn.microsoft.com/azure/well-architected/resiliency/app-design)
-- [Cross-region replication in Azure: Business continuity and disaster recovery](https://learn.microsoft.com/azure/reliability/cross-region-replication-azure)
+- [Design reliable Azure applications](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/app-design)
+- [Cross-region replication in Azure: Business continuity and disaster recovery](https://learn.microsoft.com/ja-jp/azure/reliability/cross-region-replication-azure)
 
 <br><br>
 
@@ -91,7 +91,7 @@ Identify all fault-points and fault-modes. Fault-points describe the elements wi
 
 **Resources**
 
-- [Failure mode analysis for Azure applications](https://learn.microsoft.com/azure/architecture/resiliency/failure-mode-analysis)
+- [Failure mode analysis for Azure applications](https://learn.microsoft.com/ja-jp/azure/architecture/resiliency/failure-mode-analysis)
 
 <br><br>
 
@@ -107,7 +107,7 @@ PaaS provides a framework for developing and running apps. As with IaaS, the Paa
 
 **Resources**
 
-- [Use platform as a service (PaaS) options](https://learn.microsoft.com/azure/architecture/guide/design-principles/managed-services)
+- [Use platform as a service (PaaS) options](https://learn.microsoft.com/ja-jp/azure/architecture/guide/design-principles/managed-services)
 
 <br><br>
 
@@ -123,7 +123,7 @@ Azure provides elastic scalability and you should design to scale out. However, 
 
 **Resources**
 
-- [Design to scale out](https://learn.microsoft.com/azure/architecture/guide/design-principles/scale-out)
+- [Design to scale out](https://learn.microsoft.com/ja-jp/azure/architecture/guide/design-principles/scale-out)
 
 <br><br>
 
@@ -145,7 +145,7 @@ When considering the overall security, a landing zone offers centralized securit
 
 **Resources**
 
-- [Azure landing zone integration](https://learn.microsoft.com/azure/well-architected/security/design-governance-landing-zone)
+- [Azure landing zone integration](https://learn.microsoft.com/ja-jp/azure/well-architected/security/design-governance-landing-zone)
 
 <br><br>
 
@@ -173,7 +173,7 @@ Key points:
 
 **Resources**
 
-- [Backup and disaster recovery for Azure applications](https://learn.microsoft.com/azure/well-architected/resiliency/backup-and-recovery)
+- [Backup and disaster recovery for Azure applications](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/backup-and-recovery)
 
 <br><br>
 
@@ -194,7 +194,7 @@ Provide security assurance through identity management: the process of authentic
 
 **Resources**
 
-- [Azure identity and access management considerations](https://learn.microsoft.com/azure/well-architected/security/design-identity)
+- [Azure identity and access management considerations](https://learn.microsoft.com/ja-jp/azure/well-architected/security/design-identity)
 
 <br><br>
 
@@ -218,6 +218,6 @@ The security of complex systems depends on understanding the business context, s
 
 **Resources**
 
-- [Security design principles](https://learn.microsoft.com/azure/well-architected/security/security-principles)
+- [Security design principles](https://learn.microsoft.com/ja-jp/azure/well-architected/security/security-principles)
 
 <br><br>

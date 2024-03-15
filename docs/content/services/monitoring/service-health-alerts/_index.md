@@ -25,7 +25,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ALA-1 - Configure Service Health Alerts
+### ALA-1 - サービス正常性アラートを構成します
 
 **Category: Monitoring**
 
@@ -37,8 +37,8 @@ Service health provides a personalized view of the health of the Azure services 
 
 **Resources**
 
-- [What is Azure Service Health?](https://learn.microsoft.com/azure/service-health/overview)
-- [Configure alerts for service health events](https://learn.microsoft.com/azure/service-health/alerts-activity-log-service-notifications-portal)
+- [What is Azure Service Health?](https://learn.microsoft.com/ja-jp/azure/service-health/overview)
+- [Configure alerts for service health events](https://learn.microsoft.com/ja-jp/azure/service-health/alerts-activity-log-service-notifications-portal)
 
 **Resource Graph Query/Scripts**
 

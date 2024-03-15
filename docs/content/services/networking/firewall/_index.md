@@ -40,8 +40,8 @@ Azure Firewall provides different SLAs when it's deployed in a single availabili
 
 **Resources**
 
-- [Azure Well Architected Framework - Azure Firewall](https://learn.microsoft.com/azure/architecture/framework/services/networking/azure-firewall)
-- [Deploy Azure Firewall across multiple availability zones](https://learn.microsoft.com/azure/firewall/deploy-availability-zone-powershell)
+- [Azure Well Architected Framework - Azure Firewall](https://learn.microsoft.com/ja-jp/azure/architecture/framework/services/networking/azure-firewall)
+- [Deploy Azure Firewall across multiple availability zones](https://learn.microsoft.com/ja-jp/azure/firewall/deploy-availability-zone-powershell)
 
 **Resource Graph Query/Scripts**
 
@@ -69,8 +69,8 @@ Monitor metrics related to availability and performance issues. More specificall
 
 **Resources**
 
-- [Azure Firewall metrics supported in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/essentials/metrics-supported#microsoftnetworkazurefirewalls)
-- [Azure Firewall performance](https://learn.microsoft.com/azure/firewall/firewall-performance)
+- [Azure Firewall metrics supported in Azure Monitor](https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/metrics-supported#microsoftnetworkazurefirewalls)
+- [Azure Firewall performance](https://learn.microsoft.com/ja-jp/azure/firewall/firewall-performance)
 
 **Resource Graph Query/Scripts**
 
@@ -94,7 +94,7 @@ Associate a DDoS protection plan with the virtual network hosting Azure Firewall
 
 **Resources**
 
-- [Azure DDoS Protection overview](https://learn.microsoft.com/azure/ddos-protection/ddos-protection-overview)
+- [Azure DDoS Protection overview](https://learn.microsoft.com/ja-jp/azure/ddos-protection/ddos-protection-overview)
 
 **Resource Graph Query/Scripts**
 
@@ -118,7 +118,7 @@ Azure Firewall policy allows you to define a rule hierarchy and enforce complian
 
 **Resources**
 
-- [Azure Firewall Policy hierarchy](https://learn.microsoft.com/azure/firewall-manager/rule-hierarchy)
+- [Azure Firewall Policy hierarchy](https://learn.microsoft.com/ja-jp/azure/firewall-manager/rule-hierarchy)
 
 **Resource Graph Query/Scripts**
 

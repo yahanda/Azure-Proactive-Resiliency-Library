@@ -51,7 +51,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### DBW-1 - Databricks runtime version is not latest or is not LTS version
+### DBW-1 - Databricks ランタイムのバージョンが最新ではないか、LTS バージョンではありません
 
 **Category: Governance**
 
@@ -59,16 +59,16 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Use 12.2 LTS later. Databricks recommends that you migrate your workloads in the following order:
+12.2 LTS 以降を使用してください。Databricks では、次の順序でワークロードを移行することをお勧めします。:
 
-- If your workloads are currently running on Databricks Runtime 11.3 LTS or above, you can migrate directly to the latest version of Databricks Runtime 12.x, as described later in this article.
-- If your workloads are currently running on Databricks Runtime 11.3 LTS or below, do the following:
-  - Migrate to Databricks Runtime 11.3 LTS first. See the Databricks Runtime 11.x migration guide.
-  - Follow the guidance in this article to migrate from Databricks Runtime 11.3 LTS to the latest version of Databricks Runtime 12.x.
+- ワークロードが現在 Databricks Runtime 11.3 LTS 以降で実行されている場合は、この記事の後半で説明するように、最新バージョンの Databricks Runtime 12.x に直接移行できます。
+- ワークロードが現在 Databricks Runtime 11.3 LTS 以下で実行されている場合は、次の操作を行います。
+  - 最初に Databricks Runtime 11.3 LTS に移行します。Databricks Runtime 11.x 移行ガイドを参照してください。
+  - この記事のガイダンスに従って、Databricks Runtime 11.3 LTS から最新バージョンの Databricks Runtime 12.x に移行します。
 
 **Resources**
 
-- [Databricks runtime support lifecycles](https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/databricks-runtime-ver)
+- [Databricks runtime support lifecycles](https://learn.microsoft.com/ja-jp/azure/databricks/release-notes/runtime/databricks-runtime-ver)
 
 **Resource Graph Query/Scripts**
 
@@ -80,7 +80,7 @@ Use 12.2 LTS later. Databricks recommends that you migrate your workloads in the
 
 <br><br>
 
-### DBW-2 - Use Databricks Pools
+### DBW-2 - Databricks プールを使用します
 
 **Category: System Efficiency**
 
@@ -88,11 +88,11 @@ Use 12.2 LTS later. Databricks recommends that you migrate your workloads in the
 
 **Guidance**
 
-Databricks pools are a standard feature of the service, pre-provisions VM’s instead of spinning them up on demand will help to vastly reduce risks of “provisioning” errors when starting or scaling clusters.
+Databricks プールはサービスの標準機能であり、VM をオンデマンドでスピンアップするのではなく、事前にプロビジョニングすることで、クラスターの開始時またはスケーリング時の "プロビジョニング" エラーのリスクを大幅に軽減できます。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -104,7 +104,7 @@ Databricks pools are a standard feature of the service, pre-provisions VM’s in
 
 <br><br>
 
-### DBW-3 - Use SSD backed VMs for Worker VM Type and Driver type
+### DBW-3 - Worker VM Type と Driver type に SSD ベースの VM を使用します
 
 **Category: System Efficiency**
 
@@ -112,17 +112,17 @@ Databricks pools are a standard feature of the service, pre-provisions VM’s in
 
 **Guidance**
 
-We have identified that you are using standard hard disks with your premium-capable Virtual Machines and we recommend you consider upgrading the standard-hdd disks to standard-ssd or premium disks. For any Single Instance Virtual Machine using premium storage for all Operating System Disks and Data Disks, we guarantee you will have Virtual Machine Connectivity of at least 99.9%. Consider these factors when making your upgrade decision. The first is that upgrading requires a VM reboot and this process takes 3-5 minutes to complete. The second is if the VMs in the list are mission-critical production VMs, evaluate the improved availability against the cost of premium disks.
+Premium 対応の仮想マシンで標準ハード ディスクを使用していることが確認されたため、Standard HDD ディスクを Standard SSD または Premium ディスクにアップグレードすることを検討することをお勧めします。すべてのオペレーティング システム ディスクとデータ ディスクに Premium Storage を使用する単一インスタンス仮想マシンについては、マイクロソフトは、仮想マシンの接続性が 99.9% 以上であることを保証します。アップグレードを決定する際には、これらの要素を考慮してください。1 つ目は、アップグレードには VM の再起動が必要であり、このプロセスが完了するまでに 3 分から 5 分かかることです。2 つ目は、一覧にある VM がミッション クリティカルな運用 VM である場合は、Premium ディスクのコストに対して可用性の向上を評価することです。
 
-- Premium SSD disks offer high-performance, low-latency disk support for I/O-intensive applications and production workloads.
-- Standard SSD Disks are a cost effective storage option optimized for workloads that need consistent performance at lower IOPS levels.
-- Use Standard HDD disks for Dev/Test scenarios and less critical workloads at lowest cost.
+- Premium SSD ディスクは、I/O 集中型のアプリケーションや運用ワークロードに対して、高パフォーマンスで待機時間の短いディスク サポートを提供します。
+- Standard SSD ディスクは、低い IOPS レベルで一貫したパフォーマンスを必要とするワークロード向けに最適化された、コスト効率の高いストレージ オプションです。
+- Standard HDD ディスクは、開発/テストのシナリオと重要度の低いワークロードに最小のコストで使用します。
 
-Standard SSDs are acceptable for some Production workloads as well.
+Standard SSD は、一部の運用ワークロードでも使用できます。
 
 **Resources**
 
-- [Azure managed disk types](https://learn.microsoft.com/azure/virtual-machines/disks-types#premium-ssd)
+- [Azure managed disk types](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-types#premium-ssd)
 
 **Resource Graph Query/Scripts**
 
@@ -134,7 +134,7 @@ Standard SSDs are acceptable for some Production workloads as well.
 
 <br><br>
 
-### DBW-4 - Enable autoscaling for batch workloads
+### DBW-4 - バッチ ワークロードの自動スケーリングを有効にします
 
 **Category: System Efficiency**
 
@@ -142,13 +142,13 @@ Standard SSDs are acceptable for some Production workloads as well.
 
 **Guidance**
 
-Autoscaling allows clusters to resize automatically based on workloads. Autoscaling can benefit many use cases and scenarios from both a cost and performance perspective. The documentation provides considerations for determining whether to use Autoscaling and how to get the most benefit.
+自動スケーリングを使用すると、ワークロードに基づいてクラスターのサイズを自動的に変更できます。自動スケーリングは、コストとパフォーマンスの両方の観点から、多くのユース ケースとシナリオにメリットをもたらします。このドキュメントでは、自動スケーリングを使用するかどうか、および最大のメリットを得る方法を決定するための考慮事項について説明します。
 
-For streaming workloads, Databricks recommends using Delta Live Tables with autoscaling.
+ストリーミング ワークロードの場合、Databricks では、自動スケーリングで Delta Live Tables を使用することをお勧めします。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices#enable-autoscaling-for-batch-workloadss)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#enable-autoscaling-for-batch-workloadss)
 
 **Resource Graph Query/Scripts**
 
@@ -160,7 +160,7 @@ For streaming workloads, Databricks recommends using Delta Live Tables with auto
 
 <br><br>
 
-### DBW-5 - Enable autoscaling for SQL warehouse
+### DBW-5 - SQL warehouse の自動スケーリングを有効にします
 
 **Category: System Efficiency**
 
@@ -168,13 +168,13 @@ For streaming workloads, Databricks recommends using Delta Live Tables with auto
 
 **Guidance**
 
-The scaling parameter of a SQL warehouse sets the minimum and the maximum number of clusters over which queries sent to the warehouse are distributed. The default is a minimum of one and a maximum of one cluster.
+SQL ウェアハウスのスケーリング パラメーターは、ウェアハウスに送信されたクエリが分散されるクラスターの最小数と最大数を設定します。デフォルトは、最小で 1 つ、最大で 1 つのクラスターです。
 
-To handle more concurrent users for a given warehouse, increase the cluster count.
+特定のウェアハウスでより多くの同時ユーザーを処理するには、クラスター数を増やします。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices#enable-autoscaling-for-sql-warehouse)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#enable-autoscaling-for-sql-warehouse)
 
 **Resource Graph Query/Scripts**
 
@@ -186,7 +186,7 @@ To handle more concurrent users for a given warehouse, increase the cluster coun
 
 <br><br>
 
-### DBW-6 - Use Delta Live Tables enhanced autoscaling
+### DBW-6 - Delta Live Tables の拡張自動スケーリングを使用します
 
 **Category: System Efficiency**
 
@@ -194,11 +194,11 @@ To handle more concurrent users for a given warehouse, increase the cluster coun
 
 **Guidance**
 
-A data disk is a managed disk that's attached to a virtual machine to store application data, or other data you need to keep. Data disks are registered as SCSI drives and are labeled with a letter that you choose. Hosting you data on a data disk also helps with flexibility when backuping or restoring data, as well as migrating the disk without having to migrate the entire Virtual Machine and Operating System. You will be able to also select a different disk sku, with different type, size, and performance that meet your requirements.
+データ ディスクは、アプリケーション データや保持する必要があるその他のデータを格納するために仮想マシンに接続されるマネージド ディスクです。データ ディスクは SCSI ドライブとして登録され、選択した文字でラベル付けされます。また、データ ディスクでデータをホストすると、データのバックアップや復元の柔軟性が高まり、仮想マシンとオペレーティング システム全体を移行することなくディスクを移行できます。また、要件を満たすさまざまな種類、サイズ、パフォーマンスの別のディスク SKU を選択することもできます。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -210,7 +210,7 @@ A data disk is a managed disk that's attached to a virtual machine to store appl
 
 <br><br>
 
-### DBW-7 - Automatic Job Termination is enabled, ensure there are no user-defined local processes
+### DBW-7 - ジョブの自動終了が有効になっており、ユーザー定義のローカルプロセスがないことを確認します
 
 **Category: Availability**
 
@@ -218,13 +218,13 @@ A data disk is a managed disk that's attached to a virtual machine to store appl
 
 **Guidance**
 
-To save cluster resources, you can terminate a cluster. The terminated cluster’s configuration is stored so that it can be reused (or, in the case of jobs, autostarted) at a later time. You can manually terminate a cluster or configure the cluster to terminate automatically after a specified period of inactivity. When the number of terminated clusters exceeds 150, the oldest clusters are deleted.
-You can also set auto termination for a cluster. During cluster creation, you can specify an inactivity period in minutes after which you want the cluster to terminate.
-However, The auto termination feature monitors only Spark jobs, not user-defined local processes. Therefore, if all Spark jobs have completed, a cluster may be terminated, even if local processes are running.
+クラスタ リソースを節約するために、クラスタを終了できます。終了したクラスターの構成は、後で再利用 (ジョブの場合は自動開始) できるように保存されます。クラスタを手動で終了することも、指定した非アクティブな期間が経過すると自動的に終了するようにクラスタを設定することもできます。終了したクラスタの数が 150 を超えると、最も古いクラスタが削除されます。
+また、クラスタの自動終了を設定することもできます。クラスターの作成時に、クラスターを終了するまでの非アクティブ期間を分単位で指定できます。
+ただし、自動終了機能では、ユーザー定義のローカル プロセスではなく、Spark ジョブのみが監視されます。そのため、すべての Spark ジョブが完了すると、ローカル プロセスが実行されている場合でも、クラスターが終了する可能性があります。
 
 **Resources**
 
-- [Best practices for reliability?](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability?](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -236,7 +236,7 @@ However, The auto termination feature monitors only Spark jobs, not user-defined
 
 <br><br>
 
-### DBW-8 - Enable Logging-Cluster log delivery
+### DBW-8 - Logging-Cluster ログ配信を有効にします
 
 **Category: Monitoring**
 
@@ -244,13 +244,13 @@ However, The auto termination feature monitors only Spark jobs, not user-defined
 
 **Guidance**
 
-When you create a cluster, you can specify a location to deliver the logs for the Spark driver node, worker nodes, and events. Logs are delivered every five minutes and archived hourly in your chosen destination. When a cluster is terminated, Azure Databricks guarantees to deliver all logs generated up until the cluster was terminated.
+クラスターを作成するときに、Spark ドライバー ノード、ワーカー ノード、およびイベントのログを配信する場所を指定できます。ログは 5 分ごとに配信され、選択した宛先に 1 時間ごとにアーカイブされます。クラスターが終了すると、Azure Databricks は、クラスターが終了するまでに生成されたすべてのログを配信することを保証します。
 
-The destination of the logs depends on the cluster ID. If the specified destination is dbfs:/cluster-log-delivery, cluster logs for 0630-191345-leap375 are delivered to dbfs:/cluster-log-delivery/0630-191345-leap375.
+ログの宛先は、クラスター ID によって異なります。指定した宛先が dbfs:/cluster-log-delivery の場合、0630-191345-leap375 のクラスター ログは dbfs:/cluster-log-delivery/0630-191345-leap375 に配信されます。
 
 **Resources**
 
-- [Create a cluster](https://learn.microsoft.com/en-us/azure/databricks/clusters/configure#cluster-log-delivery)
+- [Create a cluster](https://learn.microsoft.com/ja-jp/azure/databricks/clusters/configure#cluster-log-delivery)
 
 **Resource Graph Query/Scripts**
 
@@ -262,7 +262,7 @@ The destination of the logs depends on the cluster ID. If the specified destinat
 
 <br><br>
 
-### DBW-9 - Use Delta Lake for higher reliability
+### DBW-9 - Delta Lake を使用して信頼性を高めます
 
 **Category: Availability**
 
@@ -270,11 +270,11 @@ The destination of the logs depends on the cluster ID. If the specified destinat
 
 **Guidance**
 
-Delta Lake is an open source storage format that brings reliability to data lakes. Delta Lake provides ACID transactions, schema enforcement, scalable metadata handling, and unifies streaming and batch data processing. Delta Lake runs on top of your existing data lake and is fully compatible with Apache Spark APIs. Delta Lake on Databricks allows you to configure Delta Lake based on your workload patterns.
+Delta Lake は、データ レイクに信頼性をもたらすオープン ソースのストレージ形式です。Delta Lake は、ACID トランザクション、スキーマの適用、スケーラブルなメタデータ処理を提供し、ストリーミングとバッチのデータ処理を統合します。Delta Lake は、既存のデータ レイク上で実行され、Apache Spark API と完全に互換性があります。Databricks 上の Delta Lake では、ワークロード パターンに基づいて Delta Lake を構成できます。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -286,7 +286,7 @@ Delta Lake is an open source storage format that brings reliability to data lake
 
 <br><br>
 
-### DBW-10 - Use Photon Acceleration
+### DBW-10 - Photon アクセラレーションを使用します
 
 **Category: Availability**
 
@@ -294,13 +294,13 @@ Delta Lake is an open source storage format that brings reliability to data lake
 
 **Guidance**
 
-Apache Spark, as the compute engine of the Databricks Lakehouse, is based on resilient distributed data processing. In case of an internal Spark task not returning a result as expected, Apache Spark automatically reschedules the missing tasks and continues with the execution of the entire job. This is helpful for failures outside the code, like a short network issue or a revoked spot VM. Working with both the SQL API and the Spark DataFrame API comes with this resilience built into the engine.
+Apache Spark は、Databricks レイクハウスのコンピューティング エンジンとして、回復力のある分散データ処理に基づいています。内部 Spark タスクが期待どおりの結果を返さない場合、Apache Spark は不足しているタスクを自動的に再スケジュールし、ジョブ全体の実行を続行します。これは、短いネットワークの問題やスポット VM の失効など、コード外のエラーに役立ちます。SQL API と Spark DataFrame API の両方を使用すると、エンジンにこの回復性が組み込まれます。
 
-In the Databricks Lakehouse, Photon, a native vectorized engine entirely written in C++, is high performance compute compatible with Apache Spark APIs.
+Databricks レイクハウスでは、完全に C++ で記述されたネイティブ ベクトル化エンジンである Photon は、Apache Spark API と互換性のあるハイ パフォーマンス コンピューティングです。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices#use-apache-spark-or-photon-for-distributed-compute)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#use-apache-spark-or-photon-for-distributed-compute)
 
 **Resource Graph Query/Scripts**
 
@@ -312,7 +312,7 @@ In the Databricks Lakehouse, Photon, a native vectorized engine entirely written
 
 <br><br>
 
-### DBW-11 - Automatically rescue invalid or nonconforming data with Databricks Auto Loader or Delta Live Tables
+### DBW-11 - Databricks Auto Loader または Delta Live Tables を使用して、無効なデータや不適合なデータを自動的に復旧します
 
 **Category: Application Resilience**
 
@@ -320,14 +320,14 @@ In the Databricks Lakehouse, Photon, a native vectorized engine entirely written
 
 **Guidance**
 
-Invalid or nonconforming data can lead to crashes of workloads that rely on an established data format. To increase the end-to-end resilience of the whole process, it is best practice to filter out invalid and nonconforming data at ingestion. Supporting rescued data ensures you never lose or miss out on data during ingest or ETL. The rescued data column contains any data that wasn’t parsed, either because it was missing from the given schema, because there was a type mismatch, or the column casing in the record or file didn’t match that in the schema.
+無効なデータや不適合なデータは、確立されたデータ形式に依存するワークロードのクラッシュにつながる可能性があります。プロセス全体のエンドツーエンドの回復性を高めるには、インジェスト時に無効なデータや不適合なデータを除外することをお勧めします。レスキューされたデータをサポートすることで、取り込みやETL中にデータを失ったり見逃したりすることがなくなります。復旧されたデータ列には、指定されたスキーマに存在しないか、型の不一致があったか、レコードまたはファイルの列の大文字と小文字がスキーマの大文字と小文字が一致しなかったために、解析されなかったデータが含まれます。
 
-- Databricks Auto Loader: Auto Loader is the ideal tool for streaming the ingestion of files. It supports rescued data for JSON and CSV.
-- Delta Live Tables: Another option to build workflows for resilience is using Delta Live Tables with quality constraints.
+- Databricks 自動ローダー: 自動ローダーは、ファイルのインジェストをストリーミングするための理想的なツールです。JSON と CSV のレスキューされたデータをサポートします。
+- Delta Live Tables: 回復性のためのワークフローを構築するための別のオプションは、品質制約のある Delta Live Tables を使用することです。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -339,7 +339,7 @@ Invalid or nonconforming data can lead to crashes of workloads that rely on an e
 
 <br><br>
 
-### DBW-12 - Configure jobs for automatic retries and termination
+### DBW-12 - 自動再試行と自動終了のジョブを構成します
 
 **Category: Availability**
 
@@ -347,12 +347,12 @@ Invalid or nonconforming data can lead to crashes of workloads that rely on an e
 
 **Guidance**
 
-For batch and streaming inference, use Databricks jobs and MLflow to deploy models as Apache Spark UDFs to leverage job scheduling, retries, autoscaling, and so on.
-Model serving provides a scalable and production-grade model real-time serving infrastructure. It processes your machine learning models using MLflow and exposes them as REST API endpoints. This functionality uses serverless compute, which means that the endpoints and associated compute resources are managed and run in the Databricks cloud account.
+バッチ推論とストリーミング推論の場合は、Databricks ジョブと MLflow を使用してモデルを Apache Spark UDF としてデプロイし、ジョブのスケジュール設定、再試行、自動スケーリングなどを活用します。
+モデル提供は、スケーラブルで実稼働グレードのモデルリアルタイムサービスインフラストラクチャを提供します。MLflow を使用して機械学習モデルを処理し、REST API エンドポイントとして公開します。この機能ではサーバーレス コンピューティングが使用されるため、エンドポイントと関連するコンピューティング リソースは Databricks クラウド アカウントで管理および実行されます。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -364,7 +364,7 @@ Model serving provides a scalable and production-grade model real-time serving i
 
 <br><br>
 
-### DBW-13 - Use a scalable and production-grade model serving infrastructure
+### DBW-13 - スケーラブルで実稼働グレードのモデル提供用インフラストラクチャを使用します
 
 **Category: System Efficiency**
 
@@ -372,12 +372,12 @@ Model serving provides a scalable and production-grade model real-time serving i
 
 **Guidance**
 
-For batch and streaming inference, use Databricks jobs and MLflow to deploy models as Apache Spark UDFs to leverage job scheduling, retries, autoscaling, and so on.
-Model serving provides a scalable and production-grade model real-time serving infrastructure. It processes your machine learning models using MLflow and exposes them as REST API endpoints. This functionality uses serverless compute, which means that the endpoints and associated compute resources are managed and run in the Databricks cloud account.
+バッチ推論とストリーミング推論の場合は、Databricks ジョブと MLflow を使用してモデルを Apache Spark UDF としてデプロイし、ジョブのスケジュール設定、再試行、自動スケーリングなどを活用します。
+モデル提供は、スケーラブルで実稼働グレードのモデルリアルタイムサービスインフラストラクチャを提供します。MLflow を使用して機械学習モデルを処理し、REST API エンドポイントとして公開します。この機能ではサーバーレス コンピューティングが使用されるため、エンドポイントと関連するコンピューティング リソースは Databricks クラウド アカウントで管理および実行されます。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -389,7 +389,7 @@ Model serving provides a scalable and production-grade model real-time serving i
 
 <br><br>
 
-### DBW-14 - Use a layered storage architecture
+### DBW-14 - 階層型ストレージアーキテクチャを使用します
 
 **Category: Application Resilience**
 
@@ -397,19 +397,19 @@ Model serving provides a scalable and production-grade model real-time serving i
 
 **Guidance**
 
-Curate data by creating a layered architecture and ensuring data quality increases as data moves through the layers. A common layering approach is:
+階層化されたアーキテクチャを作成し、データが階層を通過するにつれてデータ品質が向上するようにすることで、データをキュレーションします。一般的な階層化のアプローチは次のとおりです。
 
-Raw layer (bronze): Source data gets ingested into the lakehouse into the first layer and should be persisted there. When all downstream data is created from the raw layer, rebuilding the subsequent layers from this layer is possible if needed.
+未加工レイヤー (ブロンズ): ソース データはレイクハウスの最初のレイヤーに取り込まれ、そこに保持する必要があります。すべての下流データが未加工レイヤーから作成されたら、必要に応じて、このレイヤーから後続のレイヤーを再構築できます。
 
-Curated layer (silver): The purpose of the second layer is to hold cleansed, refined, filtered and aggregated data. The goal of this layer is to provide a sound, reliable foundation for analyses and reports across all roles and functions.
+キュレーションされたレイヤー (シルバー): 2 番目のレイヤーの目的は、クレンジング、絞り込み、フィルター処理、および集計されたデータを保持することです。このレイヤーの目標は、すべての役割と機能にわたる分析とレポートのための健全で信頼性の高い基盤を提供することです。
 
-Final layer (gold): The third layer is created around business or project needs. It provides a different view as data products to other business units or projects, preparing data around security needs (such as anonymized data) or optimizing for performance (such as with preaggregated views). The data products in this layer are seen as the truth for the business.
+最終層 (ゴールド): 3 番目の層は、ビジネスまたはプロジェクトのニーズに基づいて作成されます。他の部署やプロジェクトに対してデータ製品として異なるビューを提供し、セキュリティ ニーズに関するデータ (匿名化されたデータなど) を準備したり、パフォーマンスを最適化したり (事前集計されたビューなど) したりします。このレイヤーのデータ製品は、ビジネスにとっての事実と見なされます。
 
-The final layer should only contain high-quality data and can be fully trusted from a business point of view.
+最後のレイヤーには、高品質のデータのみを含める必要があり、ビジネスの観点から完全に信頼できるものでなければなりません。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -421,7 +421,7 @@ The final layer should only contain high-quality data and can be fully trusted f
 
 <br><br>
 
-### DBW-15 - Improve data integrity by reducing data redundancy
+### DBW-15 - データの冗長性を削減することでデータの整合性を向上させます
 
 **Category: Application Resilience**
 
@@ -429,11 +429,11 @@ The final layer should only contain high-quality data and can be fully trusted f
 
 **Guidance**
 
-Copying or duplicating data creates data redundancy and will lead to lost integrity, lost data lineage, and often different access permissions. This will decrease the quality of the data in the lakehouse. A temporary or throwaway copy of data is not harmful on its own - it is sometimes necessary for boosting agility, experimentation and innovation. However, if these copies become operational and regularly used for business decisions, they become data silos. These data silos getting out of sync has a significant negative impact on data integrity and quality, raising questions such as “Which data set is the master?” or “Is the data set up to date?”.
+データをコピーまたは複製すると、データの冗長性が生じ、整合性が失われ、データ系列が失われ、多くの場合、それぞれのアクセス許可が異なります。これにより、レイクハウス内のデータの品質が低下します。データの一時的または使い捨て用のデータのコピーは、それ自体では有害ではなく、俊敏性、実験、イノベーションを促進するために必要になる場合があります。ただし、これらのコピーが運用可能になり、ビジネス上の意思決定に定期的に使用されるようになると、データのサイロ化が進みます。これらのデータサイロが同期しなくなると、データの整合性と品質に重大な悪影響を及ぼし、「どのデータセットがマスターなのか」や「データセットは最新か」などの疑問が生じます。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -445,7 +445,7 @@ Copying or duplicating data creates data redundancy and will lead to lost integr
 
 <br><br>
 
-### DBW-16 - Actively manage schemas
+### DBW-16 - スキーマをアクティブに管理します
 
 **Category: Governance**
 
@@ -453,14 +453,14 @@ Copying or duplicating data creates data redundancy and will lead to lost integr
 
 **Guidance**
 
-Uncontrolled schema changes can lead to invalid data and failing jobs that use these data sets. Databricks has several methods to validate and enforce the schema:
+制御されていないスキーマ変更は、無効なデータや、これらのデータ・セットを使用するジョブの失敗につながる可能性があります。Databricks には、スキーマを検証して適用するためのいくつかの方法があります。
 
-- Delta Lake supports schema validation and schema enforcement by automatically handling schema variations to prevent the insertion of bad records during ingestion.
-- Auto Loader detects the addition of new columns as it processes your data. By default, the addition of a new column causes your streams to stop with an UnknownFieldException. Auto Loader supports several modes for schema evolution.
+- Delta Lake は、スキーマのバリエーションを自動的に処理して、取り込み中に不適切なレコードが挿入されるのを防ぐことで、スキーマの検証とスキーマの適用をサポートします。
+- 自動ローダーは、データの処理中に新しい列の追加を検出します。既定では、新しい列を追加すると、ストリームは UnknownFieldException で停止します。自動ローダーでは、スキーマの進化のためにいくつかのモードがサポートされています。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -472,7 +472,7 @@ Uncontrolled schema changes can lead to invalid data and failing jobs that use t
 
 <br><br>
 
-### DBW-17 - Use constraints and data expectations
+### DBW-17 - 制約とデータの期待値を使用します
 
 **Category: Application Resilience**
 
@@ -480,13 +480,13 @@ Uncontrolled schema changes can lead to invalid data and failing jobs that use t
 
 **Guidance**
 
-Delta tables support standard SQL constraint management clauses that ensure that the quality and integrity of data added to a table are automatically verified. When a constraint is violated, Delta Lake throws an InvariantViolationException error to signal that the new data can’t be added. See Constraints on Azure Databricks.
+Delta テーブルでは、テーブルに追加されるデータの品質と整合性が自動的に検証されるようにする標準の SQL 制約管理句がサポートされています。制約に違反すると、Delta Lake は InvariantViolationException エラーをスローして、新しいデータを追加できないことを通知します。「Azure Databricks の制約」を参照してください。
 
-To further improve this handling, Delta Live Tables supports Expectations: Expectations define data quality constraints on the contents of a data set. An expectation consists of a description, an invariant, and an action to take when a record fails the invariant. Expectations to queries use Python decorators or SQL constraint clauses. See Manage data quality with Delta Live Tables.
+この処理をさらに改善するために、Delta Live Tables では、期待値: 期待値は、データ セットの内容に対するデータ品質の制約を定義します。期待値は、説明、不変条件、およびレコードが不変条件に失敗した場合に実行するアクションで構成されます。クエリへの期待は、Python デコレーターまたは SQL 制約句を使用します。「Delta Live Tables を使用したデータ品質の管理」を参照してください。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices#use-constraints-and-data-expectations)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#use-constraints-and-data-expectations)
 
 **Resource Graph Query/Scripts**
 
@@ -498,7 +498,7 @@ To further improve this handling, Delta Live Tables supports Expectations: Expec
 
 <br><br>
 
-### DBW-18 - Create regular backups
+### DBW-18 - 定期的なバックアップを作成します
 
 **Category: Disaster Recovery**
 
@@ -506,11 +506,11 @@ To further improve this handling, Delta Live Tables supports Expectations: Expec
 
 **Guidance**
 
-To recover from a failure, regular backups need to be available. The Databricks Labs project migrate allows workspace admins to create backups by exporting most of the assets of their workspaces (the tool uses the Databricks CLI/API in the background). See Databricks Migration Tool. Backups can be used either for restoring workspaces or for importing into a new workspace in case of a migration.
+障害から回復するには、定期的なバックアップを利用できる必要があります。Databricks Labs プロジェクトの移行を使用すると、ワークスペース管理者は、ワークスペースのほとんどの資産をエクスポートしてバックアップを作成できます (このツールはバックグラウンドで Databricks CLI/API を使用します)。「Databricks 移行ツール」を参照してください。バックアップは、ワークスペースの復元、または移行の場合の新しいワークスペースへのインポートに使用できます。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices#create-regular-backups)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#create-regular-backups)
 
 **Resource Graph Query/Scripts**
 
@@ -522,7 +522,7 @@ To recover from a failure, regular backups need to be available. The Databricks 
 
 <br><br>
 
-### DBW-19 - Recover from Structured Streaming query failures
+### DBW-19 - 構造化ストリーミングのクエリ エラーから復旧します
 
 **Category: Availability**
 
@@ -530,11 +530,11 @@ To recover from a failure, regular backups need to be available. The Databricks 
 
 **Guidance**
 
-Structured Streaming provides fault-tolerance and data consistency for streaming queries. Using Azure Databricks workflows, you can easily configure your Structured Streaming queries to restart on failure automatically. The restarted query continues where the failed one left off.
+構造化ストリーミングは、ストリーミング クエリのフォールト トレランスとデータの一貫性を提供します。Azure Databricks ワークフローを使用すると、障害発生時に自動的に再起動するように構造化ストリーミング クエリを簡単に構成できます。再開されたクエリは、失敗したクエリが中断したところから続行されます。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices#recover-from-structured-streaming-query-failures)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#recover-from-structured-streaming-query-failures)
 
 **Resource Graph Query/Scripts**
 
@@ -546,7 +546,7 @@ Structured Streaming provides fault-tolerance and data consistency for streaming
 
 <br><br>
 
-### DBW-20 - Recover ETL jobs based on Delta time travel
+### DBW-20 - Delta のタイム トラベルに基づいて ETL ジョブを復旧します
 
 **Category: Disaster Recovery**
 
@@ -554,11 +554,11 @@ Structured Streaming provides fault-tolerance and data consistency for streaming
 
 **Guidance**
 
-Despite thorough testing, a job in production can fail or produce some unexpected, even invalid, data. Sometimes this can be fixed with an additional job after understanding the source of the issue and fixing the pipeline that led to the issue in the first place. However, often this is not straightforward, and the respective job should be rolled back. Using Delta Time travel allows users to easily roll back changes to an older version or timestamp, repair the pipeline, and restart the fixed pipeline.
+徹底的なテストを行ったとしても、本番環境のジョブは失敗したり、予期しないデータや無効なデータが生成されたりする可能性があります。追加のジョブにより問題の原因を理解し、この問題を最初に引き起こしたパイプラインを修正すれば、これを解決できる場合があります。ただし、多くの場合、この作業は単純ではなく、それぞれのジョブをロールバックする必要が生じます。Delta Time Travel を使用すると、ユーザーは変更を古いバージョンまたはタイムスタンプに簡単にロールバックし、パイプラインを修復し、修正されたパイプラインを再起動できます。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices#recover-etl-jobs-based-on-delta-time-travel)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#recover-etl-jobs-based-on-delta-time-travel)
 
 **Resource Graph Query/Scripts**
 
@@ -570,7 +570,7 @@ Despite thorough testing, a job in production can fail or produce some unexpecte
 
 <br><br>
 
-### DBW-21 - Use Databricks Workflows and built-in recovery
+### DBW-21 - Databricks Workflows と組み込みの復旧機能を使用します
 
 **Category: Disaster Recovery**
 
@@ -578,11 +578,11 @@ Despite thorough testing, a job in production can fail or produce some unexpecte
 
 **Guidance**
 
-Databricks Workflows are built for recovery. When a task in a multi-task job fails (and, as such, all dependent tasks), Azure Databricks Workflows provide a matrix view of the runs, which lets you examine the issue that led to the failure. See View runs for a job. Whether it was a short network issue or a real issue in the data, you can fix it and start a repair run in Azure Databricks Workflows. It runs only the failed and dependent tasks and keep the successful results from the earlier run, saving time and money.
+Databricks ワークフローは復旧用に構築されています。マルチタスク ジョブのタスク (および、すべての依存タスク) が失敗した場合、Azure Databricks Workflows では実行のマトリックス ビューが提供され、失敗の原因となった問題を調べることができます。「ジョブの実行の表示」を参照してください。ネットワークが短い問題であった場合でも、データの実際の問題であった場合でも、Azure Databricks Workflows で修正して修復実行を開始できます。失敗したタスクと依存するタスクのみを実行し、以前の実行から成功した結果を保持するため、時間とコストを節約できます。
 
 **Resources**
 
-- [Best practices for reliability](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -594,7 +594,7 @@ Databricks Workflows are built for recovery. When a task in a multi-task job fai
 
 <br><br>
 
-### DBW-22 - Configure a disaster recovery pattern
+### DBW-22 - ディザスター リカバリー パターンを構成します
 
 **Category: Disaster Recovery**
 
@@ -602,7 +602,7 @@ Databricks Workflows are built for recovery. When a task in a multi-task job fai
 
 **Guidance**
 
-A clear disaster recovery pattern is critical for a cloud-native data analytics platform like Azure Databricks. For some companies, it’s critical that your data teams can use the Databricks platform even in the rare case of a regional service-wide cloud-service provider outage, whether caused by a regional disaster like a hurricane or earthquake or another source.
+明確なディザスター リカバリー パターンは、Azure Databricks のようなクラウドネイティブなデータ分析プラットフォームにとって重要です。一部の企業では、ハリケーンや地震などの地域的な災害やその他の発生源によって引き起こされるかどうかにかかわらず、地域のサービス全体のクラウドサービスプロバイダーが停止するというまれなケースでも、データチームがDatabricksプラットフォームを使用できることが重要です。
 
 **Resources**
 
@@ -618,7 +618,7 @@ A clear disaster recovery pattern is critical for a cloud-native data analytics 
 
 <br><br>
 
-### DBW-23 - Automate deployments and workloads
+### DBW-23 - デプロイとワークロードを自動化します
 
 **Category: Automation**
 
@@ -626,11 +626,11 @@ A clear disaster recovery pattern is critical for a cloud-native data analytics 
 
 **Guidance**
 
-The Databricks Terraform provider manages Azure Databricks workspaces and the associated cloud infrastructure using a flexible, powerful tool. The goal of the Databricks Terraform provider is to support all Azure Databricks REST APIs, supporting automation of the most complicated aspects of deploying and managing your data platforms. The Databricks Terraform provider is the recommended tool to deploy and manage clusters and jobs reliably, provision Azure Databricks workspaces, and configure data access.
+Databricks Terraform プロバイダーは、柔軟で強力なツールを使用して、Azure Databricks ワークスペースと関連するクラウド インフラストラクチャを管理します。Databricks Terraform プロバイダーの目標は、すべての Azure Databricks REST API をサポートし、データ プラットフォームのデプロイと管理の最も複雑な側面の自動化をサポートすることです。Databricks Terraform プロバイダーは、クラスターとジョブを確実にデプロイして管理し、Azure Databricks ワークスペースをプロビジョニングし、データ アクセスを構成するための推奨ツールです。
 
 **Resources**
 
-- [Best practices for operational excellence](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/operational-excellence/best-practices#2-automate-deployments-and-workloads)
+- [Best practices for operational excellence](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/operational-excellence/best-practices#2-automate-deployments-and-workloads)
 
 **Resource Graph Query/Scripts**
 
@@ -642,7 +642,7 @@ The Databricks Terraform provider manages Azure Databricks workspaces and the as
 
 <br><br>
 
-### DBW-24 - Set up monitoring, alerting, and logging
+### DBW-24 - 監視、アラート、ログ記録を設定します
 
 **Category: Monitoring**
 
@@ -650,11 +650,11 @@ The Databricks Terraform provider manages Azure Databricks workspaces and the as
 
 **Guidance**
 
-The Databricks Terraform provider manages Azure Databricks workspaces and the associated cloud infrastructure using a flexible, powerful tool. The goal of the Databricks Terraform provider is to support all Azure Databricks REST APIs, supporting automation of the most complicated aspects of deploying and managing your data platforms. The Databricks Terraform provider is the recommended tool to deploy and manage clusters and jobs reliably, provision Azure Databricks workspaces, and configure data access.
+Databricks Terraform プロバイダーは、柔軟で強力なツールを使用して、Azure Databricks ワークスペースと関連するクラウド インフラストラクチャを管理します。Databricks Terraform プロバイダーの目標は、すべての Azure Databricks REST API をサポートし、データ プラットフォームのデプロイと管理の最も複雑な側面の自動化をサポートすることです。Databricks Terraform プロバイダーは、クラスターとジョブを確実にデプロイして管理し、Azure Databricks ワークスペースをプロビジョニングし、データ アクセスを構成するための推奨ツールです。
 
 **Resources**
 
-- [Best practices for operational excellence](https://learn.microsoft.com/en-us/azure/databricks/lakehouse-architecture/operational-excellence/best-practices#system-monitoring)
+- [Best practices for operational excellence](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/operational-excellence/best-practices#system-monitoring)
 
 **Resource Graph Query/Scripts**
 
@@ -666,7 +666,7 @@ The Databricks Terraform provider manages Azure Databricks workspaces and the as
 
 <br><br>
 
-### DBW-25 - Deploy workspaces in separate Subscriptions
+### DBW-25 - ワークスペースを個別のサブスクリプションにデプロイします
 
 **Category: System Efficiency**
 
@@ -690,7 +690,7 @@ Customers commonly partition workspaces based on teams or departments and arrive
 
 <br><br>
 
-### DBW-26 - Isolate each workspace in its own Vnet
+### DBW-26 - 各ワークスペースを独自の VNet に分離します
 
 **Category: System Efficiency**
 
@@ -698,7 +698,7 @@ Customers commonly partition workspaces based on teams or departments and arrive
 
 **Guidance**
 
-While you can deploy more than one Workspace in a VNet by keeping the associated subnet pairs separate from other workspaces, we recommend that you should only deploy one workspace in any Vnet. Doing this perfectly aligns with the ADB's Workspace level isolation model. Most often organizations consider putting multiple workspaces in the same Vnet so that they all can share some common networking resource, like DNS, also placed in the same Vnet because the private address space in a vnet is shared by all resources. You can easily achieve the same while keeping the Workspaces separate by following the hub and spoke model and using Vnet Peering to extend the private IP space of the workspace Vnet.
+関連付けられているサブネット ペアを他のワークスペースから分離することで、VNet に複数のワークスペースをデプロイできますが、どの VNet にも 1 つのワークスペースのみをデプロイすることをお勧めします。これを行うことは、ADBのワークスペースレベルの分離モデルと完全に一致しています。ほとんどの場合、組織では、vnet 内のプライベート アドレス空間がすべてのリソースで共有されるため、DNS などの共通のネットワーク リソースを共有できるように、複数のワークスペースを同じ VNet に配置することを検討します。ハブ アンド スポーク モデルに従い、Vnet ピアリングを使用してワークスペース VNet のプライベート IP 空間を拡張することで、ワークスペースを分離しながら同じことを簡単に実現できます。
 
 **Resources**
 
@@ -714,7 +714,7 @@ While you can deploy more than one Workspace in a VNet by keeping the associated
 
 <br><br>
 
-### DBW-27 - Do not Store any Production Data in Default DBFS Folders
+### DBW-27 - 既定の DBFS フォルダーに運用データを格納しないでください
 
 **Category: Availability**
 
@@ -722,10 +722,10 @@ While you can deploy more than one Workspace in a VNet by keeping the associated
 
 **Guidance**
 
-This recommendation is driven by security and data availability concerns. Every Workspace comes with a default DBFS, primarily designed to store libraries and other system-level configuration artifacts such as Init scripts. You should not store any production data in it, because:
+この推奨事項は、セキュリティとデータの可用性に関する懸念によって推進されています。すべてのワークスペースには、主にライブラリや、Init スクリプトなどの他のシステムレベルの構成アーティファクトを格納するように設計された既定の DBFS が付属しています。次の理由により、運用データを格納しないでください。
 
-- The lifecycle of default DBFS is tied to the Workspace. Deleting the workspace will also delete the default DBFS and permanently remove its contents.
-- One can't restrict access to this default folder and its contents.
+- 既定の DBFS のライフサイクルは、ワークスペースに関連付けられています。ワークスペースを削除すると、既定の DBFS も削除され、その内容が完全に削除されます。
+- この既定のフォルダーとその内容へのアクセスを制限することはできません。
 
 **Resources**
 
@@ -741,7 +741,7 @@ This recommendation is driven by security and data availability concerns. Every 
 
 <br><br>
 
-### DBW-28 - Do not use Azure Sport VMs for critical Production workloads
+### DBW-28 - 重要な運用ワークロードに Azure Sport VM を使用しないでください
 
 **Category: Availability**
 
@@ -749,11 +749,11 @@ This recommendation is driven by security and data availability concerns. Every 
 
 **Guidance**
 
-Azure Spot VMs are not recommended for critical production workloads that require high availability and reliability. Azure Spot VMs are designed for workloads that are fault-tolerant and can tolerate interruptions. The amount of available capacity can vary based on size, region, time of day, and more. When deploying Azure Spot Virtual Machines, Azure will allocate the VMs if there's capacity available, but there's no SLA for these VMs. An Azure Spot Virtual Machine offers no high availability guarantees. At any point in time when Azure needs the capacity back, the Azure infrastructure will evict Azure Spot Virtual Machines with 30-seconds notice.
+Azure スポット VM は、高可用性と信頼性を必要とする重要な運用ワークロードには推奨されません。Azure スポット VM は、フォールト トレラントで中断を許容できるワークロード向けに設計されています。使用可能な容量は、サイズ、リージョン、時刻などによって異なります。Azure Spot Virtual Machines をデプロイする場合、使用可能な容量がある場合、Azure によって VM が割り当てられますが、これらの VM には SLA がありません。Azure Spot Virtual Machine では、高可用性は保証されません。Azure で容量の回復が必要になった時点で、Azure インフラストラクチャは 30 秒前に通知して Azure Spot Virtual Machines を削除します。
 
 **Resources**
 
-- [Use Azure Spot Virtual Machines](https://learn.microsoft.com/en-us/azure/virtual-machines/spot-vms)
+- [Use Azure Spot Virtual Machines](https://learn.microsoft.com/ja-jp/azure/virtual-machines/spot-vms)
 
 **Resource Graph Query/Scripts**
 

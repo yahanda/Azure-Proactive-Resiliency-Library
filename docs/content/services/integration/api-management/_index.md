@@ -26,7 +26,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### APIM-1 - Migrate API Management services to Premium SKU to support Availability Zones
+### APIM-1 - API Management サービスを可用性ゾーンをサポートする Premium SKU に移行します
 
 **Category: Availability**
 
@@ -38,8 +38,8 @@ Upgrade the API Management instance to the Premium SKU to add support for Availa
 
 **Resources**
 
-- [Change your API Management service tier](https://learn.microsoft.com/en-us/azure/api-management/upgrade-and-scale#change-your-api-management-service-tier)
-- [Migrate Azure API Management to availability zone support](https://learn.microsoft.com/en-us/azure/reliability/migrate-api-mgt)
+- [Change your API Management service tier](https://learn.microsoft.com/ja-jp/azure/api-management/upgrade-and-scale#change-your-api-management-service-tier)
+- [Migrate Azure API Management to availability zone support](https://learn.microsoft.com/ja-jp/azure/reliability/migrate-api-mgt)
 
 **Resource Graph Query/Scripts**
 
@@ -51,7 +51,7 @@ Upgrade the API Management instance to the Premium SKU to add support for Availa
 
 <br><br>
 
-### APIM-2 - Enable Availability Zones on Premium API Management instances
+### APIM-2 - Premium API Management インスタンスで可用性ゾーンを有効にします
 
 **Category: Availability**
 
@@ -63,8 +63,8 @@ Enable zone redundancy for APIM instances. With zone redundancy, the gateway and
 
 **Resources**
 
-- [Ensure API Management availability and reliability](https://learn.microsoft.com/en-us/azure/api-management/high-availability#availability-zones)
-- [Migrate Azure API Management to availability zone support](https://learn.microsoft.com/en-us/azure/reliability/migrate-api-mgt)
+- [Ensure API Management availability and reliability](https://learn.microsoft.com/ja-jp/azure/api-management/high-availability#availability-zones)
+- [Migrate Azure API Management to availability zone support](https://learn.microsoft.com/ja-jp/azure/reliability/migrate-api-mgt)
 
 **Resource Graph Query/Scripts**
 

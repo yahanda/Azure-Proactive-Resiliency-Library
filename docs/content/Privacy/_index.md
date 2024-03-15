@@ -1,7 +1,7 @@
 +++
 title = "Privacy"
-description = "This Privacy Policy outlines how we collect and use your data when you interact with this website."
+description = "このプライバシーポリシーは、お客様がこのWebサイトを操作する際に、お客様のデータをどのように収集および使用するかについて概説しています。"
 weight = 4
 +++
 
-We partner with Microsoft Clarity to capture how you use and interact with our website through behavioral metrics, heatmaps, and session replay to improve the content and usage of the website. Website usage data is captured using first and third-party cookies and other tracking technologies and is used for site optimization. For more information about how Microsoft collects and uses your data, visit the Microsoft Privacy Statement.
+Microsoft Clarity と提携して、行動メトリック、ヒートマップ、セッション リプレイを通じて Web サイトの使用方法と操作方法を把握し、Web サイトのコンテンツと使用状況を改善します。Webサイトの使用データは、ファーストパーティおよびサードパーティのCookieおよびその他の追跡技術を使用して取得され、サイトの最適化に使用されます。Microsoft がお客様のデータを収集して使用する方法の詳細については、「Microsoft のプライバシーに関する声明」を参照してください。

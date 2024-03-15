@@ -25,7 +25,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### REDIS-1 - Enable zone redundancy for Azure Cache for Redis
+### REDIS-1 - Azure Cache for Redis のゾーン冗長を有効にします
 
 **Category: Availability**
 
@@ -37,7 +37,7 @@ Azure Cache for Redis supports zone redundancy in its Premium and Enterprise tie
 
 **Resources**
 
-- [Enable zone redundancy for Azure Cache for Redis](https://learn.microsoft.com/azure/azure-cache-for-redis/cache-how-to-zone-redundancy)
+- [Enable zone redundancy for Azure Cache for Redis](https://learn.microsoft.com/ja-jp/azure/azure-cache-for-redis/cache-how-to-zone-redundancy)
 
 **Resource Graph Query/Scripts**
 

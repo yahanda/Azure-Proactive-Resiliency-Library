@@ -26,7 +26,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### RG-1 - Ensure Resource Group and its Resources are located in the same Region
+### RG-1 - リソース グループとそのリソース群が同じリージョンにあることを確認します
 
 **Category: Disaster Recovery**
 
@@ -38,7 +38,7 @@ Ensure your resource locations match that of the containing resource group. This
 
 **Resources**
 
-- [Azure Resource Manager Overview](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview#resource-group-location-alignment)
+- [Azure Resource Manager Overview](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/overview#resource-group-location-alignment)
 
 **Resource Graph Query/Scripts**
 

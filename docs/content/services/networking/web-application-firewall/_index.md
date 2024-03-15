@@ -39,10 +39,10 @@ WAF could block a legitimate request that it shouldn't (a false positive). You c
 
 **Resources**
 
-- [Azure Web Application Firewall monitoring and logging - Access Log](https://learn.microsoft.com/azure/web-application-firewall/afds/waf-front-door-monitor?pivots=front-door-standard-premium#access-logs)
-- [Understanding WAF logs](https://learn.microsoft.com/azure/web-application-firewall/afds/waf-front-door-tuning?pivots=front-door-standard-premium#understanding-waf-logs)
-- [Web Application Firewall exclusion lists](https://learn.microsoft.com/azure/web-application-firewall/ag/application-gateway-waf-configuration?tabs=portal)
-- [Fixing a false positive](https://learn.microsoft.com/azure/web-application-firewall/ag/web-application-firewall-troubleshoot#fixing-false-positives)
+- [Azure Web Application Firewall monitoring and logging - Access Log](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/afds/waf-front-door-monitor?pivots=front-door-standard-premium#access-logs)
+- [Understanding WAF logs](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/afds/waf-front-door-tuning?pivots=front-door-standard-premium#understanding-waf-logs)
+- [Web Application Firewall exclusion lists](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/ag/application-gateway-waf-configuration?tabs=portal)
+- [Fixing a false positive](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/ag/web-application-firewall-troubleshoot#fixing-false-positives)
 
 **Resource Graph Query/Scripts**
 
@@ -66,8 +66,8 @@ WAF could block a legitimate request that it shouldn't (a false positive). You c
 
 **Resources**
 
-- [Azure Web Application Firewall Monitoring and Logging](https://learn.microsoft.com/azure/web-application-firewall/ag/application-gateway-waf-metrics#logs-and-diagnostics)
-- [Diagnostic logs](https://learn.microsoft.com/azure/web-application-firewall/ag/web-application-firewall-logs#diagnostic-logs)
+- [Azure Web Application Firewall Monitoring and Logging](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/ag/application-gateway-waf-metrics#logs-and-diagnostics)
+- [Diagnostic logs](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/ag/web-application-firewall-logs#diagnostic-logs)
 
 **Resource Graph Query/Scripts**
 
@@ -91,7 +91,7 @@ Monitoring the health of your WAF and the applications that it protects is impor
 
 **Resources**
 
-- [WAF monitoring](https://learn.microsoft.com/azure/web-application-firewall/ag/ag-overview#waf-monitoring)
+- [WAF monitoring](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/ag/ag-overview#waf-monitoring)
 - [Azure Monitor Workbook for WAF](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20WAF/Workbook%20-%20WAF%20Monitor%20Workbook)
 
 **Resource Graph Query/Scripts**

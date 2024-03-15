@@ -33,7 +33,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### CR-1 - Use Premium tier for critical production workloads
+### CR-1 - 重要な運用ワークロードに Premium レベルを使用します
 
 **Category: System Efficiency**
 
@@ -45,7 +45,7 @@ Choose a service tier of Azure Container Registry that meets your performance ne
 
 **Resources**
 
-- [Container Registry Best Practices](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-best-practices)
+- [Container Registry Best Practices](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-best-practices)
 
 **Resource Graph Query/Scripts**
 
@@ -57,7 +57,7 @@ Choose a service tier of Azure Container Registry that meets your performance ne
 
 <br><br>
 
-### CR-2 - Enable zone redundancy
+### CR-2 - ゾーン冗長性を有効にします
 
 **Category: Availability**
 
@@ -69,7 +69,7 @@ Azure Container Registry supports optional zone redundancy. Zone redundancy prov
 
 **Resources**
 
-- [Registry best practices - Enable zone redundancy](https://review.learn.microsoft.com/en-us/azure/container-registry/zone-redundancy?toc=%2Fazure%2Freliability%2Ftoc.json&bc=%2Fazure%2Freliability%2Fbreadcrumb%2Ftoc.json&branch=main)
+- [Registry best practices - Enable zone redundancy](https://review.learn.microsoft.com/ja-jp/azure/container-registry/zone-redundancy?toc=%2Fazure%2Freliability%2Ftoc.json&bc=%2Fazure%2Freliability%2Fbreadcrumb%2Ftoc.json&branch=main)
 
 **Resource Graph Query/Scripts**
 
@@ -81,7 +81,7 @@ Azure Container Registry supports optional zone redundancy. Zone redundancy prov
 
 <br><br>
 
-### CR-3 - Enable geo-replication
+### CR-3 - geo レプリケーションを有効にします
 
 **Category: Disaster Recovery**
 
@@ -95,8 +95,8 @@ Geo-replication is available with Premium registries.
 
 **Resources**
 
-- [Registry best practices - Enable geo-replication](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-best-practices#geo-replicate-multi-region-deployments)
-- [Geo-Replicate Container Registry](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-geo-replication)
+- [Registry best practices - Enable geo-replication](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-best-practices#geo-replicate-multi-region-deployments)
+- [Geo-Replicate Container Registry](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-geo-replication)
 
 **Resource Graph Query/Scripts**
 
@@ -108,7 +108,7 @@ Geo-replication is available with Premium registries.
 
 <br><br>
 
-### CR-4 - Maximize pull performance
+### CR-4 - プル性能を最大化します
 
 **Category: System Efficiency**
 
@@ -124,7 +124,7 @@ Some characteristics of your images themselves can impact pull performance:
 
 **Resources**
 
-- [Registry authentication options - Azure Container Registry](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication?tabs=azure-cli#admin-account)
+- [Registry authentication options - Azure Container Registry](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-authentication?tabs=azure-cli#admin-account)
 
 **Resource Graph Query/Scripts**
 
@@ -136,7 +136,7 @@ Some characteristics of your images themselves can impact pull performance:
 
 <br><br>
 
-### CR-5 - Use Repository namespaces
+### CR-5 - リポジトリ名前空間を使用します
 
 **Category: Access & Security**
 
@@ -148,7 +148,7 @@ By using repository namespaces, you can allow sharing a single registry across m
 
 **Resources**
 
-- [Registry best practices - use repository namespaces](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-best-practices#repository-namespaces)
+- [Registry best practices - use repository namespaces](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-best-practices#repository-namespaces)
 
 **Resource Graph Query/Scripts**
 
@@ -159,7 +159,7 @@ By using repository namespaces, you can allow sharing a single registry across m
 {{< /collapse >}}
 <br><br>
 
-### CR-6 - Move Container Registry to a dedicated resource group
+### CR-6 - コンテナー レジストリを専用リソース グループに移動します
 
 **Category: Governance**
 
@@ -173,7 +173,7 @@ Although you might experiment with a specific host type, such as Azure Container
 
 **Resources**
 
-- [Registry best practices - Use dedicated resource group](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-best-practices#dedicated-resource-group)
+- [Registry best practices - Use dedicated resource group](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-best-practices#dedicated-resource-group)
 
 **Resource Graph Query/Scripts**
 
@@ -185,7 +185,7 @@ Although you might experiment with a specific host type, such as Azure Container
 
 <br><br>
 
-### CR-7 - Manage registry size
+### CR-7 - レジストリ サイズを管理します
 
 **Category: System Efficiency**
 
@@ -197,8 +197,8 @@ The storage constraints of each container registry service tier are intended to 
 
 **Resources**
 
-- [Registry best practices - Manage registry size](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-best-practices#manage-registry-size)
-- [Retention Policy](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-retention-policy#about-the-retention-policy)
+- [Registry best practices - Manage registry size](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-best-practices#manage-registry-size)
+- [Retention Policy](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-retention-policy#about-the-retention-policy)
 
 **Resource Graph Query/Scripts**
 
@@ -210,7 +210,7 @@ The storage constraints of each container registry service tier are intended to 
 
 <br><br>
 
-### CR-8 - Disable anonymous pull access
+### CR-8 - 匿名プルアクセスを無効化します
 
 **Category: Access & Security**
 
@@ -222,7 +222,7 @@ By default, access to pull or push content from an Azure container registry is o
 
 **Resources**
 
-- [Enable anonymous pull access](https://learn.microsoft.com/en-us/azure/container-registry/anonymous-pull-access#about-anonymous-pull-access)
+- [Enable anonymous pull access](https://learn.microsoft.com/ja-jp/azure/container-registry/anonymous-pull-access#about-anonymous-pull-access)
 
 **Resource Graph Query/Scripts**
 
@@ -234,7 +234,7 @@ By default, access to pull or push content from an Azure container registry is o
 
 <br><br>
 
-### CR-10 - Configure Diagnostic Settings for all Azure Container Registries
+### CR-10 - すべての Azure コンテナー レジストリの診断設定を構成します
 
 **Category: Monitoring**
 
@@ -246,8 +246,8 @@ Resource Logs are not collected and stored until you create a diagnostic setting
 
 **Resources**
 
-- [Monitoring Azure Container Registry data reference - Resource Logs](https://learn.microsoft.com/en-us/azure/container-registry/monitor-service-reference#resource-logs)
-- [Monitor Azure Container Registry - Enable diagnostic logs](https://learn.microsoft.com/en-us/azure/container-registry/monitor-service#collection-and-routing)
+- [Monitoring Azure Container Registry data reference - Resource Logs](https://learn.microsoft.com/ja-jp/azure/container-registry/monitor-service-reference#resource-logs)
+- [Monitor Azure Container Registry - Enable diagnostic logs](https://learn.microsoft.com/ja-jp/azure/container-registry/monitor-service#collection-and-routing)
 
 **Resource Graph Query/Scripts**
 
@@ -258,7 +258,7 @@ Resource Logs are not collected and stored until you create a diagnostic setting
 {{< /collapse >}}
 <br><br>
 
-### CR-11 - Monitor Azure Container Registry with Azure Monitor
+### CR-11 - Azure Monitor を使用して Azure Container Registry を監視します
 
 **Category: Monitoring**
 
@@ -270,8 +270,8 @@ When you have critical applications and business processes relying on Azure reso
 
 **Resources**
 
-- [Monitoring Azure Container Registry data reference](https://learn.microsoft.com/en-us/azure/container-registry/monitor-service-reference#metrics)
-- [Monitor Azure Container Registry](https://learn.microsoft.com/en-us/azure/container-registry/monitor-service)
+- [Monitoring Azure Container Registry data reference](https://learn.microsoft.com/ja-jp/azure/container-registry/monitor-service-reference#metrics)
+- [Monitor Azure Container Registry](https://learn.microsoft.com/ja-jp/azure/container-registry/monitor-service)
 
 **Resource Graph Query/Scripts**
 
@@ -283,7 +283,7 @@ When you have critical applications and business processes relying on Azure reso
 
 <br><br>
 
-### CR-12 - Enable soft delete policy
+### CR-12 - 論理的な削除ポリシーを有効にします
 
 **Category: Disaster Recovery**
 
@@ -295,7 +295,7 @@ Once you enable the soft delete policy, ACR manages the deleted artifacts as the
 
 **Resources**
 
-- [Enable soft delete policy](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-soft-delete-policy)
+- [Enable soft delete policy](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-soft-delete-policy)
 
 **Resource Graph Query/Scripts**
 

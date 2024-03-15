@@ -27,7 +27,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### EVG-1 - Configure Diagnostic Settings for all Azure Event Grid resources
+### EVG-1 - すべての Azure Event Grid リソースの診断設定を構成します
 
 **Category: Monitoring**
 
@@ -39,7 +39,7 @@ Enabling diagnostic settings allow you to capture and view diagnostic informatio
 
 **Resources**
 
-- [Azure Event Grid - Enable diagnostic logs for Event Grid resources](https://learn.microsoft.com/en-us/azure/event-grid/enable-diagnostic-logs-topic)
+- [Azure Event Grid - Enable diagnostic logs for Event Grid resources](https://learn.microsoft.com/ja-jp/azure/event-grid/enable-diagnostic-logs-topic)
 
 **Resource Graph Query/Scripts**
 
@@ -51,7 +51,7 @@ Enabling diagnostic settings allow you to capture and view diagnostic informatio
 
 <br><br>
 
-### EVG-2 - Configure Dead-letter to save events that cannot be delivered
+### EVG-2 - 配信できないイベントを保存するための配信不能を構成します
 
 **Category: Automation**
 
@@ -63,7 +63,7 @@ When Event Grid can't deliver an event within a certain time period or after try
 
 **Resources**
 
-- [Azure Event Grid delivery and retry](https://learn.microsoft.com/en-us/azure/event-grid/delivery-and-retry#dead-letter-events)
+- [Azure Event Grid delivery and retry](https://learn.microsoft.com/ja-jp/azure/event-grid/delivery-and-retry#dead-letter-events)
 
 **Resource Graph Query/Scripts**
 
@@ -75,7 +75,7 @@ When Event Grid can't deliver an event within a certain time period or after try
 
 <br><br>
 
-### EVG-3 - Configure Private Endpoints
+### EVG-3 - プライベートエンドポイントを設定します
 
 **Category: Access & Security**
 
@@ -87,7 +87,7 @@ You can use private endpoints to allow ingress of events directly from your virt
 
 **Resources**
 
-- [Configure private endpoints for Azure Event Grid topics or domains](https://learn.microsoft.com/en-us/azure/event-grid/configure-private-endpoints)
+- [Configure private endpoints for Azure Event Grid topics or domains](https://learn.microsoft.com/ja-jp/azure/event-grid/configure-private-endpoints)
 
 **Resource Graph Query/Scripts**
 

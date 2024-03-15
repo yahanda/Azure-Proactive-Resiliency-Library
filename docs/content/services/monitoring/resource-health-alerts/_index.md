@@ -27,7 +27,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### MSR-1 - Configure Resource Health Alerts
+### MSR-1 - リソース正常性アラートを構成します
 
 **Category: Monitoring**
 
@@ -39,9 +39,9 @@ Configure Resource Health Alerts for all applicable resources. Azure Resource He
 
 **Resources**
 
-- [Resource Health](https://learn.microsoft.com/en-us/azure/service-health/resource-health-overview)
-- [Configure Resource Health alerts in the Azure portal](https://learn.microsoft.com/en-us/azure/service-health/resource-health-alert-monitor-guide#create-a-resource-health-alert-rule-in-the-azure-portal)
-- [Alerts Health](https://learn.microsoft.com/en-us/azure/service-health/alerts-activity-log-service-notifications-portal)
+- [Resource Health](https://learn.microsoft.com/ja-jp/azure/service-health/resource-health-overview)
+- [Configure Resource Health alerts in the Azure portal](https://learn.microsoft.com/ja-jp/azure/service-health/resource-health-alert-monitor-guide#create-a-resource-health-alert-rule-in-the-azure-portal)
+- [Alerts Health](https://learn.microsoft.com/ja-jp/azure/service-health/alerts-activity-log-service-notifications-portal)
 
 **Resource Graph Query/Scripts**
 

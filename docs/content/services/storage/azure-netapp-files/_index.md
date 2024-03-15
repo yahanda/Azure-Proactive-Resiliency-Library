@@ -48,7 +48,7 @@ Service levels are an attribute of a capacity pool. Service levels are defined a
 
 **Resources**
 
-- [Service levels for Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels)
+- [Service levels for Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/azure-netapp-files-service-levels)
 
 **Resource Graph Query/Scripts**
 
@@ -69,11 +69,11 @@ Service levels are an attribute of a capacity pool. Service levels are defined a
 **Guidance**
 
 Standard network feature enables higher IP limits and standard VNet features such as network security groups and user-defined routes on delegated subnets, and additional connectivity patterns.
-Please check the supported regions for standard network feature [here](https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-network-topologies#supported-regions-for-standard-network-feature)
+Please check the supported regions for standard network feature [here](https://docs.microsoft.com/ja-jp/azure/azure-netapp-files/azure-netapp-files-network-topologies#supported-regions-for-standard-network-feature)
 
 **Resources**
 
-- [Guidelines for Azure NetApp Files network planning | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-network-topologies)
+- [Guidelines for Azure NetApp Files network planning | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/azure-netapp-files-network-topologies)
 
 **Resource Graph Query/Scripts**
 
@@ -97,7 +97,7 @@ Azure availability zones are physically separate locations within each suppo
 
 **Resources**
 
-- [Use availability zones for high availability in Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-netapp-files/use-availability-zones)
+- [Use availability zones for high availability in Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/use-availability-zones)
 
 **Resource Graph Query/Scripts**
 
@@ -122,8 +122,8 @@ Azure NetApp Files supports a fully managed backup solution for long-term recove
 
 **Resources**
 
-- [Snapshots](https://learn.microsoft.com/en-us/azure/azure-netapp-files/data-protection-disaster-recovery-options#snapshots)
-- [Backup](https://learn.microsoft.com/en-us/azure/azure-netapp-files/data-protection-disaster-recovery-options#backups)
+- [Snapshots](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/data-protection-disaster-recovery-options#snapshots)
+- [Backup](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/data-protection-disaster-recovery-options#backups)
 
 **Resource Graph Query/Scripts**
 
@@ -147,7 +147,7 @@ The Azure NetApp Files replication functionality provides data protection throug
 
 **Resources**
 
-- [Cross-zone replication of Azure NetApp Files volumes | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-netapp-files/cross-region-replication-introduction)
+- [Cross-zone replication of Azure NetApp Files volumes | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/cross-region-replication-introduction)
 
 **Resource Graph Query/Scripts**
 
@@ -171,7 +171,7 @@ The cross-zone replication (CZR) capability provides data protection between vol
 
 **Resources**
 
-- [Cross-zone replication of Azure NetApp Files volumes | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-netapp-files/cross-zone-replication-introduction)
+- [Cross-zone replication of Azure NetApp Files volumes | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/cross-zone-replication-introduction)
 
 **Resource Graph Query/Scripts**
 
@@ -195,7 +195,7 @@ Azure NetApp Files provides metrics on allocated storage, actual storage usage, 
 
 **Resources**
 
-- [Ways to monitor Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-netapp-files/monitor-azure-netapp-files)
+- [Ways to monitor Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/monitor-azure-netapp-files)
 
 **Resource Graph Query/Scripts**
 
@@ -215,11 +215,11 @@ Azure NetApp Files provides metrics on allocated storage, actual storage usage, 
 
 **Guidance**
 
-Azure NetApp Files supports Azure Policy. You can integrate Azure NetApp Files with Azure Policy through [creating custom policy definitions](https://learn.microsoft.com/en-us/azure/governance/policy/tutorials/create-custom-policy-definition). You can find examples in [Enforce Snapshot Policies with Azure Policy](https://anfcommunity.com/2021/08/30/enforce-snapshot-policies-with-azure-policy/) and [Azure Policy now available for Azure NetApp Files](https://anfcommunity.com/2021/04/19/azure-policy-now-available-for-azure-netapp-files/).
+Azure NetApp Files supports Azure Policy. You can integrate Azure NetApp Files with Azure Policy through [creating custom policy definitions](https://learn.microsoft.com/ja-jp/azure/governance/policy/tutorials/create-custom-policy-definition). You can find examples in [Enforce Snapshot Policies with Azure Policy](https://anfcommunity.com/2021/08/30/enforce-snapshot-policies-with-azure-policy/) and [Azure Policy now available for Azure NetApp Files](https://anfcommunity.com/2021/04/19/azure-policy-now-available-for-azure-netapp-files/).
 
 **Resources**
 
-- [Azure Policy definitions for Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-policy-definitions)
+- [Azure Policy definitions for Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/azure-policy-definitions)
 
 **Resource Graph Query/Scripts**
 

@@ -26,7 +26,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### EVHNS-1 - Enable zone redundancy for Event Hub namespace
+### EVHNS-1 - Event Hub 名前空間のゾーン冗長を有効にします
 
 **Category: Availability**
 
@@ -38,7 +38,7 @@ Event Hubs supports Availability Zones, providing fault-isolated locations withi
 
 **Resources**
 
-- [Azure Event Hubs - Geo-disaster recovery](https://learn.microsoft.com/azure/event-hubs/event-hubs-geo-dr?tabs=portal#availability-zones)
+- [Azure Event Hubs - Geo-disaster recovery](https://learn.microsoft.com/ja-jp/azure/event-hubs/event-hubs-geo-dr?tabs=portal#availability-zones)
 
 **Resource Graph Query/Scripts**
 
@@ -50,7 +50,7 @@ Event Hubs supports Availability Zones, providing fault-isolated locations withi
 
 <br><br>
 
-### EVHNS-2 - Enable auto-inflate on Event Hub Standard tier
+### EVHNS-2 - Event Hub Standard レベルで自動インフレを有効にします
 
 **Category: System Efficiency**
 
@@ -62,7 +62,7 @@ Enable auto-inflate on Event Hub Standard tier namespaces. The auto-inflate feat
 
 **Resources**
 
-- [Azure Event Hubs - Automatically scale throughput units](https://learn.microsoft.com/azure/event-hubs/event-hubs-auto-inflate)
+- [Azure Event Hubs - Automatically scale throughput units](https://learn.microsoft.com/ja-jp/azure/event-hubs/event-hubs-auto-inflate)
 
 **Resource Graph Query/Scripts**
 

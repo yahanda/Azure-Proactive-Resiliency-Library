@@ -27,7 +27,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### APPI-1 - Convert Classic Deployments
+### APPI-1 - クラシックデプロイを変換します
 
 **Category: Availability**
 
@@ -39,7 +39,7 @@ Classic Application Insights will be retired in February 2024. To minimize disru
 
 **Resources**
 
-- [Migrate an Application Insights classic resource to a workspace-based resource](https://learn.microsoft.com/en-us/azure/azure-monitor/app/convert-classic-resource)
+- [Migrate an Application Insights classic resource to a workspace-based resource](https://learn.microsoft.com/ja-jp/azure/azure-monitor/app/convert-classic-resource)
 
 **Resource Graph Query/Scripts**
 

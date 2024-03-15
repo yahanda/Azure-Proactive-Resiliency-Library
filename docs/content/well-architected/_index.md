@@ -8,13 +8,13 @@ msAuthor = "rodrigosantosms"
 draft = false
 +++
 
-This page lists all of the Well-Architected Framework Reliability Stages for which the APRL has guidance and  recommendations for.
+このページには、APRL がガイダンスと推奨事項を持っているすべての Well-Architected Framework Reliability Stages が一覧表示されます。
 
 ## Reliability Stages
 
 {{< alert style="info" >}}
 
-The below list of Reliability Stages is automatically populated based on the child folders and files in this directory within the source code in the repo.
+以下の Reliability Stages の一覧は、リポジトリ内のソース コード内のこのディレクトリ内の子フォルダーとファイルに基づいて自動的に設定されます。
 
 {{< /alert >}}
 

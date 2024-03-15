@@ -37,7 +37,7 @@ A private endpoint has two custom properties, static IP address and the network 
 
 **Resources**
 
-- [Private endpoint connections](https://learn.microsoft.com/azure/private-link/manage-private-endpoint?tabs=manage-private-link-powershell#private-endpoint-connections)
+- [Private endpoint connections](https://learn.microsoft.com/ja-jp/azure/private-link/manage-private-endpoint?tabs=manage-private-link-powershell#private-endpoint-connections)
 
 **Resource Graph Query/Scripts**
 

@@ -53,7 +53,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### VM-1 - Run production workloads on two or more VMs using VMSS Flex
+### VM-1 - VMSS Flex を使用して 2 つ以上の VM で運用ワークロードを実行します
 
 **Category: Availability**
 
@@ -61,12 +61,12 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Production VM workloads should be deployed on multiple VMs and grouped together in a VMSS Flex instance. VMSS Flex intelligently distributes VMs across the platform to minimize the impact of platform faults and platform updates on a workload. A workload running on single instance VMs, even when those instances are spread across availability zones, cannot receive the same protection because the platform has no way of knowing the VMs are related to each other.
+本番環境の VM ワークロードは、複数の VM にデプロイし、VMSS Flex インスタンスにグループ化する必要があります。VMSS Flex は、プラットフォーム全体に VM をインテリジェントに分散し、プラットフォームの障害やプラットフォームの更新がワークロードに与える影響を最小限に抑えます。単一インスタンス VM で実行されているワークロードは、それらのインスタンスが複数の可用性ゾーンに分散している場合でも、VM が相互に関連していることをプラットフォームが認識する方法がないため、同じ保護を受けることはできません。
 
 **Resources**
 
-- [What has changed with Flexible orchestration mode](https://learn.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes#what-has-changed-with-flexible-orchestration-mode)
-- [Attach or detach a Virtual Machine to or from a Virtual Machine Scale Set](https://learn.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-attach-detach-vm?branch=main&tabs=portal-1%2Cportal-2%2Cportal-3)
+- [What has changed with Flexible orchestration mode](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes#what-has-changed-with-flexible-orchestration-mode)
+- [Attach or detach a Virtual Machine to or from a Virtual Machine Scale Set](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-attach-detach-vm?branch=main&tabs=portal-1%2Cportal-2%2Cportal-3)
 
 **Resource Graph Query/Scripts**
 
@@ -78,7 +78,7 @@ Production VM workloads should be deployed on multiple VMs and grouped together 
 
 <br><br>
 
-### VM-2 - Deploy VMs across Availability Zones
+### VM-2 - 可用性ゾーン間で VM をデプロイします
 
 **Category: Availability**
 
@@ -86,11 +86,11 @@ Production VM workloads should be deployed on multiple VMs and grouped together 
 
 **Guidance**
 
-Azure Availability Zones are physically separate locations within each Azure region that are tolerant to local failures. Use availability zones to protect your applications and data against unlikely datacenter failures.
+Azure Availability Zones は、各 Azure リージョン内の物理的に分離された場所であり、ローカルの障害に耐えられます。可用性ゾーンを使用して、データセンターの予期せぬ障害からアプリケーションとデータを保護します。
 
 **Resources**
 
-- [Create virtual machines in an availability zone using the Azure portal](https://learn.microsoft.com/azure/virtual-machines/create-portal-availability-zone?tabs=standard)
+- [Create virtual machines in an availability zone using the Azure portal](https://learn.microsoft.com/ja-jp/azure/virtual-machines/create-portal-availability-zone?tabs=standard)
 
 **Resource Graph Query/Scripts**
 
@@ -102,7 +102,7 @@ Azure Availability Zones are physically separate locations within each Azure reg
 
 <br><br>
 
-### VM-3 - Migrate VMs using availability sets to VMSS Flex
+### VM-3 - 可用性セットを使用した VM を VMSS Flex に移行します
 
 **Category: Availability**
 
@@ -110,16 +110,16 @@ Azure Availability Zones are physically separate locations within each Azure reg
 
 **Guidance**
 
-Availability sets will be retired in the near future. Modernize your workloads by migrating them from VMs to VMSS Flex. With VMSS Flex, you can deploy your VMs in one of two ways:
+可用性セットは近い将来廃止される予定です。ワークロードを VM から VMSS Flex に移行することで、ワークロードを最新化します。VMSS Flex では、次の 2 つの方法のいずれかで VM をデプロイできます。
 
-. Across zones
-. In the same zone, but across fault domains (FDs) and update domains (UD) automatically.
+.ゾーン間
+.同じゾーン内ですが、フォルト・ドメイン(FD)と更新ドメイン(UD)を自動的にまたがります。
 
-In an N-tier application, it's recommended that you place each application tier into its own VMSS Flex.
+N 層アプリケーションでは、各アプリケーション層を独自の VMSS Flex に配置することをお勧めします。
 
 **Resources**
 
-- [Resiliency checklist for Virtual Machines](https://learn.microsoft.com/azure/architecture/checklist/resiliency-per-service#virtual-machines)
+- [Resiliency checklist for Virtual Machines](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#virtual-machines)
 
 **Resource Graph Query/Scripts**
 
@@ -131,7 +131,7 @@ In an N-tier application, it's recommended that you place each application tier 
 
 <br><br>
 
-### VM-4 - Replicate VMs using Azure Site Recovery
+### VM-4 - Azure Site Recovery を使用して VM をレプリケートします
 
 **Category: Disaster Recovery**
 
@@ -139,12 +139,12 @@ In an N-tier application, it's recommended that you place each application tier 
 
 **Guidance**
 
-When you replicate Azure VMs using Site Recovery, all the VM disks are continuously replicated to the target region asynchronously. The recovery points are created every few minutes. This gives you a Recovery Point Objective (RPO) in the order of minutes. You can conduct disaster recovery drills as many times as you want, without affecting the production application or the ongoing replication.
+Site Recovery を使用して Azure VM をレプリケートすると、すべての VM ディスクがターゲット リージョンに非同期的に継続的にレプリケートされます。復旧ポイントは数分ごとに作成されます。これにより、分単位で目標復旧時点 (RPO) が得られます。ディザスター リカバリーの訓練は、運用アプリケーションや進行中のレプリケーションに影響を与えることなく、何度でも実行できます。
 
 **Resources**
 
-- [Resiliency checklist for Virtual Machines](https://learn.microsoft.com/azure/architecture/checklist/resiliency-per-service#virtual-machines)
-- [Run a test failover (disaster recovery drill) to Azure](https://learn.microsoft.com/azure/site-recovery/site-recovery-test-failover-to-azure)
+- [Resiliency checklist for Virtual Machines](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#virtual-machines)
+- [Run a test failover (disaster recovery drill) to Azure](https://learn.microsoft.com/ja-jp/azure/site-recovery/site-recovery-test-failover-to-azure)
 
 **Resource Graph Query/Scripts**
 
@@ -156,7 +156,7 @@ When you replicate Azure VMs using Site Recovery, all the VM disks are continuou
 
 <br><br>
 
-### VM-5 - Use Managed Disks for VM disks
+### VM-5 - VM ディスクに Managed Disks を使用します
 
 **Category: Availability**
 
@@ -164,12 +164,12 @@ When you replicate Azure VMs using Site Recovery, all the VM disks are continuou
 
 **Guidance**
 
-Managed disks provide better reliability for VMs in an availability set, because the disks are sufficiently isolated from each other to avoid single points of failure. Also, managed disks aren't subject to the IOPS limits of VHDs created in a storage account.
+マネージド ディスクは、単一障害点を回避するためにディスクが互いに十分に分離されているため、可用性セット内の VM の信頼性が向上します。また、マネージド ディスクは、ストレージ アカウントで作成された VHD の IOPS 制限の対象にはなりません。
 
 **Resources**
 
-- [Resiliency checklist for Virtual Machines](https://learn.microsoft.com/azure/architecture/checklist/resiliency-per-service#virtual-machines)
-- [Availability options for Azure Virtual Machines](https://learn.microsoft.com/azure/virtual-machines/windows/manage-availability#use-managed-disks-for-vms-in-an-availability-set)
+- [Resiliency checklist for Virtual Machines](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#virtual-machines)
+- [Availability options for Azure Virtual Machines](https://learn.microsoft.com/ja-jp/azure/virtual-machines/windows/manage-availability#use-managed-disks-for-vms-in-an-availability-set)
 
 **Resource Graph Query/Scripts**
 
@@ -181,7 +181,7 @@ Managed disks provide better reliability for VMs in an availability set, because
 
 <br><br>
 
-### VM-6 - Host application or database data on a data disk
+### VM-6 - データ ディスク上にアプリケーションまたはデータベース データをホストします
 
 **Category: System Efficiency**
 
@@ -189,11 +189,11 @@ Managed disks provide better reliability for VMs in an availability set, because
 
 **Guidance**
 
-A data disk is a managed disk that's attached to a virtual machine to store application data, or other data you need to keep. Data disks are registered as SCSI drives and are labeled with a letter that you choose. Hosting you data on a data disk also helps with flexibility when backuping or restoring data, as well as migrating the disk without having to migrate the entire Virtual Machine and Operating System. You will be able to also select a different disk sku, with different type, size, and performance that meet your requirements.
+データ ディスクは、アプリケーション データや保持する必要があるその他のデータを格納するために仮想マシンに接続されるマネージド ディスクです。データ ディスクは SCSI ドライブとして登録され、選択した文字でラベル付けされます。また、データ ディスクでデータをホストすると、データのバックアップや復元の柔軟性が高まり、仮想マシンとオペレーティング システム全体を移行することなくディスクを移行できます。また、要件を満たすさまざまな種類、サイズ、パフォーマンスの別のディスク SKU を選択することもできます。
 
 **Resources**
 
-- [Introduction to Azure managed disks - Data disks](https://learn.microsoft.com/azure/virtual-machines/managed-disks-overview#data-disk)
+- [Introduction to Azure managed disks - Data disks](https://learn.microsoft.com/ja-jp/azure/virtual-machines/managed-disks-overview#data-disk)
 
 **Resource Graph Query/Scripts**
 
@@ -205,7 +205,7 @@ A data disk is a managed disk that's attached to a virtual machine to store appl
 
 <br><br>
 
-### VM-7 - Backup VMs with Azure Backup service
+### VM-7 - Azure Backup サービスを使用して VM をバックアップします
 
 **Category: Disaster Recovery**
 
@@ -213,11 +213,11 @@ A data disk is a managed disk that's attached to a virtual machine to store appl
 
 **Guidance**
 
-Enable backups for your virtual machines to secure and quickly recover your data. The Azure Backup service provides simple, secure, and cost-effective solutions to back up your data and recover it from the Microsoft Azure cloud.
+仮想マシンのバックアップを有効にして、データをセキュリティで保護し、迅速に復元します。Azure Backup サービスは、データをバックアップし、Microsoft Azure クラウドから復旧するための、シンプルで安全、かつコスト効率の高いソリューションを提供します。
 
 **Resources**
 
-- [What is the Azure Backup service?](https://learn.microsoft.com/azure/backup/backup-overview)
+- [What is the Azure Backup service?](https://learn.microsoft.com/ja-jp/azure/backup/backup-overview)
 
 **Resource Graph Query/Scripts**
 
@@ -229,7 +229,7 @@ Enable backups for your virtual machines to secure and quickly recover your data
 
 <br><br>
 
-### VM-8 - Production VMs should be using SSD disks
+### VM-8 - 運用 VM では SSD ディスクを使用している必要があります
 
 **Category: System Efficiency**
 
@@ -237,21 +237,21 @@ Enable backups for your virtual machines to secure and quickly recover your data
 
 **Guidance**
 
-Premium SSD disks offer high-performance, low-latency disk support for I/O-intensive applications and production workloads. Standard SSD Disks are a cost-effective storage option optimized for workloads that need consistent performance at lower IOPS levels.
+Premium SSD ディスクは、I/O 集中型のアプリケーションや運用ワークロードに対して、高パフォーマンスで待機時間の短いディスク サポートを提供します。Standard SSD ディスクは、より低い IOPS レベルで一貫したパフォーマンスを必要とするワークロード向けに最適化された、コスト効率の高いストレージ オプションです。
 
-It is recommended that you:
+次のことをお勧めします。
 
-- Use Standard HDD disks for Dev/Test scenarios and less critical workloads at lowest cost.
-- Use Premium SSD disks instead of Standard HDD disks with your premium-capable VMs. For any Single Instance VM using premium storage for all Operating System Disks and Data Disks, Azure guarantees VM connectivity of at least 99.9%.
+- Standard HDD ディスクは、開発/テストのシナリオと重要度の低いワークロードに最小のコストで使用します。
+- Premium 対応 VM では、Standard HDD ディスクではなく Premium SSD ディスクを使用します。すべてのオペレーティング システム ディスクとデータ ディスクに Premium Storage を使用する単一インスタンス VM の場合、Azure は 99.9% 以上の VM 接続を保証します。
 
-If you want to upgrade from Standard HDD to Premium SSD disks, consider the following issues:
+Standard HDD から Premium SSD ディスクにアップグレードする場合は、次の問題を考慮してください。
 
-- Upgrading requires a VM reboot and this process takes 3-5 minutes to complete.
-- If VMs are mission-critical production VMs, evaluate the improved availability against the cost of premium disks.
+- アップグレードには VM の再起動が必要であり、このプロセスは完了するまでに 3 分から 5 分かかります。
+- VM がミッション クリティカルな運用 VM の場合は、Premium ディスクのコストに対して可用性の向上を評価します。
 
 **Resources**
 
-- [Azure managed disk types](https://learn.microsoft.com/azure/virtual-machines/disks-types#premium-ssd)
+- [Azure managed disk types](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-types#premium-ssd)
 
 **Resource Graph Query/Scripts**
 
@@ -263,7 +263,7 @@ If you want to upgrade from Standard HDD to Premium SSD disks, consider the foll
 
 <br><br>
 
-### VM-9 - Review VMs in stopped state
+### VM-9 - 停止状態の VM を確認します
 
 **Category: Governance**
 
@@ -271,11 +271,11 @@ If you want to upgrade from Standard HDD to Premium SSD disks, consider the foll
 
 **Guidance**
 
-Azure Virtual Machines (VM) instances go through different states. There are provisioning and power states. If a Virtual Machine is not running that indicates the Virtual Machine might facing an issue or is no longer necessary and could be removed helping to reduce costs.
+Azure Virtual Machines (VM) インスタンスは、さまざまな状態を経ます。プロビジョニング状態と電源状態があります。仮想マシンが実行されていない場合は、仮想マシンに問題が発生している可能性があるか、不要になり、削除してコストを削減する可能性があることを示します。
 
 **Resources**
 
-- [States and billing status of Azure Virtual Machines](https://learn.microsoft.com/azure/virtual-machines/states-billing?context=%2Ftroubleshoot%2Fazure%2Fvirtual-machines%2Fcontext%2Fcontext#power-states-and-billing)
+- [States and billing status of Azure Virtual Machines](https://learn.microsoft.com/ja-jp/azure/virtual-machines/states-billing?context=%2Ftroubleshoot%2Fazure%2Fvirtual-machines%2Fcontext%2Fcontext#power-states-and-billing)
 
 **Resource Graph Query/Scripts**
 
@@ -287,7 +287,7 @@ Azure Virtual Machines (VM) instances go through different states. There are pro
 
 <br><br>
 
-### VM-10 - Enable Accelerated Networking (AccelNet)
+### VM-10 - 高速ネットワーク(AccelNet)を有効にします
 
 **Category: System Efficiency**
 
@@ -295,13 +295,13 @@ Azure Virtual Machines (VM) instances go through different states. There are pro
 
 **Guidance**
 
-Accelerated networking enables single root I/O virtualization (SR-IOV) to a VM, greatly improving its networking performance. This high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the most demanding network workloads on supported VM types.
+高速ネットワークにより、VM へのシングル ルート I/O 仮想化 (SR-IOV) が可能になり、ネットワーク パフォーマンスが大幅に向上します。この高パフォーマンス パスは、データ パスからホストをバイパスし、サポートされている VM の種類で最も要求の厳しいネットワーク ワークロードの待機時間、ジッター、CPU 使用率を削減します。
 
-This configuration is not always required, evaluate this option according to the workload requirements.
+この構成は必ずしも必要ではないため、ワークロードの要件に応じてこのオプションを評価してください。
 
 **Resources**
 
-- [Accelerated Networking (AccelNet) overview](https://learn.microsoft.com/azure/virtual-network/accelerated-networking-overview)
+- [Accelerated Networking (AccelNet) overview](https://learn.microsoft.com/ja-jp/azure/virtual-network/accelerated-networking-overview)
 
 **Resource Graph Query/Scripts**
 
@@ -313,7 +313,7 @@ This configuration is not always required, evaluate this option according to the
 
 <br><br>
 
-### VM-11 - When AccelNet is enabled, you must manually update the GuestOS NIC driver
+### VM-11 - AccelNet が有効になっている場合は、GuestOS NIC ドライバを手動で更新する必要があります
 
 **Category: Governance**
 
@@ -321,11 +321,11 @@ This configuration is not always required, evaluate this option according to the
 
 **Guidance**
 
-When Accelerated Networking is enabled the default Azure Virtual Network interface in the GuestOS is replaced for a Mellanox and consecutively its driver is provided from a 3rd party vendor. Marketplace images maintained by Microsoft are offered with the latest version of Mellanox drivers, however, once the Virtual Machine is deployed, the customer is responsible for maintaining the driver up to date.
+高速ネットワークを有効にすると、GuestOS の既定の Azure Virtual Network インターフェイスが Mellanox に置き換えられ、そのドライバーはサードパーティ ベンダーから提供されます。Microsoft が管理する Marketplace イメージは、最新バージョンの Mellanox ドライバーで提供されますが、仮想マシンがデプロイされた後は、ドライバーを最新の状態に維持する責任があります。
 
 **Resources**
 
-- [Accelerated Networking (AccelNet) overview](https://learn.microsoft.com/azure/virtual-network/accelerated-networking-overview)
+- [Accelerated Networking (AccelNet) overview](https://learn.microsoft.com/ja-jp/azure/virtual-network/accelerated-networking-overview)
 
 **Resource Graph Query/Scripts**
 
@@ -337,7 +337,7 @@ When Accelerated Networking is enabled the default Azure Virtual Network interfa
 
 <br><br>
 
-### VM-12 - VMs should not have a Public IP directly associated
+### VM-12 - VM にはパブリック IP を直接関連付けないでください
 
 **Category: Access & Security**
 
@@ -345,11 +345,11 @@ When Accelerated Networking is enabled the default Azure Virtual Network interfa
 
 **Guidance**
 
-If a Virtual Machine requires outbound internet connectivity we recommend the use of NAT Gateway or Azure Firewall, this will help to increase security and resiliency of the service as both services have much higher availability and SNAT ports. For inbound internet connectivity we recommend using a load balancing solution such as Azure Load Balancer and Application Gateway.
+仮想マシンで送信インターネット接続が必要な場合は、NAT Gateway または Azure Firewall を使用することをお勧めします。どちらのサービスも可用性と SNAT ポートがはるかに高いため、サービスのセキュリティと回復性を高めるのに役立ちます。受信インターネット接続には、Azure Load Balancer や Application Gateway などの負荷分散ソリューションを使用することをお勧めします。
 
 **Resources**
 
-- [Use Source Network Address Translation (SNAT) for outbound connections](https://learn.microsoft.com/azure/load-balancer/load-balancer-outbound-connections)
+- [Use Source Network Address Translation (SNAT) for outbound connections](https://learn.microsoft.com/ja-jp/azure/load-balancer/load-balancer-outbound-connections)
 
 **Resource Graph Query/Scripts**
 
@@ -361,7 +361,7 @@ If a Virtual Machine requires outbound internet connectivity we recommend the us
 
 <br><br>
 
-### VM-13 - VM network interfaces and associated subnets both have a Network Security Group (NSG) associated
+### VM-13 - VM ネットワーク インターフェイスと関連付けられているサブネットの両方に、ネットワーク セキュリティ グループ (NSG) が関連付けられています
 
 **Category: Access & Security**
 
@@ -369,11 +369,11 @@ If a Virtual Machine requires outbound internet connectivity we recommend the us
 
 **Guidance**
 
-Unless you have a specific reason to, we recommend that you associate a network security group to a subnet, or a network interface, but not both. Since rules in a network security group associated to a subnet can conflict with rules in a network security group associated to a network interface, you can have unexpected communication problems that require troubleshooting.
+特別な理由がない限り、ネットワーク セキュリティ グループをサブネットまたはネットワーク インターフェイスに関連付けることをお勧めしますが、両方には関連付けないでください。サブネットに関連付けられたネットワーク・セキュリティ・グループのルールは、ネットワーク・インタフェースに関連付けられたネットワーク・セキュリティ・グループのルールと競合する可能性があるため、予期しない通信の問題が発生し、トラブルシューティングが必要になる可能性があります。
 
 **Resources**
 
-- [How network security groups filter network traffic](https://learn.microsoft.com/azure/virtual-network/network-security-group-how-it-works#intra-subnet-traffic)
+- [How network security groups filter network traffic](https://learn.microsoft.com/ja-jp/azure/virtual-network/network-security-group-how-it-works#intra-subnet-traffic)
 
 **Resource Graph Query/Scripts**
 
@@ -385,7 +385,7 @@ Unless you have a specific reason to, we recommend that you associate a network 
 
 <br><br>
 
-### VM-14 - IP Forwarding should only be enabled for Network Virtual Appliances
+### VM-14 - IP 転送は、ネットワーク仮想アプライアンスに対してのみ有効にする必要があります
 
 **Category: Access & Security**
 
@@ -393,17 +393,17 @@ Unless you have a specific reason to, we recommend that you associate a network 
 
 **Guidance**
 
-IP forwarding enables the virtual machine network interface to:
+IP 転送により、仮想マシンのネットワーク インターフェイスで次のことが可能になります。
 
-Receive network traffic not destined for one of the IP addresses assigned to any of the IP configurations assigned to the network interface.
+ネットワーク インターフェイスに割り当てられている IP 構成のいずれかに割り当てられている IP アドレスの 1 つを宛先としないネットワーク トラフィックを受信します。
 
-Send network traffic with a different source IP address than the one assigned to one of a network interface's IP configurations.
+ネットワーク インターフェイスの IP 構成の 1 つに割り当てられた送信元 IP アドレスとは異なる送信元 IP アドレスを使用してネットワーク トラフィックを送信します。
 
-The setting must be enabled for every network interface that is attached to the virtual machine that receives traffic that the virtual machine needs to forward. A virtual machine can forward traffic whether it has multiple network interfaces or a single network interface attached to it. While IP forwarding is an Azure setting, the virtual machine must also run an application able to forward the traffic, such as firewall, WAN optimization, and load balancing applications.
+この設定は、仮想マシンが転送する必要があるトラフィックを受信する仮想マシンに接続されているすべてのネットワーク インターフェイスに対して有効にする必要があります。仮想マシンは、複数のネットワーク インターフェイスが接続されているか、単一のネットワーク インターフェイスが接続されているかに関係なく、トラフィックを転送できます。IP 転送は Azure の設定ですが、仮想マシンでは、ファイアウォール、WAN 最適化、負荷分散アプリケーションなど、トラフィックを転送できるアプリケーションも実行する必要があります。
 
 **Resources**
 
-- [Enable or disable IP forwarding](https://learn.microsoft.com/azure/virtual-network/virtual-network-network-interface?tabs=network-interface-portal#enable-or-disable-ip-forwarding)
+- [Enable or disable IP forwarding](https://learn.microsoft.com/ja-jp/azure/virtual-network/virtual-network-network-interface?tabs=network-interface-portal#enable-or-disable-ip-forwarding)
 
 **Resource Graph Query/Scripts**
 
@@ -415,7 +415,7 @@ The setting must be enabled for every network interface that is attached to the 
 
 <br><br>
 
-### VM-15 - Customer DNS Servers should be configured in the Virtual Network level
+### VM-15 - お客様の DNS サーバーは、仮想ネットワーク レベルで構成する必要があります
 
 **Category: Storage**
 
@@ -423,11 +423,11 @@ The setting must be enabled for every network interface that is attached to the 
 
 **Guidance**
 
-Configure the DNS Server in the Virtual Network to avoid inconsistency across the environment.
+仮想ネットワークで DNS サーバーを構成して、環境全体の不整合を回避します。
 
 **Resources**
 
-- [Name resolution for resources in Azure virtual networks](https://learn.microsoft.com/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances)
+- [Name resolution for resources in Azure virtual networks](https://learn.microsoft.com/ja-jp/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances)
 
 **Resource Graph Query/Scripts**
 
@@ -439,7 +439,7 @@ Configure the DNS Server in the Virtual Network to avoid inconsistency across th
 
 <br><br>
 
-### VM-16 - Shared disks should only be enabled in clustered servers
+### VM-16 - 共有ディスクは、クラスタ化されたサーバーでのみ有効にする必要があります
 
 **Category: Storage**
 
@@ -447,11 +447,11 @@ Configure the DNS Server in the Virtual Network to avoid inconsistency across th
 
 **Guidance**
 
-Azure shared disks is a feature for Azure managed disks that enables you to attach a managed disk to multiple virtual machines (VMs) simultaneously. Attaching a managed disk to multiple VMs allows you to either deploy new or migrate existing clustered applications to Azure, and should only be used in those situations where the disk will be assigned to more than one Virtual Machine member of a Cluster.
+Azure 共有ディスクは、マネージド ディスクを複数の仮想マシン (VM) に同時に接続できる Azure マネージド ディスクの機能です。マネージド ディスクを複数の VM に接続すると、新しいクラスター化されたアプリケーションを Azure にデプロイしたり、既存のクラスター化されたアプリケーションを Azure に移行したりできますが、ディスクがクラスターの複数の仮想マシン メンバーに割り当てられる状況でのみ使用する必要があります。
 
 **Resources**
 
-- [Azure Shared Disks](https://learn.microsoft.com/azure/virtual-machines/disks-shared-enable?tabs=azure-portal)
+- [Azure Shared Disks](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-shared-enable?tabs=azure-portal)
 
 **Resource Graph Query/Scripts**
 
@@ -463,7 +463,7 @@ Azure shared disks is a feature for Azure managed disks that enables you to atta
 
 <br><br>
 
-### VM-17 - Network access to the VM disk should be set to Disable public access and enable private access
+### VM-17 - VM ディスクへのネットワーク アクセスは、 パブリック アクセスを無効にし、プライベート アクセスを有効に設定する必要があります
 
 **Category: Access & Security**
 
@@ -471,11 +471,11 @@ Azure shared disks is a feature for Azure managed disks that enables you to atta
 
 **Guidance**
 
-Recommended changing to "Disable public access and enable private access" and creating a Private Endpoint
+「パブリック・アクセスを無効にしてプライベート・アクセスを有効にする」に変更し、プライベート・エンドポイントを作成することをお勧めします
 
 **Resources**
 
-- [Restrict import/export access for managed disks using Azure Private Link](https://learn.microsoft.com/azure/virtual-machines/disks-enable-private-links-for-import-export-portal)
+- [Restrict import/export access for managed disks using Azure Private Link](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-enable-private-links-for-import-export-portal)
 
 **Resource Graph Query/Scripts**
 
@@ -487,7 +487,7 @@ Recommended changing to "Disable public access and enable private access" and cr
 
 <br><br>
 
-### VM-18 - Ensure that your VMs are compliant with Azure Policies
+### VM-18 - VM が Azure ポリシーに準拠していることを確認します
 
 **Category: Governance**
 
@@ -495,12 +495,12 @@ Recommended changing to "Disable public access and enable private access" and cr
 
 **Guidance**
 
-It's important to keep your virtual machine (VM) secure for the applications that you run. Securing your VMs can include one or more Azure services and features that cover secure access to your VMs and secure storage of your data. This article provides information that enables you to keep your VM and applications secure.
+実行するアプリケーションに対して仮想マシン (VM) をセキュリティで保護することが重要です。VM のセキュリティ保護には、VM への安全なアクセスとデータの安全なストレージをカバーする 1 つ以上の Azure サービスと機能を含めることができます。この記事では、VM とアプリケーションをセキュリティで保護するための情報を提供します。
 
 **Resources**
 
-- [Policy-driven governance](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-principles#policy-driven-governance)
-- [Azure Policy Regulatory Compliance controls for Azure Virtual Machines](https://learn.microsoft.com/azure/virtual-machines/security-policy)
+- [Policy-driven governance](https://learn.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/landing-zone/design-principles#policy-driven-governance)
+- [Azure Policy Regulatory Compliance controls for Azure Virtual Machines](https://learn.microsoft.com/ja-jp/azure/virtual-machines/security-policy)
 
 **Resource Graph Query/Scripts**
 
@@ -512,7 +512,7 @@ It's important to keep your virtual machine (VM) secure for the applications tha
 
 <br><br>
 
-### VM-19 - Enable disk encryption and data at rest encryption by default
+### VM-19 - ディスクの暗号化と保存データの暗号化を既定で有効にします
 
 **Category: Access & Security**
 
@@ -520,16 +520,16 @@ It's important to keep your virtual machine (VM) secure for the applications tha
 
 **Guidance**
 
-There are several types of encryption available for your managed disks, including Azure Disk Encryption (ADE), Server-Side Encryption (SSE) and encryption at host.
+マネージド ディスクで使用できる暗号化には、Azure Disk Encryption (ADE)、サーバー側暗号化 (SSE)、ホストでの暗号化など、いくつかの種類があります。
 
-- Azure Disk Encryption helps protect and safeguard your data to meet your organizational security and compliance commitments.
-- Azure Disk Storage Server-Side Encryption (also referred to as encryption-at-rest or Azure Storage encryption) automatically encrypts data stored on Azure managed disks (OS and data disks) when persisting on the Storage Clusters.
-- Encryption at host ensures that data stored on the VM host hosting your VM is encrypted at rest and flows encrypted to the Storage clusters.
-- Confidential disk encryption binds disk encryption keys to the virtual machine's TPM and makes the protected disk content accessible only to the VM.
+- Azure Disk Encryption は、組織のセキュリティとコンプライアンスのコミットメントを満たすために、データを保護および保護するのに役立ちます。
+- Azure Disk Storage サーバー側の暗号化 (保存時の暗号化または Azure Storage 暗号化とも呼ばれます) は、ストレージ クラスターに保持されるときに、Azure マネージド ディスク (OS およびデータ ディスク) に格納されているデータを自動的に暗号化します。
+- ホストでの暗号化により、VM をホストしている VM ホストに格納されているデータが保存時に暗号化され、暗号化されたストレージ クラスターに流れるようになります。
+- 機密ディスクの暗号化は、ディスク暗号化キーを仮想マシンの TPM にバインドし、保護されたディスク コンテンツに VM からのみアクセスできるようにします。
 
 **Resources**
 
-- [Overview of managed disk encryption options](https://learn.microsoft.com/azure/virtual-machines/disk-encryption-overview)
+- [Overview of managed disk encryption options](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disk-encryption-overview)
 
 **Resource Graph Query/Scripts**
 
@@ -541,7 +541,7 @@ There are several types of encryption available for your managed disks, includin
 
 <br><br>
 
-### VM-20 - Enable VM Insights
+### VM-20 - VM Insights を有効にします
 
 **Category: Monitoring**
 
@@ -549,12 +549,12 @@ There are several types of encryption available for your managed disks, includin
 
 **Guidance**
 
-VM insights monitors the performance and health of your virtual machines and virtual machine scale sets. It monitors their running processes and dependencies on other resources. VM insights can help deliver predictable performance and availability of vital applications by identifying performance bottlenecks and network issues. It can also help you understand whether an issue is related to other dependencies.
+VM insights は、仮想マシンと仮想マシン スケール セットのパフォーマンスと正常性を監視します。実行中のプロセスと他のリソースへの依存関係を監視します。VM insights は、パフォーマンスのボトルネックとネットワークの問題を特定することで、重要なアプリケーションの予測可能なパフォーマンスと可用性を提供するのに役立ちます。また、問題が他の依存関係に関連しているかどうかを理解するのにも役立ちます。
 
 **Resources**
 
-- [Overview of VM insights](https://learn.microsoft.com/azure/azure-monitor/vm/vminsights-overview)
-- [Did the extension install properly?](https://learn.microsoft.com/azure/azure-monitor/vm/vminsights-troubleshoot#did-the-extension-install-properly)
+- [Overview of VM insights](https://learn.microsoft.com/ja-jp/azure/azure-monitor/vm/vminsights-overview)
+- [Did the extension install properly?](https://learn.microsoft.com/ja-jp/azure/azure-monitor/vm/vminsights-troubleshoot#did-the-extension-install-properly)
 
 **Resource Graph Query/Scripts**
 
@@ -566,7 +566,7 @@ VM insights monitors the performance and health of your virtual machines and vir
 
 <br><br>
 
-### VM-21 - Configure diagnostic settings for all Azure Virtual Machines
+### VM-21 - すべての Azure Virtual Machines の診断設定を構成します
 
 **Category: Monitoring**
 
@@ -574,22 +574,22 @@ VM insights monitors the performance and health of your virtual machines and vir
 
 **Guidance**
 
-Platform metrics are sent automatically to Azure Monitor Metrics by default and without configuration.
-Platform logs provide detailed diagnostic and auditing information for Azure resources and the Azure platform they depend on:
+プラットフォーム メトリックは、既定で構成なしで Azure Monitor メトリックに自動的に送信されます。
+プラットフォーム ログは、Azure リソースとそれらが依存する Azure プラットフォームに関する詳細な診断および監査情報を提供します。
 
-- Resource logs aren't collected until they're routed to a destination.
-- Activity logs exist on their own but can be routed to other locations.
+- リソース ログは、宛先にルーティングされるまで収集されません。
+- アクティビティ ログは単独で存在しますが、他の場所にルーティングできます。
 
-Each Azure resource requires its own diagnostic setting, which defines the following criteria:
+各 Azure リソースには、次の条件を定義する独自の診断設定が必要です。
 
-- Sources: The type of metric and log data to send to the destinations defined in the setting. The available types vary by resource type.
-- Destinations: One or more destinations to send to.
+- ソース:設定で定義された宛先に送信するメトリックおよびログデータのタイプ。使用可能なタイプは、リソースタイプによって異なります。
+- 宛先: 送信先の 1 つ以上の宛先。
 
-A single diagnostic setting can define no more than one of each of the destinations. If you want to send data to more than one of a particular destination type (for example, two different Log Analytics workspaces), create multiple settings. Each resource can have up to five diagnostic settings.
+1 つの診断設定では、各宛先を 1 つしか定義できません。特定の宛先の種類の複数 (たとえば、2 つの異なる Log Analytics ワークスペース) にデータを送信する場合は、複数の設定を作成します。各リソースには、最大 5 つの診断設定を含めることができます。
 
 **Resources**
 
-- [Diagnostic settings in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal)
+- [Diagnostic settings in Azure Monitor](https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal)
 
 **Resource Graph Query/Scripts**
 
@@ -601,7 +601,7 @@ A single diagnostic setting can define no more than one of each of the destinati
 
 <br><br>
 
-### VM-22 - Use maintenance configurations for the VMs
+### VM-22 - VM のメンテナンス構成を使用します
 
 **Category: Governance**
 
@@ -609,11 +609,11 @@ A single diagnostic setting can define no more than one of each of the destinati
 
 **Guidance**
 
-The maintenance configuration settings allows user to schedule and manage updates, ensuring the VM updates/interruptions are done in planned timeframe.
+メンテナンス構成設定を使用すると、ユーザーは更新をスケジュールおよび管理し、VM の更新/中断が計画された時間枠内に確実に行われるようにすることができます。
 
 **Resources**
 
-- [Use maintenance configurations to control and manage the VM updates](https://learn.microsoft.com/azure/virtual-machines/maintenance-configurations)
+- [Use maintenance configurations to control and manage the VM updates](https://learn.microsoft.com/ja-jp/azure/virtual-machines/maintenance-configurations)
 
 **Resource Graph Query/Scripts**
 
@@ -625,7 +625,7 @@ The maintenance configuration settings allows user to schedule and manage update
 
 <br><br>
 
-### VM-23 - Avoid using A or B-Series VM Sku for production VMs that need the full performance of the CPU continuously
+### VM-23 - CPU の完全なパフォーマンスを継続的に必要とする運用 VM には、A または B シリーズの VM SKU を使用しないでください
 
 **Category: System Efficiency**
 
@@ -633,13 +633,13 @@ The maintenance configuration settings allows user to schedule and manage update
 
 **Guidance**
 
-A-series VMs have CPU performance and memory configurations best suited for entry level workloads like development and test. Some example use cases include development and test servers, low traffic web servers, small to medium databases, proof-of-concepts, and code repositories.
+A シリーズの VM には、開発やテストなどのエントリ レベルのワークロードに最適な CPU パフォーマンスとメモリ構成があります。ユースケースの例としては、開発サーバーとテストサーバー、低トラフィックのWebサーバー、小規模から中規模のデータベース、概念実証、コードリポジトリなどがあります。
 
-B-series VMs are ideal for workloads that do not need the full performance of the CPU continuously, like web servers, proof of concepts, small databases and development build environments. These workloads typically have burstable performance requirements. To determine the physical hardware on which this size is deployed, query the virtual hardware from within the virtual machine. The B-series provides you with the ability to purchase a VM size with baseline performance that can build up credits when it is using less than its baseline. When the VM has accumulated credits, the VM can burst above the baseline using up to 100% of the vCPU when your application requires higher CPU performance. Upon consuming all the CPU credits, a B-series virtual machine is throttled back to its base CPU performance until it accumulates the credits to CPU burst again.
+B シリーズの VM は、Web サーバー、概念実証、小規模なデータベース、開発ビルド環境など、CPU の完全なパフォーマンスを継続的に必要としないワークロードに最適です。これらのワークロードには、通常、バースト可能なパフォーマンス要件があります。このサイズがデプロイされている物理ハードウェアを特定するには、仮想マシン内から仮想ハードウェアを照会します。B シリーズでは、ベースライン パフォーマンスの VM サイズを購入して、ベースラインよりも少ない使用量のときにクレジットを蓄積できます。VM にクレジットが蓄積されると、アプリケーションでより高い CPU パフォーマンスが必要な場合、VM は vCPU の最大 100% を使用してベースラインを超えてバーストできます。すべての CPU クレジットを消費すると、B シリーズの仮想マシンは、CPU バーストにクレジットが蓄積されるまで、基本 CPU パフォーマンスに調整されます。
 
 **Resources**
 
-- [B-series burstable virtual machine sizes](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable)
+- [B-series burstable virtual machine sizes](https://learn.microsoft.com/ja-jp/azure/virtual-machines/sizes-b-series-burstable)
 
 **Resource Graph Query/Scripts**
 
@@ -651,7 +651,7 @@ B-series VMs are ideal for workloads that do not need the full performance of th
 
 <br><br>
 
-### VM-24 - Mission Critical Workloads should be using Premium or Ultra Disks
+### VM-24 - ミッション クリティカルなワークロードでは、Premium ディスクまたは Ultra ディスクを使用する必要があります
 
 **Category: System Efficiency**
 
@@ -659,15 +659,15 @@ B-series VMs are ideal for workloads that do not need the full performance of th
 
 **Guidance**
 
-Azure Premium SSDs deliver high-performance and low-latency disk support for virtual machines (VMs) with input/output (IO)-intensive workloads.
+Azure Premium SSD は、入出力 (IO) 集中型のワークロードを持つ仮想マシン (VM) に対して、高パフォーマンスで低遅延のディスク サポートを提供します。
 
-Premium SSD v2 offers higher performance than Premium SSDs while also generally being less costly. You can individually tweak the performance (capacity, throughput, and IOPS) of Premium SSD v2 disks at any time, allowing workloads to be cost efficient while meeting shifting performance needs. You should use Premium solid-state drives (SSDs) as operating system (OS) disks as the V2 is not supported as OS Disk.
+Premium SSD v2 は、Premium SSD よりも高いパフォーマンスを提供しながら、一般的にコストも低くなります。Premium SSD v2 ディスクのパフォーマンス (容量、スループット、IOPS) はいつでも個別に調整できるため、変化するパフォーマンス ニーズに対応しながら、ワークロードのコスト効率を高めることができます。V2 は OS ディスクとしてサポートされていないため、Premium ソリッド ステート ドライブ (SSD) をオペレーティング システム (OS) ディスクとして使用する必要があります。
 
-Azure ultra disks are the highest-performing storage option for Azure virtual machines (VMs). You can change the performance parameters of an ultra disk without having to restart your VMs. Ultra disks are suited for data-intensive workloads such as SAP HANA, top-tier databases, and transaction-heavy workloads. Ultra disks must be used as data disks and can only be created as empty disks. You should use Premium solid-state drives (SSDs) as operating system (OS) disks.
+Azure Ultra Disks は、Azure 仮想マシン (VM) 向けの最高パフォーマンスのストレージ オプションです。Ultra ディスクのパフォーマンス パラメーターは、VM を再起動せずに変更できます。 Ultra ディスクは、SAP HANA、最上位データベース、トランザクション負荷の高いワークロードなど、データ集約型のワークロードに適しています。Ultra ディスクはデータ ディスクとして使用する必要があり、空のディスクとしてのみ作成できます。Premium ソリッド ステート ドライブ (SSD) は、オペレーティング システム (OS) ディスクとして使用する必要があります。
 
 **Resources**
 
-- [Disk type comparison and decision tree](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types#disk-type-comparison)
+- [Disk type comparison and decision tree](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-types#disk-type-comparison)
 
 **Resource Graph Query/Scripts**
 
@@ -679,7 +679,7 @@ Azure ultra disks are the highest-performing storage option for Azure virtual ma
 
 <br><br>
 
-### VM-25 - Do not create more than 2500 Citrix VDA servers per subscription
+### VM-25 - サブスクリプションごとに2500を超えるCitrix VDAサーバーを作成しないでください
 
 **Category: Application Resilience**
 
@@ -687,16 +687,16 @@ Azure ultra disks are the highest-performing storage option for Azure virtual ma
 
 **Guidance**
 
-A Citrix Managed Azure subscription supports the number of machines indicated in Limits. (In this context, machines refers to VMs that have a Citrix VDA installed. These machines deliver apps and desktops to users. It does not include other machines in a resource location, such as Cloud Connectors.)
+Citrix Managed Azureサブスクリプションは、「制限」に示されているマシンの数をサポートします。(このコンテキストでは、マシンとはCitrix VDAがインストールされている仮想マシンを指します。これらのマシンは、アプリとデスクトップをユーザーに配信します。リソースの場所にある他のマシン(Cloud Connectorなど)は含まれません。
 
-If your Citrix Managed Azure subscription is likely to reach its limit soon, and you have enough Citrix licenses, you can request another Citrix Managed Azure subscription. The dashboard contains a notification when you’re close to the limit.
+Citrix Managed Azureサブスクリプションがまもなく制限に達する可能性があり、十分なCitrixライセンスがある場合は、別のCitrix Managed Azureサブスクリプションをリクエストできます。ダッシュボードには、制限に近づいたときの通知が含まれています。
 
-You can’t create a catalog (or add machines to a catalog) if the total number of machines for all catalogs that use that Citrix Managed Azure subscription would exceed the value indicated in Limits.
+そのCitrix Managed Azureサブスクリプションを使用するすべてのカタログのマシンの合計数が 制限 に示されている値を超える場合、カタログを作成(またはカタログにマシンを追加)することはできません。
 
 **Resources**
 
-- [Citrix Limits](https://docs.citrix.com/en-us/citrix-daas-azure/limits)
-- [Citrix Managed Azure subscriptions](https://docs.citrix.com/en-us/citrix-daas-azure/limits)
+- [Citrix Limits](https://docs.citrix.com/ja-jp/citrix-daas-azure/limits)
+- [Citrix Managed Azure subscriptions](https://docs.citrix.com/ja-jp/citrix-daas-azure/limits)
 
 **Resource Graph Query/Scripts**
 
@@ -708,7 +708,7 @@ You can’t create a catalog (or add machines to a catalog) if the total number 
 
 <br><br>
 
-### VM-26 - Ensure all VMs part of a SQL Always-on cluster have the same specifications and configurations
+### VM-26 - SQL Always-on クラスターのすべての VM の仕様と構成が同じであることを確認します
 
 **Category: Availability**
 
@@ -716,11 +716,11 @@ You can’t create a catalog (or add machines to a catalog) if the total number 
 
 **Guidance**
 
-All VMs that are members or a SQL Always-on cluster must use the same VM Sku, same number of data disks, same disks Skus, same number of Network Interfaces, same VM Extensions, etc.
+メンバーまたは SQL Always-on クラスターであるすべての VM は、同じ VM SKU、同じ数のデータ ディスク、同じディスク SKU、同じ数のネットワーク インターフェイス、同じ VM 拡張機能などを使用する必要があります。
 
 **Resources**
 
-- [Prerequisites, restrictions, and recommendations for Always On availability groups](https://learn.microsoft.com/en-us/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-ver16)
+- [Prerequisites, restrictions, and recommendations for Always On availability groups](https://learn.microsoft.com/ja-jp/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-ver16)
 
 **Resource Graph Query/Scripts**
 
@@ -732,7 +732,7 @@ All VMs that are members or a SQL Always-on cluster must use the same VM Sku, sa
 
 <br><br>
 
-### VM-27 - Use Azure Boost VMs for Maintenance sensitive workload
+### VM-27 - メンテナンスの機密性の高いワークロードに Azure Boost VM を使用します
 
 **Category: Availability**
 
@@ -740,11 +740,11 @@ All VMs that are members or a SQL Always-on cluster must use the same VM Sku, sa
 
 **Guidance**
 
-If the workload is Maintenance sensitive, please consider using Azure Boost compatible VMs. Azure Boost is designed to lessen the impact on customers when Azure maintenance activities occur.
+ワークロードがメンテナンスの影響を受けやすい場合は、Azure Boost 互換 VM の使用を検討してください。 Azure Boost は、Azure メンテナンス アクティビティが発生したときのお客様への影響を軽減するように設計されています。
 
 **Resources**
 
-- [Microsoft Azure Boost](https://learn.microsoft.com/azure/azure-boost/overview)
+- [Microsoft Azure Boost](https://learn.microsoft.com/ja-jp/azure/azure-boost/overview)
 - [Announcing the general availability of Azure Boost](https://aka.ms/AzureBoostGABlog)
 
 **Resource Graph Query/Scripts**
@@ -757,7 +757,7 @@ If the workload is Maintenance sensitive, please consider using Azure Boost comp
 
 <br><br>
 
-### VM-28 - Enable Scheduled Events for Maintenance sensitive workload VMs
+### VM-28 - メンテナンスの影響を受けやすいワークロードの仮想マシンは、スケジュールされたイベントを有効化します
 
 **Category: Availability**
 
@@ -765,13 +765,13 @@ If the workload is Maintenance sensitive, please consider using Azure Boost comp
 
 **Guidance**
 
-If the workload is Maintenance sensitive, please enable Scheduled Events. Scheduled Events is an Azure Metadata Service that gives your application time to prepare for virtual machine maintenance. It provides information about upcoming maintenance events (for example, reboot) so that your application can prepare for them and limit disruption. It's available for all Azure Virtual Machines types, including PaaS and IaaS on both Windows and Linux.
+ワークロードがメンテナンスの影響を受けやすい場合は、スケジュールされたイベントを有効にしてください。スケジュールされたイベントは、仮想マシンのメンテナンスを準備するための時間をアプリケーションに与える Azure メタデータ サービスです。今後のメンテナンス イベント (再起動など) に関する情報が提供されるため、アプリケーションはそれらに備え、中断を制限できます。これは、Windows と Linux の両方の PaaS と IaaS を含む、すべての種類の Azure Virtual Machines で使用できます。
 
 **Resources**
 
-- [Monitor scheduled events for your Azure VMs](https://learn.microsoft.com/azure/virtual-machines/windows/scheduled-event-service)
-- [Azure Metadata Service: Scheduled Events for Linux VMs](https://learn.microsoft.com/azure/virtual-machines/linux/scheduled-events)
-- [Azure Metadata Service: Scheduled Events for Windows VMs](https://learn.microsoft.com/azure/virtual-machines/windows/scheduled-events)
+- [Monitor scheduled events for your Azure VMs](https://learn.microsoft.com/ja-jp/azure/virtual-machines/windows/scheduled-event-service)
+- [Azure Metadata Service: Scheduled Events for Linux VMs](https://learn.microsoft.com/ja-jp/azure/virtual-machines/linux/scheduled-events)
+- [Azure Metadata Service: Scheduled Events for Windows VMs](https://learn.microsoft.com/ja-jp/azure/virtual-machines/windows/scheduled-events)
 
 **Resource Graph Query/Scripts**
 

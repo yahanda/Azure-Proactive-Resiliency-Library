@@ -54,7 +54,7 @@ Key points:
 
 **Resources**
 
-- [Monitoring application health for reliability](https://learn.microsoft.com/azure/well-architected/resiliency/monitoring)
+- [Monitoring application health for reliability](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/monitoring)
 
 <br><br>
 
@@ -79,7 +79,7 @@ Key points:
 
 **Resources**
 
-- [Health modeling for reliability](https://learn.microsoft.com/azure/well-architected/resiliency/monitor-model)
+- [Health modeling for reliability](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/monitor-model)
 
 <br><br>
 
@@ -96,7 +96,7 @@ Examples include Workbook, Dashboards or email alerts. With Azure Workbooks and/
 
 **Resources**
 
-- [Azure Workbooks templates](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-templates)
+- [Azure Workbooks templates](https://learn.microsoft.com/ja-jp/azure/azure-monitor/visualize/workbooks-templates)
 
 <br><br>
 
@@ -117,6 +117,6 @@ Azure offers a suite of experiences to keep you informed about the health of you
 
 **Resources**
 
-- [Create a Service Health alert using the Azure portal](https://learn.microsoft.com/azure/service-health/alerts-activity-log-service-notifications-portal#create-a-service-health-alert-using-the-azure-portal)
+- [Create a Service Health alert using the Azure portal](https://learn.microsoft.com/ja-jp/azure/service-health/alerts-activity-log-service-notifications-portal#create-a-service-health-alert-using-the-azure-portal)
 
 <br><br>

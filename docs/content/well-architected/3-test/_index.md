@@ -56,7 +56,7 @@ Key points:
 
 **Resources**
 
-- [Testing applications for availability and resiliency](https://learn.microsoft.com/azure/well-architected/resiliency/testing)
+- [Testing applications for availability and resiliency](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/testing)
 
 <br><br>
 
@@ -82,7 +82,7 @@ Key points:
 
 **Resources**
 
-- [Error handling for resilient applications in Azure](https://learn.microsoft.com/azure/well-architected/resiliency/app-design-error-handling)
+- [Error handling for resilient applications in Azure](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/app-design-error-handling)
 
 <br><br>
 
@@ -109,7 +109,7 @@ Key points
 
 **Resources**
 
-- [Backup and disaster recovery for Azure applications](https://learn.microsoft.com/azure/well-architected/resiliency/backup-and-recovery)
+- [Backup and disaster recovery for Azure applications](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/backup-and-recovery)
 
 <br><br>
 
@@ -132,7 +132,7 @@ Apply chaos engineering principles when you:
 
 **Resources**
 
-- [Use chaos engineering to test Azure applications](https://learn.microsoft.com/azure/well-architected/resiliency/chaos-engineering)
+- [Use chaos engineering to test Azure applications](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/chaos-engineering)
 
 <br><br>
 
@@ -150,6 +150,6 @@ In the case of a zone-redundant serverless or provisioned General Purpose databa
 
 **Resources**
 
-- [Test application fault resiliency](https://learn.microsoft.com/en-us/azure/azure-sql/database/high-availability-sla?view=azuresql&tabs=azure-powershell#testing-application-fault-resiliency)
+- [Test application fault resiliency](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/high-availability-sla?view=azuresql&tabs=azure-powershell#testing-application-fault-resiliency)
 
 <br><br>

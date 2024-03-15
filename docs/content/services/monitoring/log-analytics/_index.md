@@ -31,7 +31,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### LOG-1 - Enable Log Analytics data export to GRS or GZRS
+### LOG-1 - GRS または GZRS への Log Analytics データのエクスポートを有効にします
 
 **Category: Disaster Recovery**
 
@@ -43,8 +43,8 @@ Data export in a Log Analytics workspace lets you continuously export data to an
 
 **Resources**
 
-- [Log Analytics workspace data export in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/logs-data-export)
-- [Azure Monitor configuration recommendations](https://learn.microsoft.com/azure/azure-monitor/best-practices-logs#configuration-recommendations)
+- [Log Analytics workspace data export in Azure Monitor](https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/logs-data-export)
+- [Azure Monitor configuration recommendations](https://learn.microsoft.com/ja-jp/azure/azure-monitor/best-practices-logs#configuration-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -56,7 +56,7 @@ Data export in a Log Analytics workspace lets you continuously export data to an
 
 <br><br>
 
-### LOG-2 - Link Log Analytics Workspace to an Availability Zone enabled dedicated cluster
+### LOG-2 - Log Analytics ワークスペースを可用性ゾーン対応の専用クラスターにリンクします
 
 **Category: Availability**
 
@@ -68,9 +68,9 @@ Link your Log Analytics workspace to an availability zone enabled dedicated clus
 
 **Resources**
 
-- [Enhance data and service resilience in Azure Monitor Logs with availability zones](https://learn.microsoft.com/azure/azure-monitor/logs/availability-zones)
-- [Create and manage a dedicated cluster in Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/logs-dedicated-clusters)
-- [Azure Monitor configuration recommendations](https://learn.microsoft.com/azure/azure-monitor/best-practices-logs#configuration-recommendations)
+- [Enhance data and service resilience in Azure Monitor Logs with availability zones](https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/availability-zones)
+- [Create and manage a dedicated cluster in Azure Monitor Logs](https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/logs-dedicated-clusters)
+- [Azure Monitor configuration recommendations](https://learn.microsoft.com/ja-jp/azure/azure-monitor/best-practices-logs#configuration-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -82,7 +82,7 @@ Link your Log Analytics workspace to an availability zone enabled dedicated clus
 
 <br><br>
 
-### LOG-3 - Configure data collection to send critical data to multiple workspaces in different regions
+### LOG-3 - 重要なデータを異なるリージョンの複数のワークスペースに送信するようにデータ収集を構成します
 
 **Category: Disaster Recovery**
 
@@ -94,7 +94,7 @@ If you require a workspace to be available in the unlikely scenario of a regiona
 
 **Resources**
 
-- [Azure Monitor configuration recommendations](https://learn.microsoft.com/azure/azure-monitor/best-practices-logs#configuration-recommendations)
+- [Azure Monitor configuration recommendations](https://learn.microsoft.com/ja-jp/azure/azure-monitor/best-practices-logs#configuration-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -106,7 +106,7 @@ If you require a workspace to be available in the unlikely scenario of a regiona
 
 <br><br>
 
-### LOG-4 - Create a health status alert rule for your Log Analytics workspace
+### LOG-4 - Log Analytics ワークスペースの正常性状態アラート ルールを作成します
 
 **Category: Monitoring**
 
@@ -118,8 +118,8 @@ A health status alert will proactively notify you if a workspace becomes unavail
 
 **Resources**
 
-- [Monitor Log Analytics workspace health](https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-workspace-health)
-- [Azure Monitor configuration recommendations](https://learn.microsoft.com/azure/azure-monitor/best-practices-logs#configuration-recommendations)
+- [Monitor Log Analytics workspace health](https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/log-analytics-workspace-health)
+- [Azure Monitor configuration recommendations](https://learn.microsoft.com/ja-jp/azure/azure-monitor/best-practices-logs#configuration-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -131,7 +131,7 @@ A health status alert will proactively notify you if a workspace becomes unavail
 
 <br><br>
 
-### LOG-5 - Configure minimal logging and retention of logs
+### LOG-5 - ログの最小ログ記録と保持を構成します
 
 **Category: Monitoring**
 
@@ -145,9 +145,9 @@ A health status alert will proactively notify you if a workspace becomes unavail
 
 **Resources**
 
-- [Data retention and archive in Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive?tabs=portal-1%2Cportal-2)
-- [Run search jobs in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/search-jobs?tabs=portal-1%2Cportal-2)
-- [Restore logs in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/restore?tabs=api-1)
+- [Data retention and archive in Azure Monitor Logs](https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/data-retention-archive?tabs=portal-1%2Cportal-2)
+- [Run search jobs in Azure Monitor](https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/search-jobs?tabs=portal-1%2Cportal-2)
+- [Restore logs in Azure Monitor](https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/restore?tabs=api-1)
 
 **Resource Graph Query/Scripts**
 

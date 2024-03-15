@@ -42,8 +42,8 @@ Select Standard SKU Standard Load Balancer provides a dimension of reliability t
 
 **Resources**
 
-- [Reliability and Azure Load Balancer](https://learn.microsoft.com/azure/architecture/framework/services/networking/azure-load-balancer/reliability)
-- [Resiliency checklist for specific Azure services- Azure Load Balancer](https://learn.microsoft.com/azure/architecture/checklist/resiliency-per-service#azure-load-balancer)
+- [Reliability and Azure Load Balancer](https://learn.microsoft.com/ja-jp/azure/architecture/framework/services/networking/azure-load-balancer/reliability)
+- [Resiliency checklist for specific Azure services- Azure Load Balancer](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#azure-load-balancer)
 
 **Resource Graph Query/Scripts**
 
@@ -67,7 +67,7 @@ Select Standard SKU Standard Load Balancer provides a dimension of reliability t
 
 **Resources**
 
-- [Resiliency checklist for specific Azure services- Azure Load Balancer](https://learn.microsoft.com/azure/architecture/checklist/resiliency-per-service#azure-load-balancer)
+- [Resiliency checklist for specific Azure services- Azure Load Balancer](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#azure-load-balancer)
 
 **Resource Graph Query/Scripts**
 
@@ -91,7 +91,7 @@ Outbound rules for Standard Public Load Balancer requires you to manually alloca
 
 **Resources**
 
-- [Resiliency checklist for specific Azure services- Azure Load Balancer](https://learn.microsoft.com/azure/architecture/checklist/resiliency-per-service#azure-load-balancer)
+- [Resiliency checklist for specific Azure services- Azure Load Balancer](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#azure-load-balancer)
 
 **Resource Graph Query/Scripts**
 
@@ -115,7 +115,7 @@ In a region with Availability Zones, a Standard Load Balancer can be made zone-r
 
 **Resources**
 
-- [Load Balancer and Availability Zones](https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-availability-zones#zone-redundant)
+- [Load Balancer and Availability Zones](https://learn.microsoft.com/ja-jp/azure/load-balancer/load-balancer-standard-availability-zones#zone-redundant)
 
 **Resource Graph Query/Scripts**
 

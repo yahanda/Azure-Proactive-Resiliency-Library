@@ -45,8 +45,8 @@ To automatically deploy your virtual network gateways across availability zones,
 
 **Resources**
 
-- [Zone redundant Virtual network gateway in availability zone](https://learn.microsoft.com/azure/vpn-gateway/about-zone-redundant-vnet-gateways)
-- [Gateway SKU](https://learn.microsoft.com/azure/vpn-gateway/about-zone-redundant-vnet-gateways#gwskus)
+- [Zone redundant Virtual network gateway in availability zone](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/about-zone-redundant-vnet-gateways)
+- [Gateway SKU](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/about-zone-redundant-vnet-gateways#gwskus)
 
 **Resource Graph Query/Scripts**
 
@@ -71,8 +71,8 @@ Active-active gateways have two Gateway IP configurations and two public IP addr
 
 **Resources**
 
-- [Active-active VPN gateway](https://learn.microsoft.com/azure/vpn-gateway/active-active-portal#gateway)
-- [Gateway SKU](https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings#gwsku)
+- [Active-active VPN gateway](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/active-active-portal#gateway)
+- [Gateway SKU](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings#gwsku)
 
 **Resource Graph Query/Scripts**
 
@@ -97,8 +97,8 @@ An Azure ExpressRoute circuit provide a private dedicated connection into Azure.
 
 **Resources**
 
-- [Configure a Site-to-Site VPN as a failover path for ExpressRoute](https://learn.microsoft.com/azure/expressroute/expressroute-howto-coexist-resource-manager#configuration-designs)
-- [Limit and limitations](https://learn.microsoft.com/azure/expressroute/expressroute-howto-coexist-resource-manager#limits-and-limitations)
+- [Configure a Site-to-Site VPN as a failover path for ExpressRoute](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-howto-coexist-resource-manager#configuration-designs)
+- [Limit and limitations](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-howto-coexist-resource-manager#limits-and-limitations)
 
 **Resource Graph Query/Scripts**
 
@@ -122,8 +122,8 @@ To plan for disaster recovery, set up Site-to-Site VPN in more than one location
 
 **Resources**
 
-- [Highly available cross-premises](https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-highlyavailable)
-- [About VPN gateway redundancy](https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-highlyavailable#about-vpn-gateway-redundancy)
+- [Highly available cross-premises](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/vpn-gateway-highlyavailable)
+- [About VPN gateway redundancy](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/vpn-gateway-highlyavailable#about-vpn-gateway-redundancy)
 
 **Resource Graph Query/Scripts**
 
@@ -147,7 +147,7 @@ Set up monitoring and alerts for Virtual Network Gateway health based on various
 
 **Resources**
 
-- [VPN gateway data reference](https://learn.microsoft.com/azure/vpn-gateway/monitor-vpn-gateway-reference)
+- [VPN gateway data reference](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/monitor-vpn-gateway-reference)
 
 **Resource Graph Query/Scripts**
 
@@ -171,8 +171,8 @@ VPN Gateway uses service health to notify about planned and unplanned maintenanc
 
 **Resources**
 
-- [Getting started with Azure Metrics Explorer](hhttps://learn.microsoft.com/azure/azure-monitor/essentials/metrics-getting-started)
-- [Monitor VPN gateway](hhttps://learn.microsoft.com/azure/vpn-gateway/monitor-vpn-gateway-reference#metrics)
+- [Getting started with Azure Metrics Explorer](hhttps://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/metrics-getting-started)
+- [Monitor VPN gateway](hhttps://learn.microsoft.com/ja-jp/azure/vpn-gateway/monitor-vpn-gateway-reference#metrics)
 
 **Resource Graph Query/Scripts**
 

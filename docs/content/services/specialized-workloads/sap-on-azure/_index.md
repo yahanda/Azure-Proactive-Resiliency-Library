@@ -16,7 +16,7 @@ The presented resiliency recommendations in this guidance include Azure Sap Solu
 |:--------------------------------------------------|:-----------------------------------------------------------------------:|:---------------:|:----------------:|:-------------------:|
 | [SAP-1 - Ensure SAP production systems are designed for high availability.](#sap-1---ensure-sap-production-systems-are-designed-for-high-availability) | Availability | High | Published | No |
 | [SAP-2 - Run SAP application servers on two or more VMS.](#sap-2---run-sap-application-servers-on-two-or-more-vms) | Availability | High | Published | No  |
-| [SAP-3 - When using Virtual Machines Scale Set (VMSS), review recommendations for SAP workload.](#sap-3---when-using-virtual-machines-scale-set-review-recommendations-for-sap-workload) | Availability | High | Published | No |
+| [SAP-3 - When using Virtual Machines Scale Set (VMSS), review recommendations for SAP workload.](#sap-3---whja-jping-virtual-machines-scale-set-review-recommendations-for-sap-workload) | Availability | High | Published | No |
 | [SAP-5 - In a zonal high availability setup if we can't use VMSS, check use if availability zone and proximity placement group.](#sap-5---in-a-zonal-high-availability-setup-if-we-cant-use-vmss-check-use-if-availability-zone-and-proximity-placement-group)  | Availability | High | Published | No |
 | [SAP-6 - Avoid placing application server and database in one Proximity Placement Group.](#sap-6---avoid-placing-application-server-and-database-in-one-proximity-placement-group) | Availability | High | Published |  No  |
 | [SAP-7 - Avoid placing VMs from multiple SAP systems in a single Proximity Placement Group.](#sap-7---avoid-placing-vms-from-multiple-sap-systems-in-a-single-proximity-placement-group) | Availability | High | Published | No |
@@ -72,7 +72,7 @@ Ensure SAP production systems are designed for high availability using availabil
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -97,7 +97,7 @@ Deploy SAP application servers on two or more virtual machines (VMs) using VMSS 
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -122,7 +122,7 @@ If utilizing Virtual Machine Scale Sets (VMSS), adhere to our guidelines for SAP
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -147,7 +147,7 @@ In a zonal high availability setup if we can't use VMSS, then ensure the SAP app
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -172,7 +172,7 @@ Ensure that you do not colocate application server and database virtual machines
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -197,7 +197,7 @@ Ensure that VMs from different SAP systems are not colocated within a single Pro
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -222,7 +222,7 @@ When creating availability sets, ensure you utilize the maximum number of fault 
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -247,7 +247,7 @@ For single-instance VMs, both OS and data disks must be either Premium SSD or Ul
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -272,7 +272,7 @@ In the case of databases, ensure that data is replicated synchronously (SYNC mod
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -297,7 +297,7 @@ Make sure that SAP shared file systems, such as /sapmnt, /usr/trans and /interfa
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -322,7 +322,7 @@ Thoroughly test all high-availability (HA) solutions, including scenarios like k
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -347,7 +347,7 @@ In zonal SAP deployments, deploy all components and Azure services with zone red
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -372,7 +372,7 @@ Make sure that SAP production workloads have a disaster recovery (DR) solution s
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -397,7 +397,7 @@ When implementing Zonal Disaster Recovery (DR), make sure that SAP production wo
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -422,7 +422,7 @@ Create an offsite backup plan by leveraging the second Azure region for storing 
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -447,7 +447,7 @@ On-demand Capacity Reservation is recommended for disaster recovery (DR) needs.â
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -472,7 +472,7 @@ Replicate production databases (ASYNC) to the DR location using the database ven
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -497,7 +497,7 @@ Back up SAP components such as (A)SCS, application servers, and WebDispatchers t
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -522,7 +522,7 @@ Ensure that critical SAP shared file systems, such as /sapmnt, /usr/trans and /i
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -547,7 +547,7 @@ Enable Cross Region Restore for Geo-redundant Recovery Services Vaults. This all
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -572,7 +572,7 @@ Conduct backup testing to verify that all production systems can be backed up si
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -597,7 +597,7 @@ Automate the build of disaster recovery (DR) infrastructure (or pre-deploy DR re
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -622,7 +622,7 @@ Document and tes disaster recovery (DR) procedure to ensure it meets your Recove
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -647,7 +647,7 @@ Configure scheduled events to receive notifications about upcoming maintenance e
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -672,7 +672,7 @@ Define a procedure for reacting to scheduled events effectively.
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -697,7 +697,7 @@ Set up Service Health alerts for all critical subscriptions, this will allow qui
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -722,7 +722,7 @@ Define a procedure for reacting to Service Health Alerts, ensuring that SAP appl
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
 
 **Resource Graph Query/Scripts**
@@ -747,9 +747,9 @@ For the ASCS-Pacemaker (Central Server Instance), ensure that the Pacemaker clus
 
 **Resources**
 
-- [SAP ACSS checks](https://learn.microsoft.com/en-us/azure/sap/center-sap-solutions/get-quality-checks-insights)
+- [SAP ACSS checks](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Quality checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
-- [ASCS-Pacemaker - Central Server Instance](https://docs.microsoft.com/en-us/azure/advisor/advisor-reference-reliability-recommendations)
+- [ASCS-Pacemaker - Central Server Instance](https://docs.microsoft.com/ja-jp/azure/advisor/advisor-reference-reliability-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -773,7 +773,7 @@ For the ASCS-Pacemaker-SLES (Central Server Instance), ensure that the Pacemaker
 
 **Resources**
 
-- [ASCS-Pacemaker-SLESCentral Server Instance](https://docs.microsoft.com/en-us/azure/advisor/advisor-reference-reliability-recommendations)
+- [ASCS-Pacemaker-SLESCentral Server Instance](https://docs.microsoft.com/ja-jp/azure/advisor/advisor-reference-reliability-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -797,7 +797,7 @@ For the ASCS-Pacemaker-RH (Central Server Instance), ensure that the Pacemaker c
 
 **Resources**
 
-- [ASCS-Pacemaker-RH Central Server Instance](https://docs.microsoft.com/en-us/azure/advisor/advisor-reference-reliability-recommendations)
+- [ASCS-Pacemaker-RH Central Server Instance](https://docs.microsoft.com/ja-jp/azure/advisor/advisor-reference-reliability-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -821,7 +821,7 @@ For the ASCS-LB (Central Server Instance), ensure that the load balancer is conf
 
 **Resources**
 
-- [ASCS-LB - Central Server Instance](https://docs.microsoft.com/en-us/azure/advisor/advisor-reference-reliability-recommendations)
+- [ASCS-LB - Central Server Instance](https://docs.microsoft.com/ja-jp/azure/advisor/advisor-reference-reliability-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -845,7 +845,7 @@ For the DBHANA-Pacemaker (Database Instance), ensure that the Pacemaker cluster 
 
 **Resources**
 
-- [DBHANA-Pacemaker - Database Instance](https://docs.microsoft.com/en-us/azure/advisor/advisor-reference-reliability-recommendations)
+- [DBHANA-Pacemaker - Database Instance](https://docs.microsoft.com/ja-jp/azure/advisor/advisor-reference-reliability-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -869,7 +869,7 @@ For the DBHANA-Pacemaker-SLES (Database Instance), ensure that the Pacemaker clu
 
 **Resources**
 
-- [DBHANA-Pacemaker-SLES- Database Instance](https://docs.microsoft.com/en-us/azure/advisor/advisor-reference-reliability-recommendations)
+- [DBHANA-Pacemaker-SLES- Database Instance](https://docs.microsoft.com/ja-jp/azure/advisor/advisor-reference-reliability-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -893,7 +893,7 @@ For the DBHANA-Pacemaker-RH (Database Instance), ensure that the Pacemaker clust
 
 **Resources**
 
-- [DBHANA-Pacemaker-RH- Database Instance](https://docs.microsoft.com/en-us/azure/advisor/advisor-reference-reliability-recommendations)
+- [DBHANA-Pacemaker-RH- Database Instance](https://docs.microsoft.com/ja-jp/azure/advisor/advisor-reference-reliability-recommendations)
 
 **Resource Graph Query/Scripts**
 
@@ -917,7 +917,7 @@ For the DBHANA-LB (Database Instance), make sure the load balancer is configured
 
 **Resources**
 
-- [DBHANA-LB- Database Instance](https://docs.microsoft.com/en-us/azure/advisor/advisor-reference-reliability-recommendations)
+- [DBHANA-LB- Database Instance](https://docs.microsoft.com/ja-jp/azure/advisor/advisor-reference-reliability-recommendations)
 
 **Resource Graph Query/Scripts**
 

@@ -27,7 +27,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### BK-1 - Migrate from classic alerts to built-in Azure Monitor alerts for Azure Recovery Services Vaults
+### BK-1 - Azure Recovery Services コンテナーのクラシック アラートから組み込みの Azure Monitor アラートに移行します
 
 **Category: Monitoring**
 
@@ -46,8 +46,8 @@ Using Azure Monitor Alerts you can:
 
 **Resources**
 
-- [Move to Azure monitor Alerts](https://learn.microsoft.com/en-us/azure/backup/move-to-azure-monitor-alerts)
-- [Classic alerts retirement announcement](https://azure.microsoft.com/en-us/updates/transition-to-builtin-azure-monitor-alerts-for-recovery-services-vaults-in-azure-backup-by-31-march-2026/)
+- [Move to Azure monitor Alerts](https://learn.microsoft.com/ja-jp/azure/backup/move-to-azure-monitor-alerts)
+- [Classic alerts retirement announcement](https://azure.microsoft.com/ja-jp/updates/transition-to-builtin-azure-monitor-alerts-for-recovery-services-vaults-in-azure-backup-by-31-march-2026/)
 
 **Resource Graph Query/Scripts**
 
@@ -57,7 +57,7 @@ Using Azure Monitor Alerts you can:
 
 {{< /collapse >}}
 
-### BK-2 - Opt-in to Cross Region Restore for all Geo-Redundant Storage (GRS) Azure Recovery Services vaults
+### BK-2 - すべての geo 冗長ストレージ (GRS) Azure Recovery Services コンテナーをリージョン間復元にオプトインします
 
 **Category: Disaster Recovery**
 
@@ -69,9 +69,9 @@ Cross Region Restore allows you to restore Azure VMs in a secondary region, whic
 
 **Resources**
 
-- [Set Cross Region Restore](https://learn.microsoft.com/azure/backup/backup-create-recovery-services-vault#set-cross-region-restore)
-- [Azure Backup Best Practices](https://learn.microsoft.com/azure/backup/guidance-best-practices)
-- [Minimum Role Requirements for Cross Region Restore](https://learn.microsoft.com/azure/backup/backup-rbac-rs-vault#minimum-role-requirements-for-azure-vm-backup)
+- [Set Cross Region Restore](https://learn.microsoft.com/ja-jp/azure/backup/backup-create-recovery-services-vault#set-cross-region-restore)
+- [Azure Backup Best Practices](https://learn.microsoft.com/ja-jp/azure/backup/guidance-best-practices)
+- [Minimum Role Requirements for Cross Region Restore](https://learn.microsoft.com/ja-jp/azure/backup/backup-rbac-rs-vault#minimum-role-requirements-for-azure-vm-backup)
 - [Recovery Services Vault](https://azure.microsoft.com/documentation/articles/backup-azure-arm-vms-prepare/)
 
 **Resource Graph Query/Scripts**

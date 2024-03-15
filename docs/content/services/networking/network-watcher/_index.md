@@ -38,7 +38,7 @@ Azure Network Watcher provides a suite of tools to monitor, diagnose, view metri
 
 **Resources**
 
-- [What is Azure Network Watcher?](https://learn.microsoft.com/azure/network-watcher/network-watcher-overview)
+- [What is Azure Network Watcher?](https://learn.microsoft.com/ja-jp/azure/network-watcher/network-watcher-overview)
 
 **Resource Graph Query/Scripts**
 
@@ -62,7 +62,7 @@ Network security group flow logging is a feature of Azure Network Watcher that a
 
 **Resources**
 
-- [Manage NSG flow logs using the Azure portal](https://learn.microsoft.com/azure/network-watcher/nsg-flow-logging)
+- [Manage NSG flow logs using the Azure portal](https://learn.microsoft.com/ja-jp/azure/network-watcher/nsg-flow-logging)
 
 **Resource Graph Query/Scripts**
 

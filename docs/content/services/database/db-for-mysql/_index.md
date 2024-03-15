@@ -26,7 +26,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### MYSQL-1 - Enable HA with zone redundancy
+### MYSQL-1 - ゾーン冗長性による HA を有効化します
 
 **Category: Availability**
 
@@ -38,7 +38,7 @@ Enable HA with zone redundancy on flexible server instances. Zone redundant high
 
 **Resources**
 
-- [High availability concepts in Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/azure/mysql/flexible-server/concepts-high-availability)
+- [High availability concepts in Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/ja-jp/azure/mysql/flexible-server/concepts-high-availability)
 
 **Resource Graph Query/Scripts**
 
@@ -50,7 +50,7 @@ Enable HA with zone redundancy on flexible server instances. Zone redundant high
 
 <br><br>
 
-### MYSQL-2 - Enable custom maintenance schedule
+### MYSQL-2 - カスタムメンテナンススケジュールを有効にします
 
 **Category: System Efficiency**
 
@@ -62,7 +62,7 @@ Use custom maintenance schedule on flexible server instances to select a preferr
 
 **Resources**
 
-- [Scheduled maintenance in Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/azure/mysql/flexible-server/concepts-maintenance)
+- [Scheduled maintenance in Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/ja-jp/azure/mysql/flexible-server/concepts-maintenance)
 
 **Resource Graph Query/Scripts**
 

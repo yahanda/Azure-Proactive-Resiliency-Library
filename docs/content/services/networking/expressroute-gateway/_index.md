@@ -43,7 +43,7 @@ Connect each ExpressRoute Gateway to a minimum of two circuits, with each circui
 
 **Resources**
 
-- [Designing for disaster recovery with ExpressRoute private peering](https://learn.microsoft.com/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering)
+- [Designing for disaster recovery with ExpressRoute private peering](https://learn.microsoft.com/ja-jp/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering)
 
 **Resource Graph Query/Scripts**
 
@@ -67,9 +67,9 @@ Azure ExpressRoute gateway provides different SLAs when it’s deployed in a sin
 
 **Resources**
 
-- [About ExpressRoute virtual network gateways - Zone-redundant gateway SKUs](https://learn.microsoft.com/azure/expressroute/expressroute-about-virtual-network-gateways#zrgw)
-- [About zone-redundant virtual network gateway in Azure availability zones](https://learn.microsoft.com/azure/vpn-gateway/about-zone-redundant-vnet-gateways)
-- [Create a zone-redundant virtual network gateway in Azure Availability Zones](https://learn.microsoft.com/azure/vpn-gateway/create-zone-redundant-vnet-gateway)
+- [About ExpressRoute virtual network gateways - Zone-redundant gateway SKUs](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-about-virtual-network-gateways#zrgw)
+- [About zone-redundant virtual network gateway in Azure availability zones](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/about-zone-redundant-vnet-gateways)
+- [Create a zone-redundant virtual network gateway in Azure Availability Zones](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/create-zone-redundant-vnet-gateway)
 
 **Resource Graph Query/Scripts**
 
@@ -93,7 +93,7 @@ Configure an Azure Resource lock for ExpressRoute Gateway to prevent accidental 
 
 **Resources**
 
-- [Protect your Azure resources with a lock - Azure Resource Manager | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources?tabs=json)
+- [Protect your Azure resources with a lock - Azure Resource Manager | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/lock-resources?tabs=json)
 
 **Resource Graph Query/Scripts**
 
@@ -123,8 +123,8 @@ Configure alerts for scalability metrics for active flows based on the supported
 
 **Resources**
 
-- [ExpressRoute monitoring, metrics, and alerts | ExpressRoute gateways](https://learn.microsoft.com/azure/expressroute/expressroute-monitoring-metrics-alerts#expressroute-gateways)
-- [Azure ExpressRoute Insights using Network Insights](https://learn.microsoft.com/en-us/azure/expressroute/expressroute-network-insights)
+- [ExpressRoute monitoring, metrics, and alerts | ExpressRoute gateways](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-monitoring-metrics-alerts#expressroute-gateways)
+- [Azure ExpressRoute Insights using Network Insights](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-network-insights)
 
 **Resource Graph Query/Scripts**
 
@@ -150,8 +150,8 @@ Configure logging for GatewayDiagnosticLog and RouteDiagnosticLog. Create alerts
 
 **Resources**
 
-- [Troubleshooting Azure VPN Gateway using diagnostic logs | Microsoft Learn](https://learn.microsoft.com/azure/vpn-gateway/troubleshoot-vpn-with-azure-diagnostics)
-- [Configure alerts on diagnostic resource log events - Azure VPN Gateway | Microsoft Learn](https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log)
+- [Troubleshooting Azure VPN Gateway using diagnostic logs | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/troubleshoot-vpn-with-azure-diagnostics)
+- [Configure alerts on diagnostic resource log events - Azure VPN Gateway | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log)
 
 **Resource Graph Query/Scripts**
 
@@ -173,11 +173,11 @@ Configure logging for GatewayDiagnosticLog and RouteDiagnosticLog. Create alerts
 
 By default, connectivity between virtual networks is enabled when you link multiple virtual networks, each with an ExpressRoute Gateway, to the same ExpressRoute circuit. However, Microsoft advises against using your ExpressRoute circuit for communication between virtual networks and instead use other techniques such as VNet peering, routing in a VNet hub via Azure Firewall, NVA and/or Azure Route Server, site-to-site VPN within Azure, the use of virtual WAN, or the use of SD-WAN.
 
-For more information about why VNet-to-VNet connectivity isn’t recommended over ExpressRoute, see: [Connectivity between virtual networks over ExpressRoute | Microsoft Learn](https://learn.microsoft.com/azure/expressroute/virtual-network-connectivity-guidance)
+For more information about why VNet-to-VNet connectivity isn’t recommended over ExpressRoute, see: [Connectivity between virtual networks over ExpressRoute | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/expressroute/virtual-network-connectivity-guidance)
 
 **Resources**
 
-- [About ExpressRoute virtual network gateways - VNet-to-VNet connectivity](https://learn.microsoft.com/azure/expressroute/expressroute-about-virtual-network-gateways#vnet-to-vnet-connectivity)
+- [About ExpressRoute virtual network gateways - VNet-to-VNet connectivity](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-about-virtual-network-gateways#vnet-to-vnet-connectivity)
 
 **Resource Graph Query/Scripts**
 
@@ -201,7 +201,7 @@ ExpressRoute virtual network gateways undergo regular updates to enhance functio
 
 **Resources**
 
-- [Configure customer-controlled maintenance for your virtual network gateway - ExpressRoute | Microsoft Learn](https://learn.microsoft.com/en-us/azure/expressroute/customer-controlled-gateway-maintenance#azure-portal-steps)
+- [Configure customer-controlled maintenance for your virtual network gateway - ExpressRoute | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/expressroute/customer-controlled-gateway-maintenance#azure-portal-steps)
 
 **Resource Graph Query/Scripts**
 

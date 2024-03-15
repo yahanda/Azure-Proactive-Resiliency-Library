@@ -1,90 +1,90 @@
 +++
 title = "Contributing"
-description = "Contribution Guide for the Azure Proactive Resiliency Library (APRL)"
+description = "Azure Proactive Resiliency Library (APRL) のコントリビューションガイド"
 weight = 3
 +++
-{{< panel title="Contributions Notice" style="warning" >}} Currently we can only accept contributions from Microsoft FTEs. In the future we will look to change this. {{< /panel >}}
+{{< panel title="Contributions Notice" style="warning" >}} 現在、Microsoft FTE からの投稿のみを受け付けています。将来的には、これを変更する予定です。 {{< /panel >}}
 
-Looking to contribute to the Azure Proactive Resiliency Library (APRL), well you have made it to the right place/page 👍
+Azure Proactive Resiliency Library (APRL) への貢献を検討している方は、適切な場所/ページにたどり着きました 👍
 
-Follow the below instructions, especially the pre-requisites, to get started contributing to the library.
+以下の指示、特に前提条件に従って、ライブラリへの貢献を開始してください。
 
-## Writing a recommendation
+## 推奨事項を書く
 
-APRL recommendations are intended to enable and accelerate the delivery of Well Architected Reliability Assessments. The purpose of APRL is not to replace existing Azure public documentation and guidance on best practices.
+APRLの推奨事項は、Well Architected Reliability Assessmentsの提供を可能にし、加速することを目的としています。APRL の目的は、ベスト プラクティスに関する既存の Azure パブリック ドキュメントやガイダンスを置き換えることではありません。
 
-Each recommendation should be actionable for the customer. The customer should be able to place the recommendation in their backlog and the engineer that picks it up should have complete clarity on the change that needs to be made and the specific resources that the change should be made to.
+各レコメンデーションは、顧客にとって実用的なものでなければなりません。顧客はレコメンデーションをバックログに配置でき、それを拾うエンジニアは、行う必要がある変更と、変更を行う必要がある特定のリソースを完全に明確にする必要があります。
 
-Each recommendation should include a descriptive title, a short guidance section that contains additional detail on the recommendation, links to public documentation that provide additional information related to the recommendation, and a query to identify resources that are not compliant with the recommendation. The title and guidance sections alone should provide sufficient information for a CSA to evaluate a resource.
+各推奨事項には、説明的なタイトル、推奨事項の詳細を含む短いガイダンス セクション、推奨事項に関連する追加情報を提供する公開ドキュメントへのリンク、および推奨事項に準拠していないリソースを特定するためのクエリを含める必要があります。タイトルとガイダンスのセクションだけでも、CSAがリソースを評価するのに十分な情報を提供する必要があります。
 
-Recommendations should not require the CSA to spend a lot of time on background reading, they should not be open to interpretation, and they should not be vague. Remember that the CSA delivering the WARA is reviewing a large number of Azure resources in a limited amount of time and is not an expert in every Azure service.
+推奨事項は、CSAがバックグラウンドの読み取りに多くの時間を費やすことを要求したり、解釈の余地があったり、曖昧であったりしてはなりません。WARA を提供する CSA は、限られた時間内に多数の Azure リソースをレビューしており、すべての Azure サービスの専門家ではないことに注意してください。
 
-**Examples**
+**例**
 
-- Good recommendation: Use a /24 subnet for the service
-- Bad recommendation: Size your subnet appropriately
+- 良い推奨事項: サービスに /24 サブネットを使用します
+- 悪い推奨事項: サブネットのサイズを適切に設定します
 
-Not all best practices make good APRL recommendations. If the best practice relates to a particular service configuration and can be checked with an ARG query, it probably makes for a good APRL recommendation. If the best practice is more aligned to general architectural concepts that are true for many service or workload types, we very likely already have a recommendation in the APRL WAF section that addresses the topic. If not, consider adding a WAF recommendation to APRL. If neither is the case, APRL may not be the best location for this content.
+すべてのベストプラクティスがAPRLの推奨に適しているわけではありません。ベストプラクティスが特定のサービス構成に関連し、ARGクエリで確認できる場合は、APRLの推奨事項として適切である可能性があります。ベスト プラクティスが、多くのサービスまたはワークロードの種類に当てはまる一般的なアーキテクチャの概念により整合している場合は、APRL WAF セクションにトピックに対処する推奨事項が既にある可能性が非常に高いです。そうでない場合は、APRL に WAF の推奨事項を追加することを検討してください。どちらも当てはまらない場合、APRLはこのコンテンツに最適な場所ではない可能性があります。
 
-## Context/Background
+## コンテキスト/背景
 
-Before jumping into the pre-requisites and specific section contribution guidance, please familiarize yourself with this context/background on how this library is built to help you contribute going forward.
+前提条件と特定のセクションのコントリビューションのガイダンスに飛び込む前に、このライブラリが今後のコントリビューションを支援するためにどのように構築されているかについて、このコンテキスト/背景をよく理解してください。
 
-This [site](https://aka.ms/aprl) is built using [Hugo](https://gohugo.io/), a static site generator, that's source code is stored in the [APRL GitHub repo](https://aka.ms/aprl/repo) (link in header of this site too) and is hosted on [GitHub Pages](https://pages.github.com), via the repo.
+この [site](https://aka.ms/aprl) は、静的サイトジェネレータである [Hugo](https://gohugo.io/) を使用して構築されており、ソースコードは [APRL GitHub リポジトリ](https://aka.ms/aprl/repo) (このサイトのヘッダーにもリンクされています) に保存され、リポジトリを介して [GitHub Pages](https://pages.github.com) でホストされています。
 
-The reason for the combination of Hugo & GitHub pages is to allow us to present an easy to navigate and consume library, rather than using a native GitHub repo, which is not easy to consume when there are lots of pages and folders. Also Hugo generates the site in such a way that it is also friendly for mobile consumers.
+HugoとGitHubのページを組み合わせた理由は、ページやフォルダがたくさんあるときに使いにくいネイティブのGitHubリポジトリを使用するのではなく、ナビゲートして利用しやすいライブラリを提示できるようにするためです。また、Hugoはモバイル利用者にとっても使いやすいようにサイトを生成します。
 
-### But I don't have any skills in Hugo?
+### でも私にはHugoのスキルがありません
 
-That's okay and you really don't need them. Hugo just needs you to be able to author markdown (`.md`) files and it does the rest when it generates the site 👍
+大丈夫です、スキルは本当に必要ありません。Hugoは、マークダウン('.md')ファイルを作成できるようにするだけで、残りの作業はサイト生成時に実行されます👍
 
-## Pre-Requisites
+## 前提条件
 
-Read and follow the below sections to leave you in a "ready state" to contribute to APRL.
+以下のセクションを読み、それに従って、APRLに貢献するための「準備完了状態」にしてください。
 
-A "ready state" means you have a forked copy of the [`Azure/Azure-Proactive-Resiliency-Library` repo](https://aka.ms/aprl/repo) cloned to your local machine and open in VS Code.
+"準備完了状態" とは、['Azure/Azure-Proactive-Resiliency-Library' リポジトリ](https://aka.ms/aprl/repo) のフォークされたコピーがローカル コンピューターに複製され、VS Code で開かれていることを意味します。
 
-## Run and Access a Local Copy of APRL During Development
+## 開発中にAPRLのローカルコピーを実行してアクセスする
 
-When in VS Code you should be able to open a terminal and run the below commands to access a copy of the APRL website from a local web server, provided by Hugo, using the following address [`http://localhost:1313/Azure-Proactive-Resiliency-Library/`](http://localhost:1313/Azure-Proactive-Resiliency-Library/):
+VS Code では、ターミナルを開き、次のコマンドを実行して、次のアドレス ['http://localhost:1313/Azure-Proactive-Resiliency-Library/'](http://localhost:1313/Azure-Proactive-Resiliency-Library/) を使用して、Hugo が提供するローカル Web サーバーから APRL Web サイトのコピーにアクセスできます。
 
 {{< code lang="text" >}}cd docs
 hugo server -D
 {{< /code >}}
 
-### Software/Applications
+### ソフトウェア/アプリケーション
 
-To contribute to this project/repo/library you will need the following installed:
+このプロジェクト/リポジトリ/ライブラリに貢献するには、次のものがインストールされている必要があります。
 
 {{< alert style="success" >}}
-You can use `winget` to install all the pre-requisites easily for you. See the [below section](#winget-install-commands)
+「winget」を使用して、すべての前提条件を簡単にインストールできます。[以下のセクション](#winget-install-commands)を参照してください。
 {{< /alert >}}
 
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/Download)
   - Extensions:
     - `editorconfig.editorconfig`, `streetsidesoftware.code-spell-checker`, `ms-vsliveshare.vsliveshare`, `medo64.render-crlf`, `vscode-icons-team.vscode-icons`
-    - VS Code will recommend automatically to install these when you open this repo, or a fork of it, in VS Code.
+    - VS Code では、VS Code でこのリポジトリまたはそのフォークを開くと、これらをインストールするように自動的に推奨されます。
 - [Hugo Extended](https://gohugo.io/installation/)
 
-### winget Install Commands
+### winget インストールコマンド
 
-To install `winget` follow the [install instructions here.](https://learn.microsoft.com/windows/package-manager/winget/#install-winget)
+「winget」をインストールするには、[インストール手順はこちら](https://learn.microsoft.com/windows/package-manager/winget/#install-winget)に従ってください。
 
 {{< code lang="text" >}}winget install --id 'Git.Git'
 winget install --id 'Microsoft.VisualStudioCode'
 winget install --id 'Hugo.Hugo.Extended'
 {{< /code >}}
 
-### Other requirements
+### その他の要件
 
 - [A GitHub profile/account](https://github.com/join)
-- A fork of the [`Azure/Azure-Proactive-Resiliency-Library` repo](https://aka.ms/aprl/repo) into your GitHub org/account and cloned locally to your machine
-  - Instructions on forking a repo and then cloning it can be found [here](https://docs.github.com/get-started/quickstart/fork-a-repo)
+- ['Azure/Azure-Proactive-Resiliency-Library' リポジトリ](https://aka.ms/aprl/repo) のフォークを GitHub 組織/アカウントに作成し、マシンにローカルに複製する
+  - リポジトリをフォークしてクローンする手順は [こちら](https://docs.github.com/get-started/quickstart/fork-a-repo) にあります。
 
-## Useful Resources
+## 役立つリソース
 
-Below are links to a number of useful resources to have when contributing to APRL:
+以下は、APRLに貢献する際に役立ついくつかのリソースへのリンクです。
 
 - [Ace Documentation Theme (that we use) - Docs](https://docs.vantage-design.com/ace/)
   - [Shortcodes - e.g. Code](https://docs.vantage-design.com/ace/shortcodes/)
@@ -94,9 +94,9 @@ Below are links to a number of useful resources to have when contributing to APR
 - [Hugo Docs](https://gohugo.io/documentation/)
 - [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 
-## Steps to do before contributing anything (after pre-requisites)
+## 何かを貢献する前に行うべき手順(前提条件の後)
 
-Run the following commands in your terminal of choice from the directory where you fork of the repo is located:
+リポジトリのフォークが配置されているディレクトリから選択したターミナルで次のコマンドを実行します。
 
 {{< code lang="text" >}}git checkout main
 git pull
@@ -106,26 +106,26 @@ git pull upstream main
 git push
 {{< /code >}}
 
-Doing this will ensure you have the latest changes from the upstream repo and you are ready to now create a new branch from `main` by running the below commands:
+これを行うと、アップストリーム リポジトリから最新の変更が取得され、次のコマンドを実行して 'main' から新しいブランチを作成する準備が整います。
 
 {{< code lang="text" >}}git checkout main
 git checkout -b <YOUR-DESIRED-BRANCH-NAME-HERE>
 {{< /code >}}
 
-## Creating a Service's Recommendation Page
+## サービスの推奨事項ページの作成
 
 {{< panel title="Important" style="danger" >}}
-Make sure you have followed the the [Steps to do before contributing anything (after pre-requisites)](#steps-to-do-before-contributing-anything-after-pre-requisites) before following this section.
+このセクションに従う前に、[何かを貢献する前に行う手順(前提条件の後)](#何かを貢献する前に行うべき手順(前提条件の後))に従っていることを確認してください。
 {{< /panel >}}
 
-The is a common task that is likely to be done is adding a new service to which you want to provide recommendations and supporting queries etc. for example Virtual Machines.
+実行される可能性が高い一般的なタスクは、推奨事項やサポート クエリなどを提供する新しいサービス (仮想マシンなど) を追加することです。
 
-For this task we use [Hugo's archetype](https://gohugo.io/content-management/archetypes/) features which enables you to create a whole directory for a new service with a lot of templated content ready for you to change and use. This can be called by using the following command `hugo new --kind service-bundle services/<category>/<service-name`
+このタスクでは、[Hugoのアーキタイプ](https://gohugo.io/content-management/archetypes/)機能を使用して、変更して使用できる多くのテンプレートコンテンツを含む新しいサービス用のディレクトリ全体を作成できます。これは、次のコマンド 'hugo new --kind service-bundle services/<category>/<service-name' を使用して呼び出すことができます。
 
-You can see source code of the directory archetype called `service-bundle` [here in the repo.](https://github.com/Azure/Azure-Proactive-Resiliency-Library/tree/main/docs/archetypes/service-bundle)
+「service-bundle」というディレクトリアーキタイプのソースコードをリポジトリの[こちら](https://github.com/Azure/Azure-Proactive-Resiliency-Library/tree/main/docs/archetypes/service-bundle)で見ることができます。
 
 {{< alert style="info" >}}
-For the steps below we will use the Virtual Machine service as an example. Please change this to the service you are wanting to create.
+以下の手順では、例として仮想マシンサービスを使用します。作成したいサービスに変更してください。
 {{< /alert >}}
 
 Steps to follow:
@@ -164,22 +164,22 @@ hugo new --kind service-bundle services/compute/virtual-machines
     - You can copy the recommendations labelled `CM-1` or `CM-2` multiple times to create more recommendations
 5. Update Azure Resource Graph queries, PowerShell, AZCLI scripts in the `code` folder within `virtual-machines`
     - You will see there is a folder, e.g. `cm-1`, `cm-2`, per recommendation to help with file structure organization
-6. Ensure you use the correct Azure resource abbreviations provided within our Cloud Adoption Framework (CAF) documentation [here](https://docs.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations). For example, use `vm` for Virtual Machines.
+6. Ensure you use the correct Azure resource abbreviations provided within our Cloud Adoption Framework (CAF) documentation [here](https://docs.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations). For example, use `vm` for Virtual Machines.
 7. Save, commit and push your changes to your branch and repo
 8. Create a [create a Pull Request](https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) into the `main` branch of the upstream repo
 9. Get it merged
 
 {{< alert style="success" >}}
-Don't forget you can see your changes live by running a local copy of the APRL website by following the guidance [here.](#run-and-access-a-local-copy-of-aprl-during-development)
+[こちら](#開発中にAPRLのローカルコピーを実行してアクセスする)のガイダンスに従って、APRLウェブサイトのローカルコピーを実行することで、変更をライブで確認できることを忘れないでください。
 {{< /alert >}}
 
-## Automation Standards for Recommendations
+## レコメンデーションの自動化標準
 
-When creating recommendations for a service, please follow the below standards:
+サービスのレコメンデーションを作成するときは、以下の基準に従ってください。
 
-### Recommendation categories
+### レコメンデーションカテゴリ
 
-Each recommendation should have _**one and only one**_ associated category from this list below.
+各レコメンデーションには、以下の一覧から _**1 つだけ **_ カテゴリが関連付けられている必要があります。
 
   | Recommendation Category | Category Description |
   |:---:|:---:|
@@ -194,27 +194,27 @@ Each recommendation should have _**one and only one**_ associated category from 
   | Networking | Aims to ensure uninterrupted network service through techniques like failover routing, load balancing, and redundancy. Focuses on maintaining the integrity and availability of network connections. |
   | Storage | Focuses on the integrity and availability of data storage systems. Employs techniques like RAID, data replication, and backups to safeguard against data loss or corruption. |
 
-### Azure Resource Graph (ARG) Queries
+### Azure Resource Graph (ARG) クエリ
 
-1. All ARG queries should have two comments at the top of the query, one comment stating  `Azure Resource Graph Query` and another comment providing a description of the query results returned. For example:
+1. すべての ARG クエリには、クエリの上部に 2 つのコメント (1 つは "Azure Resource Graph クエリ" を示すコメント、もう 1 つは返されたクエリ結果の説明を提供するコメント) が必要です。例えば：
 
     ```kql
     // Azure Resource Graph Query
     // Provides a list of Azure Container Registry resources that do not have soft delete enabled
     ```
 
-1. If the ARG query is under development, the query should have a single line stating: `// under-development`
+1. ARG クエリが開発中の場合、クエリには「// under-development」という 1 行が必要です。
 
-1. If a recommendation query cannot be returned due to limitations with the data provided within ARG, the query should have a single line stating: `// cannot-be-validated-with-arg`
+1. ARG内で提供されるデータの制限によりレコメンデーションクエリを返すことができない場合、クエリには「// cannot-be-validated-with-arg」という1行が必要です。
 
-1. Queries should only return resources that do not adhere to the APRL recommendation. For example, if the recommendation is to enable soft delete for Azure Container Registries, the associated query should only return Azure Container Registry resources that do not have soft delete enabled.
+1. クエリは、APRL の推奨事項に準拠していないリソースのみを返す必要があります。たとえば、Azure Container Registries の論理的な削除を有効にすることが推奨される場合、関連付けられているクエリは、論理的な削除が有効になっていない Azure Container Registry リソースのみを返す必要があります。
 
-1. If a ARG query folder has a file with a file type suffixed with `.fix`, this means that the current query does not work as anticipated and to consider using this as a starting point for fixing the query. Once you have validated that the query is working as anticipated, please remove the file with the `.fix` suffix.
+1. ARGクエリフォルダにファイルタイプの拡張子が「.fix」のファイルがある場合、これは現在のクエリが期待どおりに機能しないことを意味し、これをクエリを修正するための開始点として使用することを検討してください。クエリが期待どおりに動作していることを確認したら、接尾辞が '.fix' のファイルを削除してください。
 
-1. ARG query columns name returned should only include the following:
+1. 返される ARG クエリ列名には、次のもののみを含める必要があります。
 
 {{< alert style="info" >}}
-NOTE: The column names should be in the order they are listed and match exactly.
+NOTE: 列名は、リストされている順序で、完全に一致する必要があります。
 {{< /alert >}}
 
   | Column Name | Required | Information Returned (Example) | Description |
@@ -230,26 +230,26 @@ NOTE: The column names should be in the order they are listed and match exactly.
   | param5 | No | networkProfile:kubenet | Any additional information that is necessary to provide clarification for the APRL recommendation. |
 
 {{< alert style="info" >}}
-If you need support with validating a query, please reach out to the APRL team via the [APRL GitHub General Question/Feedback Form](https://github.com/Azure/Azure-Proactive-Resiliency-Library/issues/new?assignees=&labels=feedback%2C+question&projects=&template=general-question-feedback----.md&title=%E2%9D%93%F0%9F%91%82+Question%2FFeedback+-+PLEASE+CHANGE+ME+TO+SOMETHING+DESCRIPTIVE)
+クエリの検証に関するサポートが必要な場合は、[APRL GitHub General Question/Feedback Form](https://github.com/Azure/Azure-Proactive-Resiliency-Library/issues/new?assignees=&labels=feedback%2C+question&projects=&template=general-question-feedback----.md&title=%E2%9D%93%F0%9F%91%82+Question%2FFeedback+-+PLEASE+CHANGE+ME+TO+SOMETHING+DESCRIPTIVE) から APRL チームにお問い合わせください。
 {{< /alert >}}
 
-### Azure PowerShell Scripts
+### Azure PowerShell スクリプト
 
-1. All PowerShell scripts should have two comments at the top of the script, one comment stating `Azure PowerShell script` and another comment providing a description of the script results returned. For example:
+1. すべての PowerShell スクリプトには、スクリプトの上部に 2 つのコメント (1 つは "Azure PowerShell スクリプト" を示すコメント、もう 1 つは返されたスクリプト結果の説明を提供するコメント) が必要です。例えば：
 
     ```powershell
     # Azure PowerShell script
     # Provides a list of Azure Container Registry resources that do not have soft delete enabled
     ```
 
-1. Scripts should only return resources that do not adhere to the APRL recommendation. For example, if the recommendation is to enable soft delete for Azure Container Registries, the associated scripts should only return Azure Container Registry resources that do not have soft delete enabled.
+1. スクリプトは、APRL の推奨事項に準拠していないリソースのみを返す必要があります。たとえば、Azure コンテナー レジストリの論理的な削除を有効にすることが推奨される場合、関連付けられているスクリプトは、論理的な削除が有効になっていない Azure Container Registry リソースのみを返す必要があります。
 
-1. Scripts should exclusively contain code to retrieve resources that do not comply with the APRL recommendation. They should not include supporting code, such as Azure sign-in ([Connect-AzAccount](https://learn.microsoft.com/en-us/powershell/module/az.accounts/connect-azaccount), Login-AzAccount) or subscription selection ([Set-AzContext](https://learn.microsoft.com/en-us/powershell/module/az.accounts/set-azcontext), Select-AzSubscription). Execute these cmdlets separately from the APRL recommendation PowerShell script.
+1. スクリプトには、APRL勧告に準拠していないリソースを取得するためのコードのみを含める必要があります。Azure サインイン ([Connect-AzAccount](https://learn.microsoft.com/ja-jp/powershell/module/az.accounts/connect-azaccount), Login-AzAccount) やサブスクリプションの選択 ([Set-AzContext](https://learn.microsoft.com/ja-jp/powershell/module/az.accounts/set-azcontext), Select-AzSubscription) などのサポート コードを含めることはできません。これらのコマンドレットは、APRL レコメンデーション PowerShell スクリプトとは別に実行します。
 
-1. The script should return the result as an array of the `PSCustomObject` data type, with each result object containing only the following properties:
+1. スクリプトは、結果を 'PSCustomObject' データ型の配列として返し、各結果オブジェクトには次のプロパティのみを含める必要があります。
 
     {{< alert style="info" >}}
-NOTE: The property names should be in the order they are listed and match exactly.
+NOTE: プロパティ名は、リストされている順序で、正確に一致している必要があります。
 {{< /alert >}}
 
     | Property Name | Data Type | Required | Information Returned (Example) | Description |
@@ -257,7 +257,7 @@ NOTE: The property names should be in the order they are listed and match exactl
     | recommendationId | string | Yes | aks-1 | The acronym of the Azure service that the query is returning results for, followed by the APRL recommendation number. |
     | name | string | Yes | test-aks | The resource name of the Azure resource that does not adher to the APRL recommendation. |
     | id | string | Yes | /subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/test-resource-group/providers/Microsoft.ContainerService/managedClusters/test-aks | The resource ID of the Azure resource that does not adhere to the APRL recommendation. |
-    | tags | PSCustomObject | No | {"Environment":"Test","Department":"IT"} | Any relevant tags associated to the resource that does not adhere to the APRL recommendation. The data type should match the data type of `tags` in the result of ARG queries by [Search-AzGraph](https://learn.microsoft.com/en-us/powershell/module/az.resourcegraph/search-azgraph). If not set tags, set `$null`. |
+    | tags | PSCustomObject | No | {"Environment":"Test","Department":"IT"} | Any relevant tags associated to the resource that does not adhere to the APRL recommendation. The data type should match the data type of `tags` in the result of ARG queries by [Search-AzGraph](https://learn.microsoft.com/ja-jp/powershell/module/az.resourcegraph/search-azgraph). If not set tags, set `$null`. |
     | param1 | string | No | networkProfile:kubenet | Any additional information that is necessary to provide clarification for the APRL recommendation. |
     | param2 | string | No | networkProfile:kubenet | Any additional information that is necessary to provide clarification for the APRL recommendation. |
     | param3 | string | No | networkProfile:kubenet | Any additional information that is necessary to provide clarification for the APRL recommendation. |
@@ -281,35 +281,35 @@ NOTE: The property names should be in the order they are listed and match exactl
     ```
 
 {{< alert style="info" >}}
-If you need support with validating a script, please reach out to the APRL team via the [APRL GitHub General Question/Feedback Form](https://github.com/Azure/Azure-Proactive-Resiliency-Library/issues/new?assignees=&labels=feedback%2C+question&projects=&template=general-question-feedback----.md&title=%E2%9D%93%F0%9F%91%82+Question%2FFeedback+-+PLEASE+CHANGE+ME+TO+SOMETHING+DESCRIPTIVE)
+スクリプトの検証に関するサポートが必要な場合は、[APRL GitHub General Question/Feedback Form](https://github.com/Azure/Azure-Proactive-Resiliency-Library/issues/new?assignees=&labels=feedback%2C+question&projects=&template=general-question-feedback----.md&title=%E2%9D%93%F0%9F%91%82+Question%2FFeedback+-+PLEASE+CHANGE+ME+TO+SOMETHING+DESCRIPTIVE)からAPRLチームに連絡してください。
 {{< /alert >}}
 
-## Updating a Service's Recommendation Page
+## サービスの推奨事項ページの更新
 
 {{< panel title="Important" style="danger" >}}
-Make sure you have followed the the [Steps to do before contributing anything (after pre-requisites)](#steps-to-do-before-contributing-anything-after-pre-requisites) before following this section.
+このセクションに従う前に、[何かを貢献する前に行う手順(前提条件の後)](#何かを貢献する前に行う手順(前提条件の後))に従っていることを確認してください。
 {{< /panel >}}
 
-This is likely the most common task that will be performed.
+これは、おそらく実行される最も一般的なタスクです。
 
-All you need to do is just make edits directly to the existing markdown (`.md`) files, save your changes, commit, stage and push them to your branch and repo. Then [create a Pull Request](https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) into the `main` branch of the upstream repo and you are done 👍
+必要なのは、既存のマークダウン ('.md') ファイルを直接編集し、変更を保存し、コミットし、ステージングして、ブランチとリポジトリにプッシュすることだけです。次に、[pull request](https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)をアップストリームリポジトリの 'main'ブランチに作成すれば完了です👍
 
 {{< alert style="success" >}}
-Don't forget you can see your changes live by running a local copy of the APRL website by following the guidance [here.](#run-and-access-a-local-copy-of-aprl-during-development)
+[こちら](#開発中にAPRLのローカルコピーを実行してアクセスする)のガイダンスに従って、APRLウェブサイトのローカルコピーを実行することで、変更をライブで確認できることを忘れないでください。
 {{< /alert >}}
 
-## Creating a Service Category
+## サービスカテゴリの作成
 
 {{< panel title="Important" style="danger" >}}
-Make sure you have followed the the [Steps to do before contributing anything (after pre-requisites)](#steps-to-do-before-contributing-anything-after-pre-requisites) before following this section.
+このセクションに従う前に、[何かを貢献する前に行う手順(前提条件の後)](#何かを貢献する前に行う手順(前提条件の後))に従っていることを確認してください。
 {{< /panel >}}
 
-For this task we use [Hugo's archetype](https://gohugo.io/content-management/archetypes/) features which enables you to create a whole directory for a new service with a lot of templated content ready for you to change and use. This can be called by using the following command `hugo new --kind category-bundle services/<category>`
+このタスクでは、[Hugoのアーキタイプ](https://gohugo.io/content-management/archetypes/)機能を使用して、変更して使用できる多くのテンプレートコンテンツを含む新しいサービス用のディレクトリ全体を作成できます。これは、次のコマンド 'hugo new --kind category-bundle services/<category>' を使用して呼び出すことができます。
 
-You can see source code of the directory archetype called `category-bundle` [here in the repo.](https://github.com/Azure/Azure-Proactive-Resiliency-Library/tree/main/docs/archetypes/category-bundle)
+「category-bundle」というディレクトリアーキタイプのソースコードをリポジトリの[こちら](https://github.com/Azure/Azure-Proactive-Resiliency-Library/tree/main/docs/archetypes/category-bundle)で見ることができます。
 
 {{< alert style="info" >}}
-For the steps below we will use the AAA category as an example. Please change this to the category you are wanting to create.
+以下の手順では、例として AAA カテゴリを使用します。作成したいカテゴリに変更してください。
 {{< /alert >}}
 
 Steps to follow:
@@ -341,10 +341,10 @@ hugo new --kind category-bundle services/aaa
 7. Get it merged
 
 {{< alert style="success" >}}
-Don't forget you can see your changes live by running a local copy of the APRL website by following the guidance [here.](#run-and-access-a-local-copy-of-aprl-during-development)
+[こちら](#開発中にAPRLのローカルコピーを実行してアクセスする)のガイダンスに従って、APRLウェブサイトのローカルコピーを実行することで、変更をライブで確認できることを忘れないでください。
 {{< /alert >}}
 
-## Top Tips
+## 重要なヒント
 
-1. Sometimes the local version of the website may show some inconsistencies that don't reflect the content you have created.
-     - If this happens, simply kill the Hugo local web server by pressing <kbd>CTRL</kbd>+<kbd>C</kbd> and then restart the Hugo web server by running `hugo server -D` from the `docs/` directory
+1.Webサイトのローカルバージョンには、作成したコンテンツを反映していない不整合が表示される場合があります。
+     - これが発生した場合は、<kbd>CTRL</kbd>+<kbd>C</kbd>を押してHugoローカルWebサーバを強制終了し、'docs/'ディレクトリから'hugo server -D'を実行してHugoWebサーバを再起動します

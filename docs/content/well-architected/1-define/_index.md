@@ -47,8 +47,8 @@ For example, if you are striving to achieve an application Service Level Objecti
 
 **Resources**
 
-- [Use business metrics to design resilient Azure applications](https://learn.microsoft.com/azure/well-architected/resiliency/business-metrics#workload-availability-targets)
-- [Target functional and nonfunctional requirements](https://learn.microsoft.com/azure/well-architected/resiliency/design-requirements)
+- [Use business metrics to design resilient Azure applications](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/business-metrics#workload-availability-targets)
+- [Target functional and nonfunctional requirements](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/design-requirements)
 
 <br><br>
 
@@ -74,6 +74,6 @@ Monitoring and measuring application availability is vital to qualifying overall
 
 **Resources**
 
-- [Target functional and nonfunctional requirements](https://learn.microsoft.com/azure/well-architected/resiliency/design-requirements)
+- [Target functional and nonfunctional requirements](https://learn.microsoft.com/ja-jp/azure/well-architected/resiliency/design-requirements)
 
 <br><br>

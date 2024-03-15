@@ -25,7 +25,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### SBNS-1 - Enable Availability Zones for Service Bus namespaces
+### SBNS-1 - Service Bus 名前空間の可用性ゾーンを有効にします
 
 **Category: Availability**
 
@@ -37,9 +37,9 @@ Use Service Bus with zone redundancy for production workloads. The Service Bus P
 
 **Resources**
 
-- [Service Bus and reliability](https://learn.microsoft.com/en-us/azure/well-architected/services/messaging/service-bus/reliability)
-- [Azure Service Bus Geo-disaster recovery](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-geo-dr#availability-zones)
-- [Insulate Azure Service Bus applications against outages and disasters](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-outages-disasters)
+- [Service Bus and reliability](https://learn.microsoft.com/ja-jp/azure/well-architected/services/messaging/service-bus/reliability)
+- [Azure Service Bus Geo-disaster recovery](https://learn.microsoft.com/ja-jp/azure/service-bus-messaging/service-bus-geo-dr#availability-zones)
+- [Insulate Azure Service Bus applications against outages and disasters](https://learn.microsoft.com/ja-jp/azure/service-bus-messaging/service-bus-outages-disasters)
 
 **Resource Graph Query/Scripts**
 

@@ -7,7 +7,7 @@ msAuthor = "rehezser"
 draft = false
 +++
 
-The presented resiliency recommendations in this guidance include IoT Hub and associated resources and settings. General guidance are available in the Well-Architected Framework for IoT [Reliability in your IoT workload](https://learn.microsoft.com/en-us/azure/well-architected/iot/iot-reliability).
+The presented resiliency recommendations in this guidance include IoT Hub and associated resources and settings. General guidance are available in the Well-Architected Framework for IoT [Reliability in your IoT workload](https://learn.microsoft.com/ja-jp/azure/well-architected/iot/iot-reliability).
 
 ## Summary of Recommendations
 
@@ -31,7 +31,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### IOTH-1 - Device Identities are exported to a secondary region
+### IOTH-1 - デバイス ID をセカンダリ リージョンにエクスポートします
 
 **Category: Disaster Recovery**
 
@@ -45,8 +45,8 @@ Manual Failover of IoT Hub to another region is faster (RTO) and can be used for
 
 **Resources**
 
-- [Import and export IoT Hub device identities in bulk](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-bulk-identity-mgmt)
-- [IoT Hub high availability and disaster recovery](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-ha-dr#manual-failover)
+- [Import and export IoT Hub device identities in bulk](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-bulk-identity-mgmt)
+- [IoT Hub high availability and disaster recovery](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-ha-dr#manual-failover)
 
 **Resource Graph Query/Scripts**
 
@@ -58,7 +58,7 @@ Manual Failover of IoT Hub to another region is faster (RTO) and can be used for
 
 <br><br>
 
-### IOTH-2 - Do not use free tier
+### IOTH-2 - 無料利用枠を使用しないでください
 
 **Category: Availability**
 
@@ -70,7 +70,7 @@ In a production scenario the IoT Hub tier should not be Free, as the Free tier d
 
 **Resources**
 
-- [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling)
+- [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-scaling)
 
 **Resource Graph Query/Scripts**
 
@@ -82,7 +82,7 @@ In a production scenario the IoT Hub tier should not be Free, as the Free tier d
 
 <br><br>
 
-### IOTH-3 - Use Availability Zones
+### IOTH-3 - 可用性ゾーンを使用します
 
 **Category: Availability**
 
@@ -94,7 +94,7 @@ In a region that supports Availability Zones for IoT Hub, these Zones should be 
 
 **Resources**
 
-- [Azure IoT Hub high availability and disaster recovery](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-ha-dr#availability-zones)
+- [Azure IoT Hub high availability and disaster recovery](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-ha-dr#availability-zones)
 
 **Resource Graph Query/Scripts**
 
@@ -106,7 +106,7 @@ In a region that supports Availability Zones for IoT Hub, these Zones should be 
 
 <br><br>
 
-### IOTH-4 - Use Device Provisioning Service
+### IOTH-4 - Device Provisioning Service を使用します
 
 **Category: System Efficiency**
 
@@ -120,9 +120,9 @@ Even IoT Hubs that are associated to a Device Provisioning Service need to be ch
 
 **Resources**
 
-- [IoT Hub Device Provisioning Service (DPS) terminology](https://learn.microsoft.com/en-us/azure/iot-dps/concepts-service)
-- [Best practices for large-scale IoT device deployments](https://learn.microsoft.com/en-us/azure/iot-dps/concepts-deploy-at-scale)
-- [IoT Hub Device Provisioning Service high availability and disaster recovery](https://learn.microsoft.com/en-us/azure/iot-dps/iot-dps-ha-dr)
+- [IoT Hub Device Provisioning Service (DPS) terminology](https://learn.microsoft.com/ja-jp/azure/iot-dps/concepts-service)
+- [Best practices for large-scale IoT device deployments](https://learn.microsoft.com/ja-jp/azure/iot-dps/concepts-deploy-at-scale)
+- [IoT Hub Device Provisioning Service high availability and disaster recovery](https://learn.microsoft.com/ja-jp/azure/iot-dps/iot-dps-ha-dr)
 
 **Resource Graph Query/Scripts**
 
@@ -134,7 +134,7 @@ Even IoT Hubs that are associated to a Device Provisioning Service need to be ch
 
 <br><br>
 
-### IOTH-5 - Define Failover Guidelines
+### IOTH-5 - フェイルオーバーガイドラインを定義します
 
 **Category: Availability**
 
@@ -149,7 +149,7 @@ In case of a regional failure, an IoT Hub can failover to a second region. This 
 
 **Resources**
 
-- [IoT Hub high availability and disaster recovery](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-ha-dr)
+- [IoT Hub high availability and disaster recovery](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-ha-dr)
 
 **Resource Graph Query/Scripts**
 
@@ -161,7 +161,7 @@ In case of a regional failure, an IoT Hub can failover to a second region. This 
 
 <br><br>
 
-### IOTH-6 - Disabled Fallback Route
+### IOTH-6 - フォールバックルートを無効化します
 
 **Category: Monitoring**
 
@@ -173,7 +173,7 @@ If message routing is used to route messages to custom endpoints, it can happen 
 
 **Resources**
 
-- [Use message routing - Fallback route](https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-d2c#fallback-route)
+- [Use message routing - Fallback route](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-devguide-messages-d2c#fallback-route)
 
 **Resource Graph Query/Scripts**
 

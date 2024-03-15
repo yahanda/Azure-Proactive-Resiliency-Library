@@ -40,8 +40,8 @@ Deploying your App Service plans and App Service Environments across availabilit
 
 **Resources**
 
-- [Migrate App Service to availability zone support](https://learn.microsoft.com/en-us/azure/reliability/migrate-app-service)
-- [High availability enterprise deployment using App Service Environment](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/enterprise-integration/ase-high-availability-deployment)
+- [Migrate App Service to availability zone support](https://learn.microsoft.com/ja-jp/azure/reliability/migrate-app-service)
+- [High availability enterprise deployment using App Service Environment](https://learn.microsoft.com/ja-jp/azure/architecture/reference-architectures/enterprise-integration/ase-high-availability-deployment)
 
 **Resource Graph Query/Scripts**
 
@@ -65,7 +65,7 @@ The use of the Standard or Premium tier for Azure App Service Plan is crucial fo
 
 **Resources**
 
-- [Resiliency checklist for specific Azure services](https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service#app-service)
+- [Resiliency checklist for specific Azure services](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#app-service)
 
 **Resource Graph Query/Scripts**
 
@@ -89,7 +89,7 @@ It is recommended to avoid scaling up or down your Azure App Service instances f
 
 **Resources**
 
-- [Resiliency checklist for specific Azure services](https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service#app-service)
+- [Resiliency checklist for specific Azure services](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#app-service)
 
 **Resource Graph Query/Scripts**
 
@@ -113,7 +113,7 @@ It is strongly recommended to create separate App Service plans for production a
 
 **Resources**
 
-- [Resiliency checklist for specific Azure services](https://learn.microsoft.com/en-us/azure/architecture/checklist/resiliency-per-service#app-service)
+- [Resiliency checklist for specific Azure services](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#app-service)
 
 **Resource Graph Query/Scripts**
 
@@ -137,8 +137,8 @@ It is highly recommended to enable Autoscale/Automatic Scaling for your Azure Ap
 
 **Resources**
 
-- [Automatic scaling in Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling?tabs=azure-portal)
-- [Auto Scale Web Apps](https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started)
+- [Automatic scaling in Azure App Service](https://learn.microsoft.com/ja-jp/azure/app-service/manage-automatic-scaling?tabs=azure-portal)
+- [Auto Scale Web Apps](https://learn.microsoft.com/ja-jp/azure/azure-monitor/autoscale/autoscale-get-started)
 
 **Resource Graph Query/Scripts**
 

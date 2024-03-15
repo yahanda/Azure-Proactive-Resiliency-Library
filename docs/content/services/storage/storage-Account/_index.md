@@ -53,7 +53,7 @@ Data in an Azure Storage account is always replicated three times in the primary
 
 **Resources**
 
-- [Azure Storage redundancy](https://learn.microsoft.com/azure/storage/common/storage-redundancy)
+- [Azure Storage redundancy](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-redundancy)
 
 **Resource Graph Query/Scripts**
 
@@ -78,7 +78,7 @@ Azure classic Storage Account will retire 31 august 2024. So migrate all workloa
 **Resources**
 
 - [Azure classic storage accounts retirement announcement](https://azure.microsoft.com/updates/classic-azure-storage-accounts-will-be-retired-on-31-august-2024/)
-- [Migrate your classic storage accounts to Azure Resource Manager](https://learn.microsoft.com/en-us/azure/storage/common/classic-account-migration-overview)
+- [Migrate your classic storage accounts to Azure Resource Manager](https://learn.microsoft.com/ja-jp/azure/storage/common/classic-account-migration-overview)
 
 **Resource Graph Query/Scripts**
 
@@ -102,7 +102,7 @@ Consider using appropriate storage performance tier for standard storage / block
 
 **Resources**
 
-- [Performance Tier](https://learn.microsoft.com/azure/storage/common/storage-account-overview#performance-tiers )
+- [Performance Tier](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-account-overview#performance-tiers )
 
 **Resource Graph Query/Scripts**
 
@@ -132,8 +132,8 @@ Page blobs are a collection of 512-byte pages optimized for random read and writ
 
 **Resources**
 
-- [Understanding block blobs, append blobs, and page blobs](https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs)
-- [Scalability and performance targets for Blob storage](https://learn.microsoft.com/en-us/azure/storage/blobs/scalability-targets)
+- [Understanding block blobs, append blobs, and page blobs](https://learn.microsoft.com/ja-jp/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs)
+- [Scalability and performance targets for Blob storage](https://learn.microsoft.com/ja-jp/azure/storage/blobs/scalability-targets)
 
 **Resource Graph Query/Scripts**
 
@@ -182,7 +182,7 @@ Having a large number of versions per blob can increase the latency for blob lis
 
 **Resources**
 
-- [Blob versioning](https://learn.microsoft.com/azure/storage/blobs/versioning-overview )
+- [Blob versioning](https://learn.microsoft.com/ja-jp/azure/storage/blobs/versioning-overview )
 
 **Script**
 
@@ -207,7 +207,7 @@ Point and time restore support general purpose v2 account in standard performanc
 
 **Resources**
 
-- [Restore overview](https://learn.microsoft.com/azure/storage/blobs/point-in-time-restore-manage?tabs=portal)
+- [Restore overview](https://learn.microsoft.com/ja-jp/azure/storage/blobs/point-in-time-restore-manage?tabs=portal)
 
 **Script**
 
@@ -231,7 +231,7 @@ Enabling diagnostic settings allow you to capture and view diagnostic informatio
 
 **Resources**
 
-- [Diagnostic Setting for Storage Account](https://learn.microsoft.com/en-us/azure/storage/blobs/monitor-blob-storage)
+- [Diagnostic Setting for Storage Account](https://learn.microsoft.com/ja-jp/azure/storage/blobs/monitor-blob-storage)
 
 **Script**
 
@@ -257,8 +257,8 @@ Upgrading to a general-purpose v2 storage account from your general-purpose v1 o
 
 **Resources**
 
-- [Legacy storage account types](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview#legacy-storage-account-types)
-- [Upgrade to a general-purpose v2 storage account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-upgrade)
+- [Legacy storage account types](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-account-overview#legacy-storage-account-types)
+- [Upgrade to a general-purpose v2 storage account](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-account-upgrade)
 
 **Script**
 

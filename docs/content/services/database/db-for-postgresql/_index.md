@@ -26,7 +26,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### PSQL-1 - Enable HA with zone redundancy
+### PSQL-1 - ゾーン冗長性による HA を有効化します
 
 **Category: Availability**
 
@@ -38,7 +38,7 @@ Enable HA with zone redundancy on flexible server instances. Zone redundant high
 
 **Resources**
 
-- [Overview of high availability with Azure Database for PostgreSQL](https://learn.microsoft.com/azure/postgresql/flexible-server/concepts-high-availability)
+- [Overview of high availability with Azure Database for PostgreSQL](https://learn.microsoft.com/ja-jp/azure/postgresql/flexible-server/concepts-high-availability)
 
 **Resource Graph Query**
 
@@ -50,7 +50,7 @@ Enable HA with zone redundancy on flexible server instances. Zone redundant high
 
 <br><br>
 
-### PSQL-2 - Enable custom maintenance schedule
+### PSQL-2 - カスタムメンテナンススケジュールを有効にします
 
 **Category: System Efficiency**
 
@@ -62,7 +62,7 @@ Use custom maintenance schedule on flexible server instances to select a preferr
 
 **Resources**
 
-- [Scheduled maintenance in Azure Database for PostgreSQL - Flexible Server](https://learn.microsoft.com/azure/postgresql/flexible-server/concepts-maintenance)
+- [Scheduled maintenance in Azure Database for PostgreSQL - Flexible Server](https://learn.microsoft.com/ja-jp/azure/postgresql/flexible-server/concepts-maintenance)
 
 **Resource Graph Query**
 

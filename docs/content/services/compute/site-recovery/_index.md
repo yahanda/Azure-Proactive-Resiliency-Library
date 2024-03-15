@@ -27,7 +27,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ASR-1 - Ensure static IP addresses configured in VM failover settings are available in the failover subnet
+### ASR-1 - VM フェールオーバー設定で構成された静的 IP アドレスがフェールオーバー サブネットで使用可能であることを確認します
 
 **Category: Disaster Recovery**
 
@@ -35,11 +35,11 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Ensure static IP addresses configured in VM failover settings are available in the failover subnet. During failover if the target subnet has the same address space as source then the same static ip address is assigned to target VM provided it is available, otherwise the next available IP address in the target subnet is set as the target VM NIC address. You can modify the target IP address in the Network settings of the VM.
+VM フェールオーバー設定で構成された静的 IP アドレスがフェールオーバー サブネットで使用できることを確認します。フェイルオーバー中に、ターゲットサブネットのアドレス空間がソースと同じ場合、同じ静的IPアドレスがターゲットVMに割り当てられ、そうでない場合は、ターゲットサブネットで次に使用可能なIPアドレスがターゲットVMのNICアドレスとして設定されます。ターゲット IP アドレスは、VM の ネットワーク設定 で変更できます。
 
 **Resources**
 
-- [Setup network mapping for site recovery](https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-network-mapping#set-up-ip-addressing-for-target-vms)
+- [Setup network mapping for site recovery](https://learn.microsoft.com/ja-jp/azure/site-recovery/azure-to-azure-network-mapping#set-up-ip-addressing-for-target-vms)
 
 **Resource Graph Query/Scripts**
 
@@ -51,7 +51,7 @@ Ensure static IP addresses configured in VM failover settings are available in t
 
 <br><br>
 
-### ASR-2 - Perform a test failover to validate the functionality and performance of the VMs in the target location
+### ASR-2 - テスト フェールオーバーを実行して、ターゲットの場所にある VM の機能とパフォーマンスを検証します
 
 **Category: Disaster Recovery**
 
@@ -59,12 +59,12 @@ Ensure static IP addresses configured in VM failover settings are available in t
 
 **Guidance**
 
-Perform a test failover to validate your BCDR strategy and ensure that your applications are functioning correctly in the target region. This can be done without impacting your production environment.
-Test your Disaster Recovery plan periodically without any data loss or downtime, using test failovers.
+テスト フェールオーバーを実行して BCDR 戦略を検証し、アプリケーションがターゲット リージョンで正しく機能していることを確認します。これは、運用環境に影響を与えることなく実行できます。
+テスト フェールオーバーを使用して、データの損失やダウンタイムが発生しないように、ディザスター リカバリー計画を定期的にテストします。
 
 **Resources**
 
-- [Run a test failover](https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill#run-a-test-failover)
+- [Run a test failover](https://learn.microsoft.com/ja-jp/azure/site-recovery/azure-to-azure-tutorial-dr-drill#run-a-test-failover)
 
 **Resource Graph Query/Scripts**
 

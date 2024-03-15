@@ -26,7 +26,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### IT-1 - Use Generation 2 virtual machine source image
+### IT-1 - 第 2 世代仮想マシンのソース イメージを使用します
 
 **Category: Availability**
 
@@ -34,15 +34,15 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-When building your Image Templates, utilize source images that support generation 2 virtual machines. Generation 2 VMs support key features that aren't supported in generation 1 VMs.These features include increased memory, support for larger >2TB disks, it uses the new UEFI-based boot architecture rather than the BIOS-based architecture used by generation 1 VMs which can improve boot and installation times, Intel Software Guard Extensions (Intel SGX), and virtualized persistent memory (vPMEM).
+イメージ テンプレートを構築するときは、第 2 世代仮想マシンをサポートするソース イメージを利用します。第 2 世代 VM は、第 1 世代 VM でサポートされていない主要な機能をサポートしています。これらの機能には、メモリの増加、より大きな > 2 TB ディスクのサポート、第 1 世代 VM で使用される BIOS ベースのアーキテクチャではなく新しい UEFI ベースのブート アーキテクチャの使用により、起動とインストールの時間を短縮できる、Intel Software Guard Extensions (Intel SGX)、仮想化永続メモリ (vPMEM) が含まれます。
 
 **Resources**
 
-- [Generation 1 vs generation 2 virtual machines](https://learn.microsoft.com/en-us/azure/virtual-machines/generation-2#features-and-capabilities)
+- [Generation 1 vs generation 2 virtual machines](https://learn.microsoft.com/ja-jp/azure/virtual-machines/generation-2#features-and-capabilities)
 
 <br><br>
 
-### IT-2 - Replicate your Image Templates to a secondary region
+### IT-2 - イメージテンプレートをセカンダリリージョンにレプリケートします
 
 **Category: Disaster Recovery**
 
@@ -50,12 +50,12 @@ When building your Image Templates, utilize source images that support generatio
 
 **Guidance**
 
-The Azure Image Builder service that is used to deploy Image Templates doesn't currently support availability zones. Therefore, when building your Image Templates, replicate them to a secondary region, preferably to your primary region's paired region. This will allow you to quickly recover from a region failure and continue to deploy virtual machines from your Image Templates.
+イメージ テンプレートのデプロイに使用される Azure Image Builder サービスでは、現在、可用性ゾーンはサポートされていません。したがって、イメージテンプレートを作成するときは、セカンダリリージョン(できればプライマリリージョンのペアリージョン)にレプリケートします。これにより、リージョンの障害から迅速に回復し、イメージ テンプレートから仮想マシンを引き続きデプロイできます。
 
 **Resources**
 
-- [Image Template resiliency](https://learn.microsoft.com/en-us/azure/reliability/reliability-image-builder?toc=%2Fazure%2Fvirtual-machines%2Ftoc.json&bc=%2Fazure%2Fvirtual-machines%2Fbreadcrumb%2Ftoc.json#capacity-and-proactive-disaster-recovery-resiliency)
-- [Azure Image Builder Supported Regions](https://learn.microsoft.com/en-us/azure/virtual-machines/image-builder-overview?tabs=azure-powershell#regions)
+- [Image Template resiliency](https://learn.microsoft.com/ja-jp/azure/reliability/reliability-image-builder?toc=%2Fazure%2Fvirtual-machines%2Ftoc.json&bc=%2Fazure%2Fvirtual-machines%2Fbreadcrumb%2Ftoc.json#capacity-and-proactive-disaster-recovery-resiliency)
+- [Azure Image Builder Supported Regions](https://learn.microsoft.com/ja-jp/azure/virtual-machines/image-builder-overview?tabs=azure-powershell#regions)
 
 **Resource Graph Query/Scripts**
 

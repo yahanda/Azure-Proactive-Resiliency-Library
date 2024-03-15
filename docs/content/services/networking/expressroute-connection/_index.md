@@ -38,7 +38,7 @@ ExpressRoute virtual network gateway is designed to exchange network routes and 
 
 **Resources**
 
-- [About ExpressRoute FastPath](https://learn.microsoft.com/en-us/azure/expressroute/about-fastpath)
+- [About ExpressRoute FastPath](https://learn.microsoft.com/ja-jp/azure/expressroute/about-fastpath)
 
 **Resource Graph Query/Scripts**
 
@@ -62,7 +62,7 @@ Configure an Azure Resource lock for Gateway Connection resources to prevent acc
 
 **Resources**
 
-- [Protect your Azure resources with a lock - Azure Resource Manager | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources?tabs=json)
+- [Protect your Azure resources with a lock - Azure Resource Manager | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/lock-resources?tabs=json)
 
 **Resource Graph Query/Scripts**
 

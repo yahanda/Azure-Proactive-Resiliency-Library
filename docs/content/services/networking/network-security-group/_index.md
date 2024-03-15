@@ -41,7 +41,7 @@ Resource Logs are not collected and stored until you create a diagnostic setting
 
 **Resources**
 
-- [Diagnostic settings in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/essentials/diagnostic-settings)
+- [Diagnostic settings in Azure Monitor](https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/diagnostic-settings)
 
 **Resource Graph Query/Scripts**
 
@@ -71,7 +71,7 @@ Create Alerts for administrative operations such as Create or Update Network Sec
 
 **Resources**
 
-- [Azure Monitor activity log](https://learn.microsoft.com/azure/azure-monitor/essentials/activity-log?tabs=powershell)
+- [Azure Monitor activity log](https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/activity-log?tabs=powershell)
 
 **Resource Graph Query/Scripts**
 
@@ -96,7 +96,7 @@ You can set locks that prevent either deletions or modifications. In the portal,
 
 **Resources**
 
-- [Lock your resources to protect your infrastructure](https://learn.microsoft.com/azure/azure-resource-manager/management/lock-resources?toc=%2Fazure%2Fvirtual-network%2Ftoc.json&tabs=json)
+- [Lock your resources to protect your infrastructure](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/lock-resources?toc=%2Fazure%2Fvirtual-network%2Ftoc.json&tabs=json)
 
 **Resource Graph Query/Scripts**
 
@@ -128,7 +128,7 @@ Flow logs are the source of truth for all network activity in your cloud environ
 
 **Resources**
 
-- [Flow logging for network security groups](https://learn.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)
+- [Flow logging for network security groups](https://learn.microsoft.com/ja-jp/azure/network-watcher/network-watcher-nsg-flow-logging-overview)
 
 **Resource Graph Query/Scripts**
 
@@ -152,7 +152,7 @@ You can use an Azure network security group to filter network traffic between Az
 
 **Resources**
 
-- [Security rules](https://learn.microsoft.com/azure/virtual-network/network-security-groups-overview#security-rules)
+- [Security rules](https://learn.microsoft.com/ja-jp/azure/virtual-network/network-security-groups-overview#security-rules)
 
 **Resource Graph Query/Scripts**
 
