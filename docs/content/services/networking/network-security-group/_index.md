@@ -29,7 +29,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### NSG-1 - Configure Diagnostic Settings for all network security groups
+### NSG-1 - すべてのネットワーク セキュリティ グループの診断設定を構成します
 
 **Category: Monitoring**
 
@@ -59,7 +59,7 @@ Resource Logs are not collected and stored until you create a diagnostic setting
 
 <br><br>
 
-### NSG-2 - Monitor changes in Network Security Groups with Azure Monitor
+### NSG-2 - Azure Monitor を使用してネットワーク セキュリティ グループの変更を監視します
 
 **Category: Monitoring**
 
@@ -83,7 +83,7 @@ Create Alerts for administrative operations such as Create or Update Network Sec
 
 <br><br>
 
-### NSG-3 - Configure locks for Network Security Groups to avoid accidental changes and/or deletion
+### NSG-3 - 不注意による変更や削除を回避するためにネットワーク セキュリティ グループのロックを構成します
 
 **Category: Governance**
 
@@ -114,7 +114,7 @@ You can set locks that prevent either deletions or modifications. In the portal,
 
 <br><br>
 
-### NSG-4 - Configure NSG Flow Logs
+### NSG-4 - NSG フロー ログを構成します
 
 **Category: Monitoring**
 
@@ -140,7 +140,7 @@ Flow logs are the source of truth for all network activity in your cloud environ
 
 <br><br>
 
-### NSG-5 - The NSG only has Default Security Rules, make sure to configure the necessary rules
+### NSG-5 - NSG には既定のセキュリティ規則のみがあり、必要な規則を構成してください
 
 **Category: Access & Security**
 

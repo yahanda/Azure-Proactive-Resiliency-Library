@@ -27,7 +27,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### WAF-1 - Review logs for Web Application Firewall on Azure Front Door for legitimate requests that are blocked
+### WAF-1 - Azure Front Door 上の Web アプリケーション ファイアウォールのログで、ブロックされている正当な要求を確認します
 
 **Category: Monitoring**
 
@@ -54,7 +54,7 @@ WAF could block a legitimate request that it shouldn't (a false positive). You c
 
 <br><br>
 
-### WAF-2 - Review logs for Web Application Firewall on Azure Application Gateway for legitimate requests that are blocked
+### WAF-2 - Azure Application Gateway 上の Web アプリケーション ファイアウォールのログで、ブロックされている正当な要求を確認します
 
 **Category: Monitoring**
 
@@ -79,7 +79,7 @@ WAF could block a legitimate request that it shouldn't (a false positive). You c
 
 <br><br>
 
-### WAF-3 - Monitor Web Application Firewall
+### WAF-3 - Web アプリケーションファイアウォールを監視します
 
 **Category: Monitoring**
 

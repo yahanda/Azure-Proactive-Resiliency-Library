@@ -31,7 +31,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ERGW-1 - Connect the ExpressRoute Gateway to two or more circuits from different peering locations for higher resiliency
+### ERGW-1 - 回復性を高めるために、ExpressRoute ゲートウェイを異なるピアリングの場所から 2 つ以上の回線に接続します
 
 **Category: Availability**
 
@@ -55,7 +55,7 @@ Connect each ExpressRoute Gateway to a minimum of two circuits, with each circui
 
 <br><br>
 
-### ERGW-2 - Use Zone-redundant gateway SKUs
+### ERGW-2 - ゾーン冗長ゲートウェイ SKU を使用します
 
 **Category: Availability**
 
@@ -81,7 +81,7 @@ Azure ExpressRoute gateway provides different SLAs when it’s deployed in a sin
 
 <br><br>
 
-### ERGW-3 - Configure an Azure Resource lock for ExpressRoute Gateway to prevent accidental deletion
+### ERGW-3 - 誤って削除されないように ExpressRoute ゲートウェイの Azure リソース ロックを構成します
 
 **Category: Availability**
 
@@ -105,7 +105,7 @@ Configure an Azure Resource lock for ExpressRoute Gateway to prevent accidental 
 
 <br><br>
 
-### ERGW-4 - Monitor gateway health
+### ERGW-4 - ゲートウェイの正常性を監視します
 
 **Category: Monitoring**
 
@@ -136,7 +136,7 @@ Configure alerts for scalability metrics for active flows based on the supported
 
 <br><br>
 
-### ERGW-5 - Configure diagnostic logs and alerts for ExpressRoute virtual network gateway
+### ERGW-5 - ExpressRoute 仮想ネットワーク ゲートウェイの診断ログとアラートを構成します
 
 **Category: Monitoring**
 
@@ -163,7 +163,7 @@ Configure logging for GatewayDiagnosticLog and RouteDiagnosticLog. Create alerts
 
 <br><br>
 
-### ERGW-6 - Avoid using ExpressRoute circuits for VNet to VNet communication
+### ERGW-6 - VNet 間通信に ExpressRoute 回線を使用しないでください
 
 **Category: Networking**
 
@@ -189,7 +189,7 @@ For more information about why VNet-to-VNet connectivity isn’t recommended ove
 
 <br><br>
 
-### ERGW-7 - Configure customer-controlled gateway maintenance - In Preview
+### ERGW-7 - お客様が管理するゲートウェイ メンテナンスを構成します - プレビュー段階
 
 **Category: Availability**
 

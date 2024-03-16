@@ -30,7 +30,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### LB-1 - Use Standard Load Balancer SKU
+### LB-1 - Standard Load Balancer SKU を使用します
 
 **Category: Availability**
 
@@ -55,7 +55,7 @@ Select Standard SKU Standard Load Balancer provides a dimension of reliability t
 
 <br><br>
 
-### LB-2 - Ensure the Backend Pool contains at least two instances
+### LB-2 - バックエンド プールに少なくとも 2 つのインスタンスが含まれていることを確認します
 
 **Category: Availability**
 
@@ -79,7 +79,7 @@ Select Standard SKU Standard Load Balancer provides a dimension of reliability t
 
 <br><br>
 
-### LB-3 - Use NAT Gateway instead of Outbound Rules for Production Workloads
+### LB-3 - 本番ワークロードにアウトバウンドルールの代わりにNATゲートウェイを使用します
 
 **Category: Availability**
 
@@ -103,7 +103,7 @@ Outbound rules for Standard Public Load Balancer requires you to manually alloca
 
 <br><br>
 
-### LB-4 - Ensure Standard Load Balancer is zone-redundant
+### LB-4 - Standard Load Balancer がゾーン冗長であることを確認します
 
 **Category: Availability**
 

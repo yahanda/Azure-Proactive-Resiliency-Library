@@ -25,7 +25,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ERTC-1 - Ensure ExpressRoute Traffic Collector is enabled and configured for ExpressRoute Direct circuits
+### ERTC-1 - ExpressRoute Traffic Collector が有効で、ExpressRoute Direct 回線用に構成されていることを確認します
 
 **Category: Monitoring**
 

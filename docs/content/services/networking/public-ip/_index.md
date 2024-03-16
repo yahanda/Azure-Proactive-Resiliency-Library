@@ -28,7 +28,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### PIP-1 - Use Standard SKU and Zone-Redundant IPs when applicable
+### PIP-1 - 該当する場合は Standard SKU とゾーン冗長 IP を使用します
 
 **Category: Availability**
 
@@ -54,7 +54,7 @@ A zone-redundant IP is created in all zones for a region and can survive any sin
 
 <br><br>
 
-### PIP-2 - Use NAT gateway for outbound connectivity to avoid SNAT Exhaustion
+### PIP-2 - 送信接続に NAT ゲートウェイを使用して、SNAT の枯渇を回避します
 
 **Category: Availability**
 

@@ -32,7 +32,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### VPNG-1 - Choose a Zone-redundant gateway
+### VPNG-1 - ゾーン冗長ゲートウェイを選択します
 
 **Category: Availability**
 
@@ -58,7 +58,7 @@ To automatically deploy your virtual network gateways across availability zones,
 
 <br><br>
 
-### VPNG-2 - Plan for Active-Active mode
+### VPNG-2 - アクティブ/アクティブモードを計画します
 
 **Category: Availability**
 
@@ -84,7 +84,7 @@ Active-active gateways have two Gateway IP configurations and two public IP addr
 
 <br><br>
 
-### VPNG-3 - Plan for Site-to-Site VPN and Azure ExpressRoute coexisting connection
+### VPNG-3 - サイト間 VPN と Azure ExpressRoute の共存接続を計画します
 
 **Category: Disaster Recovery**
 
@@ -110,7 +110,7 @@ An Azure ExpressRoute circuit provide a private dedicated connection into Azure.
 
 <br><br>
 
-### VPNG-4 - Plan for geo-redundant VPN connections
+### VPNG-4 - geo 冗長 VPN 接続を計画します
 
 **Category: Disaster Recovery**
 
@@ -135,7 +135,7 @@ To plan for disaster recovery, set up Site-to-Site VPN in more than one location
 
 <br><br>
 
-### VPNG-5 - Monitor connections and gateway health
+### VPNG-5 - 接続とゲートウェイの正常性を監視します
 
 **Category: Monitoring**
 
@@ -159,7 +159,7 @@ Set up monitoring and alerts for Virtual Network Gateway health based on various
 
 <br><br>
 
-### VPNG-6 - Enable service health
+### VPNG-6 - サービス正常性を有効化します
 
 **Category: Monitoring**
 

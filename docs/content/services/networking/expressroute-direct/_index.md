@@ -27,7 +27,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ERD-1 - The Admin State of both Links of an ExpressRoute Direct should be in Enabled state
+### ERD-1 - ExpressRoute Direct の両方のリンクの管理状態が有効状態になっている必要があります
 
 **Category: Availability**
 
@@ -51,7 +51,7 @@ In Azure ExpressRoute Direct, the "Admin State" refers to the administrative sta
 
 <br><br>
 
-### ERD-2 - Ensure you do not over-subscribe an ExpressRoute Direct
+### ERD-2 - ExpressRoute Direct をオーバーサブスクライブしないことを確認します
 
 **Category: System Efficiency**
 
@@ -75,7 +75,8 @@ You can provision logical ExpressRoute circuits on top of your selected ExpressR
 
 <br><br>
 
-### ERD-3 - Enable rate-limiting to help optimize network performance by controlling the traffic volume across all your ExpressRoute Direct based Circuits - In Preview
+### ERD-3 - レート制限を有効にして、すべての ExpressRoute Direct ベースの回線のトラフィック量を制御することで、ネットワーク パフォーマンスを最適化します - プレビュー段階
+
 
 **Category: System Efficiency**
 

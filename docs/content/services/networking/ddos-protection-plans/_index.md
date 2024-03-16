@@ -26,7 +26,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### DDOS-1 - Monitor Azure DDoS Protection Plan metrics
+### DDOS-1 - Azure DDoS Protection プランのメトリックを監視します
 
 **Category: Access & Security**
 

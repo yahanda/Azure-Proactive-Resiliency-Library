@@ -25,7 +25,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### PEP-1 - Resolve issues with Private Endpoints in non Succeeded connection state
+### PEP-1 - 成功以外の接続状態のプライベート エンドポイントの問題を解決します
 
 **Category: Networking**
 

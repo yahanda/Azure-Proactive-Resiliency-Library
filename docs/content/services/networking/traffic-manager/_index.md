@@ -30,7 +30,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### TRAF-1 - Traffic Manager Monitor Status Should be Online
+### TRAF-1 - Traffic Manager モニターの状態はオンラインにする必要があります
 
 **Category: Availability**
 
@@ -53,7 +53,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 {{< /collapse >}}
 <br><br>
 
-### TRAF-2 - Traffic manager profiles should have more than one endpoint
+### TRAF-2 - Traffic Manager プロファイルには複数のエンドポイントが必要です
 
 **Category: Availability**
 
@@ -77,7 +77,7 @@ When configuring the Azure traffic manager, you should provision minimum of two 
 
 <br><br>
 
-### TRAF-3 - Configure at least one endpoint within a another region
+### TRAF-3 - 別のリージョン内に少なくとも 1 つのエンドポイントを構成します
 
 **Category: Disaster Recovery**
 
@@ -102,7 +102,7 @@ Profiles should have more than one endpoint to ensure availability if one of the
 
 <br><br>
 
-### TRAF-4 - TTL value of user profiles should be in 60 Seconds
+### TRAF-4 - ユーザープロファイルの TTL 値は 60 秒にする必要があります
 
 **Category: System Efficiency**
 
@@ -127,7 +127,7 @@ Time to Live (TTL) affects how recent of a response a client will get when it ma
 
 <br><br>
 
-### TRAF-5 - Ensure endpoint configured to (All World) for geographic profiles
+### TRAF-5 - 地理的プロファイルのエンドポイントが すべて (世界) に構成されていることを確認します
 
 **Category: Disaster Recovery**
 

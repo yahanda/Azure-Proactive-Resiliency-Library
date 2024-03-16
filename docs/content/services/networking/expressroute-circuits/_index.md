@@ -33,7 +33,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ERC-1 - Connect your on-premises network to critical workloads in Azure through two or more ExpressRoute circuits in different peering locations
+### ERC-1 - 異なるピアリングの場所にある 2 つ以上の ExpressRoute 回線を使用して、オンプレミス ネットワークを Azure の重要なワークロードに接続します
 
 **Category: Availability**
 
@@ -56,7 +56,7 @@ Connect each ExpressRoute Gateway to a minimum of two circuits instantiated in d
 
 <br><br>
 
-### ERC-2 - Ensure the two physical links of your ExpressRoute circuit are connected to two distinct edge devices in your network
+### ERC-2 - ExpressRoute 回線の 2 つの物理リンクがネットワーク内の 2 つの異なるエッジ デバイスに接続されていることを確認します
 
 **Category: Availability**
 
@@ -81,7 +81,7 @@ Microsoft (in the ExpressRoute direct model) or the ExpressRoute provider (in th
 
 <br><br>
 
-### ERC-3 - Ensure both connections of an ExpressRoute circuit are configured in active-active mode
+### ERC-3 - ExpressRoute 回線の両方の接続がアクティブ/アクティブ モードで構成されていることを確認します
 
 **Category: Availability**
 
@@ -105,7 +105,7 @@ To improve high availability, it's recommended that you operate both the connect
 
 <br><br>
 
-### ERC-4 - Ensure Bidirectional Forwarding Detection is enabled and configured on customer or provider edge routing devices
+### ERC-4 - お客様またはプロバイダーのエッジ ルーティング デバイスで双方向フォワーディング検出が有効化および構成されていることを確認します
 
 **Category: Availability**
 
@@ -129,7 +129,7 @@ When you enable Bidirectional Forwarding Detection (BFD) over ExpressRoute, you 
 
 <br><br>
 
-### ERC-5 - Configure monitoring and alerting for ExpressRoute circuits
+### ERC-5 - ExpressRoute 回線の監視とアラートを構成します
 
 **Category: Monitoring**
 
@@ -159,7 +159,7 @@ For ExpressRoute Direct, configure Traffic Collection for ExpressRoute Direct to
 
 <br><br>
 
-### ERC-6 - Configure service health to receive ExpressRoute circuit maintenance notification
+### ERC-6 - ExpressRoute 回線のメンテナンス通知を受信するようにサービス正常性を構成します
 
 **Category: Monitoring**
 
@@ -183,7 +183,7 @@ ExpressRoute uses service health to notify about planned and unplanned maintenan
 
 <br><br>
 
-### ERC-7 - Use a site-to-site VPN as an interim backup solution for a single ExpressRoute circuit
+### ERC-7 - 単一の ExpressRoute 回線の暫定バックアップ ソリューションとしてサイト間 VPN を使用します
 
 **Category: Disaster Recovery**
 

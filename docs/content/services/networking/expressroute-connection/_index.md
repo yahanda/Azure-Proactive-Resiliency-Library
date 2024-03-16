@@ -26,7 +26,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ERCON-1 - For Connections using ExpressRoute Direct circuits and UltraPerformance or ErGw3AZ ExpressRoute Gateways, enable FastPath to improve data path performance between your on-premises network and your virtual network
+### ERCON-1 - ExpressRoute Direct 回線と UltraPerformance または ErGw3AZ ExpressRoute ゲートウェイを使用する接続の場合、FastPath を有効にして、オンプレミス ネットワークと仮想ネットワーク間のデータ パスのパフォーマンスを向上させます
 
 **Category: System Efficiency**
 
@@ -50,7 +50,7 @@ ExpressRoute virtual network gateway is designed to exchange network routes and 
 
 <br><br>
 
-### ERCON-2 - Configure an Azure Resource Lock on connections to prevent accidental deletion
+### ERCON-2 - 誤って削除されないように接続に Azure リソース ロックを構成します
 
 **Category: Availability**
 

@@ -28,7 +28,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### PVDNSZ-1 - Protect private DNS zones and records
+### PVDNSZ-1 - プライベート DNS ゾーンとレコードを保護します
 
 **Category: Access & Security**
 
@@ -52,7 +52,7 @@ Private DNS zones and records are critical resources. Deleting a DNS zone or a s
 
 <br><br>
 
-### PVDNSZ-2 - Monitor Private DNS Zones health and set up alerts
+### PVDNSZ-2 - プライベート DNS ゾーンの正常性の監視とアラートを設定します
 
 **Category: Monitoring**
 
@@ -76,7 +76,7 @@ The records contained in a private DNS zone aren't resolvable from the Internet.
 
 <br><br>
 
-### PVDNSZ-3 - Make sure Production and DR zones have equivalent entries for workloads and resources that will be failed over
+### PVDNSZ-3 - 本番ゾーンと DR ゾーンに、フェールオーバーされるワークロードとリソースの同等のエントリがあることを確認します
 
 **Category: Governance**
 

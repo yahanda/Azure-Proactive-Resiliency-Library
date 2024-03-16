@@ -41,7 +41,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### AFD-1 - Avoid combining Traffic Manager and Front Door
+### AFD-1 - Traffic Manager と Front Door の組み合わせは避けてください
 
 **Category: Networking**
 
@@ -71,7 +71,7 @@ However, as part of a complex architecture, you might choose to use Traffic Mana
 
 <br><br>
 
-### AFD-2 - Restrict traffic to your origins
+### AFD-2 - オリジンへのトラフィックを制限します
 
 **Category: Access & Security**
 
@@ -95,7 +95,7 @@ Front Door's features work best when traffic only flows through Front Door. You 
 
 <br><br>
 
-### AFD-3 - Use the latest API version and SDK version
+### AFD-3 - 最新の API バージョンと SDK バージョンを使用します
 
 **Category: Networking**
 
@@ -121,7 +121,7 @@ When you work with Front Door by using APIs, ARM templates, Bicep, or Azure SDKs
 
 <br><br>
 
-### AFD-4 - Configure logs
+### AFD-4 - ログを設定します
 
 **Category: Monitoring**
 
@@ -147,7 +147,7 @@ Front Door tracks extensive telemetry about every request. When you enable cachi
 
 <br><br>
 
-### AFD-5 - Use end-to-end TLS
+### AFD-5 - エンドツーエンドTLSを使用します
 
 **Category: Security**
 
@@ -171,7 +171,7 @@ Front Door terminates TCP and TLS connections from clients. It then establishes 
 
 <br><br>
 
-### AFD-6 - Use HTTP to HTTPS redirection
+### AFD-6 - HTTP から HTTPS へのリダイレクトを使用します
 
 **Category: Access & Security**
 
@@ -197,7 +197,7 @@ You can configure Front Door to automatically redirect HTTP requests to use the 
 
 <br><br>
 
-### AFD-7 - Use managed TLS certificates
+### AFD-7 - マネージド TLS 証明書を使用します
 
 **Category: Access & Security**
 
@@ -221,7 +221,7 @@ When Front Door manages your TLS certificates, it reduces your operational costs
 
 <br><br>
 
-### AFD-8 - Use latest version for customer-managed certificates
+### AFD-8 - カスタマー マネージド証明書に最新バージョンを使用します
 
 **Category: Access & Security**
 
@@ -245,7 +245,7 @@ If you decide to use your own TLS certificates, then consider setting the Key Va
 
 <br><br>
 
-### AFD-9 - Use the same domain name on Front Door and your origin
+### AFD-9 - Front Door と配信元で同じドメイン名を使用します
 
 **Category: Networking**
 
@@ -271,7 +271,7 @@ Before you rewrite the Host header of your requests, carefully consider whether 
 
 <br><br>
 
-### AFD-10 - Enable the WAF
+### AFD-10 - WAF を有効にします
 
 **Category: Access & Security**
 
@@ -295,7 +295,7 @@ For internet-facing applications, we recommend you enable the Front Door web app
 
 <br><br>
 
-### AFD-11 - Disable health probes when there is only one origin in an origin group
+### AFD-11 - 配信元グループに配信元が 1 つしかない場合、正常性プローブを無効にします
 
 **Category: Availability**
 
@@ -321,7 +321,7 @@ If you only have a single origin, Front Door always routes traffic to that origi
 
 <br><br>
 
-### AFD-12 - Select good health probe endpoints
+### AFD-12 - 正常性プローブ エンドポイントを選択します
 
 **Category: Availability**
 
@@ -345,7 +345,7 @@ Consider the location where you tell Front Door's health probe to monitor. It's 
 
 <br><br>
 
-### AFD-13 - Use HEAD health probes
+### AFD-13 - HEAD 正常性プローブを使用します
 
 **Category: System Efficiency**
 
@@ -369,7 +369,7 @@ Health probes can use either the GET or HEAD HTTP method. It's a good practice t
 
 <br><br>
 
-### AFD-14 - Use geo-filtering in Azure Front Door
+### AFD-14 - Azure Front Door でジオフィルタリングを使用します
 
 **Category: Access & Security**
 
@@ -396,7 +396,7 @@ For a geo filtering rule, a match variable is either RemoteAddr or SocketAddr. R
 
 <br><br>
 
-### AFD-15 - Secure your Origin with Private Link in Azure Front Door
+### AFD-15 - Azure Front Door の Private Link を使用して配信元をセキュリティで保護します
 
 **Category: Access & Security**
 

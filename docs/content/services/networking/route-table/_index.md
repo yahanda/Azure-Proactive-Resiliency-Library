@@ -26,7 +26,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### RT-1 - Monitor changes in Route Tables with Azure Monitor
+### RT-1 - Azure Monitor を使用してルート テーブルの変更を監視します
 
 **Category: Monitoring**
 
@@ -50,7 +50,7 @@ Create Alerts for administrative operations such as Create or Update Route Table
 
 <br><br>
 
-### RT-2 - Configure locks for Route Tables to avoid accidental changes or deletion
+### RT-2 - 不注意による変更や削除を避けるためにルートテーブルのロックを構成します
 
 **Category: Governance**
 

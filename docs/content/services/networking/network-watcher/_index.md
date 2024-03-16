@@ -26,7 +26,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### NW-1 - Deploy Network Watcher in all regions where you have networking services
+### NW-1 - ネットワーク サービスがあるすべてのリージョンに Network Watcher をデプロイします
 
 **Category: Monitoring**
 
@@ -50,7 +50,7 @@ Azure Network Watcher provides a suite of tools to monitor, diagnose, view metri
 
 <br><br>
 
-### NW-2 - Fix Flow Log configurations in Failed state or Disabled Status
+### NW-2 - 失敗状態または無効状態のフローログ構成を修正します
 
 **Category: Monitoring**
 

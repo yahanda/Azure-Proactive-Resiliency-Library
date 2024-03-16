@@ -28,7 +28,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### AFW-1 - Deploy Azure Firewall across multiple availability zones
+### AFW-1 - 複数の可用性ゾーンに Azure Firewall をデプロイします
 
 **Category: Availability**
 
@@ -53,7 +53,7 @@ Azure Firewall provides different SLAs when it's deployed in a single availabili
 
 <br><br>
 
-### AFW-2 - Monitor Azure Firewall metrics
+### AFW-2 - Azure Firewall メトリックを監視します
 
 **Category: Monitoring**
 
@@ -82,7 +82,7 @@ Monitor metrics related to availability and performance issues. More specificall
 
 <br><br>
 
-### AFW-3 - Configure DDoS Protection on the Azure Firewall VNet
+### AFW-3 - Azure Firewall VNet で DDoS Protection を構成します
 
 **Category: Access & Security**
 
@@ -106,7 +106,7 @@ Associate a DDoS protection plan with the virtual network hosting Azure Firewall
 
 <br><br>
 
-### AFW-4 - Leverage Azure Policy inheritance model
+### AFW-4 - Azure Policy 継承モデルを活用します
 
 **Category: Governance**
 
