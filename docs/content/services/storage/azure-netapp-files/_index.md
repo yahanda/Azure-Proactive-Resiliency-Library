@@ -32,7 +32,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ANF-1 - Use the correct service level and volume quota size for the expected performance level
+### ANF-1 - 予想されるパフォーマンスレベルに対して正しいサービスレベルとボリュームクォータサイズを使用します
 
 **Category: System Efficiency**
 
@@ -60,7 +60,7 @@ Service levels are an attribute of a capacity pool. Service levels are defined a
 
 <br><br>
 
-### ANF-2 - Use standard network features for production in Azure NetApp Files
+### ANF-2 - Azure NetApp Files での運用環境に Standard ネットワーク機能を使用します
 
 **Category: Networking**
 
@@ -85,7 +85,7 @@ Please check the supported regions for standard network feature [here](https://d
 
 <br><br>
 
-### ANF-3 - Use availability zones for high availability in Azure NetApp Files
+### ANF-3 - Azure NetApp Files で高可用性を実現するために可用性ゾーンを使用します
 
 **Category: Availability**
 
@@ -109,7 +109,7 @@ Azure availability zones are physically separate locations within each suppo
 
 <br><br>
 
-### ANF-4 - Use snapshot and backup for in-region data protection in Azure NetApp Files
+### ANF-4 - Azure NetApp Files でリージョン内データ保護にスナップショットとバックアップを使用します
 
 **Category: Availability**
 
@@ -135,7 +135,7 @@ Azure NetApp Files supports a fully managed backup solution for long-term recove
 
 <br><br>
 
-### ANF-5 - Enable Cross-region replication of Azure NetApp Files volumes
+### ANF-5 - Azure NetApp Files ボリュームのリージョン間レプリケーションを有効にします
 
 **Category: Disaster Recovery**
 
@@ -159,7 +159,7 @@ The Azure NetApp Files replication functionality provides data protection throug
 
 <br><br>
 
-### ANF-6 - Enable Cross-zone replication of Azure NetApp Files volumes
+### ANF-6 - Azure NetApp Files ボリュームのクロスゾーン レプリケーションを有効にします
 
 **Category: Availability**
 
@@ -183,7 +183,7 @@ The cross-zone replication (CZR) capability provides data protection between vol
 
 <br><br>
 
-### ANF-7 - Monitor Azure NetApp Files metrics to better understand usage pattern and performance
+### ANF-7 - Azure NetApp Files メトリックを監視して、使用パターンとパフォーマンスをよりよく理解します
 
 **Category: Monitoring**
 
@@ -207,7 +207,7 @@ Azure NetApp Files provides metrics on allocated storage, actual storage usage, 
 
 <br><br>
 
-### ANF-8 - Use Azure policy to enforce organizational standards and to assess compliance at-scale in Azure NetApp Files
+### ANF-8 - Azure Policy を使用して組織標準を適用し、Azure NetApp Files でコンプライアンスを大規模に評価します
 
 **Category: Governance**
 

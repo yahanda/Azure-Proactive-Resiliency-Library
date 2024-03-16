@@ -29,7 +29,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### WADF-1 - Ensure the Availability Targets are well defined and communicated across teams working on the Workload
+### WADF-1 - 可用性ターゲットが明確に定義され、ワークロードに取り組んでいるチーム間で伝達されていることを確認します
 
 **Category: Availability**
 
@@ -52,7 +52,7 @@ For example, if you are striving to achieve an application Service Level Objecti
 
 <br><br>
 
-### WADF-2 - Ensure the Recovery Targets are well defined and communicated across teams working on the Workload
+### WADF-2 - リカバリターゲットが明確に定義され、ワークロードに取り組んでいるチーム間で伝達されていることを確認します
 
 **Category: Disaster Recovery**
 

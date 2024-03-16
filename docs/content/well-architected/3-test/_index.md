@@ -32,7 +32,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### WATS-1 - Test your applications for availability and resiliency
+### WATS-1 - アプリケーションの可用性と回復性をテストします
 
 **Category: Application Resilience**
 
@@ -60,7 +60,7 @@ Key points:
 
 <br><br>
 
-### WATS-2 - Consider building logic into your workload to handle errors
+### WATS-2 - エラーを処理するためのロジックをワークロードに組み込むことを検討します
 
 **Category: Application Resilience**
 
@@ -86,7 +86,7 @@ Key points:
 
 <br><br>
 
-### WATS-3 - Perform disaster recovery tests regularly
+### WATS-3 - ディザスタリカバリテストを定期的に実行します
 
 **Category: Disaster Recovery**
 
@@ -113,7 +113,7 @@ Key points
 
 <br><br>
 
-### WATS-4 - Use chaos engineering to test Azure applications
+### WATS-4 - カオス エンジニアリングを使用して Azure アプリケーションをテストします
 
 **Category: Application Resilience**
 
@@ -136,7 +136,7 @@ Apply chaos engineering principles when you:
 
 <br><br>
 
-### WATS-5 - Test application fault resiliency
+### WATS-5 - アプリケーションの障害回復性をテストします
 
 **Category: Application Resilience**
 

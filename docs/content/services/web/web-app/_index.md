@@ -31,7 +31,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### App-1 - Enable diagnostics logging
+### App-1 - 診断ログを有効にします
 
 **Category: Monitoring**
 
@@ -53,7 +53,7 @@ Enabling diagnostics logging for your Azure App Service is important for monitor
 
 <br><br>
 
-### App-2 - Monitor Performance
+### App-2 - パフォーマンスを監視します
 
 **Category: Monitoring**
 
@@ -80,7 +80,7 @@ Enable monitoring on your web applications based on ASP.NET, ASP.NET Core, Java,
 
 <br><br>
 
-### App-3 - Separate web apps from web APIs
+### App-3 - Web アプリと Web API を分離します
 
 **Category: System Efficiency**
 
@@ -102,7 +102,7 @@ If your solution has both a web front end and a web API, consider decomposing th
 
 <br><br>
 
-### App-4 - Create a separate storage account for logs
+### App-4 - ログ用に別のストレージ アカウントを作成します
 
 **Category: System Efficiency**
 
@@ -124,7 +124,7 @@ Create a separate storage account for logs. Don't use the same storage account f
 
 <br><br>
 
-### App-5 - Deploy to a staging slot
+### App-5 - ステージングスロットにデプロイします
 
 **Category: Governance**
 
@@ -149,7 +149,7 @@ Consider creating a deployment slot to hold the last-known-good (LKG) deployment
 
 <br><br>
 
-### App-6 - Store configuration as app settings
+### App-6 - 構成をアプリ設定として保存します
 
 **Category: Application Resilience**
 

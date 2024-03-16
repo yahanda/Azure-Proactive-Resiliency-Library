@@ -25,7 +25,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### SIGR-1 - Enable zone redundancy for SignalR
+### SIGR-1 - SignalR のゾーン冗長性を有効にします
 
 **Category: Availability**
 

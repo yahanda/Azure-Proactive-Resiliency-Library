@@ -28,7 +28,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### WARD-1 - Implement proactive Incident Response
+### WARD-1 - プロアクティブなインシデント対応を実装します
 
 **Category: Disaster Recovery**
 

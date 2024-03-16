@@ -36,7 +36,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ST-1 - Ensure that Storage Account configuration is at least Zone redundant
+### ST-1 - ストレージ アカウントの構成がゾーン冗長以上であることを確認します
 
 **Category: Availability**
 
@@ -65,7 +65,7 @@ Data in an Azure Storage account is always replicated three times in the primary
 
 <br><br>
 
-### ST-2 - Do not use classic Storage Account
+### ST-2 - クラシック ストレージ アカウントを使用しないようにします
 
 **Category: Governance**
 
@@ -90,7 +90,7 @@ Azure classic Storage Account will retire 31 august 2024. So migrate all workloa
 
 <br><br>
 
-### ST-3 - Ensure Performance tier is set as per workload
+### ST-3 - パフォーマンス レベルがワークロードごとに設定されていることを確認します
 
 **Category: System Efficiency**
 
@@ -114,7 +114,7 @@ Consider using appropriate storage performance tier for standard storage / block
 
 <br><br>
 
-### ST-4 - Choose right blob type for workload
+### ST-4 - ワークロードに適した BLOB の種類を選択します
 
 **Category: System Efficiency**
 
@@ -145,7 +145,7 @@ Page blobs are a collection of 512-byte pages optimized for random read and writ
 
 <br><br>
 
-### ST-5 - Enable soft delete for recovery of data
+### ST-5 - データの回復のための論理的な削除を有効にします
 
 **Category: Disaster Recovery**
 
@@ -169,7 +169,7 @@ Soft delete option allow for recovering data if its deleted by mistaken. Moreove
 
 <br><br>
 
-### ST-6 - Enable version for accidental modification and keep the number of versions below 1000
+### ST-6 - 偶発的な変更に対してバージョン管理を有効にし、バージョンの数を 1000 未満に保ちます
 
 **Category: Disaster Recovery**
 
@@ -194,7 +194,7 @@ Having a large number of versions per blob can increase the latency for blob lis
 
 <br><br>
 
-### ST-7 - Enable point and time restore for containers for recovery
+### ST-7 - リカバリ用コンテナのポイントアンドタイムリストアを有効にします
 
 **Category: Disaster Recovery**
 
@@ -219,7 +219,7 @@ Point and time restore support general purpose v2 account in standard performanc
 
 <br><br>
 
-### ST-8 - Configure Diagnostic Settings for all storage accounts
+### ST-8 - すべてのストレージ アカウントの診断設定を構成します
 
 **Category: Monitoring**
 
@@ -243,7 +243,7 @@ Enabling diagnostic settings allow you to capture and view diagnostic informatio
 
 <br><br>
 
-### ST-9 - Upgrade legacy storage accounts to v2 storage accounts
+### ST-9 - レガシ ストレージ アカウントを v2 ストレージ アカウントにアップグレードします
 
 **Category: System Efficiency**
 

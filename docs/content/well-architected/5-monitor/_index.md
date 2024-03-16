@@ -31,7 +31,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### WAMN-1 - Make sure your application's health is being monitored
+### WAMN-1 - アプリケーションの正常性が監視されていることを確認します
 
 **Category: Monitoring**
 
@@ -58,7 +58,7 @@ Key points:
 
 <br><br>
 
-### WAMN-2 - Define a health model based on performance, availability, and recovery targets
+### WAMN-2 - パフォーマンス、可用性、および回復のターゲットに基づいて正常性モデルを定義します
 
 **Category: Monitoring**
 
@@ -83,7 +83,7 @@ Key points:
 
 <br><br>
 
-### WAMN-3 - Create Dashboards and Alerts for Azure Platform resources
+### WAMN-3 - Azure Platform リソースのダッシュボードとアラートを作成します
 
 **Category: Monitoring**
 
@@ -100,7 +100,7 @@ Examples include Workbook, Dashboards or email alerts. With Azure Workbooks and/
 
 <br><br>
 
-### WAMN-4 - Ensure that the right people in your organization will be notified about any future service issues
+### WAMN-4 - 今後のサービス問題について、組織内の適切な担当者に通知されるようにします
 
 **Category: Monitoring**
 

@@ -28,7 +28,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ASP-1 - Migrate App Service to availability Zone Support
+### ASP-1 - App Service を可用性ゾーン サポートに移行します
 
 **Category: Availability**
 
@@ -53,7 +53,7 @@ Deploying your App Service plans and App Service Environments across availabilit
 
 <br><br>
 
-### ASP-2 - Use Standard or Premium tier
+### ASP-2 - Standard または Premium レベルを使用します
 
 **Category: Availability**
 
@@ -77,7 +77,7 @@ The use of the Standard or Premium tier for Azure App Service Plan is crucial fo
 
 <br><br>
 
-### ASP-3 - Avoid scaling up or down
+### ASP-3 - スケールアップまたはスケールダウンを避けるようにします
 
 **Category: System Efficiency**
 
@@ -101,7 +101,7 @@ It is recommended to avoid scaling up or down your Azure App Service instances f
 
 <br><br>
 
-### ASP-4 - Create separate App Service plans for production and test
+### ASP-4 - 運用環境とテスト用に個別の App Service プランを作成します
 
 **Category: Governance**
 
@@ -125,7 +125,7 @@ It is strongly recommended to create separate App Service plans for production a
 
 <br><br>
 
-### ASP-5 - Enable Autoscale/Automatic scaling to ensure adequate resources are available to service requests
+### ASP-5 - 自動スケーリング/自動スケーリングを有効にして、サービス要求に十分なリソースを使用できるようにします
 
 **Category: System Efficiency**
 

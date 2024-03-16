@@ -29,7 +29,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### WADP-1 - Avoid manual configuration to enforce consistency with Infrastructure as code
+### WADP-1 - コードとしてのインフラストラクチャとの一貫性を確保するために、手動構成を回避します
 
 **Category: Automation**
 
@@ -53,7 +53,7 @@ Key Points:
 
 <br><br>
 
-### WADP-2 - Validated all changes in development environments before applying them to production
+### WADP-2 - 本番環境に適用する前に、開発環境のすべての変更を検証します
 
 **Category: Automation**
 

@@ -36,7 +36,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### WADS-1 - Consider deploying your application across multiple zones
+### WADS-1 - アプリケーションを複数のゾーンにデプロイすることを検討します
 
 **Category: Availability**
 
@@ -54,7 +54,7 @@ Consider if component proximity is required for application performance reasons.
 
 <br><br>
 
-### WADS-2 - Consider deploying your application across multiple regions
+### WADS-2 - 複数のリージョンにアプリケーションをデプロイすることを検討します
 
 **Category: Disaster Recovery**
 
@@ -75,7 +75,7 @@ An active-active configuration distributes requests across multiple active regio
 
 <br><br>
 
-### WADS-3 - Ensure that all fault-points and fault-modes are understood and operationalized
+### WADS-3 - すべての障害ポイントと障害モードを認識して運用できるようにすることを確認します
 
 **Category: Availability**
 
@@ -95,7 +95,7 @@ Identify all fault-points and fault-modes. Fault-points describe the elements wi
 
 <br><br>
 
-### WADS-4 - Use PaaS Azure services instead of IaaS
+### WADS-4 - IaaS の代わりに PaaS Azure サービスを使用します
 
 **Category: System Efficiency**
 
@@ -111,7 +111,7 @@ PaaS provides a framework for developing and running apps. As with IaaS, the Paa
 
 <br><br>
 
-### WADS-5 - Design the application to scale out
+### WADS-5 - スケールアウトするアプリケーションを設計します
 
 **Category: System Efficiency**
 
@@ -127,7 +127,7 @@ Azure provides elastic scalability and you should design to scale out. However, 
 
 <br><br>
 
-### WADS-6 - Create a landing zone for the workload following the Microsoft Cloud Adoption Framework
+### WADS-6 - Microsoft クラウド導入フレームワークに従ったワークロードのランディング ゾーンを作成します
 
 **Category: Governance**
 
@@ -149,7 +149,7 @@ When considering the overall security, a landing zone offers centralized securit
 
 <br><br>
 
-### WADS-7 - Design a BCDR strategy that will help to meet the business requirements
+### WADS-7 - ビジネス要件を満たすのに役立つ BCDR 戦略を設計します
 
 **Category: Disaster Recovery**
 
@@ -177,7 +177,7 @@ Key points:
 
 <br><br>
 
-### WADS-8 - Provide security assurance through identity management
+### WADS-8 - ID 管理によるセキュリティ保証を提供します
 
 **Category: Access & Security**
 
@@ -198,7 +198,7 @@ Provide security assurance through identity management: the process of authentic
 
 <br><br>
 
-### WADS-9 - Ensure you address security-related risks helps to minimize application downtime and data loss caused by unexpected security exposures
+### WADS-9 - セキュリティ関連のリスクに確実に対処することで、予期しないセキュリティ上のリスクによって引き起こされるアプリケーションのダウンタイムとデータ損失を最小限に抑えることができます
 
 **Category: Access & Security**
 
