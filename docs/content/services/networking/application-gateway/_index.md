@@ -33,7 +33,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### AGW-1 - Set a minimum instance count of 2
+### AGW-1 - 最小インスタンス数を 2 に設定します
 
 **Category: System Efficiency**
 
@@ -57,7 +57,7 @@ Azure Application Gateways v2 are always deployed in a highly available fashion,
 
 <br><br>
 
-### AGW-2 - Secure all incoming connections with SSL
+### AGW-2 - すべての着信接続をSSLで保護します
 
 **Category: Access & Security**
 
@@ -85,7 +85,7 @@ Ensure that all incoming connections are using HTTP/s for production services. U
 
 <br><br>
 
-### AGW-3 - Enable Web Application Firewall policies
+### AGW-3 - Web アプリケーション ファイアウォール ポリシーを有効にします
 
 **Category: Access & Security**
 
@@ -110,7 +110,7 @@ Use Application Gateway with Web Application Firewall (WAF) within an applicatio
 
 <br><br>
 
-### AGW-4 - Use Application GW V2 instead of V1
+### AGW-4 - Application GW V1 の代わりに V2 を使用します
 
 **Category: System Efficiency**
 
@@ -136,7 +136,7 @@ You should use Application Gateway v2 unless there is a compelling reason for us
 
 <br><br>
 
-### AGW-5 - Monitor and Log the configurations and traffic
+### AGW-5 - 構成とトラフィックを監視してログに記録します
 
 **Category: Monitoring**
 
@@ -161,7 +161,7 @@ Enable logs that can be stored in storage accounts, Log Analytics, and other mon
 
 <br><br>
 
-### AGW-6 - Use Health Probes to detect backend availability
+### AGW-6 - 正常性プローブを使用してバックエンドの可用性を検出します
 
 **Category: Monitoring**
 
@@ -186,7 +186,7 @@ Using custom health probes can help with understand the availability of your bac
 
 <br><br>
 
-### AGW-7 - Deploy backends in a zone-redundant configuration
+### AGW-7 - ゾーン冗長構成でバックエンドを展開します
 
 **Category: Availability**
 
@@ -211,7 +211,7 @@ Deploying your backend services in a zone-aware configurations ensures that if a
 
 <br><br>
 
-### AGW-8 - Plan for backend maintenance by using connection draining
+### AGW-8 - 接続ドレインを使用してバックエンド メンテナンスを計画します
 
 **Category: Governance**
 
@@ -235,7 +235,7 @@ Plan for backend maintenance by using connection draining. Connection draining h
 
 <br><br>
 
-### AGW-9 - Ensure Application Gateway Subnet is using a /24 subnet mask
+### AGW-9 - Application Gateway サブネットが /24 サブネット マスクを使用していることを確認します
 
 **Category: Networking**
 
