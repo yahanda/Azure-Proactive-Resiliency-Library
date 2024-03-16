@@ -629,7 +629,7 @@ VM insights は、仮想マシンと仮想マシン スケール セットのパ
 
 **Category: System Efficiency**
 
-**Impact: Medium**
+**Impact: High**
 
 **Guidance**
 
