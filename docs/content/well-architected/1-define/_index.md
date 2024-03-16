@@ -37,13 +37,13 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-Ensure the Availability Targets (SLA, SLO, SLI) are well defined, tested, monitored and communicated across teams working on the Workload.
+可用性目標 (SLA、SLO、SLI) が明確に定義され、テストされ、監視され、ワークロードに取り組んでいるチーム間で伝達されていることを確認します。
 
-A Service Level Agreement (SLA) is an availability target that represents a commitment around performance and availability of the application. Understanding the SLA of individual components within the system is essential to define reliability targets. Knowing the SLA of dependencies will also provide a justification for additional spend when making the dependencies highly available and with proper support contracts. Availability targets for any dependencies leveraged by the application should be understood and ideally align with application targets should also be considered.
+サービス レベル アグリーメント (SLA) は、アプリケーションのパフォーマンスと可用性に関するコミットメントを表す可用性目標です。システム内の個々のコンポーネントのSLAを理解することは、信頼性目標を定義するために不可欠です。依存関係の SLA を知ることは、依存関係を高可用性にし、適切なサポート契約を結ぶときに、追加の支出を正当化する理由にもなります。アプリケーションによって利用される依存関係の可用性目標を理解し、理想的にはアプリケーション ターゲットと整合させることも考慮する必要があります。
 
-Understanding your availability expectations is vital to reviewing overall operations for the application.
+可用性の期待を理解することは、アプリケーションの全体的な操作を確認するために不可欠です。
 
-For example, if you are striving to achieve an application Service Level Objective (SLO) of 99.999%, the level of inherent operational action required by the application is going to be far greater than if an SLO of 99.9% was the goal.
+たとえば、99.999% のアプリケーションのサービス レベル目標 (SLO) の達成を目指している場合、アプリケーションに必要な固有の運用アクションのレベルは、99.9% の SLO が目標である場合よりもはるかに高くなります。
 
 **Resources**
 
@@ -60,17 +60,17 @@ For example, if you are striving to achieve an application Service Level Objecti
 
 **Recommendation/Guidance**
 
-Ensure the Recovery Targets are well defined and communicated across teams working on the Workload.
-Two important metrics to consider are the recovery time objective and recovery point objective, as they pertain to disaster recovery.
+復旧目標が明確に定義され、ワークロードに取り組んでいるチーム間で伝達されていることを確認します。
+考慮すべき 2 つの重要なメトリックは、ディザスター リカバリーに関連する目標復旧時間と目標復旧ポイントです。
 
-- Recovery time objective (RTO) is the maximum acceptable time that an application can be unavailable after an incident. If your RTO is 90 minutes, you must be able to restore the application to a running state within 90 minutes from the start of a disaster. If you have a very low RTO, you might keep a second regional deployment continually running an active/passive configuration on standby, to protect against a regional outage. In some cases, you might deploy an active/active configuration to achieve even lower RTO.
-- Recovery point objective (RPO) is the maximum duration of data loss that is acceptable during a disaster. For example, if you store data in a single database, with no replication to other databases, and perform hourly backups, you could lose up to an hour of data.
-RTO and RPO are non-functional requirements of a system and should be dictated by business requirements. To derive these values, it's a good idea to conduct a risk assessment, and clearly understanding the cost of downtime or data loss.
+- 目標復旧時間 (RTO) は、インシデント発生後にアプリケーションを使用できない最大許容時間です。RTO が 90 分の場合、障害発生から 90 分以内にアプリケーションを実行状態に復元できる必要があります。RTO が非常に低い場合は、リージョンの停止から保護するために、スタンバイでアクティブ/パッシブ構成を継続的に実行している 2 番目のリージョン デプロイを維持できます。場合によっては、アクティブ/アクティブ構成を展開して、RTO をさらに低く抑えることができます。
+- 目標復旧時点 (RPO) は、障害発生時に許容されるデータ損失の最大期間です。たとえば、データを 1 つのデータベースに格納し、他のデータベースへのレプリケーションを行わず、1 時間ごとにバックアップを実行すると、最大 1 時間分のデータが失われる可能性があります。
+RTO と RPO はシステムの非機能要件であり、ビジネス要件によって決定される必要があります。これらの値を導き出すには、リスク評価を実施し、ダウンタイムやデータ損失のコストを明確に理解することをお勧めします。
 
-Monitoring and measuring application availability is vital to qualifying overall application health and progress towards defined targets. Make sure you measure and monitor key targets such as:
+アプリケーションの可用性を監視および測定することは、アプリケーション全体の正常性と、定義された目標に対する進捗状況を評価するために不可欠です。次のような主要なターゲットを必ず測定および監視してください。
 
-- Mean Time Between Failures (MTBF) — The average time between failures of a particular component.
-- Mean Time to Recover (MTTR) — The average time it takes to restore a component after a failure.
+- 平均故障間隔(MTBF) — 特定のコンポーネントの故障間の平均時間。
+- 平均復旧時間(MTTR) — 障害発生後のコンポーネントの復元にかかる平均時間。
 
 **Resources**
 

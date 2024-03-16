@@ -36,17 +36,17 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-Prevention of all problems is a laudable, but impossible goal. Things will go wrong, so we need a plan to limit the impact on our end users and return operations to normal as quickly as possible.
+すべての問題を防ぐことは称賛に値しますが、不可能な目標です。物事はうまくいかないので、エンドユーザーへの影響を制限し、できるだけ早く運用を正常に戻すための計画が必要です。
 
-The key is to respond with urgency, rather than react. A reaction tends to be more impulsive and based in the present moment, without consideration of long-term effects. A response is well-thought-out, organized, and information based.
+重要なのは、反応するのではなく、緊急性を持って対応することです。反応は、長期的な影響を考慮せずに、より衝動的で、現在の瞬間に基づいている傾向があります。対応は、よく考え抜かれ、整理され、情報に基づいています。
 
-Your incident response approach determines your effectiveness at:
+インシデント対応アプローチによって、次の点で有効性が決まります。
 
-Understanding what’s going on (diagnosing the problem)
-Triaging (determining the urgency) and prioritizing the problem
-Engaging the right resources to mitigate the issue(s), and
-Communicating with stakeholders about the problem
-After the problem has been remediated, you can then learn from the incident through a post-incident review process. That's an important subject which has a whole separate module worth of discussion.
+何が起こっているのかを理解する(問題を診断する)
+問題のトリアージ (緊急度の判断) と優先順位付け
+問題を軽減するために適切なリソースを活用する。
+問題に関する利害関係者とのコミュニケーション
+問題が修復されたら、インシデント後のレビュー プロセスを通じてインシデントから学ぶことができます。これは重要なテーマであり、まったく別のモジュールで議論する必要があります。
 
 **Resources**
 

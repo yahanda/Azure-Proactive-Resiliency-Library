@@ -37,15 +37,15 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-Infrastructure as code (IaC) uses DevOps methodology and versioning with a descriptive model to define and deploy infrastructure, such as networks, virtual machines, load balancers, and connection topologies. Just as the same source code always generates the same binary, an IaC model generates the same environment every time it deploys.
+コードとしてのインフラストラクチャ (IaC) では、DevOps 手法とバージョン管理と記述モデルを使用して、ネットワーク、仮想マシン、ロード バランサー、接続トポロジなどのインフラストラクチャを定義およびデプロイします。同じソースコードで常に同じバイナリが生成されるのと同様に、IaC モデルではデプロイするたびに同じ環境が生成されます。
 
-IaC is a key DevOps practice and a component of continuous delivery. With IaC, DevOps teams can work together with a unified set of practices and tools to deliver applications and their supporting infrastructure rapidly and reliably at scale.
+IaC は DevOps の重要なプラクティスであり、継続的デリバリーのコンポーネントです。IaC を使用すると、DevOps チームは、統合されたプラクティスとツールのセットと連携して、アプリケーションとそのサポート インフラストラクチャを迅速かつ確実に大規模に提供できます。
 
-Key Points:
+キーポイント:
 
-- Avoid manual configuration to enforce consistency
-- Deliver stable test environments rapidly at scale
-- Use declarative definition files
+- 一貫性を保つために手動設定を避ける
+- 安定したテスト環境を大規模かつ迅速に提供
+- 宣言型定義ファイルを使用する
 
 **Resources**
 
@@ -61,7 +61,7 @@ Key Points:
 
 **Recommendation/Guidance**
 
-Continuously delivering value has become a mandatory requirement for organizations. To deliver value to your end users, you must release continually and without errors. Continuous delivery (CD) is the process of automating build, test, configuration, and deployment from a build to a production environment. A release pipeline can create multiple testing or staging environments to automate infrastructure creation and deploy new builds. Successive environments support progressively longer-running integration, load, and user acceptance testing activities.
+価値を継続的に提供することは、組織にとって必須の要件となっています。エンドユーザーに価値を提供するには、エラーなしで継続的にリリースする必要があります。継続的デリバリー (CD) は、ビルド、テスト、構成、およびビルド環境から運用環境への配置を自動化するプロセスです。リリース パイプラインでは、複数のテスト環境またはステージング環境を作成して、インフラストラクチャの作成を自動化し、新しいビルドをデプロイできます。連続する環境では、統合、負荷、およびユーザー受け入れテストのアクティビティの実行時間が徐々に長くなります。
 
 **Resources**
 

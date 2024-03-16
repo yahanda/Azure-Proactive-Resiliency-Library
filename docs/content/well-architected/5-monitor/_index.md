@@ -39,18 +39,18 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-Monitoring and diagnostics are crucial for availability and resiliency. If something fails, you need to know that it failed, when it failed, and why.
+監視と診断は、可用性と回復性にとって重要です。何かが失敗した場合は、失敗したこと、失敗した時期、および失敗した理由を知る必要があります。
 
-Monitoring isn't the same as failure detection. For example, your application might detect a transient error and retry, avoiding downtime. It should also log the retry operation so that you can monitor the error rate to get an overall picture of application health.
+監視は、障害検出と同じではありません。たとえば、アプリケーションが一時的なエラーを検出して再試行し、ダウンタイムを回避できます。また、エラー率を監視してアプリケーションの正常性の全体像を把握できるように、再試行操作もログに記録する必要があります。
 
-Key points:
+キーポイント:
 
-- Define alerts that are actionable and effectively prioritized.
-- Create alerts that poll for services nearing their limits and quotas.
-- Use application instrumentation to detect and resolve performance anomalies.
-- Track the progress of long-running processes.
-- Troubleshoot issues to gain an overall view of application health.
-- Document how to analyze, diagnose, and respond to signals being monitored
+- 実用的で効果的に優先順位付けされたアラートを定義します。
+- 制限とクォータに近づいているサービスをポーリングするアラートを作成します。
+- アプリケーションインストゥルメンテーションを使用して、パフォーマンスの異常を検出して解決します。
+- 実行時間の長いプロセスの進行状況を追跡します。
+- 問題のトラブルシューティングを行い、アプリケーションの正常性の全体像を把握します。
+- 監視対象の信号を分析、診断、および応答する方法を文書化する
 
 **Resources**
 
@@ -66,16 +66,16 @@ Key points:
 
 **Recommendation/Guidance**
 
-The health model should be able to surface the health of critical system flows or key subsystems to ensure that appropriate operational prioritization is applied. For example, the health model should be able to represent the current state of the user sign-in transaction flow.
+正常性モデルでは、重要なシステム フローまたは主要なサブシステムの正常性を明らかにして、適切な運用の優先順位付けが適用されるようにする必要があります。たとえば、正常性モデルは、ユーザー サインイン トランザクション フローの現在の状態を表すことができる必要があります。
 
-The health model shouldn't treat all failures the same. The health model should distinguish between transient and non transient faults. It should clearly distinguish between expected-transient but recoverable failures and a true disaster state.
+正常性モデルでは、すべてのエラーを同じように扱うべきではありません。正常性モデルでは、一時的な障害と非一時的な障害を区別する必要があります。予期される一時的だが回復可能な障害と、実際の障害状態を明確に区別する必要があります。
 
-Key points:
+キーポイント:
 
-- Know how to tell if an application is healthy or unhealthy.
-- Understand the effects of logs in diagnostic data.
-- Ensure the consistent use of diagnostic settings across the application.
-- Use critical system flows in your health model.
+- アプリケーションが正常か異常かを判断する方法を知っている。
+- 診断データ内のログの影響を理解する。
+- アプリケーション全体で診断設定を一貫して使用するようにします。
+- 正常性モデルで重要なシステム フローを使用する。
 
 **Resources**
 
@@ -91,8 +91,8 @@ Key points:
 
 **Recommendation/Guidance**
 
-In this stage, telemetry data is presented so that an operator can quickly notice problems or trends.
-Examples include Workbook, Dashboards or email alerts. With Azure Workbooks and/or dashboards, you can build a single pane of glass view of monitoring graphs originating from Application Insights, Log Analytics, Azure Monitor metrics and service health. With Azure Monitor alerts, you can create alerts on service health and resource health.
+この段階では、オペレーターが問題や傾向にすばやく気付くことができるように、テレメトリデータが表示されます。
+例としては、ワークブック、ダッシュボード、メールアラートなどがあります。Azure ブックやダッシュボードを使用すると、Application Insights、Log Analytics、Azure Monitor メトリック、サービス正常性から発生する監視グラフの 1 つのウィンドウを構築できます。Azure Monitor アラートを使用すると、サービスの正常性とリソースの正常性に関するアラートを作成できます。
 
 **Resources**
 
@@ -108,12 +108,12 @@ Examples include Workbook, Dashboards or email alerts. With Azure Workbooks and/
 
 **Recommendation/Guidance**
 
-Azure offers a suite of experiences to keep you informed about the health of your cloud resources. The Service Health portal tracks four types of health events that may impact your resources:
+Azure には、クラウド リソースの正常性に関する情報を常に把握するための一連のエクスペリエンスが用意されています。Service Health ポータルでは、リソースに影響を与える可能性がある 4 種類の正常性イベントが追跡されます。
 
-- Service issues - Problems in the Azure services that affect you right now (Outages)
-- Planned maintenance - Upcoming maintenance that can affect the availability of your services in the future.
-- Health advisories - Changes in Azure services that require your attention. Examples include deprecation of Azure features or upgrade requirements (e.g upgrade to a supported PHP framework).
-- Security advisories - Security related notifications or violations that may affect the availability of your Azure services.
+- サービスの問題 - 現在影響している Azure サービスの問題 (停止)
+- 計画メンテナンス - 将来のサービスの可用性に影響を与える可能性のある今後のメンテナンス。
+- 正常性アドバイザリ - 注意が必要な Azure サービスの変更。例としては、Azure 機能の非推奨やアップグレード要件 (サポートされている PHP フレームワークへのアップグレードなど) などがあります。
+- セキュリティ アドバイザリ - Azure サービスの可用性に影響を与える可能性のあるセキュリティ関連の通知または違反。
 
 **Resources**
 

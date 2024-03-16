@@ -44,9 +44,9 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-Design your application architecture to use availability zones within a region. Availability zones can be used to optimize application availability within a region by providing datacenter-level fault tolerance. However, the application architecture must not share dependencies between zones to use them effectively.
+リージョン内で可用性ゾーンを使用するようにアプリケーション アーキテクチャを設計します。可用性ゾーンを使用すると、データセンター レベルのフォールト トレランスを提供することで、リージョン内のアプリケーションの可用性を最適化できます。ただし、アプリケーションアーキテクチャは、ゾーンを効果的に使用するために、ゾーン間で依存関係を共有してはなりません。
 
-Consider if component proximity is required for application performance reasons. If all or part of the application is highly sensitive to latency, components might need to be co-located which can limit the applicability of multi-region and multi-zone strategies.
+アプリケーションのパフォーマンス上の理由から、コンポーネントの近接性が必要かどうかを検討します。アプリケーションの全部または一部が待機時間の影響を強く受ける場合は、コンポーネントを同じ場所に配置する必要があるため、マルチリージョンおよびマルチゾーン戦略の適用が制限される可能性があります。
 
 **Resources**
 
@@ -62,11 +62,11 @@ Consider if component proximity is required for application performance reasons.
 
 **Recommendation/Guidance**
 
-If your application is deployed to a single region, and the region becomes unavailable, your application will also be unavailable. This might be unacceptable under the terms of your application's SLA.
+アプリケーションが 1 つのリージョンにデプロイされ、そのリージョンが使用できなくなった場合、アプリケーションも使用できなくなります。これは、アプリケーションの SLA の条件の下では受け入れられない可能性があります。
 
-If so, consider deploying your application and its services across multiple regions. A multiregional deployment can use an active-active or active-passive configuration.
+その場合は、アプリケーションとそのサービスを複数のリージョンにデプロイすることを検討してください。マルチリージョン展開では、アクティブ/アクティブまたはアクティブ/パッシブ構成を使用できます。
 
-An active-active configuration distributes requests across multiple active regions. An active-passive configuration keeps warm instances in the secondary region, but doesn't send traffic there unless the primary region fails.
+アクティブ/アクティブ構成では、複数のアクティブ領域に要求が分散されます。アクティブ/パッシブ構成では、ウォーム インスタンスはセカンダリ リージョンに保持されますが、プライマリ リージョンに障害が発生しない限り、そこにトラフィックは送信されません。
 
 **Resources**
 
@@ -83,11 +83,11 @@ An active-active configuration distributes requests across multiple active regio
 
 **Recommendation/Guidance**
 
-Ensure that all fault-points and fault-modes are understood and operationalized.
+すべての障害ポイントと障害モードが理解され、運用可能であることを確認します。
 
-Failure mode analysis (FMA) is a process for building resiliency into a system, by identifying possible failure points in the system. The FMA should be part of the architecture and design phases, so that you can build failure recovery into the system from the beginning.
+故障モード分析 (FMA) は、システム内の潜在的な障害ポイントを特定することにより、システムに回復性を構築するためのプロセスです。FMA は、障害回復を最初からシステムに組み込めるように、アーキテクチャと設計のフェーズの一部である必要があります。
 
-Identify all fault-points and fault-modes. Fault-points describe the elements within an application architecture which can fail, while fault-modes capture the various ways by which a fault-point may fail. To ensure an application is resilient to end-to-end failures, it is essential that all fault-points and fault-modes are understood and operationalized .
+すべての障害点と障害モードを特定します。障害点は、アプリケーションアーキテクチャ内で障害が発生する可能性のある要素を記述し、障害モードは、障害点が障害を起こす可能性のあるさまざまな方法をキャプチャします。アプリケーションがエンドツーエンドの障害に対して回復力があることを確認するには、すべての障害点と障害モードを理解し、運用可能にすることが不可欠です。
 
 **Resources**
 
@@ -103,7 +103,7 @@ Identify all fault-points and fault-modes. Fault-points describe the elements wi
 
 **Recommendation/Guidance**
 
-PaaS provides a framework for developing and running apps. As with IaaS, the PaaS provider hosts and maintains the platform's servers, networks, storage, and other computing resources. But PaaS also includes tools, services, and systems that support the web application lifecycle. Developers use the platform to build apps without having to manage backups, security solutions, upgrades, and other administrative tasks.
+PaaS は、アプリを開発および実行するためのフレームワークを提供します。IaaS と同様に、PaaS プロバイダーは、プラットフォームのサーバー、ネットワーク、ストレージ、その他のコンピューティング リソースをホストおよび維持します。ただし、PaaS には、Web アプリケーションのライフサイクルをサポートするツール、サービス、システムも含まれています。開発者は、このプラットフォームを使用して、バックアップ、セキュリティソリューション、アップグレード、その他の管理タスクを管理することなく、アプリを構築できます。
 
 **Resources**
 
@@ -119,7 +119,7 @@ PaaS provides a framework for developing and running apps. As with IaaS, the Paa
 
 **Recommendation/Guidance**
 
-Azure provides elastic scalability and you should design to scale out. However, applications must leverage a scale-unit approach to navigate service and subscription limits to ensure that individual components and the application as a whole can scale horizontally. Don't forget about scale in, which is important to reduce cost. For example, scale in and out for App Service is done via rules. Often customers write scale out rules and never write scale in rules, which leaves the App Service more expensive.
+Azure には柔軟なスケーラビリティが用意されているため、スケールアウトするように設計する必要があります。ただし、アプリケーションでは、スケール ユニット アプローチを利用してサービスとサブスクリプションの制限を回避し、個々のコンポーネントとアプリケーション全体を水平方向にスケーリングできるようにする必要があります。コストを削減するために重要なスケールインを忘れないでください。たとえば、App Service のスケールインとスケールアウトは、ルールを使用して行われます。多くの場合、お客様はスケールアウト ルールを記述し、スケールイン ルールを記述しないため、App Service のコストが高くなります。
 
 **Resources**
 
@@ -135,13 +135,13 @@ Azure provides elastic scalability and you should design to scale out. However, 
 
 **Recommendation/Guidance**
 
-From a workload perspective, a landing zone refers to a prepared platform into which the application gets deployed. A landing zone implementation can have compute, data sources, access controls, and networking components already provisioned. With the required plumbing ready in place; the workload needs to plug into it.
+ワークロードの観点から見ると、ランディング ゾーンとは、アプリケーションがデプロイされる準備されたプラットフォームを指します。ランディング ゾーンの実装には、コンピューティング、データ ソース、アクセス制御、およびネットワーク コンポーネントが既にプロビジョニングされている場合があります。必要な配管の準備ができた状態で。ワークロードを接続する必要があります。
 
-When considering the overall security, a landing zone offers centralized security capabilities that adds a threat mitigation layer for the workload. Implementations can vary but here are some common strategies that enhance the security posture.
+全体的なセキュリティを考慮すると、ランディング ゾーンは、ワークロードの脅威軽減レイヤーを追加する一元化されたセキュリティ機能を提供します。実装はさまざまですが、セキュリティ体制を強化する一般的な戦略をいくつか紹介します。
 
-- Isolation through segmentation. You can isolate assets at several layers from Azure enrollment down to a subscription that has the resources for the workload.
-- Consistent adoption of organizational policies, enforce creation and deletion of services and their configuration through Azure Policy.
-- Configurations that align with principles of Zero Trust . For instance an implementation might have network connectivity to on-premises data centers.
+- セグメンテーションによる分離。資産は、Azure の登録から、ワークロードのリソースを持つサブスクリプションまで、複数のレイヤーで分離できます。
+- 組織のポリシーを一貫して採用し、Azure Policy を使用してサービスとその構成の作成と削除を強制します。
+- ゼロトラストの原則に沿った構成。たとえば、実装には、オンプレミスのデータ センターへのネットワーク接続がある場合があります。
 
 **Resources**
 
@@ -157,19 +157,19 @@ When considering the overall security, a landing zone offers centralized securit
 
 **Recommendation/Guidance**
 
-Disaster recovery is the process of restoring application functionality after a catastrophic loss. In cloud environments, we acknowledge up front that failures happen. Instead of trying to prevent failures altogether, the goal is to minimize the effects of a single failing component.
+ディザスタリカバリは、壊滅的な損失の後にアプリケーションの機能を復元するプロセスです。クラウド環境では、障害が発生することを前もって認識しています。目標は、障害を完全に防ごうとするのではなく、1 つのコンポーネントに障害が発生した場合の影響を最小限に抑えることです。
 
-Testing is one way to minimize these effects. You should automate testing of your applications where possible, but you also need to be prepared for when they fail. When a failure happens, having backup and recovery strategies becomes important. Your tolerance for reduced functionality during a disaster is a business decision that varies from one application to the next.
+テストは、これらの影響を最小限に抑える方法の 1 つです。アプリケーションのテストは可能な限り自動化する必要がありますが、失敗した場合に備える必要もあります。障害が発生した場合は、バックアップとリカバリの戦略が重要になります。障害発生時の機能低下に対する許容度は、アプリケーションごとに異なるビジネス上の決定事項です。
 
-It might be acceptable for some applications to be temporarily unavailable, or partially available with reduced functionality or delayed processing. For other applications, any reduced functionality is unacceptable.
+一部のアプリケーションが一時的に使用不可になったり、機能が制限されたり、処理が遅れたりして部分的に使用可能になることは許容できる場合があります。他のアプリケーションでは、機能の低下は許容されません。
 
-Key points:
+キーポイント:
 
-- Create and test a disaster recovery plan regularly using key failure scenarios.
-- Design a disaster recovery strategy to run most applications with reduced functionality.
-- Design a backup strategy that's tailored for the business requirements and circumstances of the application.
-- Automate failover and failback steps and processes.
-- Test and validate the failover and failback approach successfully at least once.
+- 主要な障害シナリオを使用して、ディザスタリカバリ計画を定期的に作成し、テストします。
+- ほとんどのアプリケーションを機能制限して実行するためのディザスタリカバリ戦略を設計します。
+- アプリケーションのビジネス要件と状況に合わせたバックアップ戦略を設計します。
+- フェイルオーバーとフェイルバックのステップとプロセスを自動化します。
+- フェールオーバーとフェールバックのアプローチを少なくとも 1 回は正常にテストして検証します。
 
 **Resources**
 
@@ -185,12 +185,12 @@ Key points:
 
 **Recommendation/Guidance**
 
-Provide security assurance through identity management: the process of authenticating and authorizing security principals. Use identity management services to authenticate and grant permission to users, partners, customers, applications, services, and other entities. Identity management is typically a centralized function not controlled by the workload team as a part of the workload's architecture.
+ID 管理 (セキュリティ プリンシパルを認証および承認するプロセス) を通じてセキュリティを保証します。ID 管理サービスを使用して、ユーザー、パートナー、顧客、アプリケーション、サービス、およびその他のエンティティを認証し、アクセス許可を付与します。ID 管理は、通常、ワークロードのアーキテクチャの一部としてワークロード チームによって制御されない一元化された機能です。
 
-- Define clear lines of responsibility and separation of duties for each function. Restrict access based on a need-to-know basis and least privilege security principles.
-- Assign permissions to users, groups, and applications at a certain scope through Azure RBAC. Use built-in roles when possible.
-- Prevent deletion or modification of a resource, resource group, or subscription through management locks.
-- Use managed identities to access resources in Azure.
+- 各機能の責任範囲と職務の分離を明確に定義します。知る必要があることと最小特権のセキュリティ原則に基づいてアクセスを制限します。
+- Azure RBAC を使用して、特定のスコープでユーザー、グループ、アプリケーションにアクセス許可を割り当てます。可能な場合は、組み込みロールを使用します。
+- 管理ロックを使用して、リソース、リソース グループ、またはサブスクリプションの削除または変更を防止します。
+- マネージド ID を使用して Azure のリソースにアクセスする。
 
 **Resources**
 
@@ -206,15 +206,15 @@ Provide security assurance through identity management: the process of authentic
 
 **Recommendation/Guidance**
 
-Security is one of the most important aspects of any architecture. It provides the following assurances against deliberate attacks and abuse of your valuable data and systems: Confidentiality ,Integrity, and Availability.
-The security of complex systems depends on understanding the business context, social context, and technical context. As you design your system, cover these areas:
+セキュリティは、あらゆるアーキテクチャの最も重要な側面の 1 つです。貴重なデータやシステムに対する意図的な攻撃や悪用に対して、機密性、完全性、可用性を保証します。
+複雑なシステムのセキュリティは、ビジネスコンテキスト、ソーシャルコンテキスト、および技術的コンテキストの理解にかかっています。システムを設計する際には、次の領域をカバーします。
 
-- Ensure that the identity provider (AAD/ADFS/AD/Other) is highly available and aligns with application availability and recovery targets.
-- All external application endpoints are secured.
-- Communication to Azure PaaS services secured using Virtual Network Service Endpoints or Private Link.
-- Keys and secrets are backed-up to geo-redundant storage, and are still available in a failover case.
-- Ensure that the process for key rotation is automated and tested.
-- Emergency access break glass accounts have been tested and secured for recovering from Identity provider failure scenarios.
+- ID プロバイダー (AAD/ADFS/AD/Other) の可用性が高く、アプリケーションの可用性と復旧のターゲットと一致していることを確認します。
+- すべての外部アプリケーション エンドポイントがセキュリティで保護されている。
+- Virtual Network サービス エンドポイントまたは Private Link を使用してセキュリティ保護された Azure PaaS サービスへの通信。
+- キーとシークレットは geo 冗長ストレージにバックアップされ、フェールオーバーの場合でも引き続き使用できます。
+- キーローテーションのプロセスが自動化され、テストされていることを確認します。
+- 緊急アクセスの非常用アカウントは、ID プロバイダーの障害シナリオから回復するためにテストされ、セキュリティで保護されています。
 
 **Resources**
 
