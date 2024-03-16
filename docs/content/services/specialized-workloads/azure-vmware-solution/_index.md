@@ -34,7 +34,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### AVS-1 - Configure Azure Service Health notification and alerts for AVS
+### AVS-1 - AVS の Azure Service Health 通知とアラートを構成します
 
 **Category: Monitoring**
 
@@ -60,7 +60,7 @@ Azure Service Health is the mechanism used to inform customers of any service or
 
 <br><br>
 
-### AVS-2 - Configure Syslog in Diagnostic Settings for AVS
+### AVS-2 - AVSの診断設定でSyslogを構成します
 
 **Category: Monitoring**
 
@@ -86,7 +86,7 @@ Azure VMware Solution Syslogs have useful data for troubleshooting and performan
 
 <br><br>
 
-### AVS-3 - Configure Azure Monitor Alert warning thresholds for vSAN datastore utilization
+### AVS-3 - vSAN データストア使用率の Azure Monitor アラート警告しきい値を構成します
 
 **Category: Monitoring**
 
@@ -114,7 +114,7 @@ To expand the vSAN datastore additional hosts can be added, up to the maximum su
 
 <br><br>
 
-### AVS-4 - Enable Stretched Clusters for Multi-AZ Availability of the vSAN Datastore
+### AVS-4 - vSAN データストアのマルチ AZ 可用性のためのストレッチ クラスタを有効化します
 
 **Category: Availability**
 
@@ -139,7 +139,7 @@ If the customer has a requirement for Multi-AZ deployment of Azure VMware Soluti
 
 <br><br>
 
-### AVS-5 - Monitor CPU Utilization to ensure sufficient resources for workloads
+### AVS-5 - CPU 使用率を監視して、ワークロードに十分なリソースを確保します
 
 **Category: Monitoring**
 
@@ -163,7 +163,7 @@ Ensure there are enough compute resources to avoid host resource exhaustion. Azu
 
 <br><br>
 
-### AVS-6 - Monitor Memory Utilization to ensure sufficient resources for workloads
+### AVS-6 - メモリ使用率を監視して、ワークロードに十分なリソースを確保します
 
 **Category: Monitoring**
 
@@ -187,7 +187,7 @@ Ensure there are enough memory resources to avoid host resource exhaustion. Azur
 
 <br><br>
 
-### AVS-7 - Monitor when Azure VMware Solution Cluster Size is approaching the host limit
+### AVS-7 - Azure VMware Solution クラスターのサイズがホストの制限に近づいているかどうかを監視します
 
 **Category: Monitoring**
 
@@ -211,7 +211,7 @@ Alert when the cluster size of 14 hosts is reached. Periodically fire up alerts,
 
 <br><br>
 
-### AVS-8 - Monitor when Azure VMware Solution Private Cloud is reaching capacity limit
+### AVS-8 - Azure VMware Solution プライベート クラウドが容量制限に達する時期を監視します
 
 **Category: Monitoring**
 
@@ -235,7 +235,7 @@ Alert when the total node count is greater than or equal to 90 hosts so that it'
 
 <br><br>
 
-### AVS-9 - Apply Resource delete lock on the resource group hosting the private cloud
+### AVS-9 - プライベート クラウドをホストしているリソース グループにリソース削除ロックを適用します
 
 **Category: Governance**
 

@@ -29,7 +29,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### KV-1 - Key vaults should have soft delete enabled
+### KV-1 - Key vaults で論理的な削除を有効にする必要があります
 
 **Category: Disaster Recovery**
 
@@ -53,7 +53,7 @@ Key Vault's soft-delete feature allows recovery of the deleted vaults and delete
 
 <br><br>
 
-### KV-2 - Key vaults should have purge protection enabled
+### KV-2 - Key vaults で削除保護を有効にする必要があります
 
 **Category: Disaster Recovery**
 
@@ -77,7 +77,7 @@ Malicious deletion of a key vault can lead to permanent data loss. A malicious i
 
 <br><br>
 
-### KV-3 - Enable Azure Private Link Service for Key vault
+### KV-3 - Key Vault の Azure Private Link サービスを有効にします
 
 **Category: Networking**
 
@@ -101,7 +101,7 @@ Azure Private Link Service enables you to access Azure Key Vault and Azure hoste
 
 <br><br>
 
-### KV-4 - Use separate key vaults per application per environment
+### KV-4 - 環境ごとアプリケーションごとに個別の Key vaults を使用します
 
 **Category: Governance**
 
@@ -125,7 +125,7 @@ Key vaults define security boundaries for stored secrets. Grouping secrets into 
 
 <br><br>
 
-### KV-5 - Diagnostic logs in Key Vault should be enabled
+### KV-5 - Key Vault の診断ログを有効にする必要があります
 
 **Category: Monitoring**
 

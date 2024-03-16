@@ -60,7 +60,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### SAP-1 - Ensure SAP production systems are designed for high availability
+### SAP-1 - SAP 運用システムが高可用性を実現するように設計されていることを確認します
 
 **Category: Availability**
 
@@ -85,7 +85,7 @@ Ensure SAP production systems are designed for high availability using availabil
 
 <br><br>
 
-### SAP-2 - Run SAP application servers on two or more VMS
+### SAP-2 - 2 つ以上の VM で SAP アプリケーション サーバーを実行します
 
 **Category: Availability**
 
@@ -110,7 +110,7 @@ Deploy SAP application servers on two or more virtual machines (VMs) using VMSS 
 
 <br><br>
 
-### SAP-3 - When using Virtual Machines Scale Set review recommendations for SAP workload
+### SAP-3 - 仮想マシン スケール セットを使用する場合は、SAP ワークロードの推奨事項を確認します
 
 **Category: Availability**
 
@@ -135,7 +135,7 @@ If utilizing Virtual Machine Scale Sets (VMSS), adhere to our guidelines for SAP
 
 <br><br>
 
-### SAP-5 - In a zonal high availability setup if we can't use VMSS check use if availability zone and proximity placement group
+### SAP-5 - ゾーン高可用性設定で VMSS を使用できない場合は、可用性ゾーンと近接配置グループの使用を確認します
 
 **Category: Availability**
 
@@ -160,7 +160,7 @@ In a zonal high availability setup if we can't use VMSS, then ensure the SAP app
 
 <br><br>
 
-### SAP-6 - Avoid placing application server and database in one Proximity Placement Group
+### SAP-6 - アプリケーションサーバーとデータベースを 1 つの近接配置グループに配置しないようにします
 
 **Category: Availability**
 
@@ -185,7 +185,7 @@ Ensure that you do not colocate application server and database virtual machines
 
 <br><br>
 
-### SAP-7 - Avoid placing VMs from multiple SAP systems in a single Proximity Placement Group
+### SAP-7 - 複数の SAP システムの VM を 1 つの近接配置グループに配置しないようにします
 
 **Category: Availability**
 
@@ -210,7 +210,7 @@ Ensure that VMs from different SAP systems are not colocated within a single Pro
 
 <br><br>
 
-### SAP-8 - When creating availability sets enable fault domains
+### SAP-8 - 可用性セットの作成時に障害ドメインを有効にします
 
 **Category: Availability**
 
@@ -235,7 +235,7 @@ When creating availability sets, ensure you utilize the maximum number of fault 
 
 <br><br>
 
-### SAP-9 - If using single-instance VMs all OS and data disks must be Premium SSD or Ultra Disk
+### SAP-9 - 単一インスタンス VM を使用する場合、すべての OS ディスクとデータ ディスクが Premium SSD または Ultra Disk である必要があります
 
 **Category: Availability**
 
@@ -260,7 +260,7 @@ For single-instance VMs, both OS and data disks must be either Premium SSD or Ul
 
 <br><br>
 
-### SAP-14 - Ensure that the data is replicated synchronously (SYNC mode) between the primary and secondary database hosting VM nodes
+### SAP-14 - VM ノードをホストしているプライマリ データベースとセカンダリ データベース間でデータが同期的にレプリケートされる (SYNC モード) ことを確認します
 
 **Category: Availability**
 
@@ -285,7 +285,7 @@ In the case of databases, ensure that data is replicated synchronously (SYNC mod
 
 <br><br>
 
-### SAP-15 - Ensure that the SAP shared files systems are made highly available
+### SAP-15 - SAP 共有ファイルシステムの高可用性を確保します
 
 **Category: Availability**
 
@@ -310,7 +310,7 @@ Make sure that SAP shared file systems, such as /sapmnt, /usr/trans and /interfa
 
 <br><br>
 
-### SAP-16 - Test all HA solutions end to end
+### SAP-16 - すべての HA ソリューションをエンドツーエンドでテストします
 
 **Category: Availability**
 
@@ -335,7 +335,7 @@ Thoroughly test all high-availability (HA) solutions, including scenarios like k
 
 <br><br>
 
-### SAP-20 - In zonal SAP deployment, ensure all components and Azure services are deployed with zone redundancy
+### SAP-20 - ゾーン SAP デプロイでは、すべてのコンポーネントと Azure サービスがゾーン冗長性でデプロイされていることを確認します
 
 **Category: Availability**
 
@@ -360,7 +360,7 @@ In zonal SAP deployments, deploy all components and Azure services with zone red
 
 <br><br>
 
-### SAP-22 - Ensure that the SAP production workloads are protected by a cross-region DR solution
+### SAP-22 - SAP 運用ワークロードがリージョン間 DR ソリューションによって保護されていることを確認します
 
 **Category: Disaster Recovery**
 
@@ -385,7 +385,7 @@ Make sure that SAP production workloads have a disaster recovery (DR) solution s
 
 <br><br>
 
-### SAP-23 - If using Zonal DR, ensure that SAP production workloads are protected by cross-zone DR solution
+### SAP-23 - ゾーン DR を使用する場合は、SAP 運用ワークロードがクロスゾーン DR ソリューションによって保護されていることを確認します
 
 **Category: Disaster Recovery**
 
@@ -410,7 +410,7 @@ When implementing Zonal Disaster Recovery (DR), make sure that SAP production wo
 
 <br><br>
 
-### SAP-24 - Implementing an offsite backup strategy by utilizing the second Azure region for our backups
+### SAP-24 - バックアップに 2 番目の Azure リージョンを利用してオフサイト バックアップ戦略を実装します
 
 **Category: Disaster Recovery**
 
@@ -435,7 +435,7 @@ Create an offsite backup plan by leveraging the second Azure region for storing 
 
 <br><br>
 
-### SAP-26 - Consider On-demand Capacity Reservation to reserve DR compute capacity
+### SAP-26 - オンデマンド容量予約 を使用して DR コンピューティング容量を予約することを検討します
 
 **Category: Disaster Recovery**
 
@@ -460,7 +460,7 @@ On-demand Capacity Reservation is recommended for disaster recovery (DR) needs.�
 
 <br><br>
 
-### SAP-27 - Ensure that the production databases are replicated (ASYNC) to DR location, use database vendor's replication
+### SAP-27 - 運用データベースが DR の場所にレプリケート (ASYNC) されていることを確認し、データベース ベンダーのレプリケーションを使用します
 
 **Category: Disaster Recovery**
 
@@ -485,7 +485,7 @@ Replicate production databases (ASYNC) to the DR location using the database ven
 
 <br><br>
 
-### SAP-28 - SAP components are backed up to DR location using an appropriate backup tool or ASR
+### SAP-28 - SAP コンポーネントは、適切なバックアップ ツールまたは ASR を使用して DR の場所にバックアップされます
 
 **Category: Disaster Recovery**
 
@@ -510,7 +510,7 @@ Back up SAP components such as (A)SCS, application servers, and WebDispatchers t
 
 <br><br>
 
-### SAP-29 - SAP shared files systems and any other critical to DR are replicated or backed up to DR location
+### SAP-29 - SAP 共有ファイル システムと DR にとって重要なその他のものが DR の場所にレプリケートまたはバックアップされます
 
 **Category: Disaster Recovery**
 
@@ -535,7 +535,7 @@ Ensure that critical SAP shared file systems, such as /sapmnt, /usr/trans and /i
 
 <br><br>
 
-### SAP-30 - Ensure Cross Region Restore of Recovery Services Vaults has been enabled
+### SAP-30 - Recovery Services コンテナーのリージョン間復元が有効になっていることを確認します
 
 **Category: Disaster Recovery**
 
@@ -560,7 +560,7 @@ Enable Cross Region Restore for Geo-redundant Recovery Services Vaults. This all
 
 <br><br>
 
-### SAP-31 - Conduct backup testing, all the systems are backed up and restore is working within an expected time frame
+### SAP-31 - バックアップテストを実施し、すべてのシステムがバックアップされ、復元が想定された時間枠内で機能することを確認します
 
 **Category: Disaster Recovery**
 
@@ -585,7 +585,7 @@ Conduct backup testing to verify that all production systems can be backed up si
 
 <br><br>
 
-### SAP-32 - Automate DR infrastructure build or pre-deploy DR resources
+### SAP-32 - DR インフラストラクチャの構築を自動化するか、DR リソースを事前デプロイします
 
 **Category: Disaster Recovery**
 
@@ -610,7 +610,7 @@ Automate the build of disaster recovery (DR) infrastructure (or pre-deploy DR re
 
 <br><br>
 
-### SAP-33 - Document and test DR procedure, ensure it meets RPO and RTO targets
+### SAP-33 - DR 手順を文書化してテストし、RPO と RTO の目標を満たしていることを確認します
 
 **Category: Disaster Recovery**
 
@@ -635,7 +635,7 @@ Document and tes disaster recovery (DR) procedure to ensure it meets your Recove
 
 <br><br>
 
-### SAP-36 - Configure scheduled events notification
+### SAP-36 - スケジュールされたイベント通知を設定します
 
 **Category: Monitoring**
 
@@ -660,7 +660,7 @@ Configure scheduled events to receive notifications about upcoming maintenance e
 
 <br><br>
 
-### SAP-37 - Defined a procedure on how to react to Scheduled events
+### SAP-37 - スケジュールされたイベントへの対応方法に関する手順を定義します
 
 **Category: Monitoring**
 
@@ -685,7 +685,7 @@ Define a procedure for reacting to scheduled events effectively.
 
 <br><br>
 
-### SAP-39 - Setup Service Health alerts for all critical subscriptions
+### SAP-39 - すべての重要なサブスクリプションに対するサービス正常性アラートを設定します
 
 **Category: Monitoring**
 
@@ -710,7 +710,7 @@ Set up Service Health alerts for all critical subscriptions, this will allow qui
 
 <br><br>
 
-### SAP-40 - Defined a procedure on how to react to Service Heath Alerts
+### SAP-40 - サービス正常性アラートへの対応方法に関する手順を定義します
 
 **Category: Monitoring**
 
@@ -735,7 +735,7 @@ Define a procedure for reacting to Service Health Alerts, ensuring that SAP appl
 
 <br><br>
 
-### SAP-42 - ASCS-Pacemaker (Central Server Instance) Ensure Pacemaker cluster has been setup for SAP ASCS high availability
+### SAP-42 - ASCS-Pacemaker (セントラル サーバー インスタンス) Pacemaker クラスターが SAP ASCS 高可用性用にセットアップされていることを確認します
 
 **Category: Availability**
 
@@ -761,7 +761,7 @@ For the ASCS-Pacemaker (Central Server Instance), ensure that the Pacemaker clus
 
 <br><br>
 
-### SAP-43 - ASCS-Pacemaker-SLES (Central Server Instance) Ensure the Pacemaker cluster has been setup for SAP ASCS high availability
+### SAP-43 - ASCS-Pacemaker-SLES (セントラル サーバー インスタンス) Pacemaker クラスターが SAP ASCS 高可用性用にセットアップされていることを確認します
 
 **Category: Availability**
 
@@ -785,7 +785,7 @@ For the ASCS-Pacemaker-SLES (Central Server Instance), ensure that the Pacemaker
 
 <br><br>
 
-### SAP-44 - ASCS-Pacemaker-RH (Central Server Instance) Ensure the Pacemaker cluster has been setup for SAP ASCS high availability
+### SAP-44 - ASCS-Pacemaker-RH (セントラル サーバー インスタンス) Pacemaker クラスターが SAP ASCS 高可用性用にセットアップされていることを確認します
 
 **Category: Availability**
 
@@ -809,7 +809,7 @@ For the ASCS-Pacemaker-RH (Central Server Instance), ensure that the Pacemaker c
 
 <br><br>
 
-### SAP-45 - ASCS-LB (Central Server Instance) Ensure the load balancer is configured correctly for SAP ASCS High availability
+### SAP-45 - ASCS-LB (セントラル サーバー インスタンス) ロード バランサーが SAP ASCS 高可用性用に正しく構成されていることを確認します
 
 **Category: Availability**
 
@@ -833,7 +833,7 @@ For the ASCS-LB (Central Server Instance), ensure that the load balancer is conf
 
 <br><br>
 
-### SAP-46 - DBHANA-Pacemaker (Database Instance) Ensure the Pacemaker cluster has been setup for SAP HANA DB high availability
+### SAP-46 - DBHANA-Pacemaker (データベース インスタンス) Pacemaker クラスターが SAP HANA DB の高可用性用にセットアップされていることを確認します
 
 **Category: Availability**
 
@@ -857,7 +857,7 @@ For the DBHANA-Pacemaker (Database Instance), ensure that the Pacemaker cluster 
 
 <br><br>
 
-### SAP-47 - DBHANA-Pacemaker-SLES (Database Instance) Ensure the Pacemaker cluster has been setup for SAP HANA DB high availability
+### SAP-47 - DBHANA-Pacemaker-SLES (データベースインスタンス) Pacemaker クラスターが SAP HANA DB 高可用性用にセットアップされていることを確認します
 
 **Category: Availability**
 
@@ -881,7 +881,7 @@ For the DBHANA-Pacemaker-SLES (Database Instance), ensure that the Pacemaker clu
 
 <br><br>
 
-### SAP-48 - DBHANA-Pacemaker-RH (Database Instance) Ensure the Pacemaker cluster has been setup for SAP ASCS high availability
+### SAP-48 - DBHANA-Pacemaker-RH (データベース インスタンス) Pacemaker クラスターが SAP ASCS 高可用性用にセットアップされていることを確認します
 
 **Category: Availability**
 
@@ -905,7 +905,7 @@ For the DBHANA-Pacemaker-RH (Database Instance), ensure that the Pacemaker clust
 
 <br><br>
 
-### SAP-49 - DBHANA-LB (Database Instance) Ensure the load balancer is configured correctly for SAP HANA DB High availability
+### SAP-49 - DBHANA-LB (データベースインスタンス) ロードバランサーが SAP HANA DB 高可用性用に正しく構成されていることを確認します
 
 **Category: Availability**
 

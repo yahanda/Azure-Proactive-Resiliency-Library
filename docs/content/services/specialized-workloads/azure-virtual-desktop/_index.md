@@ -47,7 +47,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### AVD-1 - Use Private link when connecting to File Share or Key Vault
+### AVD-1 - ファイル共有または Key Vault に接続するときにプライベート リンクを使用します
 
 **Category: Access & Security**
 
@@ -72,7 +72,7 @@ Private Link is available for other Azure services that work in conjunction with
 
 <br><br>
 
-### AVD-2 - Monitor Service Health and Resource Health of AVD
+### AVD-2 - AVD のサービスの正常性とリソースの正常性を監視します
 
 **Category: Monitoring**
 
@@ -98,7 +98,7 @@ Use Resource Health to monitor your VMs and storage solutions.
 
 <br><br>
 
-### AVD-3 - Deploy Session Hosts in an Availability Zone
+### AVD-3 - 可用性ゾーンでのセッションホストのデプロイ
 
 **Category: Availability**
 
@@ -125,7 +125,7 @@ Enhances reliability by minimizing latency and impacts reliability helping keep 
 
 <br><br>
 
-### AVD-4 - Deploy Domain Controllers and DNS Servers in Azure Virtual Network Across Availability Zones
+### AVD-4 - 可用性ゾーン間で Azure Virtual Network にドメイン コントローラーと DNS サーバーをデプロイします
 
 **Category: Availability**
 
@@ -151,7 +151,7 @@ This recommendation is not relevant when you are utilizing Microsoft Entra as th
 
 <br><br>
 
-### AVD-5 - Implement RDP Shortpath for Public or Managed Networks
+### AVD-5 - パブリックネットワークまたはマネージドネットワークにRDPショートパスを実装します
 
 **Category: Networking**
 
@@ -175,7 +175,7 @@ It is recommended to enable RDP Shortpath for AVD. RDP Shortpath is a feature of
 
 <br><br>
 
-### AVD-6 - Implement a Multi-Region BCDR Plan
+### AVD-6 - 複数リージョンの BCDR 計画を実装します
 
 **Category: Disaster Recovery**
 
@@ -200,7 +200,7 @@ It is recommended to adopt a multi-region deployment (active-active) for AVD. Ea
 
 <br><br>
 
-### AVD-7 - Store Golden Image Redundantly for Disaster Recovery
+### AVD-7 - ディザスタリカバリのためにゴールデンイメージを冗長的に保存します
 
 **Category: Disaster Recovery**
 
@@ -225,7 +225,7 @@ If a full BCDR strategy is not in place, consider using zone-redundant storage t
 
 <br><br>
 
-### AVD-8 - Capacity Planning for AVD Resources
+### AVD-8 - AVD リソースのキャパシティ プランニングを行います
 
 **Category: Disaster Recovery**
 
@@ -252,7 +252,7 @@ To handle a large number of users, consider scaling horizontally by creating mul
 
 <br><br>
 
-### AVD-9 - Ensure that FSLogix Storage Account is Redundant
+### AVD-9 - FSLogix ストレージ アカウントが冗長であることを確認します
 
 **Category: Availability**
 
@@ -284,7 +284,7 @@ Generally, it is recommended to store your data as secure and redundant as possi
 
 <br><br>
 
-### AVD-10 - Enable Azure Backup for FSLogix Storage Account
+### AVD-10 - FSLogix ストレージ アカウントの Azure Backup を有効にします
 
 **Category: Backup/Storage**
 
