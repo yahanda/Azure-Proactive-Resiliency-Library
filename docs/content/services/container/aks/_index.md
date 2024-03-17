@@ -57,9 +57,9 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Azure Availability Zones are a high-availability offering that protects applications and data from datacenter-level failures. Availability Zones are unique physical locations within an Azure region that are equipped with independent power, cooling, and networking. Each Availability Zone is made up of one or more datacenters and is designed to be highly available and fault tolerant.
+Azure Availability Zones は、データセンター レベルの障害からアプリケーションとデータを保護する高可用性オファリングです。Availability Zones は、独立した電源、冷却装置、ネットワークを備えた Azure リージョン内の一意の物理的な場所です。各アベイラビリティーゾーンは 1 つ以上のデータセンターで構成され、高可用性とフォールトトレラントを実現するように設計されています。
 
-By deploying resources such as aks clusters, virtual machines, storage, and databases across multiple Availability Zones in the same region, you can protect your applications and data from datacenter-level failures. If one Availability Zone goes down, the other Availability Zones in the region can continue to provide service.
+aks クラスター、仮想マシン、ストレージ、データベースなどのリソースを同じリージョン内の複数の Availability Zones にデプロイすることで、データセンター レベルの障害からアプリケーションとデータを保護できます。1 つのアベイラビリティーゾーンがダウンしても、リージョン内の他のアベイラビリティーゾーンは引き続きサービスを提供できます。
 
 **Resources**
 
@@ -84,9 +84,9 @@ By deploying resources such as aks clusters, virtual machines, storage, and data
 
 **Guidance**
 
-AKS automatically assigns the label kubernetes.azure.com/mode: system to nodes in a system node pool. This label signals to AKS that system pods should be scheduled on nodes in this pool. However, you can still schedule application pods on these nodes if you choose to do so.
+AKS では、システム ノード プール内のノードに kubernetes.azure.com/mode: system というラベルが自動的に割り当てられます。このラベルは、このプール内のノードでシステム ポッドをスケジュールする必要があることを AKS に通知します。ただし、選択した場合は、これらのノードでアプリケーション Pod をスケジュールできます。
 
-To prevent misconfigured or rogue application pods from accidentally killing system pods, it is recommended that you isolate critical system pods from your application pods. This can be achieved by scheduling system pods on dedicated node pools or by using node selectors to ensure that system pods are only scheduled on nodes with the kubernetes.azure.com/mode: system label.
+誤って構成されたアプリケーション Pod や不正なアプリケーション Pod が誤ってシステム Pod を強制終了するのを防ぐために、重要なシステム Pod をアプリケーション Pod から分離することをお勧めします。これは、専用ノード プールでシステム ポッドをスケジュールするか、ノード セレクターを使用して、システム ポッドが kubernetes.azure.com/mode: system ラベルを持つノードでのみスケジュールされるようにすることで実現できます。
 
 **Resources**
 
@@ -110,7 +110,7 @@ To prevent misconfigured or rogue application pods from accidentally killing sys
 
 **Guidance**
 
-Local Kubernetes accounts provide a legacy non-auditable means of accessing an AKS cluster and are not recommended for use. Enabling Microsoft Entra integration on an AKS cluster provides several benefits for managing access to the cluster. By using Microsoft Entra, you can centralize user and group management, enforce multi-factor authentication, and enable role-based access control (RBAC) for fine-grained access control to cluster resources. Additionally, Microsoft Entra provides a secure and scalable authentication mechanism that can be integrated with other Azure services and third-party identity providers.
+ローカル Kubernetes アカウントは、AKS クラスターにアクセスするための従来の監査不可能な手段であり、使用は推奨されません。AKS クラスターで Microsoft Entra 統合を有効にすると、クラスターへのアクセスを管理する上でいくつかの利点があります。Microsoft Entra を使用すると、ユーザーとグループの管理を一元化し、多要素認証を適用し、ロールベースのアクセス制御 (RBAC) を有効にして、クラスター リソースへのきめ細かなアクセス制御を行うことができます。さらに、Microsoft Entra は、他の Azure サービスやサードパーティの ID プロバイダーと統合できる安全でスケーラブルな認証メカニズムを提供します。
 
 **Resources**
 
@@ -136,7 +136,7 @@ Local Kubernetes accounts provide a legacy non-auditable means of accessing an A
 
 **Guidance**
 
-The Azure CNI networking solution provides several benefits for managing IP addresses and network connectivity for cluster pods including dynamic allocation of IPs to pods, allowing node and pod subnets to scale independently, direct network connectivity between pods and resources in the VNET and allowing different network policies for pods and nodes. It also supports different networking policies including Azure Network Policies and Calico.
+Azure CNI ネットワーク ソリューションには、ポッドへの IP の動的割り当て、ノードとポッドのサブネットの個別にスケーリング、VNET 内のポッドとリソース間の直接ネットワーク接続、ポッドとノードに異なるネットワーク ポリシーを許可するなど、クラスター ポッドの IP アドレスとネットワーク接続を管理するためのいくつかの利点があります。また、Azure ネットワーク ポリシーや Calico など、さまざまなネットワーク ポリシーもサポートしています。
 
 **Resources**
 
@@ -161,12 +161,12 @@ The Azure CNI networking solution provides several benefits for managing IP addr
 
 **Guidance**
 
-The cluster auto-scaler automatically scales the number of nodes in a node pool based on pod resource requests and the available capacity in the cluster. It helps ensure that the cluster can scale according to demand and prevent outages.
+クラスター オートスケーラーは、ポッド リソース要求とクラスター内の使用可能な容量に基づいて、ノード プール内のノード数を自動的にスケーリングします。これにより、クラスターを需要に応じてスケーリングし、停止を防ぐことができます。
 
-If the cluster has availability zones enabled, the following configuration changes need to be verified or established:
+クラスターでアベイラビリティーゾーンが有効になっている場合は、次の構成変更を検証または確立する必要があります。
 
-- Persistent Volumes - If the cluster is using persistent volumes backed by Azure Storage, ensure you have one nodepool per availability zone. Persistent volumes do not work across AZs and the auto-scaler could fail to create new pods if the nodepool cannot access the persistent volume.
-- Multiple Nodepools per Zone - If the cluster has multiple nodepools per AZ, enable the `--balance-similar-node-groups` property through the auto-scaler profile. This feature detects similar nodepools and balances the number of nodes across them.
+- 永続ボリューム - クラスターで Azure Storage によってサポートされる永続ボリュームを使用している場合は、可用性ゾーンごとに 1 つのノードプールがあることを確認します。永続ボリュームは AZ 間では機能せず、ノードプールが永続ボリュームにアクセスできない場合、オートスケーラーは新しいポッドの作成に失敗する可能性があります。
+- ゾーンごとに複数のノードプール - クラスターに AZ ごとに複数のノードプールがある場合は、自動スケーラー プロファイルを使用して '--balance-similar-node-groups' プロパティを有効にします。この機能は、類似したノードプールを検出し、それらの間でノードの数のバランスを取ります。
 
 
 **Resources**
@@ -194,7 +194,7 @@ If the cluster has availability zones enabled, the following configuration chang
 
 **Guidance**
 
-AKS is increasingly being used for stateful applications that require a backup strategy. Azure Backup now allows you to back up AKS clusters (cluster resources and persistent volumes attached to the cluster) using a backup extension, which must be installed in the cluster. Backup vault communicates with the cluster via this Backup Extension to perform backup and restore operations."
+AKS は、バックアップ戦略を必要とするステートフル アプリケーションに使用されることが増えています。Azure Backup では、クラスターにインストールする必要があるバックアップ拡張機能を使用して、AKS クラスター (クラスターに接続されているクラスター リソースと永続ボリューム) をバックアップできるようになりました。バックアップ コンテナーは、このバックアップ拡張機能を介してクラスターと通信し、バックアップと復元の操作を実行します。
 
 **Resources**
 
@@ -219,8 +219,8 @@ AKS is increasingly being used for stateful applications that require a backup s
 
 **Guidance**
 
-Minor version releases include new features and improvements. Patch releases are more frequent (sometimes weekly) and are intended for critical bug fixes within a minor version. Patch releases include fixes for security vulnerabilities or major bugs.
-If you're running an unsupported Kubernetes version, you'll be asked to upgrade when requesting support for the cluster. Clusters running unsupported Kubernetes releases aren't covered by the AKS support policies.
+マイナーバージョンのリリースには、新機能と改善が含まれています。パッチリリースはより頻繁(場合によっては毎週)で、マイナーバージョン内の重大なバグ修正を目的としています。パッチリリースには、セキュリティの脆弱性や重大なバグの修正が含まれています。
+サポートされていない Kubernetes バージョンを実行している場合は、クラスターのサポートを要求するときにアップグレードするように求められます。サポートされていない Kubernetes リリースを実行しているクラスターは、AKS サポート ポリシーの対象外です。
 
 **Resources**
 
@@ -246,12 +246,12 @@ If you're running an unsupported Kubernetes version, you'll be asked to upgrade 
 
 **Guidance**
 
-Data in an Azure Storage account is always replicated three times in the primary region. Azure Storage for Persistent Volumes offers other options for how your data is replicated in the primary or paired region:
+Azure Storage アカウント内のデータは、常にプライマリ リージョンで 3 回レプリケートされます。Azure Storage for Persistent Volumes には、プライマリ リージョンまたはペア リージョンでデータをレプリケートする方法に関する他のオプションが用意されています。
 
-- LRS synchronously replicates data 3 times in single physical location. It is least expensive replication but not recommended for apps with high availability and durability. LRS provides eleven 9 durability.
-- ZRS copies data synchronously across 3 availability zone in primary region. ZRS is recommended for apps requiring high availability across zones. ZRS provides twelve 9s durability.
+- LRS は、1 つの物理的な場所でデータを 3 回同期的にレプリケートします。レプリケーションは最もコストがかかりませんが、高可用性と持続性を備えたアプリにはお勧めしません。LRS は イレブン ナイン の耐久性を提供します。
+- ZRS は、プライマリ リージョンの 3 つの可用性ゾーン間でデータを同期的にコピーします。ZRS は、ゾーン間で高可用性を必要とするアプリに推奨されます。ZRS は トゥエルブ ナイン の耐久性を提供します。
 
-In AKS Premium_ZRS and StandardSSD_ZRS disk types are supported. ZRS disk could be scheduled on the zone or non-zone node, without the restriction that disk volume should be co-located in the same zone as a given node.
+AKS では、Premium_ZRS と StandardSSD_ZRS のディスクの種類がサポートされています。ZRS ディスクは、特定のノードと同じゾーンにディスク ボリュームを併置する必要があるという制限なしに、ゾーン ノードまたは非ゾーン ノードでスケジュールできます。
 
 **Resources**
 
@@ -276,7 +276,7 @@ In AKS Premium_ZRS and StandardSSD_ZRS disk types are supported. ZRS disk could 
 
 **Guidance**
 
-Starting with Kubernetes version 1.26, in-tree persistent volume types kubernetes.io/azure-disk and kubernetes.io/azure-file are deprecated and will no longer be supported. Removing these drivers following their deprecation is not planned, however you should migrate to the corresponding CSI drivers disks.csi.azure.com and file.csi.azure.com.
+Kubernetes バージョン 1.26 以降、ツリー内の永続ボリュームの種類 kubernetes.io/azure-disk と kubernetes.io/azure-file は非推奨となり、サポートされなくなります。廃止後にこれらのドライバーを削除する予定はありませんが、対応する CSI ドライバーに disks.csi.azure.com および file.csi.azure.com 移行する必要があります。
 
 **Resources**
 
@@ -301,7 +301,7 @@ Starting with Kubernetes version 1.26, in-tree persistent volume types kubernete
 
 **Guidance**
 
-A resource quota, defined by a ResourceQuota object, provides constraints that limit aggregate resource consumption per namespace. It can limit the quantity of objects that can be created in a namespace by type, as well as the total amount of compute resources that may be consumed by resources in that namespace.
+リソース クォータは、ResourceQuota オブジェクトによって定義され、名前空間ごとのリソース消費量の総量を制限する制約を提供します。これにより、名前空間で作成できるオブジェクトの数を種類別に制限したり、その名前空間のリソースによって消費される可能性のあるコンピューティング リソースの合計量を制限したりできます。
 
 **Resources**
 
@@ -325,11 +325,11 @@ A resource quota, defined by a ResourceQuota object, provides constraints that l
 
 **Guidance**
 
-To rapidly scale application workloads in an AKS cluster, you can use virtual nodes. With virtual nodes, pods provision much faster than through the Kubernetes cluster auto-scaler.
+AKS クラスター内のアプリケーション ワークロードを迅速にスケーリングするには、仮想ノードを使用できます。仮想ノードを使用すると、ポッドは Kubernetes クラスター オートスケーラーを使用するよりもはるかに高速にプロビジョニングされます。
 
-If the cluster has availability zones enabled, the following configuration changes need to be verified or established:
+クラスターでアベイラビリティーゾーンが有効になっている場合は、次の構成変更を検証または確立する必要があります。
 
-- Persistent Volumes - If the cluster is using persistent volumes backed by Azure Storage, ensure you have one nodepool per availability zone. Persistent volumes do not work across AZs and the auto-scaler could fail to create new pods if the nodepool cannot access the persistent volume.
+- 永続ボリューム - クラスターで Azure Storage によってサポートされる永続ボリュームを使用している場合は、可用性ゾーンごとに 1 つのノードプールがあることを確認します。永続ボリュームは AZ 間では機能せず、ノードプールが永続ボリュームにアクセスできない場合、オートスケーラーは新しいポッドの作成に失敗する可能性があります。
 
 **Resources**
 
@@ -354,7 +354,7 @@ If the cluster has availability zones enabled, the following configuration chang
 
 **Guidance**
 
-Production AKS clusters should be configured with the Standard tier. The AKS free service doesn't offer a financially backed SLA and node scalability is limited. To obtain that SLA, Standard tier must be selected.
+運用 AKS クラスターは、Standard レベルで構成する必要があります。AKS 無料サービスでは、返金制度のある SLA は提供されず、ノードのスケーラビリティは制限されます。その SLA を取得するには、Standard レベルを選択する必要があります。
 
 **Resources**
 
@@ -379,7 +379,7 @@ Production AKS clusters should be configured with the Standard tier. The AKS fre
 
 **Guidance**
 
-Azure Monitor collects events, captures container logs, collects CPU/Memory information from the Metrics API and allows the visualization of the data, to validate the near real time health and performance of AKS environments. The visualization tool can be Azure Monitor Container Insights, Prometheus, Grafana or others.
+Azure Monitor は、イベントを収集し、コンテナー ログをキャプチャし、メトリック API から CPU/メモリ情報を収集し、データの視覚化を可能にして、AKS 環境のほぼリアルタイムの正常性とパフォーマンスを検証します。視覚化ツールには、Azure Monitor Container Insights、Prometheus、Grafana などがあります。
 
 **Resources**
 
@@ -403,7 +403,7 @@ Azure Monitor collects events, captures container logs, collects CPU/Memory info
 
 **Guidance**
 
-Ephemeral OS disks provide lower read/write latency on the OS disk of AKS agent nodes since the disk is locally attached, and it is not replicated as managed disks. You will also get faster cluster operations like scale or upgrade thanks to faster re-imaging and boot times.
+エフェメラル OS ディスクはローカルに接続され、マネージド ディスクとしてレプリケートされないため、AKS エージェント ノードの OS ディスクでの読み取り/書き込み待機時間が短くなります。また、再イメージ化と起動時間の短縮により、スケーリングやアップグレードなどのクラスター操作も高速化されます。
 
 **Resources**
 
@@ -426,7 +426,8 @@ Ephemeral OS disks provide lower read/write latency on the OS disk of AKS agent 
 **Impact: Low**
 
 **Guidance**
-Azure Policies allow companies to enforce governance best practices in the AKS cluster around security, authentication, provisioning, networking and others.
+
+Azure ポリシーを使用すると、企業は、セキュリティ、認証、プロビジョニング、ネットワークなどに関するガバナンスのベスト プラクティスを AKS クラスターに適用できます。
 
 **Resources**
 
@@ -451,7 +452,7 @@ Azure Policies allow companies to enforce governance best practices in the AKS c
 
 **Guidance**
 
-GitOps is an operating model for cloud-native applications that stores application and declarative infrastructure code in Git to be used as the source of truth for automated continuous delivery. With GitOps, you describe the desired state of your entire system in a git repository, and a GitOps operator deploys it to your environment, which is often a Kubernetes cluster. To prevent potential outages or unsuccessful failover scenarios, GitOps helps maintain the configuration of all AKS clusters to the intended configuration.
+GitOps は、アプリケーションと宣言型インフラストラクチャ コードを Git に格納し、自動化された継続的デリバリーの信頼できる情報源として使用するクラウドネイティブ アプリケーションの運用モデルです。GitOps では、システム全体の望ましい状態を git リポジトリに記述し、GitOps オペレーターがそれを環境 (多くの場合は Kubernetes クラスター) にデプロイします。潜在的な停止やフェールオーバーの失敗のシナリオを防ぐために、GitOps は、すべての AKS クラスターの構成を意図した構成に維持するのに役立ちます。
 
 **Resources**
 
@@ -476,7 +477,7 @@ GitOps is an operating model for cloud-native applications that stores applicati
 
 **Guidance**
 
-Configure Topology Spread Constraints to control how Pods are spread across your cluster among failure-domains such as regions, zones, nodes, and other user-defined topology domains. This can help to achieve high availability as well as efficient resource utilization.
+Topology Spread Constraintsを設定して、リージョン、ゾーン、ノード、その他のユーザー定義のトポロジードメインなどの障害ドメイン間でPodをクラスター全体に分散する方法を制御します。これにより、高可用性と効率的なリソース使用率を実現できます。
 
 **Resources**
 
@@ -501,7 +502,7 @@ Configure Topology Spread Constraints to control how Pods are spread across your
 
 **Guidance**
 
-AKS kubelet controller uses liveness probes to validate containers and applications health. Based on containers health, kubelet will know when to restart a container.
+AKS kubelet コントローラーでは、Liveness Probe を使用してコンテナーとアプリケーションの正常性を検証します。コンテナの健全性に基づいて、kubeletはコンテナを再起動するタイミングを認識します。
 
 **Resources**
 
@@ -526,7 +527,7 @@ AKS kubelet controller uses liveness probes to validate containers and applicati
 
 **Guidance**
 
-Configure ReplicaSets in the Pod or Deployment manifests to maintain a stable set of replica Pods running at any given time. This feature will guarantee the availability of a specified number of identical Pods.
+PodまたはDeploymentマニフェストでReplicaSetを設定して、安定したレプリカPodのセットをいつでも実行し続けるようにします。この機能は、指定された数の同一のPodの可用性を保証します。
 
 **Resources**
 
@@ -550,7 +551,7 @@ Configure ReplicaSets in the Pod or Deployment manifests to maintain a stable se
 
 **Guidance**
 
-The system node pool should be configured with a minimum node count of two to ensure critical system pods are resilient to node outages.
+システム ノード プールは、重要なシステム ポッドがノードの停止に対して回復性があることを確認するために、最小ノード数を 2 に設定して構成する必要があります。
 
 **Resources**
 
@@ -574,7 +575,7 @@ The system node pool should be configured with a minimum node count of two to en
 
 **Guidance**
 
-The user node pool should be configured with a minimum node count of two if the application requires high availability.
+アプリケーションで高可用性が必要な場合は、ユーザー ノード プールを 2 以上のノード数で構成する必要があります。
 
 **Resources**
 
@@ -598,7 +599,7 @@ The user node pool should be configured with a minimum node count of two if the 
 
 **Guidance**
 
-A Pod Disruption Budget (PDB) is a Kubernetes resource that allows you to configure the minimum number or percentage of pods that should remain available during voluntary disruptions, such as maintenance or scaling events. To maintain the availability of applications, define Pod Disruption Budgets (PDBs) to make sure that a minimum number of pods are available in the cluster.
+Pod Disruption Budget (PDB) は、メンテナンスやスケーリング イベントなどの自発的な中断時に使用可能なポッドの最小数または割合を構成できる Kubernetes リソースです。アプリケーションの可用性を維持するには、Pod Disruption Budgets (PDB)を定義して、クラスタで使用可能なポッドの最小数を確保します。
 
 **Resources**
 
@@ -623,7 +624,7 @@ A Pod Disruption Budget (PDB) is a Kubernetes resource that allows you to config
 
 **Guidance**
 
-Nodepool subnets should be sized to accommodate maximum auto-scale settings. By properly sizing the subnet, AKS can efficiently scale out nodes to meet increased demand, reducing the risk of resource constraints and potential service disruptions.
+ノードプール サブネットのサイズは、最大自動スケール設定に対応する必要があります。サブネットのサイズを適切に設定することで、AKS はノードを効率的にスケールアウトして需要の増加に対応し、リソースの制約や潜在的なサービス中断のリスクを軽減できます。
 
 **Resources**
 
@@ -647,7 +648,7 @@ Nodepool subnets should be sized to accommodate maximum auto-scale settings. By 
 
 **Guidance**
 
-Enforcing namespace-level resource quotas is crucial for ensuring reliability by preventing resource exhaustion and maintaining cluster stability. This helps prevent individual applications or users from monopolizing resources, which can lead to degraded performance or outages for other applications in the cluster.
+名前空間レベルのリソース クォータを適用することは、リソースの枯渇を防ぎ、クラスターの安定性を維持することで信頼性を確保するために重要です。これにより、個々のアプリケーションやユーザーがリソースを独占し、パフォーマンスの低下やクラスタ内の他のアプリケーションの停止につながるのを防ぐことができます。
 
 **Resources**
 

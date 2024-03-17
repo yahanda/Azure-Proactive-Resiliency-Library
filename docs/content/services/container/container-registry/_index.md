@@ -41,7 +41,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Choose a service tier of Azure Container Registry that meets your performance needs. The Premium tier provides the greatest bandwidth and highest rate of concurrent read and write operations when you have high-volume deployments. Use Basic for getting started, Standard for most production applications, and Premium for hyper-scale performance and geo-replication.
+パフォーマンスのニーズを満たす Azure Container Registry のサービス レベルを選択します。Premium レベルでは、大規模なデプロイ時に最大の帯域幅と同時読み取りおよび書き込み操作のレートが最大になります。作業の開始には Basic、ほとんどの運用アプリケーションには Standard、ハイパースケール パフォーマンスと geo レプリケーションには Premium を使用します。
 
 **Resources**
 
@@ -65,7 +65,7 @@ Choose a service tier of Azure Container Registry that meets your performance ne
 
 **Guidance**
 
-Azure Container Registry supports optional zone redundancy. Zone redundancy provides resiliency and high availability to a registry or replication resource (replica) in a specific region.
+Azure Container Registry では、オプションのゾーン冗長性がサポートされています。ゾーン冗長性は、特定のリージョン内のレジストリまたはレプリケーション リソース (レプリカ) に回復性と高可用性を提供します。
 
 **Resources**
 
@@ -89,9 +89,9 @@ Azure Container Registry supports optional zone redundancy. Zone redundancy prov
 
 **Guidance**
 
-Use Azure Container Registry's geo-replication feature if you're deploying containers to multiple regions. Whether you're serving global customers from local data centers or your development team is in different locations, you can simplify registry management and minimize latency by geo-replicating your registry. You can also configure regional webhooks to notify you of events in specific replicas such as when images are pushed.
+コンテナーを複数のリージョンにデプロイする場合は、Azure Container Registry の geo レプリケーション機能を使用します。ローカル データ センターから世界中の顧客にサービスを提供している場合でも、開発チームがさまざまな場所にいる場合でも、レジストリを geo レプリケートすることで、レジストリ管理を簡素化し、待機時間を最小限に抑えることができます。また、リージョン Webhook を構成して、イメージがプッシュされたときなど、特定のレプリカのイベントを通知することもできます。
 
-Geo-replication is available with Premium registries.
+geo レプリケーションは、Premium レジストリで使用できます。
 
 **Resources**
 
@@ -116,11 +116,11 @@ Geo-replication is available with Premium registries.
 
 **Guidance**
 
-Some characteristics of your images themselves can impact pull performance:
+イメージ自体のいくつかの特性は、プルのパフォーマンスに影響を与える可能性があります。
 
-- Image size - Minimize the sizes of your images by removing unnecessary layers or reducing the size of layers. One way to reduce image size is to use the multi-stage Docker build approach to include only the necessary runtime components. Also check whether your image can include a lighter base OS image. And if you use a deployment environment such as Azure Container Instances that caches certain base images, check whether you can swap an image layer for one of the cached images.
+- イメージサイズ - 不要なレイヤーを削除したり、レイヤーのサイズを小さくしたりして、イメージのサイズを最小化します。イメージ サイズを小さくする方法の 1 つは、マルチステージの Docker ビルド アプローチを使用して、必要なランタイム コンポーネントのみを含めることです。また、イメージに軽量の基本 OS イメージを含めることができるかどうかも確認します。また、特定の基本イメージをキャッシュする Azure Container Instances などのデプロイ環境を使用する場合は、キャッシュされたイメージの 1 つにイメージ レイヤーをスワップできるかどうかを確認します。
 
-- Number of layers - Balance the number of layers used. If you have too few, you don’t benefit from layer reuse and caching on the host. Too many, and your deployment environment spends more time pulling and decompressing. Five to 10 layers is optimal.
+- レイヤーの数 - 使用するレイヤーの数のバランスを取ります。数が少なすぎると、ホストでのレイヤーの再利用とキャッシュのメリットが得られません。数が多すぎると、デプロイ環境はプルと圧縮解除により多くの時間を費やします。5〜10層が最適です。
 
 **Resources**
 
@@ -144,7 +144,7 @@ Some characteristics of your images themselves can impact pull performance:
 
 **Guidance**
 
-By using repository namespaces, you can allow sharing a single registry across multiple groups within your organization. Registries can be shared across deployments and teams. Azure Container Registry supports nested namespaces, enabling group isolation. However, the registry manages all repositories independently, not as a hierarchy.
+リポジトリ名前空間を使用すると、組織内の複数のグループ間で 1 つのレジストリを共有できます。レジストリは、デプロイ間およびチーム間で共有できます。Azure Container Registry では、入れ子になった名前空間がサポートされており、グループの分離が可能です。ただし、レジストリは、すべてのリポジトリを階層としてではなく、個別に管理します。
 
 **Resources**
 
@@ -167,9 +167,9 @@ By using repository namespaces, you can allow sharing a single registry across m
 
 **Guidance**
 
-Because container registries are resources that are used across multiple container hosts, a registry should reside in its own resource group.
+コンテナー レジストリは複数のコンテナー ホストで使用されるリソースであるため、レジストリは独自のリソース グループに存在する必要があります。
 
-Although you might experiment with a specific host type, such as Azure Container Instances, you'll likely want to delete the container instance when you're done. However, you might also want to keep the collection of images you pushed to Azure Container Registry. By placing your registry in its own resource group, you minimize the risk of accidentally deleting the collection of images in the registry when you delete the container instance resource group.
+Azure Container Instances などの特定のホストの種類を試すこともできますが、完了したらコンテナー インスタンスを削除することをお勧めします。ただし、Azure Container Registry にプッシュしたイメージのコレクションを保持することもできます。レジストリを独自のリソース グループに配置することで、コンテナー インスタンスのリソース グループを削除するときに、レジストリ内のイメージのコレクションを誤って削除するリスクを最小限に抑えることができます。
 
 **Resources**
 
@@ -193,7 +193,7 @@ Although you might experiment with a specific host type, such as Azure Container
 
 **Guidance**
 
-The storage constraints of each container registry service tier are intended to align with a typical scenario: Basic for getting started, Standard for most production applications, and Premium for hyper-scale performance and geo-replication. Throughout the life of your registry, you should manage its size by periodically deleting unused content. Consider also enabling a retention policy to automatically delete untagged image manifests to free up storage space.
+各コンテナー レジストリ サービス レベルのストレージの制約は、一般的なシナリオ (作業を開始する場合は Basic、ほとんどの運用アプリケーションの場合は Standard、ハイパースケール パフォーマンスと geo レプリケーションの場合は Premium) に合わせて調整することを目的としています。レジストリの有効期間中は、未使用のコンテンツを定期的に削除してサイズを管理する必要があります。また、アイテム保持ポリシーを有効にして、タグ付けされていないイメージ マニフェストを自動的に削除し、ストレージ領域を解放することも検討してください。
 
 **Resources**
 
@@ -218,7 +218,7 @@ The storage constraints of each container registry service tier are intended to 
 
 **Guidance**
 
-By default, access to pull or push content from an Azure container registry is only available to authenticated users. Enabling anonymous (unauthenticated) pull access makes all registry content publicly available for read (pull) actions. Warning: Anonymous pull access currently applies to all repositories in the registry. If you manage repository access using repository-scoped tokens, all users may pull from those repositories in a registry enabled for anonymous pull. We recommend deleting tokens when anonymous pull access is enabled.
+既定では、Azure コンテナー レジストリからコンテンツをプルまたはプッシュするためのアクセスは、認証されたユーザーのみが使用できます。匿名 (認証されていない) プル アクセスを有効にすると、すべてのレジストリ コンテンツを読み取り (プル) アクションで公開できるようになります。警告: 匿名プル アクセスは、現在、レジストリ内のすべてのリポジトリに適用されます。リポジトリ スコープのトークンを使用してリポジトリ アクセスを管理する場合、すべてのユーザーは、匿名プルが有効になっているレジストリ内のリポジトリからプルできます。匿名プル アクセスが有効になっている場合は、トークンを削除することをお勧めします。
 
 **Resources**
 
@@ -242,7 +242,7 @@ By default, access to pull or push content from an Azure container registry is o
 
 **Guidance**
 
-Resource Logs are not collected and stored until you create a diagnostic setting and route them to one or more locations.
+リソース ログは、診断設定を作成して 1 つ以上の場所にルーティングするまで収集および保存されません。
 
 **Resources**
 
@@ -266,7 +266,7 @@ Resource Logs are not collected and stored until you create a diagnostic setting
 
 **Guidance**
 
-When you have critical applications and business processes relying on Azure resources, you want to monitor those resources for their availability, performance, and operation. Azure Container Registry creates monitoring data using Azure Monitor, which is a full stack monitoring service in Azure that provides a complete set of features to monitor your Azure resources in addition to resources in other clouds and on-premises.
+Azure リソースに依存する重要なアプリケーションやビジネス プロセスがある場合は、それらのリソースの可用性、パフォーマンス、操作を監視する必要があります。Azure Container Registry は、他のクラウドやオンプレミスのリソースに加えて、Azure リソースを監視するための完全な機能セットを提供する Azure のフル スタック監視サービスである Azure Monitor を使用して監視データを作成します。
 
 **Resources**
 
@@ -291,7 +291,7 @@ When you have critical applications and business processes relying on Azure reso
 
 **Guidance**
 
-Once you enable the soft delete policy, ACR manages the deleted artifacts as the soft deleted artifacts with a set retention period. Thereby you have ability to list, filter, and restore the soft deleted artifacts. Once the retention period is complete, all the soft deleted artifacts are auto-purged.
+論理的な削除ポリシーを有効にすると、ACR は、削除された成果物を、保持期間が設定された論理的に削除された成果物として管理します。これにより、論理的に削除された成果物を一覧表示、フィルター処理、および復元できます。保持期間が完了すると、論理的に削除されたすべての成果物が自動的に消去されます。
 
 **Resources**
 
