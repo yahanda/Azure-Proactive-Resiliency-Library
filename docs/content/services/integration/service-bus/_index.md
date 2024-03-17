@@ -33,7 +33,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Use Service Bus with zone redundancy for production workloads. The Service Bus Premium SKU supports availability zones, providing fault-isolated locations within the same Azure region. Service Bus manages three copies of the messaging store (1 primary and 2 secondary). Service Bus keeps all three copies in sync for data and management operations. If the primary copy fails, one of the secondary copies is promoted to primary with no perceived downtime. If the applications see transient disconnects from Service Bus, the retry logic in the SDK will automatically reconnect to Service Bus.
+運用環境のワークロードには、ゾーン冗長性を備えた Service Bus を使用します。Service Bus Premium SKU では、可用性ゾーンがサポートされており、同じ Azure リージョン内に障害が分離された場所が提供されます。Service Bus は、メッセージング ストアの 3 つのコピー (1 つのプライマリと 2 つのセカンダリ) を管理します。Service Bus は、データ操作と管理操作のために 3 つのコピーすべての同期を維持します。プライマリ・コピーに障害が発生すると、セカンダリ・コピーの1つがプライマリ・コピーに昇格され、ダウンタイムは発生しません。アプリケーションで Service Bus からの一時的な切断が検出された場合、SDK の再試行ロジックによって Service Bus に自動的に再接続されます。
 
 **Resources**
 

@@ -34,7 +34,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Upgrade the API Management instance to the Premium SKU to add support for Availability Zones.
+API Management インスタンスを Premium SKU にアップグレードして、Availability Zones のサポートを追加します。
 
 **Resources**
 
@@ -59,7 +59,7 @@ Upgrade the API Management instance to the Premium SKU to add support for Availa
 
 **Guidance**
 
-Enable zone redundancy for APIM instances. With zone redundancy, the gateway and the control plane of your API Management instance (Management API, developer portal, Git configuration) are replicated across datacenters in physically separated zones, making it resilient to a zone failure.
+APIM インスタンスのゾーン冗長性を有効にします。ゾーン冗長性により、API Management インスタンス (管理 API、開発者ポータル、Git 構成) のゲートウェイとコントロール プレーンが、物理的に分離されたゾーン内のデータセンター間でレプリケートされ、ゾーンの障害に対する回復性が確保されます。
 
 **Resources**
 

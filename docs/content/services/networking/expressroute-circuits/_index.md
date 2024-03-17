@@ -138,7 +138,7 @@ ExpressRoute 経由の双方向フォワーディング検出 (BFD) を有効に
 
 **Guidance**
 
-ExpressRoute 回線の可用性、回線の QoS、スループットに関する Network Insights を使用して監視を構成します。可用性メトリックと回線 QoS メトリックのアラートを [ExpressRoute Circuits |Azure Monitor ベースライン アラート](https://azure.github.io/azure-monitor-baseline-alerts/services/Network/expressRouteCircuits/)、およびビット/秒が ExpressRoute 回線 SKU と顧客の使用状況に適したしきい値を超えた場合のスループット メトリックに従って構成します。
+ExpressRoute 回線の可用性、回線の QoS、スループットに関する Network Insights を使用して監視を構成します。可用性メトリックと回線 QoS メトリックのアラートを [ExpressRoute Circuits |Azure Monitor ベースライン アラート](https://azure.github.io/azure-monitor-baseline-alerts/services/Network/expressRouteCircuits/)、およびビット/秒が ExpressRoute 回線 SKU とお客様の使用状況に適したしきい値を超えた場合のスループット メトリックに従って構成します。
 
 ExpressRoute の接続モニターと Log Analytics ワークスペース、および Network Watcher を使用してアラートを構成します。ChecksFailedPercent が 5% を超えたとき、および RoundTripTimeMs が環境に適した事前テスト済みの平均を超えたときにアラートを構成します。
 

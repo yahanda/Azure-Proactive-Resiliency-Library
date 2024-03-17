@@ -34,7 +34,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation**
 
-Event Hubs supports Availability Zones, providing fault-isolated locations within an Azure region. The Availability Zones support is only available in Azure regions with availability zones. Both metadata and data (events) are replicated across data centers in the availability zone.
+Event Hubs は Availability Zones をサポートしており、Azure リージョン内で障害が分離された場所を提供します。Availability Zones のサポートは、可用性ゾーンがある Azure リージョンでのみ使用できます。メタデータとデータ (イベント) の両方が、可用性ゾーン内のデータセンター間でレプリケートされます。
 
 **Resources**
 
@@ -58,7 +58,7 @@ Event Hubs supports Availability Zones, providing fault-isolated locations withi
 
 **Recommendation**
 
-Enable auto-inflate on Event Hub Standard tier namespaces. The auto-inflate feature of Event Hubs automatically scales up by increasing the number of TUs, to meet usage needs. Increasing TUs prevents throttling scenarios where data ingress or data egress rates exceed the rates allowed by the TUs assigned to the namespace.
+Event Hub Standard レベルの名前空間で自動インフレを有効にします。Event Hubs の自動インフレ機能は、使用ニーズを満たすために TU の数を増やすことで自動的にスケールアップされます。TU を増やすと、データのイングレス レートまたはデータ送信レートが、名前空間に割り当てられた TU で許可されているレートを超える調整シナリオが防止されます。
 
 **Resources**
 
