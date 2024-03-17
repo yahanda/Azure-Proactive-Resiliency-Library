@@ -35,7 +35,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation**
 
-Classic Application Insights will be retired in February 2024. To minimize disruption to your existing application monitoring scenarios, transition to workspace-based Application Insights before 29 February 2024.
+クラシック Application Insights は 2024 年 2 月に廃止されます。既存のアプリケーション監視シナリオの中断を最小限に抑えるには、2024 年 2 月 29 日までにワークスペースベースの Application Insights に移行してください。
 
 **Resources**
 

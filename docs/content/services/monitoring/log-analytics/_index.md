@@ -39,7 +39,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Data export in a Log Analytics workspace lets you continuously export data to an Azure Storage account.  Protect your Log Analytics workspace data from the unlikely event of a regional failure by continuously exporting to a geo-redundant storage (GRS) or geo-zone-redundant storage (GZRS) account.
+Log Analytics ワークスペースでデータをエクスポートすると、Azure Storage アカウントにデータを継続的にエクスポートできます。 geo 冗長ストレージ (GRS) または geo ゾーン冗長ストレージ (GZRS) アカウントに継続的にエクスポートすることで、リージョン障害の万が一の事態から Log Analytics ワークスペース データを保護します。
 
 **Resources**
 
@@ -64,7 +64,7 @@ Data export in a Log Analytics workspace lets you continuously export data to an
 
 **Guidance**
 
-Link your Log Analytics workspace to an availability zone enabled dedicated cluster to increase the resilience of Azure Monitor features that rely on your Log Analytics workspace and to protect your Log Analytics data against the unlikely event of a datacenter failure.
+Log Analytics ワークスペースを可用性ゾーン対応の専用クラスターにリンクして、Log Analytics ワークスペースに依存する Azure Monitor 機能の回復性を高め、データセンターの障害という万が一のイベントから Log Analytics データを保護します。
 
 **Resources**
 
@@ -90,7 +90,7 @@ Link your Log Analytics workspace to an availability zone enabled dedicated clus
 
 **Guidance**
 
-If you require a workspace to be available in the unlikely scenario of a regional failure then configure data collection to send critical data to multiple workspaces in different regions.
+リージョン障害の万が一のシナリオでワークスペースを使用可能にする必要がある場合は、異なるリージョンの複数のワークスペースに重要なデータを送信するようにデータ収集を構成します。
 
 **Resources**
 
@@ -114,7 +114,7 @@ If you require a workspace to be available in the unlikely scenario of a regiona
 
 **Guidance**
 
-A health status alert will proactively notify you if a workspace becomes unavailable because of a datacenter or regional failure.
+正常性状態アラートは、データセンターまたはリージョンの障害が原因でワークスペースが使用できなくなった場合に事前に通知します。
 
 **Resources**
 
@@ -139,9 +139,9 @@ A health status alert will proactively notify you if a workspace becomes unavail
 
 **Guidance**
 
- Azure Monitor Logs automatically retains log data for a specific period of time depending on the data type (for example, 31 days for platform logs and metrics). However, you may need to retain your data for longer periods for compliance or business reasons. You can configure the data retention settings based on your requirements.
+Azure Monitor ログは、データの種類に応じて特定の期間 (たとえば、プラットフォーム ログとメトリックの場合は 31 日間) ログ データを自動的に保持します。ただし、コンプライアンスやビジネス上の理由から、データを長期間保持する必要がある場合があります。要件に基づいてデータ保持設定を構成できます。
 
- For long-term storage, it might be necessary to move logs from Azure Monitor to a more cost-effective storage solution, such as Azure Blob Storage. This allows you to keep logs for an extended period of time without incurring high costs.
+長期ストレージの場合は、Azure Monitor から Azure Blob Storage などのよりコスト効率の高いストレージ ソリューションにログを移動することが必要になる場合があります。これにより、高いコストをかけずにログを長期間保持できます。
 
 **Resources**
 

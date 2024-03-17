@@ -35,7 +35,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation**
 
-Configure Resource Health Alerts for all applicable resources. Azure Resource Health alerts keep you informed about the current and historical health status of your Azure resources. Azure Resource Health alerts can notify you when these resources have a change in their health status.
+該当するすべてのリソースに対して Resource Health アラートを構成します。Azure Resource Health アラートは、Azure リソースの現在および過去の正常性状態に関する情報を提供します。Azure Resource Health アラートでは、これらのリソースの正常性状態に変化があったときに通知できます。
 
 **Resources**
 

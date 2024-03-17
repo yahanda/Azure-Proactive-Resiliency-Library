@@ -35,14 +35,14 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-On 31 March 2026, classic alerts for Recovery Services vaults in Azure Backup will be retired and no longer supported. Before that date, transition to built-in Azure monitor alerting solution.
-Using Azure Monitor Alerts you can:
+2026 年 3 月 31 日に、Azure Backup の Recovery Services コンテナーのクラシック アラートは廃止され、サポートされなくなります。その日付より前に、組み込みの Azure Monitor アラート ソリューションに移行します。
+Azure Monitor アラートを使用すると、次のことができます。
 
-- Configure notifications to a wide range of notification channels.
-- Enable notifications for selective scenarios.
-- Monitor alerts at-scale via Backup center.
-- Manage alerts and notifications programmatically.
-- Consistent alert management for multiple Azure services, including backup.
+- さまざまな通知チャネルへの通知を構成します。
+- 選択したシナリオの通知を有効にします。
+- バックアップ センターでアラートを大規模に監視します。
+- アラートと通知をプログラムで管理します。
+- バックアップを含む複数の Azure サービスに対する一貫したアラート管理。
 
 **Resources**
 
@@ -65,7 +65,7 @@ Using Azure Monitor Alerts you can:
 
 **Guidance**
 
-Cross Region Restore allows you to restore Azure VMs in a secondary region, which is an Azure paired region. This option allows you to conduct drills to meet audit or compliance requirements, and to restore the VM or its disk if there's a disaster in the primary region. CRR is an opt-in feature for any GRS vault only.
+リージョン間の復元を使用すると、セカンダリ リージョン (Azure ペア リージョン) に Azure VM を復元できます。このオプションを使用すると、監査またはコンプライアンスの要件を満たすための訓練を実施し、プライマリ リージョンで障害が発生した場合に VM またはそのディスクを復元できます。CRR は、GRS コンテナー専用のオプトイン機能です。
 
 **Resources**
 

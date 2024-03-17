@@ -39,9 +39,9 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation**
 
-Device Identities should be copied to the failover region IoT-Hub for all IoT devices to be able to connect in case of a failover to another IoT Hub.
+デバイス ID は、別の IoT Hub へのフェールオーバーが発生した場合にすべての IoT デバイスが接続できるように、フェールオーバー リージョン IoT-Hub にコピーする必要があります。
 
-Manual Failover of IoT Hub to another region is faster (RTO) and can be used for mission critical workload.
+別のリージョンへの IoT Hub の手動フェールオーバーは高速 (RTO) であり、ミッション クリティカルなワークロードに使用できます。
 
 **Resources**
 
@@ -66,7 +66,7 @@ Manual Failover of IoT Hub to another region is faster (RTO) and can be used for
 
 **Recommendation**
 
-In a production scenario the IoT Hub tier should not be Free, as the Free tier does not offer the necessary SLA.
+運用シナリオでは、Free レベルでは必要な SLA が提供されないため、IoT Hub レベルを Free にしないでください。
 
 **Resources**
 
@@ -90,7 +90,7 @@ In a production scenario the IoT Hub tier should not be Free, as the Free tier d
 
 **Recommendation**
 
-In a region that supports Availability Zones for IoT Hub, these Zones should be used to increase availability. Availability Zones are automatically activated for new IoT Hubs in the supported regions.
+IoT Hub の Availability Zones をサポートするリージョンでは、これらのゾーンを使用して可用性を高める必要があります。Availability Zones は、サポートされているリージョン内の新しい IoT Hub に対して自動的にアクティブ化されます。
 
 **Resources**
 
@@ -114,9 +114,9 @@ In a region that supports Availability Zones for IoT Hub, these Zones should be 
 
 **Recommendation**
 
-Device Provisioning Service (DPS) can redistribute IoT devices easily for scaling and availability. Devices will not be bound to specific IoT Hub instances, but can be reassigned with rules.
+Device Provisioning Service (DPS) を使用すると、スケーリングと可用性のために IoT デバイスを簡単に再配布できます。デバイスは特定の IoT Hub インスタンスにバインドされませんが、ルールを使用して再割り当てできます。
 
-Even IoT Hubs that are associated to a Device Provisioning Service need to be checked if their devices use it.
+Device Provisioning Service に関連付けられている IoT Hub でも、デバイスで使用されているかどうかを確認する必要があります。
 
 **Resources**
 
@@ -142,10 +142,10 @@ Even IoT Hubs that are associated to a Device Provisioning Service need to be ch
 
 **Recommendation**
 
-In case of a regional failure, an IoT Hub can failover to a second region. This failover can be initiated automatically or manually. In both cases certain requirements are necessary for you application to continue working. Review the guidance for a failover
+リージョンで障害が発生した場合、IoT Hub は 2 番目のリージョンにフェールオーバーできます。このフェールオーバーは、自動または手動で開始できます。どちらの場合も、アプリケーションが動作し続けるには、特定の要件が必要です。フェールオーバーのガイダンスを確認ください。
 
-- check if the RTO is matched in case of an automatic failover
-- no IP addresses are used by devices to connect to an IoT Hub
+- 自動フェイルオーバーの場合にRTOが一致しているかどうかを確認します
+- デバイスが IoT ハブに接続するために IP アドレスは使用されません
 
 **Resources**
 
@@ -169,7 +169,7 @@ In case of a regional failure, an IoT Hub can failover to a second region. This 
 
 **Recommendation**
 
-If message routing is used to route messages to custom endpoints, it can happen that messages are not delivered to the custom routes, if the conditions are not meat. A default route will always receive all messages. Disabling it could potentially leave messages undelivered.
+メッセージ ルーティングを使用してメッセージをカスタム エンドポイントにルーティングする場合、条件がミートでないと、メッセージがカスタム ルートに配信されないことがあります。既定のルートでは、常にすべてのメッセージが受信されます。無効にすると、メッセージが配信されない可能性があります。
 
 **Resources**
 

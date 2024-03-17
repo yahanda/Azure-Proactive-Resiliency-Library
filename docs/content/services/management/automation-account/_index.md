@@ -34,9 +34,9 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
- Set up disaster recovery of Automation accounts, and its dependent resources such as Modules, Connections, Credentials, Certificates, Variables and Schedules to handle a region-wide service outage or zone-wide failure. For disaster recovery, the replica Automation account must be already deployed and ready in the secondary region to failover if the Automation account in the primary region becomes unavailable. Ensure that your disaster recovery strategy considers your Automation account and the dependent resources.
+Automation アカウントと、その依存リソース (モジュール、接続、資格情報、証明書、変数、スケジュールなど) のディザスター リカバリーを設定して、リージョン全体のサービス停止またはゾーン全体の障害に対処します。ディザスター リカバリーの場合、レプリカの Automation アカウントは既にデプロイされており、プライマリ リージョンの Automation アカウントが使用できなくなった場合にフェールオーバーする準備ができている必要があります。ディザスター リカバリー戦略で、Automation アカウントと依存リソースが考慮されていることを確認します。
 
- You can use the [PowerShell script](https://learn.microsoft.com/ja-jp/azure/automation/automation-disaster-recovery?tabs=win-hrw%2Cps-script%2Coption-one#script-to-migrate-automation-account-assets-from-one-region-to-another) to migrate assets of the Automation account from one region to another, or if you are using [ARM templates](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/overview) to define and deploy Automation runbooks, you can use these templates to deploy the same runbooks in any other Azure region where you create the replica Automation account.
+[PowerShell スクリプト](https://learn.microsoft.com/ja-jp/azure/automation/automation-disaster-recovery?tabs=win-hrw%2Cps-script%2Coption-one#script-to-migrate-automation-account-assets-from-one-region-to-another) を使用して Automation アカウントの資産をあるリージョンから別のリージョンに移行するか、[ARM テンプレート](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/overview) を使用して Automation Runbook を定義してデプロイすると、これらのテンプレートを使用して、レプリカの Automation アカウントを作成する他の Azure リージョンに同じ Runbook をデプロイできます。
 
 **Resources**
 

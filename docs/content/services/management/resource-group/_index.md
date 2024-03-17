@@ -34,7 +34,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Ensure your resource locations match that of the containing resource group. This ensures that, in the event of a regional outage, you will still be able to manage your resource. ARM stores resource data for resources in a resource group and, if the region is unavailable, updates to this data could fail, making the resource effectively read-only.
+リソースの場所が、含まれているリソース グループの場所と一致していることを確認します。これにより、リージョンで障害が発生した場合でも、リソースを管理できます。ARM は、リソース グループ内のリソースのリソース データを格納し、リージョンが使用できない場合、このデータの更新が失敗し、リソースが実質的に読み取り専用になる可能性があります。
 
 **Resources**
 

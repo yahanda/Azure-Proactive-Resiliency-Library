@@ -33,7 +33,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Service health provides a personalized view of the health of the Azure services and regions you're using. This is the best place to look for service impacting communications about outages, planned maintenance activities, and other health advisories because the authenticated Service Health experience knows which services and resources you currently use. The best way to use Service Health is to set up Service Health alerts to notify you via your preferred communication channels when service issues, planned maintenance, or other changes may affect the Azure services and regions you use.
+サービス正常性は、使用している Azure サービスとリージョンの正常性を個人用に表示します。これは、認証された Service Health エクスペリエンスによって、現在使用しているサービスとリソースが認識されるため、停止、計画メンテナンス アクティビティ、その他の正常性に関するアドバイザリに関する通信に影響を与えるサービスを探すのに最適な場所です。Service Health を使用する最善の方法は、サービスの問題、計画メンテナンス、またはその他の変更が、使用する Azure サービスやリージョンに影響を与える可能性がある場合に、優先する通信チャネルを介して通知するように Service Health アラートを設定することです。
 
 **Resources**
 
