@@ -34,11 +34,11 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-The metric names present different packet types, and bytes vs. packets, with a basic construct of tag names on each metric as follows:
+メトリック名は、さまざまなパケットタイプ、バイト数とパケット数を示し、各メトリックのタグ名の基本構造は次のとおりです。
 
-- Dropped tag name (for example, Inbound Packets Dropped DDoS): The number of packets dropped/scrubbed by the DDoS protection system.
-- Forwarded tag name (for example Inbound Packets Forwarded DDoS): The number of packets forwarded by the DDoS system to the destination VIP – traffic that wasn't filtered.
-- No tag name (for example Inbound Packets DDoS): The total number of packets that came into the scrubbing system – representing the sum of the packets dropped and forwarded.
+- ドロップされたタグ名 (例: Inbound Packets Dropped DDoS): DDoS 保護システムによってドロップ/スクラビングされたパケットの数。
+- 転送されたタグ名 (例: Inbound Packets Forwarded DDoS): DDoS システムによって宛先 VIP に転送されたパケットの数 (フィルター処理されなかったトラフィック)。
+- タグ名なし(例:Inbound Packets DDoS):スクラビングシステムに着信したパケットの総数(ドロップおよび転送されたパケットの合計を表します)。
 
 **Resources**
 

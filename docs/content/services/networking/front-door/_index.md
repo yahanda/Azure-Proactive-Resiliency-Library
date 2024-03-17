@@ -49,13 +49,13 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-For most solutions, we recommend to use *either* Front Door *or* Traffic Manager, but not both. Azure Traffic Manager is a DNS-based load balancer. It sends traffic directly to your origin's endpoints. In contrast, Azure Front Door terminates connections at points of presence (PoPs) near to the client and establishes separate long-lived connections to the origins. The products work differently and are intended for different use cases.
+ほとんどのソリューションでは、Front Door または Traffic Manager のいずれかを使用することをお勧めしますが、両方は使用しないでください。Azure Traffic Manager は、DNS ベースのロード バランサーです。オリジンのエンドポイントにトラフィックを直接送信します。これに対し、Azure Front Door は、クライアントに近いポイント オブ プレゼンス (PoP) で接続を終了し、配信元への有効期間の長い接続を別個に確立します。製品は動作が異なり、さまざまなユースケースを対象としています。
 
-If you need content caching and delivery (CDN), TLS termination, advanced routing capabilities, or a web application firewall (WAF), consider using Front Door. For simple global load balancing with direct connections from your client to your endpoints, consider using Traffic Manager.
+コンテンツのキャッシュと配信 (CDN)、TLS ターミネーション、高度なルーティング機能、または Web アプリケーション ファイアウォール (WAF) が必要な場合は、Front Door の使用を検討してください。クライアントからエンドポイントへの直接接続による単純なグローバル負荷分散の場合は、Traffic Manager の使用を検討してください。
 
-However, as part of a complex architecture that requires high availability, you can put an Azure Traffic Manager in front of an Azure Front Door. In the unlikely event that Azure Front Door is unavailable, Azure Traffic Manager can then route traffic to an alternative destination, such as Azure Application Gateway or a partner content delivery network (CDN).
+ただし、高可用性を必要とする複雑なアーキテクチャの一部として、Azure Front Door の前に Azure Traffic Manager を配置できます。万が一、Azure Front Door が使用できなくなった場合、Azure Traffic Manager は、Azure Application Gateway やパートナー コンテンツ配信ネットワーク (CDN) などの代替宛先にトラフィックをルーティングできます。
 
-Don't put Azure Traffic Manager behind Azure Front Door. Azure Traffic Managers should always be in front of Azure Front Door.
+Azure Front Door の背後に Azure Traffic Manager を配置しないでください。Azure Traffic Manager は、常に Azure Front Door の前に配置する必要があります。
 
 **Resources**
 
@@ -82,7 +82,7 @@ Don't put Azure Traffic Manager behind Azure Front Door. Azure Traffic Managers 
 
 **Guidance**
 
-Front Door's features work best when traffic only flows through Front Door. You should configure your origin to block traffic that hasn't been sent through Front Door.
+Front Door の機能は、トラフィックが Front Door のみを通過する場合に最適です。Front Door 経由で送信されていないトラフィックをブロックするように配信元を構成する必要があります。
 
 **Resources**
 
@@ -106,7 +106,7 @@ Front Door's features work best when traffic only flows through Front Door. You 
 
 **Guidance**
 
-When you work with Front Door by using APIs, ARM templates, Bicep, or Azure SDKs, it's important to use the latest available API or SDK version. API and SDK updates occur when new functionality is available, and also contain important security patches and bug fixes.
+API、ARM テンプレート、Bicep、または Azure SDK を使用して Front Door を操作する場合は、使用可能な最新の API または SDK バージョンを使用することが重要です。APIとSDKの更新は、新しい機能が利用可能になったときに行われ、重要なセキュリティパッチとバグ修正も含まれています。
 
 **Resources**
 
@@ -132,7 +132,7 @@ When you work with Front Door by using APIs, ARM templates, Bicep, or Azure SDKs
 
 **Guidance**
 
-Front Door tracks extensive telemetry about every request. When you enable caching, your origin servers might not receive every request, so it's important that you use the Front Door logs to understand how your solution is running and responding to your clients.
+Front Door は、すべての要求に関する広範なテレメトリを追跡します。キャッシュを有効にすると、配信元サーバーがすべての要求を受信しない可能性があるため、Front Door ログを使用して、ソリューションの実行方法とクライアントへの応答方法を把握することが重要です。
 
 **Resources**
 
@@ -158,7 +158,7 @@ Front Door tracks extensive telemetry about every request. When you enable cachi
 
 **Guidance**
 
-Front Door terminates TCP and TLS connections from clients. It then establishes new connections from each point of presence (PoP) to the origin. It's a good practice to secure each of these connections with TLS, even for origins that are hosted in Azure. This approach ensures that your data is always encrypted during transit.
+Front Door は、クライアントからの TCP 接続と TLS 接続を終了します。次に、各ポイントオブプレゼンス(PoP)からオリジンへの新しい接続を確立します。Azure でホストされている配信元であっても、これらの各接続を TLS でセキュリティで保護することをお勧めします。このアプローチにより、転送中にデータが常に暗号化されます。
 
 **Resources**
 
@@ -182,9 +182,9 @@ Front Door terminates TCP and TLS connections from clients. It then establishes 
 
 **Guidance**
 
-It's a good practice for clients to use HTTPS to connect to your service. However, sometimes you need to accept HTTP requests to allow for older clients or clients who might not understand the best practice.
+クライアントは HTTPS を使用してサービスに接続することをお勧めします。ただし、古いクライアントやベスト プラクティスを理解していない可能性のあるクライアントを許可するために、HTTP 要求を受け入れる必要がある場合があります。
 
-You can configure Front Door to automatically redirect HTTP requests to use the HTTPS protocol. You should enable the Redirect all traffic to use HTTPS setting on your route.
+HTTPS プロトコルを使用するように HTTP 要求を自動的にリダイレクトするように Front Door を構成できます。ルートで [すべてのトラフィックをリダイレクトして HTTPS を使用する] 設定を有効にする必要があります。
 
 **Resources**
 
@@ -208,7 +208,7 @@ You can configure Front Door to automatically redirect HTTP requests to use the 
 
 **Guidance**
 
-When Front Door manages your TLS certificates, it reduces your operational costs, and helps you to avoid costly outages caused by forgetting to renew a certificate. Front Door automatically issues and rotates the managed TLS certificates.
+Front Door で TLS 証明書を管理すると、運用コストが削減され、証明書の更新を忘れることによるコストのかかる停止を回避できます。Front Door は、マネージド TLS 証明書を自動的に発行し、ローテーションします。
 
 **Resources**
 
@@ -232,7 +232,7 @@ When Front Door manages your TLS certificates, it reduces your operational costs
 
 **Guidance**
 
-If you decide to use your own TLS certificates, then consider setting the Key Vault certificate version to 'Latest'. By using 'Latest', you avoid having to reconfigure Front Door to use new versions of your certificate and waiting for the certificate to be deployed throughout Front Door's environments.
+独自の TLS 証明書を使用する場合は、Key Vault 証明書のバージョンを "最新" に設定することを検討してください。"最新" を使用すると、新しいバージョンの証明書を使用するように Front Door を再構成したり、証明書が Front Door の環境全体に展開されるのを待ったりする必要がなくなります。
 
 **Resources**
 
@@ -256,9 +256,9 @@ If you decide to use your own TLS certificates, then consider setting the Key Va
 
 **Guidance**
 
-Front Door can rewrite the Host header of incoming requests. This feature can be helpful when you manage a set of customer-facing custom domain names that route to a single origin. This feature can also help when you want to avoid configuring custom domain names in Front Door and at your origin. However, when you rewrite the Host header, request cookies and URL redirections might break. In particular, when you use platforms like Azure App Service, features like session affinity and authentication and authorization might not work correctly.
+Front Door では、受信要求の Host ヘッダーを書き換えることができます。この機能は、単一の配信元にルーティングする顧客向けの一連のカスタム ドメイン名を管理する場合に役立ちます。この機能は、Front Door と配信元でカスタム ドメイン名を構成しないようにする場合にも役立ちます。ただし、Host ヘッダーを書き換えると、要求 Cookie と URL リダイレクトが破損する可能性があります。特に、Azure App Service などのプラットフォームを使用する場合、セッション アフィニティや認証と承認などの機能が正しく動作しない可能性があります。
 
-Before you rewrite the Host header of your requests, carefully consider whether your application is going to work correctly.
+要求の Host ヘッダーを書き換える前に、アプリケーションが正しく動作するかどうかを慎重に検討してください。
 
 **Resources**
 
@@ -282,7 +282,7 @@ Before you rewrite the Host header of your requests, carefully consider whether 
 
 **Guidance**
 
-For internet-facing applications, we recommend you enable the Front Door web application firewall (WAF) and configure it to use managed rules. When you use a WAF and Microsoft-managed rules, your application is protected from a wide range of attacks.
+インターネットに接続するアプリケーションの場合は、Front Door Web アプリケーション ファイアウォール (WAF) を有効にし、マネージド ルールを使用するように構成することをお勧めします。WAF と Microsoft マネージド ルールを使用すると、アプリケーションはさまざまな攻撃から保護されます。
 
 **Resources**
 
@@ -306,9 +306,9 @@ For internet-facing applications, we recommend you enable the Front Door web app
 
 **Guidance**
 
-Front Door's health probes are designed to detect situations where an origin is unavailable or unhealthy. When a health probe detects a problem with an origin, Front Door can be configured to send traffic to another origin in the origin group.
+Front Door の正常性プローブは、配信元が使用できない、または異常な状況を検出するように設計されています。正常性プローブで配信元の問題が検出されると、配信元グループ内の別の配信元にトラフィックを送信するように Front Door を構成できます。
 
-If you only have a single origin, Front Door always routes traffic to that origin even if its health probe reports an unhealthy status. The status of the health probe doesn't do anything to change Front Door's behavior. In this scenario, health probes don't provide a benefit and you should disable them to reduce the traffic on your origin.
+配信元が 1 つしかない場合、Front Door は、正常性プローブで異常な状態が報告された場合でも、常にその配信元にトラフィックをルーティングします。正常性プローブの状態は、Front Door の動作を変更するために何も行いません。このシナリオでは、正常性プローブには利点がないため、配信元のトラフィックを減らすために無効にする必要があります。
 
 **Resources**
 
@@ -332,7 +332,7 @@ If you only have a single origin, Front Door always routes traffic to that origi
 
 **Guidance**
 
-Consider the location where you tell Front Door's health probe to monitor. It's usually a good idea to monitor a webpage or location that you specifically design for health monitoring. Your application logic can consider the status of all of the critical components required to serve production traffic including application servers, databases, and caches. That way, if any component fails, Front Door can route your traffic to another instance of your service
+Front Door の正常性プローブに監視するように指示する場所を検討します。通常、正常性の監視用に特別に設計した Web ページまたは場所を監視することをお勧めします。アプリケーション・ロジックは、アプリケーション・サーバー、データベース、キャッシュなど、本番トラフィックの処理に必要なすべての重要なコンポーネントのステータスを考慮できます。これにより、いずれかのコンポーネントに障害が発生した場合に、Front Door はサービスの別のインスタンスにトラフィックをルーティングできます。
 
 **Resources**
 
@@ -356,7 +356,7 @@ Consider the location where you tell Front Door's health probe to monitor. It's 
 
 **Guidance**
 
-Health probes can use either the GET or HEAD HTTP method. It's a good practice to use the HEAD method for health probes, which reduces the amount of traffic load on your origins.
+正常性プローブでは、GET または HEAD HTTP メソッドを使用できます。正常性プローブに HEAD メソッドを使用すると、配信元のトラフィック負荷が軽減されます。
 
 **Resources**
 
@@ -380,10 +380,10 @@ Health probes can use either the GET or HEAD HTTP method. It's a good practice t
 
 **Guidance**
 
-By default, Azure Front Door will respond to all user requests regardless of the location where the request is coming from. In some scenarios, you may want to restrict the access to your web application by countries/regions. The Web application firewall (WAF) service in Front Door enables you to define a policy using custom access rules for a specific path on your endpoint to either allow or block access from specified countries/regions.
+既定では、Azure Front Door は、要求の送信元の場所に関係なく、すべてのユーザー要求に応答します。一部のシナリオでは、国/地域ごとに Web アプリケーションへのアクセスを制限することができます。Front Door の Web アプリケーション ファイアウォール (WAF) サービスを使用すると、エンドポイント上の特定のパスに対してカスタム アクセス規則を使用してポリシーを定義し、指定した国/地域からのアクセスを許可またはブロックできます。
 
-A WAF policy contains a set of custom rules. The rule consists of match conditions, an action, and a priority. In a match condition, you define a match variable, operator, and match value.
-For a geo filtering rule, a match variable is either RemoteAddr or SocketAddr. RemoteAddr is the original client IP that is usually sent via X-Forwarded-For request header. SocketAddr is the source IP address WAF sees. If your user is behind a proxy, SocketAddr is often the proxy server address. The operator in the case of this geo filtering rule is GeoMatch, and the value is a two letter country/region code of interest. "ZZ" country code or "Unknown" country captures IP addresses that are not yet mapped to a country in our dataset. You may add ZZ to your match condition to avoid false positives. You can combine a GeoMatch condition and a REQUEST_URI string match condition to create a path-based geo-filtering rule.
+WAFポリシーには、一連のカスタム・ルールが含まれています。ルールは、一致条件、アクション、優先度で構成されます。一致条件では、一致変数、演算子、一致値を定義します。
+地域フィルタリングルールの場合、一致変数は RemoteAddr または SocketAddr です。RemoteAddr は、通常 X-Forwarded-For 要求ヘッダーを介して送信される元のクライアント IP です。SocketAddr は、WAF が認識する送信元 IP アドレスです。ユーザーがプロキシの背後にいる場合、多くの場合、SocketAddr はプロキシ サーバーのアドレスです。この地域フィルタリング ルールの場合の演算子は GeoMatch で、値は対象の 2 文字の国/地域コードです。「ZZ」国コードまたは「不明」国は、データセット内の国にまだマッピングされていないIPアドレスをキャプチャします。一致条件に ZZ を追加して、誤検知を回避できます。GeoMatch 条件とREQUEST_URI文字列一致条件を組み合わせて、パスベースの地域フィルタリングルールを作成できます。
 
 **Resources**
 
@@ -407,9 +407,9 @@ For a geo filtering rule, a match variable is either RemoteAddr or SocketAddr. R
 
 **Guidance**
 
-Azure Private Link enables you to access Azure PaaS services and services hosted in Azure over a private endpoint in your virtual network. Traffic between your virtual network and the service goes over the Microsoft backbone network, eliminating exposure to the public Internet.
+Azure Private Link を使用すると、Azure PaaS サービスと Azure でホストされているサービスに、仮想ネットワーク内のプライベート エンドポイント経由でアクセスできます。仮想ネットワークとサービス間のトラフィックは Microsoft のバックボーン ネットワークを経由するため、パブリック インターネットへの露出がなくなります。
 
-Azure Front Door Premium can connect to your origin using Private Link. Your origin can be hosted in a virtual network or hosted as a PaaS service such as Azure App Service or Azure Storage. Private Link removes the need for your origin to be accessed publicly.
+Azure Front Door Premium では、Private Link を使用して配信元に接続できます。配信元は、仮想ネットワークでホストすることも、Azure App Service や Azure Storage などの PaaS サービスとしてホストすることもできます。Private Link を使用すると、配信元にパブリックにアクセスする必要がなくなります。
 
 **Resources**
 

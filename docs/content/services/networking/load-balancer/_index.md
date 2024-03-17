@@ -38,7 +38,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Select Standard SKU Standard Load Balancer provides a dimension of reliability that Basic does not - that of availability zones and zone resiliency. This means when a zone goes down, your zone-redundant Standard Load Balancer will not be impacted. This ensures your deployments can withstand zone failures within a region. In addition, Standard Load Balancer supports global load balancing ensuring your application is not impacted by region failures either. Basic load balancers don't have a Service Level Agreement (SLA).
+Standard SKU を選択します。Standard Load Balancer は、Basic にはない信頼性の側面 (可用性ゾーンとゾーンの回復性) を提供します。つまり、ゾーンがダウンしても、ゾーン冗長 Standard Load Balancer は影響を受けません。これにより、デプロイはリージョン内のゾーン障害に耐えることができます。さらに、Standard Load Balancer ではグローバル負荷分散がサポートされているため、アプリケーションもリージョンの障害の影響を受けません。Basic ロード バランサーには、サービス レベル アグリーメント (SLA) がありません。
 
 **Resources**
 
@@ -63,7 +63,7 @@ Select Standard SKU Standard Load Balancer provides a dimension of reliability t
 
 **Guidance**
 
- Deploy Azure LB with at least two instances in the backend. A single instance could result in a single point of failure. In order to build for scale, you might want to pair LB with Virtual Machine Scale Sets.
+バックエンドに少なくとも 2 つのインスタンスを含む Azure LB をデプロイします。インスタンスが 1 つあるだけで、単一障害点が発生する可能性があります。スケールに合わせてビルドするには、LB と Virtual Machine Scale Sets を組み合わせることができます。
 
 **Resources**
 
@@ -87,7 +87,7 @@ Select Standard SKU Standard Load Balancer provides a dimension of reliability t
 
 **Guidance**
 
-Outbound rules for Standard Public Load Balancer requires you to manually allocate fixed amounts of ports to each of your backend pool instances. Because the SNAT port allocation is fixed, outbound rules does not provide the most scalable method for outbound connectivity. For production workloads, we recommend using NAT Gateway instead in order to prevent the risk of connection failures due to SNAT port exhaustion. NAT Gateway scales dynamically and provides secure connectivity to the internet.
+Standard Public Load Balancer のアウトバウンド規則では、各バックエンド プール インスタンスに一定量のポートを手動で割り当てる必要があります。SNAT ポートの割り当ては固定されているため、送信規則は送信接続の最もスケーラブルな方法を提供しません。運用環境のワークロードでは、SNAT ポートの枯渇による接続エラーのリスクを回避するために、代わりに NAT Gateway を使用することをお勧めします。NAT Gateway は動的に拡張され、インターネットへの安全な接続を提供します。
 
 **Resources**
 
@@ -111,7 +111,7 @@ Outbound rules for Standard Public Load Balancer requires you to manually alloca
 
 **Guidance**
 
-In a region with Availability Zones, a Standard Load Balancer can be made zone-redundant by assigning it with a zone-redundant frontend IP address. With a zone-redundant frontend IP, the load balancer will continue to distribute traffic even when one availability zone fails, as long as there are other healthy zones and corresponding healthy backend instances in these zones that can receive traffic.
+Availability Zones があるリージョンでは、Standard Load Balancer にゾーン冗長フロントエンド IP アドレスを割り当てることで、ゾーン冗長にすることができます。ゾーン冗長フロントエンド IP を使用すると、1 つの可用性ゾーンで障害が発生しても、トラフィックを受信できる他の正常なゾーンとそれに対応する正常なバックエンド インスタンスがこれらのゾーンにある限り、ロード バランサーはトラフィックを分散し続けます。
 
 **Resources**
 

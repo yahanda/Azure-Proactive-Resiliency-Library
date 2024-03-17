@@ -34,7 +34,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Azure Network Watcher provides a suite of tools to monitor, diagnose, view metrics, and enable or disable logs for Azure IaaS (Infrastructure-as-a-Service) resources. Network Watcher enables you to monitor and repair the network health of IaaS products like virtual machines (VMs), virtual networks (VNets), application gateways, load balancers, etc. Network Watcher isn't designed or intended for PaaS monitoring or Web analytics.
+Azure Network Watcher には、Azure IaaS (サービスとしてのインフラストラクチャ) リソースの監視、診断、メトリックの表示、ログの有効化または無効化を行うための一連のツールが用意されています。Network Watcher を使用すると、仮想マシン (VM)、仮想ネットワーク (VNet)、アプリケーション ゲートウェイ、ロード バランサーなどの IaaS 製品のネットワーク正常性を監視および修復できます。 Network Watcher は、PaaS 監視や Web 分析用に設計または意図されていません。
 
 **Resources**
 
@@ -58,7 +58,7 @@ Azure Network Watcher provides a suite of tools to monitor, diagnose, view metri
 
 **Guidance**
 
-Network security group flow logging is a feature of Azure Network Watcher that allows you to log information about IP traffic flowing through a network security group. If the flow log is in Failed state, the monitoring data from the associated resource is not being collected.
+ネットワーク セキュリティ グループ フロー ログは、ネットワーク セキュリティ グループを通過する IP トラフィックに関する情報をログに記録できる Azure Network Watcher の機能です。フロー ログが [失敗] 状態の場合、関連付けられたリソースからの監視データは収集されていません。
 
 **Resources**
 

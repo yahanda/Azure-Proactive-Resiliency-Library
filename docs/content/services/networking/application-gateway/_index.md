@@ -41,7 +41,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Azure Application Gateways v2 are always deployed in a highly available fashion, deployed with multiple instances by default regardless of your autoscaling configuration. However, creating a new instance can take up to six or seven minutes. In order to avoid downtime for various failure modes, it is recommended that you configure a minimum instance count of two, ideally with Availability Zone support. By doing this, you will always have at least two instances in your Azure Application Gateway under normal circumstances. If one of them was to have a problem, there will always be another instance present to handle the traffic while a new instance is being created. Also, continue to leverage auto scaling to dynamically scale out based on the traffic requirements without the need of manual intervention.
+Azure Application Gateway v2 は常に高可用性方式でデプロイされ、自動スケールの構成に関係なく、既定で複数のインスタンスと共にデプロイされます。ただし、新しいインスタンスの作成には最大で 6 分から 7 分かかる場合があります。さまざまな障害モードでのダウンタイムを回避するために、最小インスタンス数を 2 に設定し、理想的にはアベイラビリティーゾーンをサポートすることをお勧めします。これにより、通常の状況では、Azure Application Gateway に常に少なくとも 2 つのインスタンスが存在することになります。そのうちの 1 つに問題が発生した場合、新しいインスタンスが作成されている間、トラフィックを処理する別のインスタンスが常に存在します。また、Auto Scaling を引き続き活用して、手動による介入を必要とせずに、トラフィック要件に基づいて動的にスケールアウトします。
 
 **Resources**
 
@@ -65,7 +65,7 @@ Azure Application Gateways v2 are always deployed in a highly available fashion,
 
 **Guidance**
 
-Ensure that all incoming connections are using HTTP/s for production services. Using end to end SSL/TLS or SSL/TLS termination to ensure the security of all incoming connections to the Application Gateway allows you and your users to be safe from possible attacks as it ensures that all data passed between the web server and browsers remain private and encrypted.
+すべての着信接続が運用サービスに HTTP/s を使用していることを確認します。エンド ツー エンドの SSL/TLS または SSL/TLS ターミネーションを使用して Application Gateway へのすべての受信接続のセキュリティを確保すると、Web サーバーとブラウザー間でやり取りされるすべてのデータがプライベートで暗号化されたままになるため、管理者とユーザーは攻撃の可能性から保護されます。
 
 **Resources**
 
@@ -93,7 +93,7 @@ Ensure that all incoming connections are using HTTP/s for production services. U
 
 **Guidance**
 
-Use Application Gateway with Web Application Firewall (WAF) within an application virtual network to protect inbound HTTP/S traffic from the Internet. The WAF provides centralized protection from possible exploits by using rules based on the OWASP (Open Web Application Security Project) core rule sets.
+アプリケーション仮想ネットワーク内の Web アプリケーション ファイアウォール (WAF) で Application Gateway を使用して、インターネットからの受信 HTTP/S トラフィックを保護します。WAFは、OWASP(Open Web Application Security Project)のコアルールセットに基づくルールを使用して、潜在的なエクスプロイトから一元的に保護します。
 
 **Resources**
 
@@ -118,7 +118,7 @@ Use Application Gateway with Web Application Firewall (WAF) within an applicatio
 
 **Guidance**
 
-You should use Application Gateway v2 unless there is a compelling reason for using v1. V2 has many more built in features such as autoscaling, static VIPs, Azure KeyVault integration for certificate management and many more features listed in our comparison charts. Leveraging this updated version allows for better performance and control of how your traffic routed and the ability to make changes to the traffic.
+Application Gateway v1 を使用するやむを得ない理由がない限り、v2 を使用する必要があります。V2 には、自動スケーリング、静的 VIP、証明書管理のための Azure KeyVault 統合など、さらに多くの機能が組み込まれており、比較表に記載されている機能も多数あります。この更新されたバージョンを活用することで、パフォーマンスが向上し、トラフィックのルーティング方法を制御し、トラフィックに変更を加えることができます。
 
 **Resources**
 
@@ -144,7 +144,7 @@ You should use Application Gateway v2 unless there is a compelling reason for us
 
 **Guidance**
 
-Enable logs that can be stored in storage accounts, Log Analytics, and other monitoring services. If NSGs are applied NSG flow logs can be enabled and stored for traffic audit and to provide insights into the traffic flowing into your Azure Cloud.
+ストレージ アカウント、Log Analytics、その他の監視サービスに格納できるログを有効にします。NSG を適用すると、トラフィック監査のために NSG フロー ログを有効にして保存し、Azure クラウドに流れ込むトラフィックに関する分析情報を提供できます。
 
 **Resources**
 
@@ -169,7 +169,7 @@ Enable logs that can be stored in storage accounts, Log Analytics, and other mon
 
 **Guidance**
 
-Using custom health probes can help with understand the availability of your backends and allows you to monitor the backend services if they are being affected in any way.
+カスタム正常性プローブを使用すると、バックエンドの可用性を把握し、バックエンド サービスに何らかの影響があるかどうかを監視できます。
 
 **Resources**
 
@@ -194,7 +194,7 @@ Using custom health probes can help with understand the availability of your bac
 
 **Guidance**
 
-Deploying your backend services in a zone-aware configurations ensures that if a specific zone goes down that customers will still have access to the services as the other services located in other zones will still be available.
+バックエンド サービスをゾーン対応構成で展開すると、特定のゾーンがダウンした場合でも、他のゾーンにある他のサービスが引き続き使用できるため、お客様は引き続きサービスにアクセスできます。
 
 **Resources**
 
@@ -219,7 +219,7 @@ Deploying your backend services in a zone-aware configurations ensures that if a
 
 **Guidance**
 
-Plan for backend maintenance by using connection draining. Connection draining helps you achieve graceful removal of backend pool members during planned service updates or problems with backend health. This setting is enabled via the Backend Setting and is applied to all backend pool members during rule creation.
+接続ドレインを使用してバックエンドのメンテナンスを計画します。接続ドレインは、計画されたサービスの更新やバックエンドの正常性の問題中に、バックエンド プール メンバーを正常に削除するのに役立ちます。この設定は、バックエンド設定で有効になり、ルールの作成時にすべてのバックエンド プール メンバーに適用されます。
 
 **Resources**
 
@@ -243,7 +243,7 @@ Plan for backend maintenance by using connection draining. Connection draining h
 
 **Recommendation/Guidance**
 
-Application Gateway (Standard_v2 or WAF_v2 SKU) can support up to 125 instances. Although a /24 subnet isn't required per Application Gateway v2 SKU deployment, it is highly recommended. This is to ensure that Application Gateway v2 has sufficient space for autoscaling expansion and maintenance upgrades.
+Application Gateway (Standard_v2 または WAF_v2 SKU) では、最大 125 個のインスタンスをサポートできます。Application Gateway v2 SKU のデプロイごとに /24 サブネットは必要ありませんが、強くお勧めします。これは、Application Gateway v2 に、自動スケーリングの拡張とメンテナンス アップグレードのための十分な領域を確保するためです。
 
 **Resources**
 

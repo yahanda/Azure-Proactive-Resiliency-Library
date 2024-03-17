@@ -37,7 +37,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Network security groups: Network security groups and application security groups can contain multiple inbound and outbound security rules that enable you to filter traffic to and from resources by source and destination IP address, port, and protocol. NSG's provide a security layer on Subnet level. Note that the following subnets are excluded(ignored) because applying NSG on these subnets is not supported: GatewaySubnet, AzureFirewallSubnet, AzureFirewallManagementSubnet, RouteServerSubnet.
+ネットワーク・セキュリティ・グループ: ネットワーク・セキュリティ・グループおよびアプリケーション・セキュリティ・グループには、ソースおよび宛先のIPアドレス、ポートおよびプロトコルによってリソースとの間のトラフィックをフィルタリングできる複数の受信および送信セキュリティ規則を含めることができます。NSG は、サブネット レベルのセキュリティ層を提供します。GatewaySubnet、AzureFirewallSubnet、AzureFirewallManagementSubnet、RouteServerSubnet への NSG の適用はサポートされていないため、これらのサブネットは除外 (無視) されることに注意してください。
 
 **Resources**
 
@@ -64,7 +64,7 @@ Network security groups: Network security groups and application security groups
 
 **Guidance**
 
-Azure DDoS Protection, combined with application design best practices, provides enhanced DDoS mitigation features to defend against DDoS attacks. It's automatically tuned to help protect your specific Azure resources in a virtual network.
+Azure DDoS Protection は、アプリケーション設計のベスト プラクティスと組み合わせることで、DDoS 攻撃から保護するための強化された DDoS 軽減機能を提供します。これは、仮想ネットワーク内の特定の Azure リソースを保護するのに役立つように自動的に調整されます。
 
 **Resources**
 
@@ -88,7 +88,7 @@ Azure DDoS Protection, combined with application design best practices, provides
 
 **Guidance**
 
-Use virtual network service endpoints only when Private Link isn't available and there are no concerns with unauthorized movement of data. The VNet service endpoint feature (turning on VNet service endpoint on the network side and setting up appropriate VNet ACLs on the Azure service side) limits the Azure service access to the allowed VNet and subnet, thus providing a network level security and isolation of the Azure service traffic. All traffic using VNet service endpoints flows over Microsoft backbone, thus providing another layer of isolation from the public internet
+仮想ネットワーク サービス エンドポイントは、Private Link が使用できず、データの不正な移動の懸念がない場合にのみ使用します。VNet サービス エンドポイント機能 (ネットワーク側で VNet サービス エンドポイントを有効にし、Azure サービス側で適切な VNet ACL を設定する) により、許可された VNet とサブネットへの Azure サービス アクセスが制限されるため、ネットワーク レベルのセキュリティと Azure サービス トラフィックの分離が提供されます。VNet サービス エンドポイントを使用するすべてのトラフィックは Microsoft のバックボーンを経由するため、パブリック インターネットから分離する別のレイヤーが提供されます
 
 **Resources**
 

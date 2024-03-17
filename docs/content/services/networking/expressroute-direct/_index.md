@@ -35,7 +35,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-In Azure ExpressRoute Direct, the "Admin State" refers to the administrative status of the ExpressRoute layer 1 links. It essentially indicates whether a particular link is enabled or disabled, in other words the physical port is on or off; and is required to pass traffic across the ExpressRoute Direct connection. Admin State is a crucial setting because it determines the operational status of your ExpressRoute Direct, affecting connectivity between your on-premises network and Azure services.
+Azure ExpressRoute Direct では、"管理状態" は ExpressRoute レイヤー 1 リンクの管理状態を指します。これは基本的に、特定のリンクが有効か無効か、つまり物理ポートがオンかオフかを示します。ExpressRoute Direct 接続経由でトラフィックを渡すために必要です。管理状態は、ExpressRoute Direct の動作状態を決定し、オンプレミス ネットワークと Azure サービス間の接続に影響を与えるため、重要な設定です。
 
 **Resources**
 
@@ -59,7 +59,7 @@ In Azure ExpressRoute Direct, the "Admin State" refers to the administrative sta
 
 **Recommendation/Guidance**
 
-You can provision logical ExpressRoute circuits on top of your selected ExpressRoute Direct resource of 10-Gbps or 100-Gbps up to the subscribed Bandwidth of 20-Gbps or 200-Gbps. From a resiliency perspective this is not recommended. If one of the ExpressRoute Direct ports goes down, and your ExpressRoute circuits are already consuming 100% of the 10-Gbps or 100-Gbps, the second ExpressRoute Direct port wouldn’t have bandwidth enough to support any additional load. One reason a port may be down would be during a maintenance event. The remaining port would support all traffic during the maintenance event, up to the 10-Gbps or 100-Gbps capacity. Unless you use rate limiting for ExpressRoute Direct circuits (Preview) to limit the bandwidth of non-production connections, you should not over-subscribe your ExpressRoute Direct ports being used for production workloads.
+選択した ExpressRoute Direct リソース (10 Gbps または 100 Gbps) の上に、サブスクライブされた 20 Gbps または 200 Gbps の帯域幅まで、論理 ExpressRoute 回線をプロビジョニングできます。回復性の観点から、これは推奨されません。ExpressRoute Direct ポートの 1 つがダウンし、ExpressRoute 回線が既に 10 Gbps または 100 Gbps を 100% 消費している場合、2 番目の ExpressRoute Direct ポートには、追加の負荷をサポートするのに十分な帯域幅がありません。ポートがダウンする理由の 1 つは、メンテナンス イベント中です。残りのポートは、メンテナンス イベント中、最大 10 Gbps または 100 Gbps の容量のすべてのトラフィックをサポートします。ExpressRoute Direct 回線 (プレビュー) のレート制限を使用して非運用接続の帯域幅を制限しない限り、運用ワークロードに使用されている ExpressRoute Direct ポートをオーバーサブスクライブしないでください。
 
 **Resources**
 
@@ -84,7 +84,7 @@ You can provision logical ExpressRoute circuits on top of your selected ExpressR
 
 **Recommendation/Guidance**
 
-Rate limiting is a feature that enables you to control the traffic volume between your on-premises network and Azure over an ExpressRoute Direct circuit. It applies to the traffic over either private or Microsoft peering of the ExpressRoute circuit. This feature helps distribute the port bandwidth evenly among the circuits, ensures network stability, and prevents network congestion. This document outlines the steps to enable rate limiting for your ExpressRoute Direct circuits.
+レート制限は、ExpressRoute Direct 回線を介してオンプレミス ネットワークと Azure 間のトラフィック量を制御できる機能です。これは、ExpressRoute 回線のプライベート ピアリングまたは Microsoft ピアリング経由のトラフィックに適用されます。この機能は、ポート帯域幅を回線間で均等に分散し、ネットワークの安定性を確保し、ネットワークの輻輳を防ぐのに役立ちます。このドキュメントでは、ExpressRoute Direct 回線のレート制限を有効にする手順について説明します。
 
 **Resources**
 

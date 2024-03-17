@@ -36,8 +36,8 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Public IP addresses with a standard SKU can be created as non-zonal, zonal, or zone-redundant in regions that support availability zones.
-A zone-redundant IP is created in all zones for a region and can survive any single zone failure. A zonal IP is tied to a specific availability zone, and shares fate with the health of the zone. A "non-zonal" public IP address is placed into a zone for you by Azure and doesn't give a guarantee of redundancy.  When utilizing a Public IP with resources that support zone resiliency (such as an Azure Load Balancer or Azure Firewall), it is recommended to use zone-redundant IPs in most cases.
+Standard SKU のパブリック IP アドレスは、可用性ゾーンをサポートするリージョンで、非ゾーン、ゾーン、またはゾーン冗長として作成できます。
+ゾーン冗長 IP は、リージョンのすべてのゾーンに作成され、1 つのゾーンで障害が発生しても存続できます。ゾーン IP は特定の可用性ゾーンに関連付けられており、ゾーンの正常性と運命を共有します。"ゾーン以外の" パブリック IP アドレスは、Azure によってゾーンに配置され、冗長性は保証されません。 ゾーンの回復性をサポートするリソース (Azure Load Balancer や Azure Firewall など) でパブリック IP を利用する場合は、ほとんどの場合、ゾーン冗長 IP を使用することをお勧めします。
 
 **Resources**
 
@@ -62,7 +62,7 @@ A zone-redundant IP is created in all zones for a region and can survive any sin
 
 **Guidance**
 
-Prevent risk of connectivity failures due to SNAT port exhaustion by using NAT gateway for outbound traffic from your virtual networks. NAT gateway scales dynamically and provides secure connections for traffic headed to the internet.
+仮想ネットワークからの送信トラフィックに NAT ゲートウェイを使用して、SNAT ポートの枯渇による接続エラーのリスクを回避します。NAT ゲートウェイは動的にスケーリングされ、インターネットに向かうトラフィックに安全な接続を提供します。
 
 **Resources**
 

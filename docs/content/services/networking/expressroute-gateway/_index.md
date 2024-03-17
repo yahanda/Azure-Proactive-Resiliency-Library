@@ -39,7 +39,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Connect each ExpressRoute Gateway to a minimum of two circuits, with each circuit connecting from a diverse peering location compared to the other.
+各 ExpressRoute ゲートウェイを少なくとも 2 つの回線に接続し、各回線が他の回線と比較して多様なピアリングの場所から接続されるようにします。
 
 **Resources**
 
@@ -63,7 +63,7 @@ Connect each ExpressRoute Gateway to a minimum of two circuits, with each circui
 
 **Guidance**
 
-Azure ExpressRoute gateway provides different SLAs when it’s deployed in a single availability zone and when it’s deployed in two or more availability zones. For information about all Azure SLAs, see [Service Level Agreements (SLA) for Online Services](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1&year=2023). To automatically deploy your virtual network gateways across availability zones, you can use zone-redundant virtual network gateways. With zone-redundant gateways, you can benefit from zone-resiliency to access your mission-critical, scalable services on Azure
+Azure ExpressRoute ゲートウェイは、1 つの可用性ゾーンにデプロイされる場合と、2 つ以上の可用性ゾーンにデプロイされる場合に、異なる SLA を提供します。すべての Azure SLA の詳細については、[Online Services のサービス レベル アグリーメント (SLA)](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1&year=2023) を参照してください。可用性ゾーン間で仮想ネットワーク ゲートウェイを自動的にデプロイするには、ゾーン冗長仮想ネットワーク ゲートウェイを使用できます。ゾーン冗長ゲートウェイを使用すると、ゾーン回復性の恩恵を受けて、Azure 上のミッション クリティカルでスケーラブルなサービスにアクセスできます
 
 **Resources**
 
@@ -89,7 +89,7 @@ Azure ExpressRoute gateway provides different SLAs when it’s deployed in a sin
 
 **Guidance**
 
-Configure an Azure Resource lock for ExpressRoute Gateway to prevent accidental deletion. As an administrator, you can lock an Azure subscription, resource group, or resource to protect them from accidental user deletions and modifications. The lock overrides any user permission.
+ExpressRoute ゲートウェイの Azure リソース ロックを構成して、誤って削除されないようにします。管理者は、Azure サブスクリプション、リソース グループ、またはリソースをロックして、ユーザーが誤って削除したり変更したりしないように保護できます。ロックは、すべてのユーザー権限よりも優先されます。
 
 **Resources**
 
@@ -113,13 +113,13 @@ Configure an Azure Resource lock for ExpressRoute Gateway to prevent accidental 
 
 **Guidance**
 
-Setup monitoring using Network Insights for ExpressRoute Gateway availability, performance, and scalability.
+ExpressRoute ゲートウェイの可用性、パフォーマンス、スケーラビリティのために Network Insights を使用して監視を設定します。
 
-Configure alerts for availability metrics for routes advertised, routes learned and number of VMs based on the supported amounts for the ExpressRoute Gateway SKU in use. Configure alerts for frequency of routes changed based on the customer environment.
+アドバタイズされたルート、学習されたルート、VM の数の可用性メトリックのアラートを、使用中の ExpressRoute ゲートウェイ SKU でサポートされている量に基づいて構成します。お客様の環境に基づいて変更されるルートの頻度に関するアラートを構成します。
 
-Configure alerts for performance metrics for bits in, bits out and CPU utilization according to [ExpressRoute Gateways | Azure Monitor Baseline Alerts](https://azure.github.io/azure-monitor-baseline-alerts/services/Network/expressRouteGateways/). Configure alerts for packets per second based on the supported amount for the ExpressRoute Gateway SKU in use and based on the customer environment.
+[ExpressRoute Gateways |Azure Monitor ベースライン アラート](https://azure.github.io/azure-monitor-baseline-alerts/services/Network/expressRouteGateways/) に従って、使用中の ExpressRoute ゲートウェイ SKU でサポートされている量とお客様の環境に基づいて、パケット/秒のアラートを構成します。
 
-Configure alerts for scalability metrics for active flows based on the supported amounts for the ExpressRoute Gateway SKU in use and the expected number of flows for the customer environment, and for max flows per second for when this value exceeds a historical baseline for the customer environment.
+使用中の ExpressRoute ゲートウェイ SKU でサポートされている量と顧客環境で予想されるフロー数、およびこの値が顧客環境の履歴ベースラインを超えた場合の最大フロー数/秒に基づいて、アクティブなフローのスケーラビリティ メトリックのアラートを構成します。
 
 **Resources**
 
@@ -144,9 +144,9 @@ Configure alerts for scalability metrics for active flows based on the supported
 
 **Guidance**
 
-Enabling diagnostic logs allows you to capture and view diagnostic information so that you can troubleshoot any failures for ExpressRoute virtual network gateway.
+診断ログを有効にすると、診断情報をキャプチャして表示できるため、ExpressRoute 仮想ネットワーク ゲートウェイのエラーをトラブルシューティングできます。
 
-Configure logging for GatewayDiagnosticLog and RouteDiagnosticLog. Create alerts based on the GatewayDiagnosticLog for gateway configuration events, primary changes, and maintenance events. Create alerts based on the RouteDiagnosticLog for changes to static routes and BGP events.
+GatewayDiagnosticLog と RouteDiagnosticLog のログ記録を構成します。ゲートウェイ構成イベント、プライマリ変更、およびメンテナンス イベントの GatewayDiagnosticLog に基づいてアラートを作成します。RouteDiagnosticLog に基づいて、静的ルートと BGP イベントの変更に関するアラートを作成します。
 
 **Resources**
 
@@ -171,9 +171,9 @@ Configure logging for GatewayDiagnosticLog and RouteDiagnosticLog. Create alerts
 
 **Guidance**
 
-By default, connectivity between virtual networks is enabled when you link multiple virtual networks, each with an ExpressRoute Gateway, to the same ExpressRoute circuit. However, Microsoft advises against using your ExpressRoute circuit for communication between virtual networks and instead use other techniques such as VNet peering, routing in a VNet hub via Azure Firewall, NVA and/or Azure Route Server, site-to-site VPN within Azure, the use of virtual WAN, or the use of SD-WAN.
+既定では、複数の仮想ネットワーク (それぞれ ExpressRoute ゲートウェイ) を同じ ExpressRoute 回線にリンクすると、仮想ネットワーク間の接続が有効になります。ただし、仮想ネットワーク間の通信に ExpressRoute 回線を使用せず、代わりに VNet ピアリング、Azure Firewall、NVA、Azure Route Server 経由の VNet ハブでのルーティング、Azure 内のサイト間 VPN、仮想 WAN の使用、SD-WAN の使用など、他の手法を使用することをお勧めします。
 
-For more information about why VNet-to-VNet connectivity isn’t recommended over ExpressRoute, see: [Connectivity between virtual networks over ExpressRoute | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/expressroute/virtual-network-connectivity-guidance)
+ExpressRoute 経由の VNet 間接続が推奨されない理由の詳細については、[ExpressRoute 経由の仮想ネットワーク間の接続 | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/expressroute/virtual-network-connectivity-guidance) を参照ください。
 
 **Resources**
 
@@ -197,7 +197,7 @@ For more information about why VNet-to-VNet connectivity isn’t recommended ove
 
 **Guidance**
 
-ExpressRoute virtual network gateways undergo regular updates to enhance functionality, reliability, performance, and security. Configuring and scheduling customer-controlled maintenance will minimize the impact of these updates and align the update schedule to best fit your maintenance windows.
+ExpressRoute 仮想ネットワーク ゲートウェイは、機能、信頼性、パフォーマンス、セキュリティを強化するために定期的に更新されます。顧客が管理するメンテナンスを構成してスケジュールすると、これらの更新の影響が最小限に抑えられ、メンテナンス期間に最も適した更新スケジュールが調整されます。
 
 **Resources**
 

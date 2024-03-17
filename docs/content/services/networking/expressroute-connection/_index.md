@@ -34,7 +34,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-ExpressRoute virtual network gateway is designed to exchange network routes and route network traffic. FastPath is designed to improve the data path performance between your on-premises network and your virtual network. When enabled, FastPath sends network traffic directly to virtual machines in the virtual network, bypassing the gateway. Bypassing the gateway enhances resiliency by reducing its utilization of the gateway.
+ExpressRoute 仮想ネットワーク ゲートウェイは、ネットワーク ルートを交換し、ネットワーク トラフィックをルーティングするように設計されています。FastPath は、オンプレミス ネットワークと仮想ネットワーク間のデータ パスのパフォーマンスを向上させるように設計されています。有効にすると、FastPath はゲートウェイをバイパスして、仮想ネットワーク内の仮想マシンにネットワーク トラフィックを直接送信します。ゲートウェイをバイパスすると、ゲートウェイの使用率が減り、回復性が向上します。
 
 **Resources**
 
@@ -58,7 +58,7 @@ ExpressRoute virtual network gateway is designed to exchange network routes and 
 
 **Recommendation/Guidance**
 
-Configure an Azure Resource lock for Gateway Connection resources to prevent accidental deletion. Accidental deletion of a Gateway Connection resource may result in unexpected loss of connectivity between your on-premises network and Azure workloads. As an administrator, you can lock an Azure subscription, resource group, or resource to protect them from accidental user deletions and modifications. The lock overrides any user permission.
+ゲートウェイ接続リソースの Azure リソース ロックを構成して、誤って削除されないようにします。ゲートウェイ接続リソースを誤って削除すると、オンプレミス ネットワークと Azure ワークロード間の接続が予期せず失われる可能性があります。管理者は、Azure サブスクリプション、リソース グループ、またはリソースをロックして、ユーザーが誤って削除したり変更したりしないように保護できます。ロックは、すべてのユーザー権限よりも優先されます。
 
 **Resources**
 

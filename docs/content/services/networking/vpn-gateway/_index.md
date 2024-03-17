@@ -40,8 +40,8 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Azure VPN gateway provides different SLAs when it's deployed in a single availability zone and when it's deployed in two or more availability zones. For information about all Azure SLAs, see [SLA summary for Azure services](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1).
-To automatically deploy your virtual network gateways across availability zones, you can use zone-redundant virtual network gateways. With zone-redundant gateways, you can benefit from zone-resiliency to access your mission-critical, scalable services on Azure.
+Azure VPN ゲートウェイは、1 つの可用性ゾーンにデプロイする場合と、2 つ以上の可用性ゾーンにデプロイする場合で、異なる SLA を提供します。すべての Azure SLA の詳細については、[Azure サービスの SLA の概要](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1) を参照してください。
+可用性ゾーン間で仮想ネットワーク ゲートウェイを自動的にデプロイするには、ゾーン冗長仮想ネットワーク ゲートウェイを使用できます。ゾーン冗長ゲートウェイを使用すると、ゾーン回復性を利用して、Azure 上のミッション クリティカルでスケーラブルなサービスにアクセスできます。
 
 **Resources**
 
@@ -66,8 +66,8 @@ To automatically deploy your virtual network gateways across availability zones,
 
 **Guidance**
 
-The active-active mode is available for all SKUs except Basic.
-Active-active gateways have two Gateway IP configurations and two public IP addresses.
+アクティブ/アクティブ モードは、Basic を除くすべての SKU で使用できます。
+アクティブ/アクティブ ゲートウェイには、2 つのゲートウェイ IP 構成と 2 つのパブリック IP アドレスがあります。
 
 **Resources**
 
@@ -92,8 +92,8 @@ Active-active gateways have two Gateway IP configurations and two public IP addr
 
 **Guidance**
 
-During the initial planning phase, you want to decide whether you want to configure an ExpressRoute connection.
-An Azure ExpressRoute circuit provide a private dedicated connection into Azure.You also need to identify the bandwidth and the SKU type requirement for your business needs. Configure a Site-to-Site VPN as a failover path for ExpressRoute
+最初の計画フェーズでは、ExpressRoute 接続を構成するかどうかを決定する必要があります。
+Azure ExpressRoute 回線は、Azure へのプライベート専用接続を提供します。また、ビジネス ニーズに合った帯域幅と SKU の種類の要件を特定する必要もあります。ExpressRoute のフェイルオーバー・パスとしてのサイト間VPNを構成します。
 
 **Resources**
 
@@ -118,7 +118,7 @@ An Azure ExpressRoute circuit provide a private dedicated connection into Azure.
 
 **Guidance**
 
-To plan for disaster recovery, set up Site-to-Site VPN in more than one location. You can create IP Sec connectivity in the same metro or different metro and choose to work with different service providers for diverse paths
+ディザスタ・リカバリを計画するには、複数の場所でサイト間VPNを設定します。同じ都市圏または異なる都市圏で IP Sec 接続を作成し、さまざまなパスに対して異なるサービス プロバイダーと連携することを選択できます。
 
 **Resources**
 
@@ -143,7 +143,7 @@ To plan for disaster recovery, set up Site-to-Site VPN in more than one location
 
 **Guidance**
 
-Set up monitoring and alerts for Virtual Network Gateway health based on various metrics available.
+使用可能なさまざまなメトリックに基づいて、Virtual Network ゲートウェイの正常性の監視とアラートを設定します。
 
 **Resources**
 
@@ -167,7 +167,7 @@ Set up monitoring and alerts for Virtual Network Gateway health based on various
 
 **Guidance**
 
-VPN Gateway uses service health to notify about planned and unplanned maintenance. Configuring service health will notify you about changes made to your VPN connectivity.
+VPN Gateway は、サービス正常性を使用して、計画メンテナンスと計画外のメンテナンスについて通知します。サービス正常性を構成すると、VPN 接続に加えられた変更について通知されます。
 
 **Resources**
 

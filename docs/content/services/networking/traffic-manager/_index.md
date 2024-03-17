@@ -38,7 +38,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-  Monitor status should be online to provide the failover for application workload.  If the health of your Traffic Manager displays a Degraded status, then the status of one or more endpoints may be Degraded.
+モニターの状態は、アプリケーション ワークロードのフェールオーバーを提供するためにオンラインである必要があります。 Traffic Manager の正常性に Degraded (低下) 状態が表示される場合は、1 つ以上のエンドポイントの状態が Degraded(低下) になっている可能性があります。
 
 **Resources**
 
@@ -61,7 +61,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-When configuring the Azure traffic manager, you should provision minimum of two endpoints to fail-over the workload to a another instance.
+Azure Traffic Manager を構成するときは、ワークロードを別のインスタンスにフェールオーバーするために、少なくとも 2 つのエンドポイントをプロビジョニングする必要があります。
 
 **Resources**
 
@@ -85,7 +85,7 @@ When configuring the Azure traffic manager, you should provision minimum of two 
 
 **Guidance**
 
-Profiles should have more than one endpoint to ensure availability if one of the endpoints fails. It is also recommended that endpoints be in different regions.
+プロファイルには、エンドポイントの 1 つに障害が発生した場合に可用性を確保するために、複数のエンドポイントが必要です。また、エンドポイントを異なるリージョンに配置することもお勧めします。
 
 **Resources**
 
@@ -110,7 +110,7 @@ Profiles should have more than one endpoint to ensure availability if one of the
 
 **Guidance**
 
-Time to Live (TTL) affects how recent of a response a client will get when it makes a request to Azure Traffic Manager. Reducing the TTL value means that the client will be routed to a functioning endpoint faster in the case of a failover. Configure your TTL to 60 seconds to route traffic to a health endpoint as quickly as possible.
+Time to Live (TTL) は、クライアントが Azure Traffic Manager に要求を行ったときに取得する応答の最新度に影響します。TTL 値を減らすと、フェールオーバーの場合に、クライアントは機能しているエンドポイントに高速にルーティングされます。TTL を 60 秒に設定して、トラフィックを正常性エンドポイントにできるだけ早くルーティングします。
 
 **Resources**
 
@@ -135,7 +135,7 @@ Time to Live (TTL) affects how recent of a response a client will get when it ma
 
 **Guidance**
 
-For geographic routing, traffic is routed to endpoints based on defined regions. When a region fails, there is no pre-defined failover. Having an endpoint where the Regional Grouping is configured to "All (World)" for geographic profiles will avoid traffic black holing and guarantee service remains available.
+地理的ルーティングの場合、トラフィックは定義されたリージョンに基づいてエンドポイントにルーティングされます。リージョンに障害が発生した場合、事前定義されたフェールオーバーはありません。地域プロファイルの地域グループを「すべて(世界)」に構成したエンドポイントを使用すると、トラフィックのブラックホール化が回避され、サービスが引き続き利用可能であることが保証されます。
 
 **Resources**
 

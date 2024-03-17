@@ -34,7 +34,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Create Alerts for administrative operations such as Create or Update Route Table with Azure Monitor to detect unauthorized/undesired changes to production resources, this alert can help identify undesired changes in routing, such as attempts to by-pass firewalls or from accessing resources externally.
+Azure Monitor を使用したルート テーブルの作成や更新などの管理操作のアラートを作成して、運用リソースに対する承認されていない/望ましくない変更を検出するために、このアラートは、ファイアウォールのバイパスや外部からのリソースへのアクセスの試みなど、ルーティングの望ましくない変更を特定するのに役立ちます。
 
 **Resources**
 
@@ -58,8 +58,8 @@ Create Alerts for administrative operations such as Create or Update Route Table
 
 **Guidance**
 
-As an administrator, you can lock an Azure subscription, resource group, or resource to protect them from accidental user deletions and modifications. The lock overrides any user permissions.
-You can set locks that prevent either deletions or modifications. In the portal, these locks are called Delete and Read-only.
+管理者は、Azure サブスクリプション、リソース グループ、またはリソースをロックして、ユーザーが誤って削除したり変更したりしないように保護できます。ロックは、すべてのユーザー権限よりも優先されます。
+削除または変更を禁止するロックを設定できます。ポータルでは、これらのロックは 削除 と 読み取り専用 と呼ばれます。
 
 **Resources**
 

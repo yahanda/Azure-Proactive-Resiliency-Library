@@ -36,7 +36,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Private DNS zones and records are critical resources. Deleting a DNS zone or a single DNS record can result in a service outage. It's important that DNS zones and records are protected against unauthorized or accidental changes. The Private DNS Zone Contributor role is a built-in role for managing private DNS resources. This role applied to a user or group enables them to manage private DNS resources.
+プライベート DNS ゾーンとレコードは重要なリソースです。DNS ゾーンまたは 1 つの DNS レコードを削除すると、サービスが停止する可能性があります。DNS ゾーンとレコードは、承認されていない変更や偶発的な変更から保護されることが重要です。プライベート DNS ゾーン共同作成者ロールは、プライベート DNS リソースを管理するための組み込みロールです。ユーザーまたはグループに適用されるこのロールにより、プライベート DNS リソースを管理できます。
 
 **Resources**
 
@@ -60,7 +60,7 @@ Private DNS zones and records are critical resources. Deleting a DNS zone or a s
 
 **Guidance**
 
-The records contained in a private DNS zone aren't resolvable from the Internet. DNS resolution against a private DNS zone works only from virtual networks that are linked to it. You can link a private DNS zone to one or more virtual networks by creating virtual network links. You can also enable the autoregistration feature to automatically manage the life cycle of the DNS records for the virtual machines that get deployed in a virtual network.
+プライベート DNS ゾーンに含まれるレコードは、インターネットから解決できません。プライベート DNS ゾーンに対する DNS 解決は、そのゾーンにリンクされている仮想ネットワークからのみ機能します。仮想ネットワーク リンクを作成することで、プライベート DNS ゾーンを 1 つ以上の仮想ネットワークにリンクできます。また、自動登録機能を有効にして、仮想ネットワークにデプロイされる仮想マシンの DNS レコードのライフ サイクルを自動的に管理することもできます。
 
 **Resources**
 
@@ -84,7 +84,7 @@ The records contained in a private DNS zone aren't resolvable from the Internet.
 
 **Guidance**
 
-Azure Private DNS provides a reliable, secure DNS service to manage and resolve domain names in a virtual network without the need to add a custom DNS solution. By using private DNS zones, you can use your own custom domain names rather than the Azure-provided names available today. The records contained in a private DNS zone aren't resolvable from the Internet. DNS resolution against a private DNS zone works only from virtual networks that are linked to it. You can link a private DNS zone to one or more virtual networks by creating virtual network links. You can also enable the autoregistration feature to automatically manage the life cycle of the DNS records for the virtual machines that get deployed in a virtual network.
+Azure プライベート DNS は、カスタム DNS ソリューションを追加することなく、仮想ネットワーク内のドメイン名を管理および解決するための、信頼性が高く安全な DNS サービスを提供します。プライベート DNS ゾーンを使用すると、現在使用可能な Azure 提供の名前ではなく、独自のカスタム ドメイン名を使用できます。プライベート DNS ゾーンに含まれるレコードは、インターネットから解決できません。プライベート DNS ゾーンに対する DNS 解決は、そのゾーンにリンクされている仮想ネットワークからのみ機能します。仮想ネットワーク リンクを作成することで、プライベート DNS ゾーンを 1 つ以上の仮想ネットワークにリンクできます。また、自動登録機能を有効にして、仮想ネットワークにデプロイされる仮想マシンの DNS レコードのライフ サイクルを自動的に管理することもできます。
 
 **Resources**
 

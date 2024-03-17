@@ -35,7 +35,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-WAF could block a legitimate request that it shouldn't (a false positive). You can identify requests that have been blocked within the last 24 hours through Log Analytics.
+WAFは、ブロックすべきではない正当なリクエスト(誤検知)をブロックする可能性があります。Log Analytics を使用して、過去 24 時間以内にブロックされた要求を特定できます。
 
 **Resources**
 
@@ -62,7 +62,7 @@ WAF could block a legitimate request that it shouldn't (a false positive). You c
 
 **Guidance**
 
-WAF could block a legitimate request that it shouldn't (a false positive). You can identify requests that have been blocked within the last 24 hours through Log Analytics.
+WAFは、ブロックすべきではない正当なリクエスト(誤検知)をブロックする可能性があります。Log Analytics を使用して、過去 24 時間以内にブロックされた要求を特定できます。
 
 **Resources**
 
@@ -87,7 +87,7 @@ WAF could block a legitimate request that it shouldn't (a false positive). You c
 
 **Guidance**
 
-Monitoring the health of your WAF and the applications that it protects is important. Health monitoring is supported by integration with Microsoft Defender for Cloud, Azure Monitor, and Azure Monitor logs.
+WAFとWAFが保護するアプリケーションの正常性を監視することは重要です。正常性の監視は、Microsoft Defender for Cloud、Azure Monitor、Azure Monitor ログとの統合によってサポートされています。
 
 **Resources**
 

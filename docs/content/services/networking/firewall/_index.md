@@ -36,7 +36,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Azure Firewall provides different SLAs when it's deployed in a single availability zone and when it's deployed in two or more availability zones.
+Azure Firewall は、1 つの可用性ゾーンにデプロイする場合と、2 つ以上の可用性ゾーンにデプロイする場合で、異なる SLA を提供します。
 
 **Resources**
 
@@ -61,11 +61,11 @@ Azure Firewall provides different SLAs when it's deployed in a single availabili
 
 **Guidance**
 
-Monitor metrics related to availability and performance issues. More specifically:
+可用性とパフォーマンスの問題に関連するメトリックを監視します。具体的には、次のようになります。
 
-- _FirewallHealth_: Indicates the overall health of the firewall.
-- _Throughput_: Throughput processed by the firewall. An alert should be triggered if throughput gets close to the documented limits.
-- _SNATPortUtilization_: Percentage of outbound SNAT ports currently in use. An alert should be triggered if this metric gets close to 100% (at which point Source-NATted connections, such as outbound internet connections will start to fail). If you'll need more than 512,000 SNAT ports, deploying a NAT gateway with Azure Firewall can be considered. However, deploying NAT gateway with a zone redundant firewall is not recommended deployment option, as the NAT gateway does not support zonal deployment at this time. In order to use NAT gateway with Azure Firewall, a zonal Firewall deployment is required. In addition, Azure Virtual Network NAT integration is not currently supported in secured virtual hub network architectures.
+- _FirewallHealth_: ファイアウォールの全体的な正常性を示します。
+- _Throughput_: ファイアウォールによって処理されたスループット。スループットが文書化された制限に近づくと、アラートがトリガーされます。
+- _SNATPortUtilization_: 現在使用されている送信 SNAT ポートの割合。このメトリックが 100% に近づくと、アラートがトリガーされます (その時点で、送信インターネット接続などのソース NAT 接続は失敗し始めます)。512,000 を超える SNAT ポートが必要な場合は、Azure Firewall を使用して NAT ゲートウェイをデプロイすることを検討できます。ただし、NAT ゲートウェイは現時点ではゾーン展開をサポートしていないため、ゾーン冗長ファイアウォールを使用した NAT ゲートウェイの展開は推奨されません。Azure Firewall で NAT ゲートウェイを使用するには、ゾーン ファイアウォールのデプロイが必要です。また、Azure Virtual Network NAT 統合は、セキュリティ保護付き仮想ハブ ネットワーク アーキテクチャでは現在サポートされていません。
 
 **Resources**
 
@@ -90,7 +90,7 @@ Monitor metrics related to availability and performance issues. More specificall
 
 **Guidance**
 
-Associate a DDoS protection plan with the virtual network hosting Azure Firewall. A DDoS protection plan provides enhanced mitigation features to defend your firewall from DDoS attacks. Azure Firewall Manager is an integrated tool to create your firewall infrastructure and DDoS protection plans.
+DDoS 保護プランを Azure Firewall をホストしている仮想ネットワークに関連付けます。DDoS 保護プランは、DDoS 攻撃からファイアウォールを保護するための強化された軽減機能を提供します。Azure Firewall Manager は、ファイアウォール インフラストラクチャと DDoS 保護プランを作成するための統合ツールです。
 
 **Resources**
 
@@ -114,7 +114,7 @@ Associate a DDoS protection plan with the virtual network hosting Azure Firewall
 
 **Guidance**
 
-Azure Firewall policy allows you to define a rule hierarchy and enforce compliance. It provides a hierarchical structure to overlay a central base policy on top of a child application team policy. The base policy has a higher priority and runs before the child policy. Use an Azure custom role definition to prevent inadvertent base policy removal and provide selective access to rule collection groups within a subscription or resource group.
+Azure Firewall ポリシーを使用すると、ルール階層を定義し、コンプライアンスを適用できます。これは、子アプリケーション・チーム・ポリシーの上に中央の基本ポリシーをオーバーレイする階層構造を提供します。基本ポリシーの優先度が高く、子ポリシーの前に実行されます。Azure カスタム ロール定義を使用して、基本ポリシーの不注意による削除を防ぎ、サブスクリプションまたはリソース グループ内のルール コレクション グループへの選択的なアクセスを提供します。
 
 **Resources**
 

@@ -41,7 +41,8 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Connect each ExpressRoute Gateway to a minimum of two circuits instantiated in different peering locations.
+各 ExpressRoute ゲートウェイを、異なるピアリングの場所でインスタンス化された少なくとも 2 つの回線に接続します。
+
 **Resources**
 
 - [Designing for disaster recovery with ExpressRoute private peering](https://learn.microsoft.com/ja-jp/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering)
@@ -64,7 +65,7 @@ Connect each ExpressRoute Gateway to a minimum of two circuits instantiated in d
 
 **Guidance**
 
-Microsoft (in the ExpressRoute direct model) or the ExpressRoute provider (in the ExpressRoute provider-based model) always offer a physically redundant service. Make sure that the same level of physical redundancy (two physical devices, two physical links) is used across the entire path from the ExpressRoute peering location to your network.
+Microsoft (ExpressRoute direct モデルの場合) または ExpressRoute プロバイダー (ExpressRoute プロバイダー ベース モデルの場合) は、常に物理的に冗長なサービスを提供します。ExpressRoute ピアリングの場所からネットワークまでのパス全体で、同じレベルの物理冗長性 (2 つの物理デバイス、2 つの物理リンク) が使用されていることを確認します。
 
 **Resources**
 
@@ -89,7 +90,7 @@ Microsoft (in the ExpressRoute direct model) or the ExpressRoute provider (in th
 
 **Guidance**
 
-To improve high availability, it's recommended that you operate both the connections of an ExpressRoute circuit in active-active mode. If you configure the connections to operate in active-active mode, the Microsoft network will load balance the traffic across the connections on a per-flow basis.
+高可用性を向上させるには、ExpressRoute 回線の両方の接続をアクティブ/アクティブ モードで運用することをお勧めします。接続をアクティブ/アクティブ モードで動作するように構成すると、Microsoft ネットワークはフローごとに接続間でトラフィックの負荷を分散します。
 
 **Resources**
 
@@ -113,7 +114,7 @@ To improve high availability, it's recommended that you operate both the connect
 
 **Guidance**
 
-When you enable Bidirectional Forwarding Detection (BFD) over ExpressRoute, you can speed up the link failure detection between Microsoft Enterprise edge (MSEE) devices and the routers that your ExpressRoute circuit gets configured (CE/PE). You can configure ExpressRoute over your edge routing devices or your Partner Edge routing devices (if you went with managed Layer 3 connection service).
+ExpressRoute 経由の双方向フォワーディング検出 (BFD) を有効にすると、Microsoft エンタープライズ エッジ (MSEE) デバイスと、ExpressRoute 回線が構成されるルーター (CE/PE) 間のリンク障害検出を高速化できます。ExpressRoute は、エッジ ルーティング デバイスまたはパートナー エッジ ルーティング デバイス (マネージド レイヤー 3 接続サービスを使用した場合) を介して構成できます。
 
 **Resources**
 
@@ -137,11 +138,11 @@ When you enable Bidirectional Forwarding Detection (BFD) over ExpressRoute, you 
 
 **Guidance**
 
-Configure monitoring using Network Insights for ExpressRoute circuit availability, circuit QoS, and throughput. Configure alerts for availability metrics and circuit QoS metrics according to [ExpressRoute Circuits | Azure Monitor Baseline Alerts](https://azure.github.io/azure-monitor-baseline-alerts/services/Network/expressRouteCircuits/), and throughput metrics when bits/sec exceed a threshold appropriate for the ExpressRoute circuit SKU and customer usage.
+ExpressRoute 回線の可用性、回線の QoS、スループットに関する Network Insights を使用して監視を構成します。可用性メトリックと回線 QoS メトリックのアラートを [ExpressRoute Circuits |Azure Monitor ベースライン アラート](https://azure.github.io/azure-monitor-baseline-alerts/services/Network/expressRouteCircuits/)、およびビット/秒が ExpressRoute 回線 SKU と顧客の使用状況に適したしきい値を超えた場合のスループット メトリックに従って構成します。
 
-Configure alerts using Connection Monitor for ExpressRoute with a Log Analytics workspace, and Network Watcher. Configure alerts for when ChecksFailedPercent exceeds 5%, and when RoundTripTimeMs exceeds a pre-tested average appropriate to the environment.
+ExpressRoute の接続モニターと Log Analytics ワークスペース、および Network Watcher を使用してアラートを構成します。ChecksFailedPercent が 5% を超えたとき、および RoundTripTimeMs が環境に適した事前テスト済みの平均を超えたときにアラートを構成します。
 
-For ExpressRoute Direct, configure Traffic Collection for ExpressRoute Direct to send flow logs to a Log Analytics workspace.
+ExpressRoute Direct の場合は、フロー ログを Log Analytics ワークスペースに送信するように ExpressRoute Direct のトラフィック収集を構成します。
 
 **Resources**
 
@@ -167,7 +168,7 @@ For ExpressRoute Direct, configure Traffic Collection for ExpressRoute Direct to
 
 **Guidance**
 
-ExpressRoute uses service health to notify about planned and unplanned maintenance. Configuring service health will notify you about changes made to your ExpressRoute circuits.
+ExpressRoute では、サービス正常性を使用して、計画メンテナンスと計画外のメンテナンスについて通知します。サービス正常性を構成すると、ExpressRoute 回線に加えられた変更について通知されます。
 
 **Resources**
 
@@ -191,7 +192,7 @@ ExpressRoute uses service health to notify about planned and unplanned maintenan
 
 **Guidance**
 
-If you have not yet added a second ExpressRoute circuit for an ExpressRoute Gateway, use a site-to-site VPN as an interim solution until the second ExpressRoute circuit is available.
+ExpressRoute ゲートウェイの 2 番目の ExpressRoute 回線をまだ追加していない場合は、2 番目の ExpressRoute 回線が使用可能になるまでの暫定的なソリューションとしてサイト間 VPN を使用します。
 
 **Resources**
 

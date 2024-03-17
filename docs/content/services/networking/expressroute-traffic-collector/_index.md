@@ -33,9 +33,9 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-ExpressRoute Traffic Collector enables sampling of network flows sent over your ExpressRoute Direct circuits. Flow logs get sent to a Log Analytics workspace where you can create your own log queries for further analysis. You can also export the data to any visualization tool or SIEM (Security Information and Event Management) of your choice. Flow logs can be enabled for both private peering and Microsoft peering with ExpressRoute Traffic Collector.
+ExpressRoute Traffic Collector を使用すると、ExpressRoute Direct 回線経由で送信されるネットワーク フローのサンプリングが可能になります。フロー ログは Log Analytics ワークスペースに送信され、そこで独自のログ クエリを作成してさらに分析できます。また、任意の視覚化ツールやSIEM(セキュリティ情報およびイベント管理)にデータをエクスポートすることもできます。フロー ログは、ExpressRoute Traffic Collector を使用したプライベート ピアリングと Microsoft ピアリングの両方で有効にできます。
 
-You can associate a single ExpressRoute Direct circuit with multiple ExpressRoute Traffic Collectors deployed in different Azure region within a given geo-political region. It's recommended that you associate your ExpressRoute Direct circuit with multiple ExpressRoute Traffic Collectors as part of your disaster recovery and high availability plan.
+1 つの ExpressRoute Direct 回線を、特定の地政学的リージョン内の異なる Azure リージョンにデプロイされた複数の ExpressRoute トラフィック コレクターに関連付けることができます。ディザスター リカバリーと高可用性の計画の一環として、ExpressRoute Direct 回線を複数の ExpressRoute トラフィック コレクターに関連付けることをお勧めします。
 
 **Resources**
 

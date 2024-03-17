@@ -33,7 +33,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-A private endpoint has two custom properties, static IP address and the network interface name. These properties must be set when the private endpoint is created. I the state is not in Succeeded state, there might be a problem with the private endpoint or with the associated resource.
+プライベート エンドポイントには、静的 IP アドレスとネットワーク インターフェイス名の 2 つのカスタム プロパティがあります。これらのプロパティは、プライベート エンドポイントの作成時に設定する必要があります。状態が 成功 状態でない場合は、プライベート エンドポイントまたは関連するリソースに問題がある可能性があります。
 
 **Resources**
 
