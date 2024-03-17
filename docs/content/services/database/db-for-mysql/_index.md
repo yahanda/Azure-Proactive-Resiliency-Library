@@ -34,7 +34,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Enable HA with zone redundancy on flexible server instances. Zone redundant high availability deploys a standby replica in a different zone with automatic failover capability.
+フレキシブル サーバー インスタンスでゾーン冗長性を備えた HA を有効にします。ゾーン冗長高可用性は、自動フェールオーバー機能を備えた別のゾーンにスタンバイ レプリカをデプロイします。
 
 **Resources**
 
@@ -58,7 +58,7 @@ Enable HA with zone redundancy on flexible server instances. Zone redundant high
 
 **Guidance**
 
-Use custom maintenance schedule on flexible server instances to select a preferred time for service updates to be applied.
+フレキシブル サーバー インスタンスでカスタム メンテナンス スケジュールを使用して、サービス更新プログラムを適用する優先時間を選択します。
 
 **Resources**
 

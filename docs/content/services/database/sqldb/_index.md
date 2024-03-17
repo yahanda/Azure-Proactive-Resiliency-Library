@@ -39,7 +39,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-If your primary database fails, perform a manual failover to the secondary database. Until you fail over, the secondary database remains read-only. Active geo-replication enables you to create readable replicas and manually failover to any replica if there is a datacenter outage or application upgrade. Up to four secondaries are supported in the same or different regions, and the secondaries can also be used for read-only access queries. The failover must be initiated manually by the application or the user. After failover, the new primary has a different connection end point.
+プライマリ データベースに障害が発生した場合は、セカンダリ データベースへの手動フェールオーバーを実行します。フェールオーバーするまで、セカンダリ データベースは読み取り専用のままです。アクティブ geo レプリケーションを使用すると、読み取り可能なレプリカを作成し、データセンターの停止やアプリケーションのアップグレードが発生した場合に、任意のレプリカに手動でフェールオーバーできます。同じリージョンまたは異なるリージョンで最大 4 つのセカンダリがサポートされ、セカンダリは読み取り専用アクセス クエリにも使用できます。フェールオーバーは、アプリケーションまたはユーザーが手動で開始する必要があります。フェイルオーバー後、新しいプライマリーの接続エンドポイントは異なります。
 
 **Resources**
 
@@ -63,7 +63,7 @@ If your primary database fails, perform a manual failover to the secondary datab
 
 **Guidance**
 
-You can use the readable secondary databases to offload read-only query workloads. Because autofailover groups involve multiple databases, these databases must be configured on the primary server. Autofailover groups support replication of all databases in the group to only one secondary server or instance in a different region.
+読み取り可能なセカンダリ データベースを使用して、読み取り専用クエリ ワークロードをオフロードできます。自動フェールオーバー グループには複数のデータベースが含まれるため、これらのデータベースはプライマリ サーバー上で構成する必要があります。自動フェールオーバー グループでは、グループ内のすべてのデータベースを、別のリージョン内の 1 つのセカンダリ サーバーまたはインスタンスにのみレプリケーションできます。
 
 **Resources**
 
@@ -88,7 +88,7 @@ You can use the readable secondary databases to offload read-only query workload
 
 **Guidance**
 
-By default, the cluster of nodes for the premium availability model is created in the same datacenter. With the introduction of Azure Availability Zones, SQL Database can place different replicas of the Business Critical database to different availability zones in the same region. To eliminate a single point of failure, the control ring is also duplicated across multiple zones as three gateway rings (GW). The routing to a specific gateway ring is controlled by Azure Traffic Manager (ATM). Because the zone redundant configuration in the Premium or Business Critical service tiers doesn't create extra database redundancy, you can enable it at no extra cost.
+既定では、Premium 可用性モデルのノードのクラスターは、同じデータセンターに作成されます。Azure Availability Zones の導入により、SQL Database では、Business Critical データベースの異なるレプリカを同じリージョン内の異なる可用性ゾーンに配置できます。単一障害点を排除するために、制御リングは 3 つのゲートウェイ リング(GW)として複数のゾーンに複製されます。特定のゲートウェイ リングへのルーティングは、Azure Traffic Manager (ATM) によって制御されます。Premium または Business Critical サービス レベルのゾーン冗長構成では、追加のデータベース冗長性は作成されないため、追加コストなしで有効にできます。
 
 **Resources**
 
@@ -112,7 +112,7 @@ By default, the cluster of nodes for the premium availability model is created i
 
 **Guidance**
 
-Although Azure SQL Database is resilient when it concerns transitive infrastructure failures, these failures might affect your connectivity. When a transient error occurs while working with SQL Database, make sure your code can retry the call.
+Azure SQL Database は、推移的なインフラストラクチャの障害に関しては回復性がありますが、これらの障害は接続に影響を与える可能性があります。SQL Database の操作中に一時的なエラーが発生した場合は、コードで呼び出しを再試行できることを確認します。
 
 **Resources**
 
@@ -136,7 +136,7 @@ Although Azure SQL Database is resilient when it concerns transitive infrastruct
 
 **Guidance**
 
-Use one of the available solutions to monitor SQL DB to detect potential reliability incidents early and make your databases more reliable. Choose a near real-time monitoring solution to quickly react to incidents.
+利用可能なソリューションの 1 つを使用して SQL DB を監視し、潜在的な信頼性インシデントを早期に検出し、データベースの信頼性を高めます。ほぼリアルタイムの監視ソリューションを選択して、インシデントに迅速に対応します。
 
 **Resources**
 
@@ -162,7 +162,7 @@ Use one of the available solutions to monitor SQL DB to detect potential reliabi
 
 **Guidance**
 
-It is highly recommended to use Azure Key Vault (AKV) to store encryption keys related to Always Encrypted configurations, however it is not required. If you are not using AKV, then ensure that your keys are properly backed up.
+Azure Key Vault (AKV) を使用して、Always Encrypted 構成に関連する暗号化キーを格納することを強くお勧めしますが、必須ではありません。AKV を使用していない場合は、キーが適切にバックアップされていることを確認します。
 
 **Resources**
 

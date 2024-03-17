@@ -41,7 +41,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Azure implements multi-tier isolation approach with rack, DC, zone, and region isolation levels. Cosmos DB is by default highly resilient by running four replicas, but it is still susceptible to failures or issues with entire regions or availability zones. As such, it is crucial to enable at least a secondary region on your Cosmos DB to achieve higher SLA. Doing so does not incur any downtime at all and it is as easy as selecting a pin on map.
+Azure では、ラック、DC、ゾーン、リージョンの分離レベルによる多層分離アプローチが実装されています。Cosmos DB は、既定では 4 つのレプリカを実行することで高い回復性を備えていますが、リージョン全体または可用性ゾーンに関する障害や問題の影響を受けやすいままです。そのため、より高い SLA を実現するには、Cosmos DB で少なくともセカンダリ リージョンを有効にすることが重要です。そうすることでダウンタイムはまったく発生せず、地図上のピンを選択するのと同じくらい簡単です。
 
 **Resources**
 
@@ -65,7 +65,7 @@ Azure implements multi-tier isolation approach with rack, DC, zone, and region i
 
 **Guidance**
 
-Cosmos DB is a battle-tested service with extremely high uptime and resiliency, but even the most resilient of systems sometimes run into a small hiccup. Should a region become unavailable, the Service-Managed failover option allows Azure Cosmos DB to fail over automatically to the next available region with no user action needed.
+Cosmos DB は、非常に高いアップタイムと回復性を備えた実証済みのサービスですが、最も回復性のあるシステムでも、小さな問題が発生することがあります。リージョンが使用できなくなった場合、サービス マネージド フェールオーバー オプションを使用すると、Azure Cosmos DB は、ユーザーの操作を必要とせずに、次に使用可能なリージョンに自動的にフェールオーバーできます。
 
 **Resources**
 
@@ -89,7 +89,7 @@ Cosmos DB is a battle-tested service with extremely high uptime and resiliency, 
 
 **Guidance**
 
-Multi-region write capability enables you to design multi-region application that is inherently highly available by virtue of being active in multiple regions. This, however, requires that you pay close considerations to consistency requirements and handle potential writes conflicts by way of conflict resolution policy. On the flip side, blindly enabling this configuration can lead to decreased availability due to unexpected application behavior and data corruption due to unhandled conflicts.
+複数リージョンの書き込み機能を使用すると、複数のリージョンでアクティブであるため、本質的に可用性の高いマルチリージョン アプリケーションを設計できます。ただし、そのためには、整合性の要件を綿密に検討し、競合解決ポリシーを使用して潜在的な書き込み競合を処理する必要があります。反対に、この構成を盲目的に有効にすると、予期しないアプリケーションの動作や、未処理の競合によるデータの破損により、可用性が低下する可能性があります。
 
 **Resources**
 
@@ -114,7 +114,7 @@ Multi-region write capability enables you to design multi-region application tha
 
 **Guidance**
 
-Within a globally distributed database environment, there is a direct relationship between the consistency level and data durability in the presence of a region-wide outage. As you develop your business continuity plan, you need to understand the maximum period of recent data updates the application can tolerate losing when recovering after a disruptive event. We recommend using Session consistency unless you have established that stronger consistency mode is needed, you are willing to tolerate higher write latencies, and understand that outages on read-only regions can affect the ability of write region to accept writes.
+グローバルに分散されたデータベース環境内では、整合性レベルと、リージョン全体の停止が発生した場合のデータ持続性の間には直接的な関係があります。事業継続計画を策定する際には、破壊的なイベント後の復旧時にアプリケーションが損失を許容できる最近のデータ更新の最大期間を理解する必要があります。より強力な整合性モードが必要であることが確立され、書き込みレイテンシーの増加を許容し、読み取り専用リージョンでの停止が書き込みを受け入れる書き込みリージョンの機能に影響を与える可能性があることを理解していない限り、セッション整合性を使用することをお勧めします。
 
 **Resources**
 
@@ -138,7 +138,7 @@ Within a globally distributed database environment, there is a direct relationsh
 
 **Guidance**
 
-Cosmos DB automatically backs up your data and there is no way to turn back ups off. In short, you are always protected. But should any mishap occur – a process that went haywire and deleted data it shouldn’t, customer data was overwritten by accident, etc. – minimizing the time it takes to revert the changes is of the essence. With continuous mode, you can self-serve restore your database/collection to a point in time before such mishap occurred. With periodic mode, however, you must contact Microsoft support, which despite us striving to provide speedy help will inevitably increase the restore time.
+Cosmos DB によってデータが自動的にバックアップされるため、バックアップをオフにする方法はありません。要するに、あなたは常に保護されています。しかし、プロセスがうまくいかず、削除すべきでないデータを削除したり、顧客データが誤って上書きされたりなどの事故が発生した場合は、変更を元に戻すのにかかる時間を最小限に抑えることが重要です。継続モードでは、このような事故が発生する前の時点にデータベース/コレクションをセルフサービスで復元できます。ただし、定期モードでは、Microsoft サポートに連絡する必要があり、迅速なサポートを提供するよう努めているにもかかわらず、復元時間が必然的に長くなります。
 
 **Resources**
 
@@ -162,7 +162,7 @@ Cosmos DB automatically backs up your data and there is no way to turn back ups 
 
 **Guidance**
 
-Cosmos DB limits single response to 4 MB. If your query requests a large amount of data or data from multiple backend partitions, the results will span multiple pages for which separate requests must be issued. Each result page will indicate whether more results are available and provide a continuation token to access the next page. You must include a while loop in your code and traverse the pages until no more results are available.
+Cosmos DB では、1 つの応答が 4 MB に制限されています。クエリが大量のデータまたは複数のバックエンド パーティションからのデータを要求する場合、結果は複数のページにまたがり、個別の要求を発行する必要があります。各結果ページには、さらに結果が利用可能かどうかが示され、次のページにアクセスするための継続トークンが提供されます。コードに while ループを含め、結果が得られなくなるまでページを走査する必要があります。
 
 **Resources**
 
@@ -186,7 +186,7 @@ Cosmos DB limits single response to 4 MB. If your query requests a large amount 
 
 **Guidance**
 
-Not only is establishing a new database connection expensive, so is maintaining it. As such it is critical to maintain only one instance, a so-called “singleton”, of the SDK client per account per application. Connections, both HTTP and TCP, are scoped to the client instance. Most compute environments have limitations in terms of the number of connections that can be open at the same time and when these limits are reached, connectivity will be affected.
+新しいデータベース接続の確立にはコストがかかるだけでなく、その維持にもコストがかかります。そのため、SDK クライアントのインスタンス (いわゆる "シングルトン") を 1 つのアカウントごとに、アプリケーションごとに 1 つだけ維持することが重要です。接続 (HTTP と TCP) はどちらも、クライアント インスタンスにスコープが設定されます。ほとんどのコンピューティング環境には、同時に開くことができる接続の数に関する制限があり、これらの制限に達すると、接続が影響を受けます。
 
 **Resources**
 
@@ -209,7 +209,7 @@ Not only is establishing a new database connection expensive, so is maintaining 
 
 **Guidance**
 
-Cosmos DB SDKs by default handle large number of transient errors and automatically retry operations, where possible. That said, your application should add retry policies for certain well-defined cases that cannot be generically handled by the SDKs.
+既定では、Cosmos DB SDK は多数の一時的なエラーを処理し、可能な場合は自動的に操作を再試行します。ただし、アプリケーションでは、SDK で一般的に処理できない明確に定義された特定のケースに対して再試行ポリシーを追加する必要があります。
 
 **Resources**
 
@@ -233,7 +233,7 @@ Cosmos DB SDKs by default handle large number of transient errors and automatica
 
 **Guidance**
 
-It is good practice to monitor the availability and responsiveness of your Azure Cosmos DB resources and have alerts in place for your workload to stay proactive in case an unforeseen event occurs.
+Azure Cosmos DB リソースの可用性と応答性を監視し、予期しないイベントが発生した場合にワークロードをプロアクティブに維持できるようにアラートを設定することをお勧めします。
 
 **Resources**
 

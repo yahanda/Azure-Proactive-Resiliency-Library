@@ -33,7 +33,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-Azure Cache for Redis supports zone redundancy in its Premium and Enterprise tiers. A zone-redundant cache runs on VMs spread across multiple Availability Zones. Zone redundancy provides higher resilience and availability.
+Azure Cache for Redis では、Premium レベルと Enterprise レベルでゾーン冗長性がサポートされています。ゾーン冗長キャッシュは、複数の可用性ゾーンに分散した VM で実行されます。ゾーン冗長性により、回復性と可用性が向上します。
 
 **Resources**
 
