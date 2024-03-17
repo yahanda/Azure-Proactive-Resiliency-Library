@@ -55,7 +55,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Private Link is available for other Azure services that work in conjunction with Azure Virtual Desktop, such as Azure Files and Key Vault. From a resiliency standpoint, we recommending implementing private endpoints for these services to reduce exposure to potential internet-related issues such as latency, packet loss, and/or downtime. This can lead to more reliable communication between AVD and dependent services.
+Private Link は、Azure Files や Key Vault など、Azure Virtual Desktop と連携して動作する他の Azure サービスで使用できます。回復性の観点から、これらのサービスにプライベート エンドポイントを実装して、待機時間、パケット損失、ダウンタイムなどの潜在的なインターネット関連の問題にさらされる可能性を減らすことをお勧めします。これにより、AVD と依存サービス間の通信の信頼性が高まります。
 
 **Resources**
 
@@ -80,9 +80,9 @@ Private Link is available for other Azure services that work in conjunction with
 
 **Guidance**
 
-Use Service Health to stay informed about the health of the Azure services and regions that you use to insure their availability.
-Set up Service Health alerts so that you stay aware of service issues, planned maintenance, or other changes that might affect your Azure Virtual Desktop resources.
-Use Resource Health to monitor your VMs and storage solutions.
+Service Health を使用して、可用性を保証するために使用する Azure サービスとリージョンの正常性について常に情報を入手します。
+サービスの問題、計画メンテナンス、または Azure Virtual Desktop リソースに影響を与える可能性のあるその他の変更を常に把握できるように、Service Health アラートを設定します。
+Resource Health を使用して、VM とストレージ ソリューションを監視します。
 
 **Resources**
 
@@ -106,9 +106,9 @@ Use Resource Health to monitor your VMs and storage solutions.
 
 **Guidance**
 
-Deploy session hosts in an availability zone or an availability set helps protect the environment from outages.
+可用性ゾーンまたは可用性セットにセッション ホストをデプロイすると、環境を停止から保護するのに役立ちます。
 
-Enhances reliability by minimizing latency and impacts reliability helping keep the data synchronized and protecting from outages. If one zone experiences an outage, then regional services, capacity, and high availability are supported by the remaining zones.
+レイテンシーとインパクトの信頼性を最小限に抑え、データの同期を維持し、停止から保護することで、信頼性を高めます。1 つのゾーンで障害が発生した場合、リージョンのサービス、容量、高可用性は残りのゾーンでサポートされます。
 
 **Resources**
 
@@ -133,9 +133,9 @@ Enhances reliability by minimizing latency and impacts reliability helping keep 
 
 **Guidance**
 
-When using an AD DS identity solution with AVD, it is recommended to deploy domain controllers and DNS servers on Azure virtual machines across availability zones. This improves the environment’s reliability by removing a dependency on an on-premises service and improves performance by creating a shorter path for user authentication.
+AVD で AD DS ID ソリューションを使用する場合は、可用性ゾーン間で Azure 仮想マシンにドメイン コントローラーと DNS サーバーをデプロイすることをお勧めします。これにより、オンプレミス サービスへの依存関係がなくなることで環境の信頼性が向上し、ユーザー認証のパスが短くなることでパフォーマンスが向上します。
 
-This recommendation is not relevant when you are utilizing Microsoft Entra as the identity provider.
+この推奨事項は、ID プロバイダーとして Microsoft Entra を利用している場合には関係ありません。
 
 **Resources**
 
@@ -159,7 +159,7 @@ This recommendation is not relevant when you are utilizing Microsoft Entra as th
 
 **Guidance**
 
-It is recommended to enable RDP Shortpath for AVD. RDP Shortpath is a feature of Azure Virtual Desktop that establishes a direct UDP-based transport between a supported Windows Remote Desktop client and session host. By default, Remote Desktop Protocol (RDP) tries to establish connection using UDP and uses a TCP-based reverse connect transport as a fallback connection mechanism. TCP-based reverse connect transport provides the best compatibility with various networking configurations and has a high success rate for establishing RDP connections. UDP-based transport offers better connection reliability and more consistent latency.
+AVD の RDP Shortpath を有効にすることをお勧めします。RDP Shortpath は、サポートされている Windows リモート デスクトップ クライアントとセッション ホストの間に直接 UDP ベースのトランスポートを確立する Azure Virtual Desktop の機能です。既定では、リモート デスクトップ プロトコル (RDP) は UDP を使用して接続を確立しようとし、フォールバック接続メカニズムとして TCP ベースの逆接続トランスポートを使用します。TCP ベースの逆接続トランスポートは、さまざまなネットワーク構成と最高の互換性を提供し、RDP 接続を確立するための高い成功率を備えています。UDPベースのトランスポートは、接続の信頼性が高く、遅延の一貫性が高くなります。
 
 **Resources**
 
@@ -183,7 +183,7 @@ It is recommended to enable RDP Shortpath for AVD. RDP Shortpath is a feature of
 
 **Guidance**
 
-It is recommended to adopt a multi-region deployment (active-active) for AVD. Each region should contain at least identity, name resolution, AVD management resources, and session hosts in case of a primary region outage.
+AVD にはマルチリージョン デプロイ(アクティブ/アクティブ)を採用することをお勧めします。各リージョンには、プライマリ リージョンが停止した場合に備えて、少なくとも ID、名前解決、AVD 管理リソース、およびセッション ホストが含まれている必要があります。
 
 **Resources**
 
@@ -208,7 +208,7 @@ It is recommended to adopt a multi-region deployment (active-active) for AVD. Ea
 
 **Guidance**
 
-If a full BCDR strategy is not in place, consider using zone-redundant storage to store golden images across availability zones. Having the image available will allow for faster recovery in case of zonal or regional outage.
+完全な BCDR 戦略が設定されていない場合は、ゾーン冗長ストレージを使用して、可用性ゾーン間でゴールド イメージを格納することを検討してください。イメージを利用できるようにしておくと、ゾーンまたはリージョンの停止が発生した場合に、より迅速な回復が可能になります。
 
 **Resources**
 
@@ -233,9 +233,9 @@ If a full BCDR strategy is not in place, consider using zone-redundant storage t
 
 **Guidance**
 
-Monitor and plan for subscription limits. Closely monitor your Azure Virtual Desktop deployments, and keep track of resource usage within your subscription. By proactively monitoring capacity, you can identify potential challenges early on, and you can take suitable actions to avoid reaching limits.
-Consider scaling across multiple subscriptions if further scaling is required, or work with Azure support to adjust limits based on your business requirements.
-To handle a large number of users, consider scaling horizontally by creating multiple host pools.
+サブスクリプションの制限を監視して計画します。Azure Virtual Desktop のデプロイを綿密に監視し、サブスクリプション内のリソースの使用状況を追跡します。容量をプロアクティブに監視することで、潜在的な課題を早期に特定し、制限に達しないように適切なアクションを実行できます。
+さらにスケーリングが必要な場合は、複数のサブスクリプションにまたがってスケーリングすることを検討するか、Azure サポートと連携して、ビジネス要件に基づいて制限を調整してください。
+多数のユーザーを処理するには、複数のホスト プールを作成して水平方向にスケーリングすることを検討してください。
 
 **Resources**
 
@@ -260,15 +260,15 @@ To handle a large number of users, consider scaling horizontally by creating mul
 
 **Guidance**
 
-It is important to ensure the redundancy of our user profiles when using FSLogix. When using FSLogix with AVD, it is deployed on a file share in a storage account. Data in an Azure Storage account is always replicated three times in the primary region. Below are the options for how your data is replicated in the primary or paired region:
-LRS for least expensive replication (not recommended for apps with high availability and durability).
+FSLogix を使用するときは、ユーザー プロファイルの冗長性を確保することが重要です。AVD で FSLogix を使用する場合、ストレージ アカウント内のファイル共有にデプロイされます。Azure Storage アカウント内のデータは、常にプライマリ リージョンで 3 回レプリケートされます。以下は、プライマリまたはペアのリージョンでデータをレプリケートする方法のオプションです。
+LRS は、レプリケーションのコストが最も低くなります (高可用性と持続性を備えたアプリには推奨されません)。
 
-- LRS provides eleven 9s durability and replicates three time in a single physical location.
-- ZRS is recommended for apps requiring high availability across zones. ZRS provides twelve 9s durability. Replicated across three availability zones
-- GRS replicates an additional three copies to secondary region and provides sixteen 9s durability.
-- GZRS provides both high availability and redundancy across geo replication. It provides sixteen 9s durability over a given year.
+- LRS は イレブン ナイン の耐久性を提供し、1 つの物理的な場所で 3 回複製します。
+- ZRS は、ゾーン間で高可用性を必要とするアプリに推奨されます。ZRS は トゥエルブ ナイン の耐久性を提供します。3 つの可用性ゾーン間でレプリケートされる
+- GRS は、さらに 3 つのコピーをセカンダリ領域にレプリケートし、シックスティーン ナイン の耐久性を提供します。
+- GZRS は、geo レプリケーション全体で高可用性と冗長性の両方を提供します。1年間で シックスティーン ナイン の耐久性を提供します。
 
-Generally, it is recommended to store your data as secure and redundant as possible.
+一般的には、できるだけ安全で冗長なデータを保存することをお勧めします。
 
 **Resources**
 
@@ -292,7 +292,7 @@ Generally, it is recommended to store your data as secure and redundant as possi
 
 **Guidance**
 
-It is recommended to enable backup on the FSLogix Storage Account. Ensuring the user profiles are resilient will allow user data and experience to be consistent through outages.
+FSLogix ストレージ アカウントでバックアップを有効にすることをお勧めします。ユーザー プロファイルの回復性を確保することで、停止中もユーザー データとエクスペリエンスの一貫性を保つことができます。
 
 **Resources**
 
