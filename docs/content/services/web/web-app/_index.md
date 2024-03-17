@@ -39,7 +39,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Enabling diagnostics logging for your Azure App Service is important for monitoring and diagnostics purposes. It includes application logging and web server logging.
+Azure App Service の診断ログを有効にすることは、監視と診断の目的で重要です。これには、アプリケーションのログ記録と Web サーバーのログ記録が含まれます。
 
 **Resources**
 
@@ -61,9 +61,9 @@ Enabling diagnostics logging for your Azure App Service is important for monitor
 
 **Guidance**
 
-Use a performance monitoring service such [Application Insights](https://learn.microsoft.com/ja-jp/azure/application-insights/app-insights-overview) to monitor application performance and behavior under load. Performance monitoring gives you real-time insight into the application. It enables you to diagnose issues and perform root-cause analysis of failures.
+[Application Insights](https://learn.microsoft.com/ja-jp/azure/application-insights/app-insights-overview) などのパフォーマンス監視サービスを使用して、負荷がかかった状態でのアプリケーションのパフォーマンスと動作を監視します。パフォーマンス監視により、アプリケーションをリアルタイムで把握できます。これにより、問題を診断し、障害の根本原因分析を実行できます。
 
-Enable monitoring on your web applications based on ASP.NET, ASP.NET Core, Java, and Node.js running on Azure App Service. Previously, you needed to manually instrument your app, but the latest extension/agent is now built into the App Service image by default.
+Azure App Service で実行されている ASP.NET、ASP.NET Core、Java、Node.jsに基づいて Web アプリケーションの監視を有効にします。以前は、アプリを手動でインストルメント化する必要がありましたが、最新の拡張機能/エージェントが既定で App Service イメージに組み込まれるようになりました。
 
 **Resources**
 
@@ -88,7 +88,7 @@ Enable monitoring on your web applications based on ASP.NET, ASP.NET Core, Java,
 
 **Guidance**
 
-If your solution has both a web front end and a web API, consider decomposing them into separate App Service apps. This design makes it easier to decompose the solution by workload. You can run the web app and the API in separate App Service plans, so they can be scaled independently. If you don't need that level of scalability at first, you can deploy the apps into the same plan, and move them into separate plans later, if needed.
+ソリューションに Web フロントエンドと Web API の両方がある場合は、それらを個別の App Service アプリに分解することを検討してください。この設計により、ワークロードごとにソリューションを簡単に分解できます。Web アプリと API を別々の App Service プランで実行して、個別にスケーリングできます。最初はそのレベルのスケーラビリティが必要ない場合は、アプリを同じプランにデプロイし、必要に応じて後で別のプランに移動できます。
 
 **Resources**
 
@@ -110,7 +110,7 @@ If your solution has both a web front end and a web API, consider decomposing th
 
 **Guidance**
 
-Create a separate storage account for logs. Don't use the same storage account for logs and application data. This helps to prevent logging from reducing application performance.
+ログ用に別のストレージ アカウントを作成します。ログとアプリケーション データに同じストレージ アカウントを使用しないでください。これにより、ロギングによってアプリケーションのパフォーマンスが低下するのを防ぐことができます。
 
 **Resources**
 
@@ -132,9 +132,10 @@ Create a separate storage account for logs. Don't use the same storage account f
 
 **Guidance**
 
-Create a deployment slot for staging. Deploy application updates to the staging slot, and verify the deployment before swapping it into production. This reduces the chance of a bad update in production. It also ensures that all instances are warmed up before being swapped into production. Many applications have a significant warmup and cold-start time. For more information
+ステージング用のデプロイ スロットを作成します。アプリケーションの更新プログラムをステージング スロットにデプロイし、運用環境にスワップする前にデプロイを確認します。これにより、運用環境で不適切な更新が発生する可能性が低くなります。また、すべてのインスタンスが本番環境にスワップされる前にウォームアップされます。多くのアプリケーションでは、ウォームアップとコールドスタートにかなりの時間がかかります。詳細情報
 
-Consider creating a deployment slot to hold the last-known-good (LKG) deployment. When you deploy an update to production, move the previous production deployment into the LKG slot. This makes it easier to roll back a bad deployment. If you discover a problem later, you can quickly revert to the LKG version.
+前回正常起動時 (LKG) のデプロイを保持するためのデプロイ スロットの作成を検討してください。更新プログラムを運用環境にデプロイする場合は、以前の運用環境のデプロイを LKG スロットに移動します。これにより、不適切なデプロイを簡単にロールバックできます。後で問題が見つかった場合は、すぐに LKG バージョンに戻すことができます。
+
 **Resources**
 
 - [Set up staging environments in Azure App Service](https://learn.microsoft.com/ja-jp/azure/app-service-web/web-sites-staged-publishing)
@@ -157,7 +158,7 @@ Consider creating a deployment slot to hold the last-known-good (LKG) deployment
 
 **Guidance**
 
-Use app settings to hold configuration settings as app settings. Define the settings in your Resource Manager templates, or using PowerShell, so that you can apply them as part of an automated deployment / update process, which is more reliable.
+アプリ設定を使用して、構成設定をアプリ設定として保持します。Resource Manager テンプレートで、または PowerShell を使用して設定を定義し、自動化されたデプロイ/更新プロセスの一部として適用できるようにし、信頼性を高めます。
 
 **Resources**
 

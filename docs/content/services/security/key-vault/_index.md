@@ -37,7 +37,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Key Vault's soft-delete feature allows recovery of the deleted vaults and deleted key vault objects (for example, keys, secrets, certificates), known as soft-delete.When soft-delete is enabled, resources marked as deleted resources are retained for a specified period (90 days by default). The service further provides a mechanism for recovering the deleted object, essentially undoing the deletion
+Key Vault の論理的な削除機能を使用すると、論理的な削除と呼ばれる、削除されたコンテナーと削除されたキー コンテナー オブジェクト (キー、シークレット、証明書など) を回復できます。論理的な削除が有効な場合、削除されたリソースとしてマークされたリソースは、指定された期間 (既定では 90 日間) 保持されます。このサービスはさらに、削除されたオブジェクトを回復し、基本的に削除を元に戻すためのメカニズムを提供します
 
 **Resources**
 
@@ -61,7 +61,7 @@ Key Vault's soft-delete feature allows recovery of the deleted vaults and delete
 
 **Guidance**
 
-Malicious deletion of a key vault can lead to permanent data loss. A malicious insider in your organization can potentially delete and purge key vaults. Purge protection protects you from insider attacks by enforcing a mandatory retention period for soft deleted key vaults. No one inside your organization or Microsoft will be able to purge your key vaults during the soft delete retention period.
+Key vault を悪意を持って削除すると、データが完全に失われる可能性があります。組織内の悪意のある内部関係者は、key vaults を削除して消去する可能性があります。消去保護は、論理的に削除された key vaults に必須の保持期間を適用することで、インサイダー攻撃から保護します。組織内のユーザーや Microsoft は、論理的な削除の保持期間中に key vaults を消去することはできません。
 
 **Resources**
 
@@ -85,7 +85,7 @@ Malicious deletion of a key vault can lead to permanent data loss. A malicious i
 
 **Guidance**
 
-Azure Private Link Service enables you to access Azure Key Vault and Azure hosted customer/partner services over a Private Endpoint in your virtual network. An Azure Private Endpoint is a network interface that connects you privately and securely to a service powered by Azure Private Link. The private endpoint uses a private IP address from your VNet, effectively bringing the service into your VNet. All traffic to the service can be routed through the private endpoint, so no gateways, NAT devices, ExpressRoute or VPN connections, or public IP addresses are needed. Traffic between your virtual network and the service traverses over the Microsoft backbone network, eliminating exposure from the public Internet. You can connect to an instance of an Azure resource, giving you the highest level of granularity in access control.
+Azure Private Link サービスを使用すると、仮想ネットワーク内のプライベート エンドポイント経由で Azure Key Vault と Azure でホストされている顧客/パートナー サービスにアクセスできます。Azure プライベート エンドポイントは、Azure Private Link を利用したサービスにプライベートかつ安全に接続するネットワーク インターフェイスです。プライベート エンドポイントは、VNet のプライベート IP アドレスを使用して、サービスを効果的に VNet に取り込みます。サービスへのすべてのトラフィックはプライベート エンドポイント経由でルーティングできるため、ゲートウェイ、NAT デバイス、ExpressRoute または VPN 接続、パブリック IP アドレスは必要ありません。仮想ネットワークとサービス間のトラフィックは Microsoft のバックボーン ネットワークを経由するため、パブリック インターネットからの露出が排除されます。Azure リソースのインスタンスに接続して、アクセス制御の最高レベルの粒度を実現できます。
 
 **Resources**
 
@@ -109,7 +109,7 @@ Azure Private Link Service enables you to access Azure Key Vault and Azure hoste
 
 **Guidance**
 
-Key vaults define security boundaries for stored secrets. Grouping secrets into the same vault increases the blast radius of a security event because attacks might be able to access secrets across concerns. To mitigate access across concerns, consider what secrets a specific application should have access to, and then separate your key vaults based on this delineation. Separating key vaults by application is the most common boundary. Security boundaries, however, can be more granular for large applications, for example, per group of related services.
+Key vaults は、格納されているシークレットのセキュリティ境界を定義します。シークレットを同じ vault にグループ化すると、攻撃によって懸念事項全体のシークレットにアクセスできる可能性があるため、セキュリティ イベントの影響範囲が広がります。懸念事項間のアクセスを軽減するには、特定のアプリケーションがアクセスできるシークレットを検討し、この線引きに基づいて key vaults を分離します。アプリケーションごとに key vaults を分離することは、最も一般的な境界です。ただし、セキュリティ境界は、たとえば、関連するサービスのグループごとなど、大規模なアプリケーションに対してより詳細に設定できます。
 
 **Resources**
 
@@ -133,7 +133,7 @@ Key vaults define security boundaries for stored secrets. Grouping secrets into 
 
 **Guidance**
 
-Enable logs , set up alerts and retain them as per the retention requirement. This enables you to monitor how and when your key vaults are accessed, and by whom.
+ログを有効にし、アラートを設定し、保持要件に従って保持します。これにより、key vaults がいつ、どのように、誰によってアクセスされたかを監視できます。
 
 **Resources**
 

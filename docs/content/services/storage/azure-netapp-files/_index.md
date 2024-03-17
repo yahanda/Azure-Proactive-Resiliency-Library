@@ -40,11 +40,11 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Service levels are an attribute of a capacity pool. Service levels are defined and differentiated by the allowed maximum throughput for a volume in the capacity pool based on the quota that is assigned to the volume. Throughput is a combination of read and write speed. Azure NetApp Files supports three service levels:
+サービス レベルは、容量プールの属性です。サービス レベルは、ボリュームに割り当てられているクォータに基づいて、容量プール内のボリュームに対して許容される最大スループットによって定義され、区別されます。スループットは、読み取り速度と書き込み速度の組み合わせです。Azure NetApp Files では、次の 3 つのサービス レベルがサポートされています。
 
-- Standard (16 MiB/s per 1TiB) throughput
-- Premium (64 MiB/s per 1TiB) throughput
-- Ultra (128 MiB/s per 1TiB) throughput
+- 標準 (1TiB あたり 16 MiB/秒) スループット
+- Premium (1TiB あたり 64 MiB/秒) スループット
+- Ultra (1TiB あたり 128 MiB/秒) スループット
 
 **Resources**
 
@@ -68,8 +68,8 @@ Service levels are an attribute of a capacity pool. Service levels are defined a
 
 **Guidance**
 
-Standard network feature enables higher IP limits and standard VNet features such as network security groups and user-defined routes on delegated subnets, and additional connectivity patterns.
-Please check the supported regions for standard network feature [here](https://docs.microsoft.com/ja-jp/azure/azure-netapp-files/azure-netapp-files-network-topologies#supported-regions-for-standard-network-feature)
+標準ネットワーク機能を使用すると、より高い IP 制限と、委任されたサブネット上のネットワーク セキュリティ グループとユーザー定義ルート、追加の接続パターンなどの標準 VNet 機能が可能になります。
+標準ネットワーク機能の対応地域は [こちら](https://docs.microsoft.com/ja-jp/azure/azure-netapp-files/azure-netapp-files-network-topologies#supported-regions-for-standard-network-feature) を参照ください。
 
 **Resources**
 
@@ -93,7 +93,7 @@ Please check the supported regions for standard network feature [here](https://d
 
 **Guidance**
 
-Azure availability zones are physically separate locations within each supporting Azure region that are tolerant to local failures. Failures can range from software and hardware failures to events such as earthquakes, floods, and fires. Tolerance to failures is achieved because of redundancy and logical isolation of Azure services. To ensure resiliency, a minimum of three separate availability zones are present in all availability zone-enabled regions.
+Azure 可用性ゾーンは、ローカルの障害に耐えられる、サポートする各 Azure リージョン内の物理的に分離された場所です。障害は、ソフトウェアやハードウェアの障害から、地震、洪水、火災などのイベントまで多岐にわたります。障害に対する耐性は、Azure サービスの冗長性と論理的な分離によって実現されます。回復性を確保するために、すべての可用性ゾーン対応リージョンに少なくとも 3 つの個別の可用性ゾーンが存在します。
 
 **Resources**
 
@@ -117,8 +117,8 @@ Azure availability zones are physically separate locations within each suppo
 
 **Guidance**
 
-Azure NetApp Files snapshot technology delivers stability, scalability, and swift recoverability without impacting performance.
-Azure NetApp Files supports a fully managed backup solution for long-term recovery, archive, and compliance. Backups can be restored to new volumes in the same region as the backup. Backups created by Azure NetApp Files are stored in Azure storage, independent of volume snapshots that are available for near-term recovery or cloning.
+Azure NetApp Files スナップショット テクノロジは、パフォーマンスに影響を与えることなく、安定性、スケーラビリティ、迅速な復旧性を提供します。
+Azure NetApp Files は、長期的な復旧、アーカイブ、コンプライアンスのためのフル マネージド バックアップ ソリューションをサポートしています。バックアップは、バックアップと同じリージョン内の新しいボリュームに復元できます。Azure NetApp Files によって作成されたバックアップは、短期的な復旧や複製に使用できるボリューム スナップショットとは無関係に、Azure Storage に格納されます。
 
 **Resources**
 
@@ -143,7 +143,7 @@ Azure NetApp Files supports a fully managed backup solution for long-term recove
 
 **Guidance**
 
-The Azure NetApp Files replication functionality provides data protection through cross-region volume replication. You can asynchronously replicate data from an Azure NetApp Files volume (source) in one region to another Azure NetApp Files volume (destination) in another region. This capability enables you to fail over your critical application if a region-wide outage or disaster happens.
+Azure NetApp Files レプリケーション機能は、リージョン間ボリューム レプリケーションによるデータ保護を提供します。あるリージョンの Azure NetApp Files ボリューム (ソース) から、別のリージョンの別の Azure NetApp Files ボリューム (宛先) にデータを非同期的にレプリケートできます。この機能により、リージョン全体の停止や災害が発生した場合に、重要なアプリケーションをフェールオーバーできます。
 
 **Resources**
 
@@ -167,7 +167,7 @@ The Azure NetApp Files replication functionality provides data protection throug
 
 **Guidance**
 
-The cross-zone replication (CZR) capability provides data protection between volumes in different availability zones. You can asynchronously replicate data from an Azure NetApp Files volume (source) in one availability zone to another Azure NetApp Files volume (destination) in another availability. This capability enables you to fail over your critical application if a zone-wide outage or disaster happens.
+クロスゾーンレプリケーション (CZR) 機能は、異なる可用性ゾーン内のボリューム間のデータ保護を提供します。ある可用性ゾーンの Azure NetApp Files ボリューム (ソース) から、別の可用性の別の Azure NetApp Files ボリューム (宛先) にデータを非同期的にレプリケートできます。この機能により、ゾーン全体の停止や災害が発生した場合に、重要なアプリケーションをフェイルオーバーできます。
 
 **Resources**
 
@@ -191,7 +191,7 @@ The cross-zone replication (CZR) capability provides data protection between vol
 
 **Guidance**
 
-Azure NetApp Files provides metrics on allocated storage, actual storage usage, volume IOPS, and latency. With these metrics, you can gain a better understanding on the usage pattern and volume performance of your NetApp accounts.
+Azure NetApp Files では、割り当てられたストレージ、実際のストレージ使用量、ボリューム IOPS、待機時間に関するメトリックが提供されます。これらの指標を使用すると、ネットアップアカウントの使用パターンとボリュームパフォーマンスをより深く理解できます。
 
 **Resources**
 
@@ -215,7 +215,7 @@ Azure NetApp Files provides metrics on allocated storage, actual storage usage, 
 
 **Guidance**
 
-Azure NetApp Files supports Azure Policy. You can integrate Azure NetApp Files with Azure Policy through [creating custom policy definitions](https://learn.microsoft.com/ja-jp/azure/governance/policy/tutorials/create-custom-policy-definition). You can find examples in [Enforce Snapshot Policies with Azure Policy](https://anfcommunity.com/2021/08/30/enforce-snapshot-policies-with-azure-policy/) and [Azure Policy now available for Azure NetApp Files](https://anfcommunity.com/2021/04/19/azure-policy-now-available-for-azure-netapp-files/).
+Azure NetApp Files は Azure Policy をサポートしています。Azure NetApp Files と Azure Policy を統合するには、[カスタム ポリシー定義の作成](https://learn.microsoft.com/ja-jp/azure/governance/policy/tutorials/create-custom-policy-definition)。例については、[Azure Policy を使用してスナップショット ポリシーを適用する](https://anfcommunity.com/2021/08/30/enforce-snapshot-policies-with-azure-policy/) と [Azure NetApp Files で Azure Policy を使用できるようになりました](https://anfcommunity.com/2021/04/19/azure-policy-now-available-for-azure-netapp-files/) を参照してください。
 
 **Resources**
 

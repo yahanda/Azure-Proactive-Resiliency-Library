@@ -44,12 +44,12 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Data in an Azure Storage account is always replicated three times in the primary region. Azure Storage offers other options for how your data is replicated in the primary or paired region:
+Azure Storage アカウント内のデータは、常にプライマリ リージョンで 3 回レプリケートされます。Azure Storage には、プライマリ リージョンまたはペア リージョンでデータをレプリケートする方法に関する他のオプションが用意されています。
 
-- LRS synchronously replicates data 3 times in single physical location. It is least expensive replication but not recommended for apps with high availability and durability. LRS provides eleven 9 durability.
-- ZRS copies data synchronously across 3 availability zone in primary region. ZRS is recommended for apps requiring high availability across zones. ZRS provides twelve 9s durability.
-- GRS replicate additional 3 copies to secondary region and provides sixteen 9s availability.
-- GZRS provides both high availability and redundancy across geo replication. It provides sixteen 9s durability over a given year.
+- LRS は、1 つの物理的な場所でデータを 3 回同期的にレプリケートします。レプリケーションは最もコストがかかりませんが、高可用性と持続性を備えたアプリにはお勧めしません。LRS は イレブンナイン の耐久性を提供します。
+- ZRS は、プライマリ リージョンの 3 つの可用性ゾーン間でデータを同期的にコピーします。ZRS は、ゾーン間で高可用性を必要とするアプリに推奨されます。ZRS は トゥエルブ ナイン の耐久性を提供します。
+- GRS は、追加の 3 つのコピーをセカンダリ リージョンにレプリケートし、シックスティーン ナイン の可用性を提供します。
+- GZRS は、geo レプリケーション全体で高可用性と冗長性の両方を提供します。1年間で シックスティーン ナイン の耐久性を提供します。
 
 **Resources**
 
@@ -73,7 +73,7 @@ Data in an Azure Storage account is always replicated three times in the primary
 
 **Guidance**
 
-Azure classic Storage Account will retire 31 august 2024. So migrate all workload from classic storage accounts to Azure Resource Manager storage accounts.
+Azure クラシック ストレージ アカウントは、2024 年 8 月 31 日に廃止されます。そのため、すべてのワークロードをクラシック ストレージ アカウントから Azure Resource Manager ストレージ アカウントに移行します。
 
 **Resources**
 
@@ -98,7 +98,7 @@ Azure classic Storage Account will retire 31 august 2024. So migrate all workloa
 
 **Guidance**
 
-Consider using appropriate storage performance tier for standard storage / block blob / append blob / file-share and page blob. Each workload scenario requires appropriate Performance tier and its important that based on the type of transaction and blob type/file type appropriate performance tier is selected. Failing to do so will create performance bottleneck.
+Standard ストレージ、ブロック BLOB、追加 BLOB、ファイル共有、ページ BLOB に適切なストレージ パフォーマンス レベルを使用することを検討してください。各ワークロード シナリオには適切なパフォーマンス レベルが必要であり、トランザクションの種類と BLOB の種類/ファイルの種類に基づいて適切なパフォーマンス レベルを選択することが重要です。そうしないと、パフォーマンスのボトルネックが発生します。
 
 **Resources**
 
@@ -122,13 +122,13 @@ Consider using appropriate storage performance tier for standard storage / block
 
 **Guidance**
 
-The storage service offers three types of blobs, block blobs, append blobs, and page blobs. You specify the blob type when you create the blob.
+ストレージ サービスには、ブロック BLOB、追加 BLOB、ページ BLOB の 3 種類の BLOB が用意されています。BLOB の種類は、BLOB を作成するときに指定します。
 
-Block blobs are optimized for uploading large amounts of data efficiently. Block blobs are composed of blocks, each of which is identified by a block ID. A block blob can include up to 50,000 blocks.
+ブロック BLOB は、大量のデータを効率的にアップロードするために最適化されています。ブロック BLOB はブロックで構成され、各ブロックはブロック ID で識別されます。ブロック BLOB には、最大 50,000 個のブロックを含めることができます。
 
-An append blob is composed of blocks and is optimized for append operations. When you modify an append blob, blocks are added to the end of the blob only. Updating or deleting of existing blocks is not supported. Unlike a block blob, an append blob does not expose its block IDs.
+追加 BLOB はブロックで構成され、追加操作用に最適化されています。追加 BLOB を変更すると、ブロックは BLOB の末尾にのみ追加されます。既存のブロックの更新や削除はサポートされていません。ブロック BLOB とは異なり、追加 BLOB ではブロック ID は公開されません。
 
-Page blobs are a collection of 512-byte pages optimized for random read and write operations. To create a page blob, you initialize the page blob and specify the maximum size the page blob will grow. To add or update the contents of a page blob, you write a page or pages by specifying an offset and a range that both align to 512-byte page boundaries.
+ページ BLOB は、ランダムな読み取りおよび書き込み操作用に最適化された 512 バイトのページのコレクションです。ページ BLOB を作成するには、ページ BLOB を初期化し、ページ BLOB が拡張する最大サイズを指定します。ページ BLOB の内容を追加または更新するには、オフセットと範囲の両方が 512 バイトのページ境界に揃えられるように指定して、ページを書き込みます。
 
 **Resources**
 
@@ -153,7 +153,7 @@ Page blobs are a collection of 512-byte pages optimized for random read and writ
 
 **Guidance**
 
-Soft delete option allow for recovering data if its deleted by mistaken. Moreover Lock will prevent accidentally deleting storage account.
+論理的な削除オプションを使用すると、誤って削除された場合にデータを回復できます。さらに、ロックはストレージアカウントを誤って削除するのを防ぎます。
 
 **Resources**
 
@@ -177,8 +177,8 @@ Soft delete option allow for recovering data if its deleted by mistaken. Moreove
 
 **Guidance**
 
-To recover data from accidental modification or deletion enable versioning.
-Having a large number of versions per blob can increase the latency for blob listing operations. Microsoft recommends maintaining fewer than 1000 versions per blob. You can use lifecycle management to automatically delete old versions.
+誤って変更または削除したデータを回復するには、バージョン管理を有効にします。
+BLOB あたりのバージョン数が多いと、BLOB の一覧表示操作の待機時間が長くなる可能性があります。Microsoft では、BLOB あたり 1,000 未満のバージョンを維持することをお勧めします。ライフサイクル管理を使用して、古いバージョンを自動的に削除できます。
 
 **Resources**
 
@@ -202,8 +202,8 @@ Having a large number of versions per blob can increase the latency for blob lis
 
 **Guidance**
 
-You can use point-in-time restore to restore one or more sets of block blobs to a previous state
-Point and time restore support general purpose v2 account in standard performance tier. Its a mechanism to protect data
+ポイントインタイム リストアを使用すると、ブロック BLOB の 1 つ以上のセットを以前の状態に復元できます。
+ポイント アンド タイム リストアでは、Standard パフォーマンス レベルで汎用 v2 アカウントがサポートされます。データを保護するためのメカニズムです。
 
 **Resources**
 
@@ -227,7 +227,7 @@ Point and time restore support general purpose v2 account in standard performanc
 
 **Guidance**
 
-Enabling diagnostic settings allow you to capture and view diagnostic information so that you can troubleshoot any failures.
+診断設定を有効にすると、診断情報をキャプチャして表示し、障害のトラブルシューティングを行うことができます。
 
 **Resources**
 
@@ -251,9 +251,9 @@ Enabling diagnostic settings allow you to capture and view diagnostic informatio
 
 **Guidance**
 
-General-purpose v2 storage accounts support the latest Azure Storage features and incorporate all of the functionality of general-purpose v1 and Blob storage accounts. General-purpose v2 accounts are recommended for most storage scenarios. General-purpose v2 accounts deliver the lowest per-gigabyte capacity prices for Azure Storage, as well as industry-competitive transaction prices. General-purpose v2 accounts support default account access tiers of hot or cool and blob level tiering between hot, cool, or archive.
+汎用 v2 ストレージ アカウントは、最新の Azure Storage 機能をサポートし、汎用 v1 アカウントと Blob ストレージ アカウントのすべての機能が組み込まれています。汎用 v2 アカウントは、ほとんどのストレージ シナリオに推奨されます。汎用 v2 アカウントは、Azure Storage のギガバイトあたりの容量価格が最も低く、業界で競争力のあるトランザクション価格を提供します。汎用 v2 アカウントでは、ホットまたはクールの既定のアカウント アクセス層と、ホット、クール、またはアーカイブ間の BLOB レベルの階層化がサポートされています。
 
-Upgrading to a general-purpose v2 storage account from your general-purpose v1 or Blob storage accounts is straightforward. There's no downtime or risk of data loss associated with upgrading to a general-purpose v2 storage account. Upgrading a general-purpose v1 or Blob storage account to general-purpose v2 is permanent and cannot be undone.
+汎用 v1 または Blob ストレージ アカウントから汎用 v2 ストレージ アカウントへのアップグレードは簡単です。汎用 v2 ストレージ アカウントへのアップグレードに関連するダウンタイムやデータ損失のリスクはありません。汎用 v1 または Blob Storage アカウントから汎用 v2 へのアップグレードは永続的であり、元に戻すことはできません。
 
 **Resources**
 

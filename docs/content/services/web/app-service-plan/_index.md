@@ -36,7 +36,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Deploying your App Service plans and App Service Environments across availability zones (AZ) is a feature provided by Azure to enhance the resiliency and reliability of your business-critical workloads. By distributing your applications across multiple availability zones, you can ensure their continued operation even in the event of a datacenter-level failure. This approach offers excellent redundancy without the need for deploying your applications in different Azure regions. Availability zones provide a higher level of fault tolerance, helping to safeguard your applications and minimize downtime. This enables your business to maintain continuity and deliver uninterrupted services to your customers.
+可用性ゾーン (AZ) 間での App Service プランと App Service Environment のデプロイは、ビジネスクリティカルなワークロードの回復性と信頼性を強化するために Azure によって提供される機能です。アプリケーションを複数のアベイラビリティーゾーンに分散することで、データセンターレベルの障害が発生した場合でも、アプリケーションの運用を継続できます。このアプローチでは、アプリケーションを異なる Azure リージョンにデプロイする必要なく、優れた冗長性が提供されます。可用性ゾーンは、より高いレベルのフォールトトレランスを提供し、アプリケーションを保護し、ダウンタイムを最小限に抑えるのに役立ちます。これにより、ビジネスの継続性を維持し、中断のないサービスをお客様に提供できます。
 
 **Resources**
 
@@ -61,7 +61,7 @@ Deploying your App Service plans and App Service Environments across availabilit
 
 **Guidance**
 
-The use of the Standard or Premium tier for Azure App Service Plan is crucial for highly resilient applications, as it provides advanced scaling, high availability, traffic management, enhanced performance, networking features, and multiple deployment slots, ensuring uninterrupted operation and robustness in the face of potential failures or increased demands.
+Azure App Service プランの Standard または Premium レベルの使用は、高度なスケーリング、高可用性、トラフィック管理、強化されたパフォーマンス、ネットワーク機能、複数のデプロイ スロットを提供し、潜在的な障害や需要の増加に直面しても中断のない運用と堅牢性を保証するため、回復性の高いアプリケーションにとって非常に重要です。
 
 **Resources**
 
@@ -85,7 +85,7 @@ The use of the Standard or Premium tier for Azure App Service Plan is crucial fo
 
 **Guidance**
 
-It is recommended to avoid scaling up or down your Azure App Service instances frequently. Instead, choose an appropriate tier and instance size that can handle your typical workload, and scale out the instances to accommodate changes in traffic volume. Scaling up or down can potentially trigger an application restart, which may result in service disruptions.
+Azure App Service インスタンスを頻繁にスケールアップまたはスケールダウンすることは避けることをお勧めします。代わりに、一般的なワークロードを処理できる適切なレベルとインスタンスサイズを選択し、トラフィック量の変化に対応するためにインスタンスをスケールアウトします。スケールアップまたはスケールダウンすると、アプリケーションの再起動がトリガーされ、サービスが中断される可能性があります。
 
 **Resources**
 
@@ -109,7 +109,7 @@ It is recommended to avoid scaling up or down your Azure App Service instances f
 
 **Guidance**
 
-It is strongly recommended to create separate App Service plans for production and test environments. Avoid using slots within your production deployment for testing purposes. When apps within the same App Service plan share VM instances, combining production and test deployments can have adverse effects on the production environment. For instance, load tests conducted on the test deployment may degrade the live production site. By isolating test deployments in a separate plan, you ensure the separation and protection of the production version.
+運用環境とテスト環境用に別々の App Service プランを作成することを強くお勧めします。テスト目的で運用環境内のスロットを使用することは避けてください。同じ App Service プラン内のアプリが VM インスタンスを共有する場合、運用環境とテスト デプロイを組み合わせると、運用環境に悪影響を及ぼす可能性があります。たとえば、テスト展開で実行されるロード テストでは、実際の運用サイトのパフォーマンスが低下する可能性があります。テスト展開を個別の計画に分離することで、運用バージョンの分離と保護を確実に行うことができます。
 
 **Resources**
 
@@ -133,7 +133,7 @@ It is strongly recommended to create separate App Service plans for production a
 
 **Guidance**
 
-It is highly recommended to enable Autoscale/Automatic Scaling for your Azure App Service to ensure that sufficient resources are available to handle incoming requests. Autoscaling is rule based scaling while Automatic Scaling newer platform feature that performs automatic scale out and in based on HTTP traffic.
+Azure App Service の自動スケーリング/自動スケーリングを有効にして、受信要求を処理するのに十分なリソースを確保することを強くお勧めします。自動スケーリングはルールベースのスケーリングですが、自動スケーリングは、HTTP トラフィックに基づいて自動スケールアウトとスケールインを実行する新しいプラットフォーム機能です。
 
 **Resources**
 

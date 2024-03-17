@@ -33,7 +33,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Recommendation/Guidance**
 
-Use SignalR with zone redundancy for production workloads. Zone redundancy is a Premium tier feature. It is implicitly enabled when you create or upgrade to a Premium tier resource. Standard tier resources can be upgraded to Premium tier without downtime.
+運用ワークロードのゾーン冗長性で SignalR を使用します。ゾーン冗長は Premium レベルの機能です。これは、Premium レベルのリソースを作成またはアップグレードするときに暗黙的に有効になります。Standard レベルのリソースは、ダウンタイムなしで Premium レベルにアップグレードできます。
 
 **Resources**
 
