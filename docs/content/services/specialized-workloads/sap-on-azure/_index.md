@@ -59,7 +59,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Azure Availability Zones are physically separate locations within each Azure region that are tolerant to local failures. Use availability zones to protect your applications and data against unlikely data center failures. Ensure each single point of failure of each SAP production system is protected with high availability using multiple availability zones. If you cannot deploy across different zones in a region, then  refer to Microsoft guidance for High availability deployment options for SAP workload.
+Azure Availability Zones は、各 Azure リージョン内の物理的に分離された場所であり、ローカルの障害に耐えられます。アベイラビリティーゾーンを使用して、データセンターの予期せぬ障害からアプリケーションとデータを保護します。複数の可用性ゾーンを使用して、各 SAP 運用システムの各単一障害点が高可用性で保護されるようにします。リージョン内の異なるゾーンにデプロイできない場合は、SAP ワークロードの高可用性デプロイ オプションに関する Microsoft のガイダンスを参照してください。
 
 **Resources**
 
