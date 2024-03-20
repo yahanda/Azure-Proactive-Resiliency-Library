@@ -16,11 +16,9 @@ The below table shows the list of resiliency recommendations for Log Analytics a
 {{< table style="table-striped" >}}
 | Recommendation                                                                                                                                                                                              |     Category      | Impact |  State  | ARG Query Available |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:------:|:-------:|:-------------------:|
-| [LOG-1 - Enable Log Analytics data export to GRS or GZRS](#log-1---enable-log-analytics-data-export-to-grs-or-gzrs)                                                                                         | Disaster Recovery | Medium | Preview |         No          |
-| [LOG-2 - Link Log Analytics Workspace to an Availability Zone enabled dedicated cluster](#log-2---link-log-analytics-workspace-to-an-availability-zone-enabled-dedicated-cluster)                           |   Availability    | Medium | Preview |         No          |
-| [LOG-3 - Configure data collection to send critical data to multiple workspaces in different regions](#log-3---configure-data-collection-to-send-critical-data-to-multiple-workspaces-in-different-regions) | Disaster Recovery | Medium | Preview |         No          |
-| [LOG-4 - Create a health status alert rule for your Log Analytics workspace](#log-4---create-a-health-status-alert-rule-for-your-log-analytics-workspace)                                                   |    Monitoring     |  Low   | Preview |         No          |
-| [LOG-5 - Configure minimal logging and retention of logs](#log-5---configure-minimal-logging-and-retention-of-logs)                                                                                         |    Monitoring     |  Low   | Preview |         No          |
+| [LOG-1 - Enable Log Analytics data export to GRS or GZRS](#log-1---enable-log-analytics-data-export-to-grs-or-gzrs)                                                                                         | Governance | Medium | Verified |         No          |
+| [LOG-4 - Create a health status alert rule for your Log Analytics workspace](#log-4---create-a-health-status-alert-rule-for-your-log-analytics-workspace)                                                   |    Monitoring     |  Low   | Verified |         No          |
+| [LOG-5 - Configure minimal logging and retention of logs](#log-5---configure-minimal-logging-and-retention-of-logs)                                                                                         |    Governance     |  Low   | Verified |         No          |
 {{< /table >}}
 
 {{< alert style="info" >}}
@@ -33,13 +31,13 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ### LOG-1 - GRS または GZRS への Log Analytics データのエクスポートを有効にします
 
-**Category: Disaster Recovery**
+**Category: Governance**
 
 **Impact: Medium**
 
 **Guidance**
 
-Log Analytics ワークスペースでデータをエクスポートすると、Azure Storage アカウントにデータを継続的にエクスポートできます。 geo 冗長ストレージ (GRS) または geo ゾーン冗長ストレージ (GZRS) アカウントに継続的にエクスポートすることで、リージョン障害の万が一の事態から Log Analytics ワークスペース データを保護します。
+Log Analytics ワークスペースでデータをエクスポートすると、Azure Storage アカウントにデータを継続的にエクスポートできます。 geo 冗長ストレージ (GRS) または geo ゾーン冗長ストレージ (GZRS) アカウントに継続的にエクスポートすることで、リージョン障害の万が一の事態から Log Analytics ワークスペース データを保護します。 これは主に、データ保持のコンプライアンスを満たすための推奨事項ですが、データを他の Azure サービスやツールと統合するためにも使用できます。
 
 **Resources**
 
@@ -51,56 +49,6 @@ Log Analytics ワークスペースでデータをエクスポートすると、
 {{< collapse title="Show/Hide Query/Script" >}}
 
 {{< code lang="sql" file="code/log-1/log-1.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-<br><br>
-
-### LOG-2 - Log Analytics ワークスペースを可用性ゾーン対応の専用クラスターにリンクします
-
-**Category: Availability**
-
-**Impact: Medium**
-
-**Guidance**
-
-Log Analytics ワークスペースを可用性ゾーン対応の専用クラスターにリンクして、Log Analytics ワークスペースに依存する Azure Monitor 機能の回復性を高め、データセンターの障害という万が一のイベントから Log Analytics データを保護します。
-
-**Resources**
-
-- [Enhance data and service resilience in Azure Monitor Logs with availability zones](https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/availability-zones)
-- [Create and manage a dedicated cluster in Azure Monitor Logs](https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/logs-dedicated-clusters)
-- [Azure Monitor configuration recommendations](https://learn.microsoft.com/ja-jp/azure/azure-monitor/best-practices-logs#configuration-recommendations)
-
-**Resource Graph Query/Scripts**
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="sql" file="code/log-2/log-2.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-<br><br>
-
-### LOG-3 - 重要なデータを異なるリージョンの複数のワークスペースに送信するようにデータ収集を構成します
-
-**Category: Disaster Recovery**
-
-**Impact: Medium**
-
-**Guidance**
-
-リージョン障害の万が一のシナリオでワークスペースを使用可能にする必要がある場合は、異なるリージョンの複数のワークスペースに重要なデータを送信するようにデータ収集を構成します。
-
-**Resources**
-
-- [Azure Monitor configuration recommendations](https://learn.microsoft.com/ja-jp/azure/azure-monitor/best-practices-logs#configuration-recommendations)
-
-**Resource Graph Query/Scripts**
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="sql" file="code/log-3/log-3.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 
@@ -133,15 +81,15 @@ Log Analytics ワークスペースを可用性ゾーン対応の専用クラス
 
 ### LOG-5 - ログの最小ログ記録と保持を構成します
 
-**Category: Monitoring**
+**Category: Governance**
 
 **Impact: Low**
 
 **Guidance**
 
-Azure Monitor ログは、データの種類に応じて特定の期間 (たとえば、プラットフォーム ログとメトリックの場合は 31 日間) ログ データを自動的に保持します。ただし、コンプライアンスやビジネス上の理由から、データを長期間保持する必要がある場合があります。要件に基づいてデータ保持設定を構成できます。
+Azure Monitor ログは、データの種類に応じて特定の期間 (たとえば、プラットフォーム ログとメトリックの場合は 30 日間) ログ データを自動的に保持します。ただし、コンプライアンスやビジネス上の理由から、データを長期間保持する必要がある場合があります。要件に基づいてデータ保持設定を構成できます。
 
-長期ストレージの場合は、Azure Monitor から Azure Blob Storage などのよりコスト効率の高いストレージ ソリューションにログを移動することが必要になる場合があります。これにより、高いコストをかけずにログを長期間保持できます。
+Azure Monitor のアーカイブ設定を使用すると、ワークスペース内の古くて使用頻度の低いデータに低コストでアクセスできます。アーカイブされた状態のデータには、検索ジョブと復元を使用してアクセスできます。データは、最大 12 年間アーカイブされた状態に保持できます。
 
 **Resources**
 

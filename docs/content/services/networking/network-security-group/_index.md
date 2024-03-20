@@ -87,7 +87,7 @@ Azure Monitor を使用したネットワーク セキュリティ グループ�
 
 **Category: Governance**
 
-**Impact: Medium**
+**Impact: Low**
 
 **Guidance**
 

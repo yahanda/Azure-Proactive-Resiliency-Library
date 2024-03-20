@@ -173,7 +173,7 @@ Azure CNI ネットワーク ソリューションには、ポッドへの IP �
 
 - [Use the Cluster Autoscaler on AKS](https://learn.microsoft.com/ja-jp/azure/aks/cluster-autoscaler?tabs=azure-cli)
 - [Best practices for advanced scheduler features](https://learn.microsoft.com/ja-jp/azure/aks/operator-best-practices-advanced-scheduler)
-- [Node pool scaling considerations and best practices](https://learn.microsoft.com/ja-jp/azure/aks/operator-best-practices-run-at-scale#node-pool-scaling-considerations-and-best-practices)
+- [Node pool scaling considerations and best practices](https://learn.microsoft.com/ja-jp/azure/aks/best-practices-performance-scale-large#node-pool-scaling)
 - [Best practices for basic scheduler features](https://learn.microsoft.com/ja-jp/azure/aks/operator-best-practices-scheduler)
 
 **Resource Graph Query/Scripts**

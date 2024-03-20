@@ -18,7 +18,7 @@ The below table shows the list of resiliency recommendations for Storage Account
 |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:------:|:-------:|:--------------------:|
 | [ST-1 - Ensure that Storage Account configuration is at least Zone redundant](#st-1---ensure-that-storage-account-configuration-is-at-least-zone-redundant)                                   |   Availability    |  High  | Preview |          Yes         |
 | [ST-2 - Do not use classic storage account](#st-2---do-not-use-classic-storage-account)                                                                                                       |    Governance     |  High  | Preview |         Yes          |
-| [ST-3 - Ensure Performance tier is set as per workload](#st-3---ensure-performance-tier-is-set-as-per-workload)                                                                               | System Efficiency | Medium | Preview |         Yes          |
+| [ST-3 - Ensure Performance tier is set as per workload](#st-3---ensure-performance-tier-is-set-as-per-workload)                                                                               | System Efficiency | Medium | Preview |          No          |
 | [ST-4 - Choose right blob type for workload](#st-4---choose-right-blob-type-for-workload)                                                                                                     | System Efficiency | Medium | Preview |          No          |
 | [ST-5 - Enable soft delete for recovery of data](#st-5---enable-soft-delete-for-recovery-of-data)                                                                                             | Disaster Recovery | Medium | Preview |          No          |
 | [ST-6 - Enable version for accidental modification and keep the number of versions below 1000](#st-6---enable-version-for-accidental-modification-and-keep-the-number-of-versions-below-1000) | Disaster Recovery | Medium | Preview |          No          |
@@ -98,11 +98,18 @@ Azure クラシック ストレージ アカウントは、2024 年 8 月 31 日
 
 **Guidance**
 
-Standard ストレージ、ブロック BLOB、追加 BLOB、ファイル共有、ページ BLOB に適切なストレージ パフォーマンス レベルを使用することを検討してください。各ワークロード シナリオには適切なパフォーマンス レベルが必要であり、トランザクションの種類と BLOB の種類/ファイルの種類に基づいて適切なパフォーマンス レベルを選択することが重要です。そうしないと、パフォーマンスのボトルネックが発生します。
+ワークロードのシナリオに適したストレージ パフォーマンス レベルを使用することを検討してください。各ワークロード シナリオには適切なパフォーマンス レベルが必要であり、ストレージの使用量に基づいて適切なパフォーマンス レベルを選択することが重要です。
 
 **Resources**
 
-- [Performance Tier](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-account-overview#performance-tiers )
+- [Types of storage accounts](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-account-overview#types-of-storage-accounts)
+- [Scalability and performance targets for standard storage accounts](https://learn.microsoft.com/ja-jp/azure/storage/common/scalability-targets-standard-account)
+- [Performance and scalability checklist for Blob storage](https://learn.microsoft.com/ja-jp/azure/storage/blobs/storage-performance-checklist)
+- [Scalability and performance targets for Blob storage](https://learn.microsoft.com/ja-jp/azure/storage/blobs/scalability-targets)
+- [Premium block blob storage accounts](https://learn.microsoft.com/ja-jp/azure/storage/blobs/storage-blob-block-blob-premium)
+- [Scalability targets for premium block blob storage accounts](https://learn.microsoft.com/ja-jp/azure/storage/blobs/scalability-targets-premium-block-blobs)
+- [Scalability and performance targets for premium page blob storage accounts](https://learn.microsoft.com/ja-jp/azure/storage/blobs/scalability-targets-premium-page-blobs)
+- [Azure Files scalability and performance targets](https://learn.microsoft.com/ja-jp/azure/storage/files/storage-files-scale-targets)
 
 **Resource Graph Query/Scripts**
 

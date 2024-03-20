@@ -132,7 +132,7 @@ Azure SQL Database は、推移的なインフラストラクチャの障害に�
 
 **Category: Monitoring**
 
-**Impact: Medium**
+**Impact: High**
 
 **Guidance**
 

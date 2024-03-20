@@ -108,7 +108,7 @@ Databricks プールはサービスの標準機能であり、VM をオンデマ
 
 **Category: System Efficiency**
 
-**Impact: Low**
+**Impact: Medium**
 
 **Guidance**
 

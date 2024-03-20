@@ -17,7 +17,6 @@ The presented resiliency recommendations in this guidance include Container Regi
 | [CR-1 - Use Premium tier for critical production workloads](#cr-1---use-premium-tier-for-critical-production-workloads) | System Efficiency | High | Preview | Yes |
 | [CR-2 - Enable zone redundancy](#cr-2---enable-zone-redundancy) | Availability | High | Preview | Yes |
 | [CR-3 - Enable geo-replication](#cr-3---enable-geo-replication) | Disaster Recovery | High | Preview | Yes |
-| [CR-4 - Maximize pull performance](#cr-4---maximize-pull-performance) | System Efficiency | High | Preview | No |
 | [CR-5 - Use Repository namespaces](#cr-5---use-repository-namespaces) | Access & Security | Low | Preview | No |
 | [CR-6 - Move Container Registry to a dedicated resource group](#cr-6---move-container-registry-to-a-dedicated-resource-group) | Governance | Low | Preview | Yes |
 | [CR-7 - Manage registry size](#cr-7---manage-registry-size) | System Efficiency | Medium | Preview | No |
@@ -103,34 +102,6 @@ geo レプリケーションは、Premium レジストリで使用できます�
 {{< collapse title="Show/Hide Query/Script" >}}
 
 {{< code lang="sql" file="code/cr-3/cr-3.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-<br><br>
-
-### CR-4 - プル性能を最大化します
-
-**Category: System Efficiency**
-
-**Impact: High**
-
-**Guidance**
-
-イメージ自体のいくつかの特性は、プルのパフォーマンスに影響を与える可能性があります。
-
-- イメージサイズ - 不要なレイヤーを削除したり、レイヤーのサイズを小さくしたりして、イメージのサイズを最小化します。イメージ サイズを小さくする方法の 1 つは、マルチステージの Docker ビルド アプローチを使用して、必要なランタイム コンポーネントのみを含めることです。また、イメージに軽量の基本 OS イメージを含めることができるかどうかも確認します。また、特定の基本イメージをキャッシュする Azure Container Instances などのデプロイ環境を使用する場合は、キャッシュされたイメージの 1 つにイメージ レイヤーをスワップできるかどうかを確認します。
-
-- レイヤーの数 - 使用するレイヤーの数のバランスを取ります。数が少なすぎると、ホストでのレイヤーの再利用とキャッシュのメリットが得られません。数が多すぎると、デプロイ環境はプルと圧縮解除により多くの時間を費やします。5〜10層が最適です。
-
-**Resources**
-
-- [Registry authentication options - Azure Container Registry](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-authentication?tabs=azure-cli#admin-account)
-
-**Resource Graph Query/Scripts**
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="sql" file="code/cr-4/cr-4.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 
