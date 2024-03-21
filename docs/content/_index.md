@@ -6,7 +6,7 @@ weight = 1
 
 Azure Proactive Resiliency Library (APRL) のホームへようこそ。
 
-<img src="/Azure-Proactive-Resiliency-Library-jp-translation/media/img/aprl-white.png" width=40%>
+<img src="/Azure-Proactive-Resiliency-Library/media/img/aprl-white.png" width=40%>
 <br><br>
 
 このライブラリは、Well-Architected Framework の信頼性エンゲージメント/アセスメントでお客様、パートナー様、およびフィールドが使用できるガイダンスと推奨事項のステージング領域となることを意図して構築されています。ガイダンスと推奨事項は、お客様やパートナー様とともにテストおよび検証された後、公式の [Well-Architected Framework ドキュメント](https://aka.ms/waf) に組み込まれることを目的としています。

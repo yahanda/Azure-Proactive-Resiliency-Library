@@ -3,7 +3,7 @@
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Azure/Azure-Proactive-Resiliency-Library.svg)](http://isitmaintained.com/project/Azure/Azure-Proactive-Resiliency-Library "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/Azure/Azure-Proactive-Resiliency-Library.svg)](http://isitmaintained.com/project/Azure/Azure-Proactive-Resiliency-Library "Percentage of issues still open")
 
-> **GitHub Pagesサイトは、コントリビュートする予定がない限り、[yahanda.github.io/Azure-Proactive-Resiliency-Library-jp-translation](https://yahanda.github.io/Azure-Proactive-Resiliency-Library-jp-translation) からアクセスしてください。**
+> **GitHub Pagesサイトは、コントリビュートする予定がない限り、[yahanda.github.io/Azure-Proactive-Resiliency-Library](https://yahanda.github.io/Azure-Proactive-Resiliency-Library) からアクセスしてください。**
 
 Azure Proactive Resiliency Library (APRL) のホームへようこそ。
 
