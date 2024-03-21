@@ -86,7 +86,7 @@ Azure Availability Zones は、各 Azure リージョン内の物理的に分離
 
 **Guidance**
 
-Use Virtual Machines Scale Set (VMSS) with flexible orchestration to distribute the virtual machines across specified zones and within each zone to also distribute VMs across different fault domains within the zone on a best effort basis. Configure VMSS Flex following Microsoft recommendation for SAP workload using the right mode and correct settings. If you aren't currently using VMSS Flex for SAP application servers and also not using Availability Sets with Fault domain & Update domain distribution, then you should consider moving to VMSS Flex architecture to improve the resiliency posture of your SAP deployment. The following blog post in links below outlines the details on the process of migrating existing SAP workloads that are deployed in an availability set or availability zone to a flexible scale set with FD=1 deployment option.
+柔軟なオーケストレーションで Virtual Machines スケール セット (VMSS) を使用して、指定したゾーン間および各ゾーン内で仮想マシンを分散し、ゾーン内の異なる障害ドメインにベスト エフォート ベースで VM を分散します。適切なモードと正しい設定を使用して、SAP ワークロードに関する Microsoft の推奨事項に従って VMSS Flex を構成します。現在、VMSS Flex for SAP アプリケーション サーバーを使用しておらず、障害ドメインと更新ドメインの分散で可用性セットも使用していない場合は、VMSS Flex アーキテクチャへの移行を検討して、SAP デプロイの回復性体制を改善する必要があります。以下のリンクにある次のブログ記事では、可用性セットまたは可用性ゾーンにデプロイされている既存の SAP ワークロードを、FD=1 デプロイ オプションを使用してフレキシブル スケール セットに移行するプロセスの詳細について概説しています。
 
 
 **Resources**
