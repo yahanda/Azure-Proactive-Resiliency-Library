@@ -38,7 +38,6 @@ The presented resiliency recommendations in this guidance include Virtual Machin
 | [VM-22 - Use maintenance configurations for the Virtual Machine](#vm-22---use-maintenance-configurations-for-the-vms) | Governance | High | Preview | Yes |
 | [VM-23 - Avoid using A or B-Series VM Sku for production VMs that need the full performance of the CPU continuously](#vm-23---avoid-using-a-or-b-series-vm-sku-for-production-vms-that-need-the-full-performance-of-the-cpu-continuously) | System Efficiency | High | Preview | Yes |
 | [VM-24 - Mission Critical Workloads should be using Premium or Ultra Disks](#vm-24---mission-critical-workloads-should-be-using-premium-or-ultra-disks) | System Efficiency | High | Preview | Yes |
-| [VM-25 - Do not create more than 2500 Citrix VDA servers per subscription](#vm-25---do-not-create-more-than-2500-citrix-vda-servers-per-subscription) | Application Resiliency | High | Preview | No |
 | [VM-26 - Ensure all VMs part of a SQL Always-on cluster have the same specifications and configurations](#vm-26---ensure-all-vms-part-of-a-sql-always-on-cluster-have-the-same-specifications-and-configurations) | Application Resiliency | High | Preview | No |
 | [VM-27 - Use Azure Boost VMs for Maintenance sensitive workload](#vm-27---use-azure-boost-vms-for-maintenance-sensitive-workload) | Availability | Medium | Preview | No |
 | [VM-28 - Enable Scheduled Events for Maintenance sensitive workload VMs](#vm-28---enable-scheduled-events-for-maintenance-sensitive-workload-vms) | Availability | Medium | Preview | No |
@@ -164,12 +163,13 @@ Site Recovery を使用して Azure VM をレプリケートすると、すべ�
 
 **Guidance**
 
-マネージド ディスクは、単一障害点を回避するためにディスクが互いに十分に分離されているため、可用性セット内の VM の信頼性が向上します。また、マネージド ディスクは、ストレージ アカウントで作成された VHD の IOPS 制限の対象にはなりません。
+Azure アンマネージド ディスクは、2025 年 9 月 30 日に完全に廃止されます。アンマネージド ディスクを使用する場合は、今すぐ移行の計画を開始してください。
 
 **Resources**
 
-- [Resiliency checklist for Virtual Machines](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#virtual-machines)
-- [Availability options for Azure Virtual Machines](https://learn.microsoft.com/ja-jp/azure/virtual-machines/windows/manage-availability#use-managed-disks-for-vms-in-an-availability-set)
+- [Migrate your Azure unmanaged disks by Sep 30, 2025](https://learn.microsoft.com/ja-jp/azure/virtual-machines/unmanaged-disks-deprecation)
+- [Migrate Windows VM from unmanaged disks to managed disks](https://learn.microsoft.com/ja-jp/azure/virtual-machines/windows/convert-unmanaged-to-managed-disks)
+- [Migrate Linux VM from unmanaged disks to managed disks](https://learn.microsoft.com/ja-jp/azure/virtual-machines/linux/convert-unmanaged-to-managed-disks)
 
 **Resource Graph Query/Scripts**
 
@@ -674,35 +674,6 @@ Azure Ultra Disks は、Azure 仮想マシン (VM) 向けの最高パフォー�
 {{< collapse title="Show/Hide Query/Script" >}}
 
 {{< code lang="sql" file="code/vm-24/vm-24.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-<br><br>
-
-### VM-25 - サブスクリプションごとに2500を超えるCitrix VDAサーバーを作成しないでください
-
-**Category: Application Resilience**
-
-**Impact: High**
-
-**Guidance**
-
-Citrix Managed Azureサブスクリプションは、「制限」に示されているマシンの数をサポートします。(このコンテキストでは、マシンとはCitrix VDAがインストールされている仮想マシンを指します。これらのマシンは、アプリとデスクトップをユーザーに配信します。リソースの場所にある他のマシン(Cloud Connectorなど)は含まれません。
-
-Citrix Managed Azureサブスクリプションがまもなく制限に達する可能性があり、十分なCitrixライセンスがある場合は、別のCitrix Managed Azureサブスクリプションをリクエストできます。ダッシュボードには、制限に近づいたときの通知が含まれています。
-
-そのCitrix Managed Azureサブスクリプションを使用するすべてのカタログのマシンの合計数が 制限 に示されている値を超える場合、カタログを作成(またはカタログにマシンを追加)することはできません。
-
-**Resources**
-
-- [Citrix Limits](https://docs.citrix.com/ja-jp/citrix-daas-azure/limits)
-- [Citrix Managed Azure subscriptions](https://docs.citrix.com/ja-jp/citrix-daas-azure/limits)
-
-**Resource Graph Query/Scripts**
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="sql" file="code/vm-25/vm-25.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 

@@ -18,7 +18,6 @@ The presented resiliency recommendations in this guidance include ExpressRoute G
 | [ERGW-2 - Use Zone-redundant gateway SKUs](#ergw-2---use-zone-redundant-gateway-skus) | Availability | High | Preview | Yes |
 | [ERGW-3 - Configure an Azure Resource lock for ExpressRoute Gateway to prevent accidental deletion](#ergw-3---configure-an-azure-resource-lock-for-expressroute-gateway-to-prevent-accidental-deletion) | Availability | Medium | Preview | No |
 | [ERGW-4 - Monitor gateway health](#ergw-4---monitor-gateway-health) | Monitoring | High | Preview | No |
-| [ERGW-5 - Configure diagnostic logs and alerts for ExpressRoute virtual network gateway](#ergw-5---configure-diagnostic-logs-and-alerts-for-expressroute-virtual-network-gateway) | Monitoring | High | Preview | No |
 | [ERGW-6 - Avoid using ExpressRoute circuits for VNet to VNet communication](#ergw-6---avoid-using-expressroute-circuits-for-vnet-to-vnet-communication) | Networking | Medium | Preview | No |
 | [ERGW-7 - Configure customer-controlled gateway maintenance - In Preview](#ergw-7---configure-customer-controlled-gateway-maintenance---in-preview) | Networking | High | Preview | No |
 {{< /table >}}
@@ -136,34 +135,7 @@ ExpressRoute ゲートウェイの可用性、パフォーマンス、スケー�
 
 <br><br>
 
-### ERGW-5 - ExpressRoute 仮想ネットワーク ゲートウェイの診断ログとアラートを構成します
-
-**Category: Monitoring**
-
-**Impact: High**
-
-**Guidance**
-
-診断ログを有効にすると、診断情報をキャプチャして表示できるため、ExpressRoute 仮想ネットワーク ゲートウェイのエラーをトラブルシューティングできます。
-
-GatewayDiagnosticLog と RouteDiagnosticLog のログ記録を構成します。ゲートウェイ構成イベント、プライマリ変更、およびメンテナンス イベントの GatewayDiagnosticLog に基づいてアラートを作成します。RouteDiagnosticLog に基づいて、静的ルートと BGP イベントの変更に関するアラートを作成します。
-
-**Resources**
-
-- [Troubleshooting Azure VPN Gateway using diagnostic logs | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/troubleshoot-vpn-with-azure-diagnostics)
-- [Configure alerts on diagnostic resource log events - Azure VPN Gateway | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log)
-
-**Resource Graph Query/Scripts**
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="sql" file="code/ergw-5/ergw-5.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-<br><br>
-
-### ERGW-6 - VNet 間通信に ExpressRoute 回線を使用しないでください
+### ERGW-6 - VNet 間通信に ExpressRoute 回線を使用しないようにします
 
 **Category: Networking**
 
