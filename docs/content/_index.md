@@ -6,15 +6,15 @@ weight = 1
 
 {{< alert style="danger" >}}
 
-## WEBSITE MAINTENANCE NOTICE
+## ウェブサイトメンテナンスのお知らせ
 
-The APRL repository is scheduled to be migrated to a new repository the week of April 8th.
-The current APRL repository will be placed in READ-ONLY mode from April 8th to April 12th.
-No new pull requests will be accepted after April 5th.
+APRL リポジトリは、4 月 8 日の週に新しいリポジトリに移行される予定です。
+現在の APRL リポジトリは、4 月 8 日から 4 月 12 日まで読み取り専用モードになります。
+4 月 5 日以降、新しいプル要求は受け付けられません。
 
-### New Repository: [https://github.com/Azure/Azure-Proactive-Resiliency-Library-v2](https://github.com/Azure/Azure-Proactive-Resiliency-Library-v2)
+### New Repository: [https://github.com/yahanda/Azure-Proactive-Resiliency-Library-v2](https://github.com/yahanda/Azure-Proactive-Resiliency-Library-v2)
 
-### [aka.ms/aprl](https://aka.ms/aprl) will redirect to the new website starting April 15th
+### [aka.ms/aprl](https://aka.ms/aprl) は 4 月 15 日から新しいウェブサイトにリダイレクトされます
 
 {{< /alert >}}
 
