@@ -133,7 +133,7 @@ Azure Firewall ポリシーを使用すると、ルール階層を定義し、�
 
 <br><br>
 
-### AFW-5 - Configure 2-4 PIPs for SNAT Port utilization
+### AFW-5 - SNAT ポート利用のため 2 から 4 個の PIP を構成します
 
 **Category: Availability**
 
@@ -141,11 +141,11 @@ Azure Firewall ポリシーを使用すると、ルール階層を定義し、�
 
 **Guidance**
 
-Configure a minimum of two to four public IP addresses per Azure Firewall to avoid SNAT exhaustion. Azure Firewall provides SNAT capability for all outbound traffic traffic to public IP addresses. Azure Firewall provides 2,496 SNAT ports per each additional PIP.
+SNAT の枯渇を回避するために、Azure Firewall ごとに少なくとも 2 つから 4 つのパブリック IP アドレスを構成します。Azure Firewall には、パブリック IP アドレスへのすべての送信トラフィック トラフィックに対して SNAT 機能が用意されています。Azure Firewall では、追加の PIP ごとに 2,496 個の SNAT ポートが提供されます。
 
 **Resources**
 
-- [Azure Well-Architected Framework review - Azure Firewall](https://learn.microsoft.com/en-us/azure/well-architected/service-guides/azure-firewall#recommendations)
+- [Azure Well-Architected Framework review - Azure Firewall](https://learn.microsoft.com/ja-jp/azure/well-architected/service-guides/azure-firewall#recommendations)
 
 **Resource Graphy Query/Scripts**
 
@@ -157,7 +157,7 @@ Configure a minimum of two to four public IP addresses per Azure Firewall to avo
 
 <br><br>
 
-### AFW-6 - Monitor AZFW Latency Probes metric
+### AFW-6 - AZFW Latency Probes メトリックを監視します
 
 **Category: Monitoring**
 
@@ -165,12 +165,12 @@ Configure a minimum of two to four public IP addresses per Azure Firewall to avo
 
 **Guidance**
 
-Create the metric to monitor latency probes 20ms over a long period of time ( > 30mins ). When the latency probe is over a long period of time, it means the firewall instance CPUs are stressed and could possible be causing issues.
+長期間(> 30 分)にわたって 20 ミリ秒のレイテンシープローブを監視するメトリクスを作成します。レイテンシープローブが長期間にわたっている場合は、ファイアウォールインスタンスのCPUに負荷がかかり、問題が発生している可能性があることを意味します。
 
 **Resources**
 
-- [Azure Well-Architected Framework review - Azure Firewall](https://learn.microsoft.com/azure/well-architected/service-guides/azure-firewall#recommendations)
-- [Azure Firewall metrics overview](https://learn.microsoft.com/azure/firewall/metrics)
+- [Azure Well-Architected Framework review - Azure Firewall](https://learn.microsoft.com/ja-jp/azure/well-architected/service-guides/azure-firewall#recommendations)
+- [Azure Firewall metrics overview](https://learn.microsoft.com/ja-jp/azure/firewall/metrics)
 
 **Resource Graphy Query/Scripts**
 

@@ -768,7 +768,7 @@ Azure スポット VM は、高可用性と信頼性を必要とする重要な�
 
 <br><br>
 
-### DBW-29 - Migrate Legacy Workspaces
+### DBW-29 - レガシーワークスペースを移行します
 
 **Category: Availability**
 
@@ -776,34 +776,34 @@ Azure スポット VM は、高可用性と信頼性を必要とする重要な�
 
 **Guidance**
 
-Azure Databricks initially launched with shared control plane, where some regions shared control plane resources with another region. This shared control plane model then evolved to dedicated in-region control planes (e.g. North Europe, Central US, East US) to ensure a regional outage does not impact customer workspaces in other regions.
+Azure Databricks は当初、一部のリージョンが別のリージョンとコントロール プレーン リソースを共有していた共有コントロール プレーンでリリースされました。その後、この共有コントロール プレーン モデルは、リージョン内の専用のコントロール プレーン (北ヨーロッパ、米国中部、米国東部など) に進化し、リージョンの停止が他のリージョンのお客様のワークスペースに影響を与えないようにしました。
 
-Regions that now have their dedicated control plane have workspaces running in two configurations:
+専用のコントロールプレーンを持つようになったリージョンには、次の 2 つの構成で実行されているワークスペースがあります。
 
-- Legacy Workspaces - these are workspaces created before the dedicated control plane was available.
-- Workspaces - these are workspaces created after the dedicated control plane was available.
+- レガシーワークスペース - 専用コントロールプレーンが利用可能になる前に作成されたワークスペースです。
+- ワークスペース - 専用コントロールプレーンが使用可能になった後に作成されたワークスペースです。
 
-The path for migrating legacy workspaces to use the in-region control plane is to **redeploy**.
+リージョン内コントロール プレーンを使用するようにレガシ ワークスペースを移行するためのパスは、**再デプロイ** です。
 
-Review the list of network addresses used in each region in the Microsoft documentation and determine which regions are sharing a control plane. For example, we can look up Canada East in the table and see that the address for its SCC relay is "tunnel.canadacentral.azuredatabricks.net". Since the relay address is in Canada Central, we know that "Canada East" is using the control plane in another region.
+Microsoft のドキュメントで各リージョンで使用されているネットワーク アドレスの一覧を確認し、コントロール プレーンを共有しているリージョンを特定します。たとえば、テーブルでカナダ東部を検索すると、その SCC リレーのアドレスが "tunnel.canadacentral.azuredatabricks.net" であることがわかります。リレー アドレスはカナダ中部にあるため、「カナダ東部」が別のリージョンでコントロール プレーンを使用していることがわかります。
 
-Some regions list two different addresses in the Azure Databricks Control plane networking table. For example, North Europe lists both "tunnel.westeurope.azuredatabricks.net" and "tunnel.northeuropec2.azuredatabricks.net" for the SCC relay address. This is because North Europe once shared the West Europe control plane, but it now has its own independent control plane. There are still some old, legacy workspaces in North Europe tied to the old control plane, but all workspaces created since the switch-over will be using the new control plane.
+一部のリージョンでは、Azure Databricks コントロール プレーン ネットワーク テーブルに 2 つの異なるアドレスが一覧表示されます。たとえば、北ヨーロッパでは、SCC リレー アドレスに「tunnel.westeurope.azuredatabricks.net」と「tunnel.northeuropec2.azuredatabricks.net」の両方がリストされます。これは、北ヨーロッパがかつて西ヨーロッパのコントロールプレーンを共有していましたが、現在は独自の独立したコントロールプレーンを持っているためです。北ヨーロッパには、古いコントロール プレーンに関連付けられた古いレガシ ワークスペースがまだいくつかありますが、切り替え以降に作成されたすべてのワークスペースは、新しいコントロール プレーンを使用します。
 
-Once a new Azure Databricks workspace is created, it should be configured to match the original legacy workspace.  Databricks, Inc.
-recommends that customers use the Databricks Terraform Exporter for both the initial copy and for maintaining the workspace. However, this exporter is still in the experimental phase. For customers that do not trust experimental projects or for customers that do not want to use Terraform, they can use the "Migrate" tool that Databricks, Inc. maintains with GitHub. This is a collection of scripts that will export all of the objects (notebooks, cluster definitions, metadata, *etc.*) from one workspace and then import them to another workspace.  Customers can use the "Migrate" tool to initially populate the new
-workspace and then use their CI/CD deployment process to keep the workspace in sync.
+新しい Azure Databricks ワークスペースが作成されたら、元のレガシ ワークスペースと一致するように構成する必要があります。 Databricks, Inc.(データブリックス)
+では、初期コピーとワークスペースの保守の両方に Databricks Terraform Exporter を使用することをお勧めします。ただし、このエクスポーターはまだ実験段階にあります。実験的なプロジェクトを信頼しないお客様や、Terraform を使用したくない場合は、Databricks, Inc. が GitHub で管理している "移行" ツールを使用できます。これは、すべてのオブジェクト (ノートブック、クラスター定義、メタデータなど) を 1 つのワークスペースからエクスポートし、それらを別のワークスペースにインポートするスクリプトのコレクションです。 お客様は "移行" ツールを使用して、新しい
+ワークスペースに移動し、CI/CD デプロイ プロセスを使用してワークスペースの同期を維持します。
 
-Pro Tip: If you need to determine where the control plane is located for a particular Databricks workspace, you can use the "nslookup" console command on Windows or Linux with the workspace address.  The result will tell you where the control plane is located.
+上級者のヒント: 特定の Databricks ワークスペースのコントロール プレーンがどこにあるかを判断する必要がある場合は、ワークスペース アドレスを指定して Windows または Linux で "nslookup" コンソール コマンドを使用できます。 結果から、コントロールプレーンがどこにあるかがわかります。
 
 **Resources**
 
-- [Azure Databricks regions - IP addresses and domains](https://learn.microsoft.com/azure/databricks/resources/supported-regions#--ip-addresses-and-domains)
+- [Azure Databricks regions - IP addresses and domains](https://learn.microsoft.com/ja-jp/azure/databricks/resources/supported-regions#--ip-addresses-and-domains)
 - [Migrate - maintained by Databricks Inc.](https://github.com/databrickslabs/migrate)
 - [Databricks Terraform Exporter - maintained by Databricks Inc. (Experimental)](https://registry.terraform.io/providers/databricks/databricks/latest/docs/guides/experimental-exporter)
 
 <br><br>
 
-### DBW-30 - Define alternate VM SKUs
+### DBW-30 - 代替 VM SKU を定義します
 
 **Category: System Efficiency**
 
@@ -811,20 +811,20 @@ Pro Tip: If you need to determine where the control plane is located for a parti
 
 **Guidance**
 
-Azure Databricks availability planning should include plans for swapping VM SKUs based on capacity constraints.
+Azure Databricks の可用性計画には、容量の制約に基づいて VM SKU をスワップする計画を含める必要があります。
 
-Azure Databricks creates its VMs as regional VMs and depends on Azure to choose the best availability zone for the VM.  In the past, there have been rare instances where compute can not be allocated due to zonal or regional VM constraints.  Thus, resulting in a "CLOUD PROVIDER" error.
+Azure Databricks は、その VM をリージョン VM として作成し、VM に最適な可用性ゾーンを選択するために Azure に依存します。 過去には、ゾーンまたはリージョンの VM の制約のためにコンピューティングを割り当てられないまれなインスタンスがありました。 したがって、「CLOUD PROVIDER」エラーが発生します。
 
-In these situations, customers have two options:
+このような状況では、お客様には 2 つのオプションがあります。
 
-- Use Databricks Pools.  To manage costs, customers should be careful when selecting the size of their pools. They will have to pay for the Azure VMs even when they are idle in the pool.  Databricks pool can contain only one SKU of VMs; you cannot mix multiple SKUs in the same pool. To reduce the number of pools that customers need to manage, they should settle on a few SKUs that will service their jobs instead of using a different VM
-SKU for each job.
-- Plan for alternative SKUs in their preferred region(s).
+- Databricks プールを使用します。 コストを管理するには、プールのサイズを選択する際に注意が必要です。Azure VM がプール内でアイドル状態の場合でも、その料金を支払う必要があります。 Databricks プールに含めることができる VM の SKU は 1 つだけです。同じプールに複数のSKUを混在させることはできません。お客様が管理する必要があるプールの数を減らすには、別の VM を使用する代わりに、ジョブを処理するいくつかの SKU に落ち着く必要があります
+各ジョブの SKU。
+- 優先リージョンの代替 SKU を計画する。
 
 **Resources**
 
-- [Compute configuration best practices](https://learn.microsoft.com/azure/databricks/compute/cluster-config-best-practices)
-- [GPU-enabled compute](https://learn.microsoft.com/azure/databricks/compute/gpu)
+- [Compute configuration best practices](https://learn.microsoft.com/ja-jp/azure/databricks/compute/cluster-config-best-practices)
+- [GPU-enabled compute](https://learn.microsoft.com/ja-jp/azure/databricks/compute/gpu)
 
 **Resource Graph Query**
 

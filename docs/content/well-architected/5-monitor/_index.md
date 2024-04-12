@@ -122,7 +122,7 @@ Azure には、クラウド リソースの正常性に関する情報を常に�
 
 <br><br>
 
-### WAMN-5 - Utilize built-in Resilience policies
+### WAMN-5 - 組み込みのレジリエンスポリシーを利用します
 
 **Category: Governance**
 
@@ -130,11 +130,11 @@ Azure には、クラウド リソースの正常性に関する情報を常に�
 
 **Recommendation/Guidance**
 
-Utilize Azure's built-in Resilience policies to audit and enforce resilient configurations of Azure services. Azure Policy helps to enforce organizational standards and to assess compliance at-scale.
+Azure の組み込みの回復性ポリシーを利用して、Azure サービスの回復性のある構成を監査および適用します。Azure Policy は、組織の標準を適用し、コンプライアンスを大規模に評価するのに役立ちます。
 
 **Resources**
 
 - [Built-in Resilience policy definitions](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policyDefinitions/Resilience)
-- [Get policy compliance data](https://learn.microsoft.com/azure/governance/policy/how-to/get-compliance-data)
+- [Get policy compliance data](https://learn.microsoft.com/ja-jp/azure/governance/policy/how-to/get-compliance-data)
 
 <br><br>

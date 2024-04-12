@@ -159,7 +159,7 @@ VPN Gateway は、サービス正常性を使用して、計画メンテナン�
 
 <br><br>
 
-### VPNG-7 - Deploy zone-redundant VPN Gateways with zone-redundant Public IP(s)
+### VPNG-7 - ゾーン冗長パブリック IP を使用してゾーン冗長 VPN Gateway をデプロイします
 
 **Category: Availability**
 
@@ -167,11 +167,11 @@ VPN Gateway は、サービス正常性を使用して、計画メンテナン�
 
 **Guidance**
 
-When using zone-redundant SKUs for VPN Gateways (VpnGw*AZ), make sure that you associate your gateway with zone-redundant Standard SKU public IP addresses. If a VPN gateway is associated with zonal Standard SKU public IP addresses, all the gateway instances are deployed in the same zone as the IP address(es). This recommendation applies to both active-passive gateways (which use a single public IP address) and active-active VPN gateways (which use two public IP addresses).
+VPN Gateway にゾーン冗長 SKU (VpnGw*AZ) を使用する場合は、ゲートウェイをゾーン冗長 Standard SKU パブリック IP アドレスに関連付けてください。VPN ゲートウェイがゾーンの Standard SKU パブリック IP アドレスに関連付けられている場合、すべてのゲートウェイ インスタンスは IP アドレスと同じゾーンにデプロイされます。この推奨事項は、アクティブ/パッシブ ゲートウェイ (1 つのパブリック IP アドレスを使用) とアクティブ/アクティブ VPN ゲートウェイ (2 つのパブリック IP アドレスを使用) の両方に適用されます。
 
 **Resources**
 
-- [About zone-redundant virtual network gateway in Azure availability zones](https://learn.microsoft.com/azure/vpn-gateway/about-zone-redundant-vnet-gateways)
+- [About zone-redundant virtual network gateway in Azure availability zones](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/about-zone-redundant-vnet-gateways)
 
 **Resource Graph Query**
 

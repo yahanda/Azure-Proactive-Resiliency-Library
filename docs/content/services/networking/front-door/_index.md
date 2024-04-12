@@ -59,9 +59,9 @@ Azure Front Door の背後に Azure Traffic Manager を配置しないでくだ�
 
 **Resources**
 
-- [Azure Load Balancing Options](https://learn.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview)
-- [Azure Traffic Manager](https://learn.microsoft.com/azure/traffic-manager/traffic-manager-overview)
-- [Azure Front Door](https://learn.microsoft.com/azure/frontdoor/front-door-overview)
+- [Azure Load Balancing Options](https://learn.microsoft.com/ja-jp/azure/architecture/guide/technology-choices/load-balancing-overview)
+- [Azure Traffic Manager](https://learn.microsoft.com/ja-jp/azure/traffic-manager/traffic-manager-overview)
+- [Azure Front Door](https://learn.microsoft.com/ja-jp/azure/frontdoor/front-door-overview)
 - [Mission-critical global content delivery](https://learn.microsoft.com/ja-jp/azure/architecture/guide/networking/global-web-applications/mission-critical-content-delivery)
 
 **Resource Graph Query**

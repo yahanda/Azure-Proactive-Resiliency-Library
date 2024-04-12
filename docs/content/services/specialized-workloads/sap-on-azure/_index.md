@@ -122,7 +122,7 @@ For single-instance VMs, both OS and data disks must be either Premium SSD or Ul
 - [SAP ACSS Insights](https://learn.microsoft.com/ja-jp/azure/sap/center-sap-solutions/get-quality-checks-insights)
 - [OpenSource Inventory Checks](https://aka.ms/ACESInventoryCheckSAP)
 - [OpenSource Quality Checks](https://github.com/Azure/SAP-on-Azure-Scripts-and-Utilities/tree/main/QualityCheck)
-- [VM SLA](https://www.azure.cn/en-us/support/sla/virtual-machines/)
+- [VM SLA](https://www.azure.cn/ja-jp/support/sla/virtual-machines/)
 - [SAP Storage Planning Guide](https://learn.microsoft.com/ja-jp/azure/sap/workloads/planning-guide-storage)
 
 **Resource Graph Query**

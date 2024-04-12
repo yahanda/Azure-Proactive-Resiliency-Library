@@ -92,8 +92,8 @@ On September 30, 2025, Basic SKU public IP addresses will be retired. If you are
 
 **Resources**
 
-- [Upgrading a basic public IP address to Standard SKU - Guidance](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-basic-upgrade-guidance)
-- [Upgrade to Standard SKU public IP addresses in Azure by 30 September 2025—Basic SKU will be retired](https://azure.microsoft.com/en-us/updates/upgrade-to-standard-sku-public-ip-addresses-in-azure-by-30-september-2025-basic-sku-will-be-retired/)
+- [Upgrading a basic public IP address to Standard SKU - Guidance](https://learn.microsoft.com/ja-jp/azure/virtual-network/ip-services/public-ip-basic-upgrade-guidance)
+- [Upgrade to Standard SKU public IP addresses in Azure by 30 September 2025—Basic SKU will be retired](https://azure.microsoft.com/ja-jp/updates/upgrade-to-standard-sku-public-ip-addresses-in-azure-by-30-september-2025-basic-sku-will-be-retired/)
 
 **Resource Graph Query/Scripts**
 

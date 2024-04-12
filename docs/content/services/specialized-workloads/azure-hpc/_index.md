@@ -54,7 +54,7 @@ With above setup all nodes can access the file shares independent of the the hea
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/powershell/high-performance-computing/hpcpack-ha-cloud?view=hpc19-ps#hpc-pack-cluster-shares)
+- [Learn More](https://learn.microsoft.com/ja-jp/powershell/high-performance-computing/hpcpack-ha-cloud?view=hpc19-ps#hpc-pack-cluster-shares)
 
 **Resource Graph Query/Scripts**
 
@@ -78,7 +78,7 @@ By deploying Azure "burst" nodes (both Windows and Linux) in your HPC Pack clust
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/powershell/high-performance-computing/hpcpack-auto-grow-shrink?view=hpc19-ps)
+- [Learn More](https://learn.microsoft.com/ja-jp/powershell/high-performance-computing/hpcpack-auto-grow-shrink?view=hpc19-ps)
 
 **Resource Graph Query/Scripts**
 
@@ -102,7 +102,7 @@ Establish a cluster with a minimum of two head nodes. In the event of a head nod
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/powershell/high-performance-computing/hpcpack-ha-cloud?view=hpc19-ps#dealing-with-head-node-failure)
+- [Learn More](https://learn.microsoft.com/ja-jp/powershell/high-performance-computing/hpcpack-ha-cloud?view=hpc19-ps#dealing-with-head-node-failure)
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -130,7 +130,7 @@ When HPC failed to connect to the Domain controller, admin and user will not be 
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/powershell/high-performance-computing/hpcpack-ha-cloud?view=hpc19-ps#dealing-with-ad-failure)
+- [Learn More](https://learn.microsoft.com/ja-jp/powershell/high-performance-computing/hpcpack-ha-cloud?view=hpc19-ps#dealing-with-ad-failure)
 
 <br><br>
 

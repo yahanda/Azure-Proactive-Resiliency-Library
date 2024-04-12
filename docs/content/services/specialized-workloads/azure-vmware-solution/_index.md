@@ -24,7 +24,7 @@ The presented resiliency recommendations in this guidance include Azure VMware S
 |[AVS-8 - Monitor when Azure VMware Solution Private Cloud is reaching the capacity limit](#avs-8---monitor-when-azure-vmware-solution-private-cloud-is-reaching-the-capacity-limit) | Monitoring | Medium | Verified | No |
 |[AVS-9 - Apply Resource delete lock on the resource group hosting the private cloud](#avs-9---apply-resource-delete-lock-on-the-resource-group-hosting-the-private-cloud) | Governance | High | Verified | No |
 |[AVS-10 - Align ExpressRoute configuration with best practices for circuit resilience](#avs-10---align-expressroute-configuration-with-best-practices-for-circuit-resilience) | Networking | High | Verified | No |
-|[AVS-11 - Deploy two or more circuits in different peering locations when using stretched clusters](#avs-11---deploy-two-or-more-circuits-in-different-peering-locations-when-using-stretched-clusters) | Networking | High | Verified | No |
+|[AVS-11 - Deploy two or more circuits in different peering locations when using stretched clusters](#avs-11---deploy-two-or-more-circuits-in-different-peering-locations-whja-jping-stretched-clusters) | Networking | High | Verified | No |
 |[AVS-12 - Deploy two Azure VMware Solution private clouds in different regions for geographical disaster recovery](#avs-12---deploy-two-azure-vmware-solution-private-clouds-in-different-regions-for-geographical-disaster-recovery) | Disaster Recovery | High | Verified | No |
 |[AVS-13 - Use the AVS Interconnect feature to connect private clouds in different availability zones](#avs-13---use-the-avs-interconnect-feature-to-connect-private-clouds-in-different-availability-zones) | Storage | High | Verified | No |
 |[AVS-14 - Use key autorotation for vSAN datastore customer-managed keys](#avs-14---use-key-autorotation-for-vsan-datastore-customer-managed-keys) | Storage | High | Verified | No |
@@ -59,7 +59,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 Azure VMware Solution がデプロイされているサブスクリプションとリージョンの Azure VMware Solution サービスに対して Azure Service Health の通知とアラートが構成されていることを確認します。
 
-Azure Service Health は、プライベート クラウドのデプロイに影響を与えるサービスまたはセキュリティの問題を顧客に通知するために使用されるメカニズムです。さらに、Azure Service Health は、ホストの交換、アップグレード、お客様の運用に影響を与える可能性のあるサービスの更新など、Azure VMware Solution 環境でのメンテナンス アクティビティをお客様に通知するために使用されます。Azure Service Health の通知とアラートを適切に構成することで、お客様は関連する通知を確実に受け取ることができ、Azure VMware Solution のメンテナンスによるサービス要求の送信を減らすことができます。
+Azure Service Health は、プライベート クラウドのデプロイに影響を与えるサービスまたはセキュリティの問題をお客様に通知するために使用されるメカニズムです。さらに、Azure Service Health は、ホストの交換、アップグレード、お客様の運用に影響を与える可能性のあるサービスの更新など、Azure VMware Solution 環境でのメンテナンス アクティビティをお客様に通知するために使用されます。Azure Service Health の通知とアラートを適切に構成することで、お客様は関連する通知を確実に受け取ることができ、Azure VMware Solution のメンテナンスによるサービス要求の送信を減らすことができます。
 
 **Resources**
 
@@ -287,7 +287,7 @@ For critical workloads, Microsoft recommends deploying two (or more) ExpressRout
 **Resources**
 
 - [APRL guidance for ExpressRoute circuits](https://azure.github.io/Azure-Proactive-Resiliency-Library/services/networking/expressroute-circuits)
-- [Create a new ExpressRoute circuit](https://learn.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager?pivots=expressroute-preview#create-a-new-expressroute-circuit-preview)
+- [Create a new ExpressRoute circuit](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-howto-circuit-portal-resource-manager?pivots=expressroute-preview#create-a-new-expressroute-circuit-preview)
 
 **Resource Graph Query/Scripts**
 
@@ -310,7 +310,7 @@ Azure VMware Solution vSAN stretched clusters span two Availability Zones (AZs) 
 
 **Resources**
 
-- [Deploy vSAN streched cluster](https://learn.microsoft.com/en-us/azure/azure-vmware/deploy-vsan-stretched-clusters#deploy-a-stretched-cluster-private-cloud)
+- [Deploy vSAN streched cluster](https://learn.microsoft.com/ja-jp/azure/azure-vmware/deploy-vsan-stretched-clusters#deploy-a-stretched-cluster-private-cloud)
 
 **Resource Graph Query/Scripts**
 
@@ -333,8 +333,8 @@ Two Azure VMware Solution private clouds can be deployed in different regions fo
 
 **Resources**
 
-- [Private Clouds in two regions](https://learn.microsoft.com/en-us/azure/azure-vmware/move-azure-vmware-solution-across-regions)
-- [Dual Region Network Topology](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/azure-vmware/eslz-dual-region-network-topology)
+- [Private Clouds in two regions](https://learn.microsoft.com/ja-jp/azure/azure-vmware/move-azure-vmware-solution-across-regions)
+- [Dual Region Network Topology](https://learn.microsoft.com/ja-jp/azure/cloud-adoption-framework/scenarios/azure-vmware/eslz-dual-region-network-topology)
 
 **Resource Graph Query/Scripts**
 
@@ -357,7 +357,7 @@ Use the Interconnect feature for direct communication between private clouds in 
 
 **Resources**
 
-- [Connect Private Clouds in the same region](https://learn.microsoft.com/en-us/azure/azure-vmware/connect-multiple-private-clouds-same-region)
+- [Connect Private Clouds in the same region](https://learn.microsoft.com/ja-jp/azure/azure-vmware/connect-multiple-private-clouds-same-region)
 
 **Resource Graph Query/Scripts**
 
@@ -381,7 +381,7 @@ When using customer-managed keys to encrypt the vSAN datastore(s), use Azure Key
 
 **Resources**
 
-- [Configure Customer Managed Keys](https://learn.microsoft.com/en-us/azure/azure-vmware/configure-customer-managed-keys?tabs=azure-portal)
+- [Configure Customer Managed Keys](https://learn.microsoft.com/ja-jp/azure/azure-vmware/configure-customer-managed-keys?tabs=azure-portal)
 
 **Resource Graph Query/Scripts**
 
@@ -405,8 +405,8 @@ Ensure that two external identity sources are configured for NSX and vCenter Ser
 
 **Resources**
 
-- [Set an external identity source for vCenter](https://learn.microsoft.com/en-us/azure/azure-vmware/configure-identity-source-vcenter)
-- [Set an external identity for NSX-T](https://learn.microsoft.com/en-us/azure/azure-vmware/configure-external-identity-source-nsx-t)
+- [Set an external identity source for vCenter](https://learn.microsoft.com/ja-jp/azure/azure-vmware/configure-identity-source-vcenter)
+- [Set an external identity for NSX-T](https://learn.microsoft.com/ja-jp/azure/azure-vmware/configure-external-identity-source-nsx-t)
 
 **Resource Graph Query/Scripts**
 
@@ -430,7 +430,7 @@ Enable Network Extension High Availability to provide appliance failure toleranc
 
 **Resources**
 
-- [HCX Network extension high availability](https://learn.microsoft.com/en-us/azure/azure-vmware/configure-hcx-network-extension-high-availability)
+- [HCX Network extension high availability](https://learn.microsoft.com/ja-jp/azure/azure-vmware/configure-hcx-network-extension-high-availability)
 - [Understanding Network Extension High Availability](https://docs.vmware.com/en/VMware-HCX/4.8/hcx-user-guide/GUID-E1353511-697A-44B0-82A0-852DB55F97D7.html)
 
 **Resource Graph Query/Scripts**
@@ -479,7 +479,7 @@ Azure VMware Solution private clouds can support upto three DNS servers for a si
 
 **Resources**
 
-- [Configure DNS forwarder](https://learn.microsoft.com/en-us/azure/azure-vmware/configure-dns-azure-vmware-solution#configure-dns-forwarder)
+- [Configure DNS forwarder](https://learn.microsoft.com/ja-jp/azure/azure-vmware/configure-dns-azure-vmware-solution#configure-dns-forwarder)
 
 **Resource Graph Query/Scripts**
 
@@ -505,8 +505,8 @@ The default storage policy is set to RAID-1 FTT-1, with Object Space Reservation
 
 **Resources**
 
-- [Use fault domains](https://learn.microsoft.com/en-us/azure/well-architected/azure-vmware/application-platform#use-fault-domains)
-- [Configure storage policy](https://learn.microsoft.com/en-us/azure/azure-vmware/configure-storage-policy)
+- [Use fault domains](https://learn.microsoft.com/ja-jp/azure/well-architected/azure-vmware/application-platform#use-fault-domains)
+- [Configure storage policy](https://learn.microsoft.com/ja-jp/azure/azure-vmware/configure-storage-policy)
 
 **Resource Graph Query/Scripts**
 

@@ -307,18 +307,18 @@ FSLogix ストレージ アカウントでバックアップを有効にする�
 
 <br><br>
 
-### AVD-11 - Scaling plans should be created per region and not scaled across regions
+### AVD-11 - スケーリング プランはリージョンごとに作成し、リージョン間でスケーリングしないでください
 
 **Category: Disaster Recovery**
 
 **Impact: Medium**
 
 **Guidance:**
-Each region has its own scaling plans assigned to host pools within that region. However, these plans can become inaccessible if there's a regional failure. To mitigate this risk, it's advisable to create a secondary scaling plan in another region.
+各リージョンには、そのリージョン内のホスト プールに割り当てられた独自のスケーリング プランがあります。ただし、これらのプランは、リージョンで障害が発生した場合にアクセスできなくなる可能性があります。このリスクを軽減するには、別のリージョンにセカンダリ スケーリング プランを作成することをお勧めします。
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/virtual-desktop/autoscale-scaling-plan?tabs=portal)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/autoscale-scaling-plan?tabs=portal)
 
 **Resource Graph Query/Scripts**
 
@@ -341,7 +341,7 @@ Ensure that AVD session hosts can effectively communicate with the AVD control p
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/virtual-desktop/troubleshoot-rdp-shortpath)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/troubleshoot-rdp-shortpath)
 
 **Resource Graph Query/Scripts**
 
@@ -365,7 +365,7 @@ Set up secondary server in staging mode for Entra Connect for syncing to Entra i
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-install-multiple-domains)
+- [Learn More](https://learn.microsoft.com/ja-jp/entra/identity/hybrid/connect/how-to-connect-install-multiple-domains)
 
 **Resource Graph Query/Scripts**
 
@@ -389,7 +389,7 @@ For a hybrid scenario, each Azure region with AVD session hosts should have Acti
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/azure-virtual-desktop/azure-virtual-desktop-multi-region-bcdr)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/architecture/example-scenario/azure-virtual-desktop/azure-virtual-desktop-multi-region-bcdr)
 
 **Resource Graph Query/Scripts:**
 
@@ -412,7 +412,7 @@ Active Directory Domain Services (AD DS) integrated DNS/other should target Seco
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/azure-virtual-desktop/azure-virtual-desktop-multi-region-bcdr)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/architecture/example-scenario/azure-virtual-desktop/azure-virtual-desktop-multi-region-bcdr)
 
 **Resource Graph Query/Scripts:**
 
@@ -435,7 +435,7 @@ Monitor and plan for subscription limits and API throttling limits. Closely moni
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/wvd/windows-virtual-desktop#azure-virtual-desktop-limitations)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/architecture/example-scenario/wvd/windows-virtual-desktop#azure-virtual-desktop-limitations)
 
 **Resource Graph Query/Scripts:**
 
@@ -459,7 +459,7 @@ has context menu
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/training/modules/create-manage-session-host-image/)
+- [Learn More](https://learn.microsoft.com/ja-jp/training/modules/create-manage-session-host-image/)
 
 **Resource Graph Query/Scripts:**
 
@@ -485,7 +485,7 @@ To ensure your apps work with the latest updates, the validation host pool shoul
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/virtual-desktop/configure-validation-environment?tabs=azure-portal)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/configure-validation-environment?tabs=azure-portal)
 
 **Resource Graph Query/Scripts:**
 
@@ -509,7 +509,7 @@ The Scheduled Agent Updates feature lets you create up to two maintenance window
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/virtual-desktop/scheduled-agent-updates)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/scheduled-agent-updates)
 
 **Resource Graph Query/Scripts:**
 
@@ -534,7 +534,7 @@ To ensure your apps work with the latest updates, the validation host pool shoul
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/virtual-desktop/configure-validation-environment?tabs=azure-portal)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/configure-validation-environment?tabs=azure-portal)
 
 **Resource Graph Query/Scripts:**
 
@@ -557,7 +557,7 @@ Leverage Azure Site Recovery (ASR) or implement Azure Backup for personal host p
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/virtual-desktop/scheduled-agent-updates)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/scheduled-agent-updates)
 
 **Resource Graph Query/Scripts:**
 
@@ -581,7 +581,7 @@ When using AD-joined session hosts will benefit from using a unique OU to target
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/virtual-dc/adds-on-azure-vm#configure-the-vms-and-install-active-directory-domain-services)
+- [Learn More](https://learn.microsoft.com/ja-jp/windows-server/identity/ad-ds/deploy/virtual-dc/adds-on-azure-vm#configure-the-vms-and-install-active-directory-domain-services)
 
 **Resource Graph Query/Scripts:**
 
@@ -604,7 +604,7 @@ Ensure all session hosts have the standard FSLogix configuration deployed. Regul
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/fslogix/reference-configuration-settings?tabs=profiles)
+- [Learn More](https://learn.microsoft.com/ja-jp/fslogix/reference-configuration-settings?tabs=profiles)
 
 **Resource Graph Query/Scripts:**
 
@@ -627,7 +627,7 @@ Verify user permissions are correctly set on SMB shares so that users have appro
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/fslogix/how-to-configure-storage-permissions)
+- [Learn More](https://learn.microsoft.com/ja-jp/fslogix/how-to-configure-storage-permissions)
 
 **Resource Graph Query/Scripts:**
 
@@ -650,7 +650,7 @@ Regularly review FSLogix logs for errors and issues related to login and mountin
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/fslogix/troubleshooting-events-logs-diagnostics)
+- [Learn More](https://learn.microsoft.com/ja-jp/fslogix/troubleshooting-events-logs-diagnostics)
 
 **Resource Graph Query/Scripts:**
 
@@ -673,7 +673,7 @@ Ensure a process is in place to regularly check for FSLogix agent upgrades and m
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/fslogix/how-to-install-fslogix)
+- [Learn More](https://learn.microsoft.com/ja-jp/fslogix/how-to-install-fslogix)
 
 **Resource Graph Query/Scripts:**
 
@@ -699,7 +699,7 @@ Verify the number of users connecting to each file share to make sure the SMB pa
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/virtual-desktop/app-attach-overview?pivots=msix-app-attach)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/app-attach-overview?pivots=msix-app-attach)
 
 **Resource Graph Query/Scripts:**
 
@@ -727,7 +727,7 @@ Your file share should be in the same Azure region as your session hosts.
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/virtual-desktop/app-attach-overview?pivots=msix-app-attach)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/app-attach-overview?pivots=msix-app-attach)
 
 **Resource Graph Query/Scripts:**
 
@@ -751,7 +751,7 @@ For high availability connections back to on-premises datacenters should conside
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering#need-for-redundant-connectivity-solution)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering#need-for-redundant-connectivity-solution)
 
 **Resource Graph Query/Scripts:**
 
@@ -777,7 +777,7 @@ It's important your organization plans for IP addressing in Azure. Planning ensu
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/plan-for-ip-addressing)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/plan-for-ip-addressing)
 
 **Resource Graph Query/Scripts:**
 
@@ -803,7 +803,7 @@ AVD workload teams should collaborate with centralized teams that manage the sha
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/management-business-continuity-disaster-recovery)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/landing-zone/design-area/management-business-continuity-disaster-recovery)
 
 **Resource Graph Query/Scripts:**
 
@@ -826,7 +826,7 @@ To ensure continuous availability and disaster recovery readiness, it is recomme
 
 **Resources:**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/key-vault/general/disaster-recovery-guidance)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/key-vault/general/disaster-recovery-guidance)
 
 **Resource Graph Query/Scripts:**
 
@@ -848,7 +848,7 @@ AVD Insights is an Azure Workbook template provided by the AVD product team. It 
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/virtual-desktop/insights?tabs=monitor)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/insights?tabs=monitor)
 
 **Resource Graph Query/Scripts:**
 
@@ -872,7 +872,7 @@ Having separate Log Analytics ensures that your DR environment is fully operatio
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/virtual-desktop/diagnostics-log-analytics)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/virtual-desktop/diagnostics-log-analytics)
 
 **Resource Graph Query/Scripts:**
 
@@ -896,7 +896,7 @@ Follow AVD Landing Zone best practices using multiple resource groups based on r
 
 **Resources**
 
-- [Learn More](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/azure-virtual-desktop/enterprise-scale-landing-zone)
+- [Learn More](https://learn.microsoft.com/ja-jp/azure/cloud-adoption-framework/scenarios/azure-virtual-desktop/enterprise-scale-landing-zone)
 
 **Resource Graph Query/Scripts:**
 
