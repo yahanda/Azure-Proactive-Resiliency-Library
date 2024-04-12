@@ -143,7 +143,7 @@ For single-instance VMs, both OS and data disks must be either Premium SSD or Ul
 
 **Guidance**
 
-High availability for databases should be implemented using database native replication technologies and the data should be replicated synchronously that is in SYNC mode from primary database to a stand-by node.
+データベースの高可用性は、データベース・ネイティブ・レプリケーション・テクノロジーを使用して実装する必要があり、データは同期的に、つまりプライマリ・データベースからスタンバイ・ノードに同期モードで複製する必要があります。
 
 **Resources**
 
@@ -168,12 +168,12 @@ High availability for databases should be implemented using database native repl
 
 **Guidance**
 
-SAP shared file systems such as /sapmnt, /usr/sap/trans, interfaces should be made highly available.
+/sapmnt、/usr/sap/trans などの SAP 共有ファイルシステムのインターフェースは、高可用性にする必要があります。
 
-In case of Azure File Shares, we recommend that you use ZRS (Zone-redundant storage).
-In case of Azure NetApp Files, we recommend that you use Zonal replication for your volumes.
+Azure ファイル共有の場合は、ZRS (ゾーン冗長ストレージ) を使用することをお勧めします。
+Azure NetApp Files の場合は、ボリュームにゾーン レプリケーションを使用することをお勧めします。
 
-You should review the results of individual checks on other Azure services to ensure SAP shared file systems are designed to protect from zonal failure: ST-1, ANF-1, ANF-6
+他の Azure サービスに対する個々のチェックの結果を確認して、SAP 共有ファイル システムがゾーン障害から保護するように設計されていることを確認する必要があります (ST-1、ANF-1、ANF-6)
 
 **Resources**
 
@@ -197,8 +197,8 @@ You should review the results of individual checks on other Azure services to en
 
 **Guidance**
 
-Test all high availability solutions thoroughly (including kernel panic in Linux VMs and also fail-back). Include zonal failure scenarios in your testing, the testing should confirm that each layer of your SAP solution including database, central services, application servers and shared file systems is configured correctly for zone redundancy, the solution meets RPO = 0 and the application fails over automatically meeting your RTO.
-The fail back can be either automatic or manual.
+すべての高可用性ソリューションを徹底的にテストします (Linux VM でのカーネル パニックとフェールバックを含む)。テストにゾーン障害シナリオを含めると、データベース、セントラル サービス、アプリケーション サーバー、共有ファイル システムなど、SAP ソリューションの各レイヤーがゾーン冗長性に対して正しく構成され、ソリューションが RPO = 0 を満たし、アプリケーションが自動的にフェールオーバーして RTO を満たすことがテストで確認されます。
+フェールバックは、自動または手動のいずれかです。
 
 **Resources**
 
@@ -222,12 +222,12 @@ The fail back can be either automatic or manual.
 
 **Guidance**
 
-When executing a migrate command in a Linux Pacemaker cluster, the system generates a temporary "prefer" location constraint, aiming to move a resource to a specified node. This constraint prioritizes the target node for the resource temporarily without permanently altering the cluster’s configuration.
+Linux Pacemaker クラスターで migrate コマンドを実行すると、システムは、指定されたノードにリソースを移動することを目的とした一時的な "優先" 場所の制約を生成します。この制約は、クラスターの構成を永続的に変更することなく、リソースのターゲットノードに一時的に優先順位を付けます。
 
-During planned maintenances and fail over testing, you can leverage the migrate command for temporary resource relocation during maintenance or administrative tasks to ensure minimal disruption. This constraint is not permanent and does not survive reboots or cluster resets. It's designed for short-term adjustments.
+計画メンテナンスおよびフェイルオーバー・テスト中に、保守または管理タスク中の一時的なリソース再配置にmigrateコマンドを利用して、中断を最小限に抑えることができます。この制約は永続的ではなく、再起動やクラスタのリセット後も存続しません。これは、短期的な調整用に設計されています。
 
-Once the planned task necessitating the resource migration is complete, manually remove the temporary constraint to revert to the cluster's original resource management policies.
-This approach allows for controlled resource movement within the cluster, facilitating maintenance while preserving the integrity and efficiency of the cluster's configuration.
+リソースの移行を必要とする計画されたタスクが完了したら、一時的な制約を手動で削除して、クラスターの元のリソース管理ポリシーに戻します。
+このアプローチにより、クラスター内のリソース移動を制御できるため、クラスターの構成の整合性と効率を維持しながらメンテナンスが容易になります。
 
 **Resources**
 
@@ -250,9 +250,9 @@ This approach allows for controlled resource movement within the cluster, facili
 
 **Guidance**
 
-To ensure the availability of compute resources for critical VM roles in a DR region, consider securing capacity either through a warm standby approach or by utilizing Azure's On-demand Capacity Reservation.
+DR リージョン内の重要な VM ロールのコンピューティング リソースの可用性を確保するには、ウォーム スタンバイ アプローチまたは Azure のオンデマンド容量予約を利用して容量を確保することを検討してください。
 
-Warm standby involves keeping VMs in the DR region running. On-demand Capacity Reservation, on the other hand, reserves compute capacity without having to run the VMs, allowing you to start them when needed. When DR VMs are not needed, the reserved capacity may safely be used to run other workloads without the risk of losing the capacity to other customers. This strategy guarantees resource availability for your critical workloads in the event of a disaster, balancing cost and readiness.
+ウォーム スタンバイでは、DR リージョン内の VM を実行したままにします。一方、オンデマンド容量予約 では、VM を実行せずにコンピューティング容量が予約されるため、必要なときに起動できます。DR VM が不要な場合は、予約容量を安全に使用して他のワークロードを実行し、他のお客様に容量を奪われるリスクを負わせることはありません。この戦略により、災害発生時に重要なワークロードのリソースの可用性が保証され、コストと準備のバランスが取れます。
 
 **Resources**
 
@@ -276,7 +276,7 @@ Warm standby involves keeping VMs in the DR region running. On-demand Capacity R
 
 **Guidance**
 
-The replication of production databases to a DR location using the database vendor's asynchronous replication technology is a key strategy in ensuring data availability and business continuity.
+データベース・ベンダーの非同期レプリケーション・テクノロジーを使用して、本番データベースをDRロケーションにレプリケーションすることは、データの可用性とビジネス継続性を確保するための重要な戦略です。
 
 **Resources**
 
@@ -301,7 +301,7 @@ The replication of production databases to a DR location using the database vend
 
 **Guidance**
 
-SAP components such as (A)SCS, application servers, WebDispatchers, etc are backed up to DR location using an appropriate backup tool or ASR.
+(A)SCS、アプリケーションサーバー、WebDispatcherなどのSAPコンポーネントは、適切なバックアップツールまたはASRを使用してDRロケーションにバックアップされます。
 
 **Resources**
 
@@ -326,7 +326,7 @@ SAP components such as (A)SCS, application servers, WebDispatchers, etc are back
 
 **Guidance**
 
-Ensure that critical SAP shared file systems, such as /sapmnt, /usr/trans and /interfaces are either replicated or backed up for disaster recovery purposes.
+/sapmnt、/usr/trans、/interfaces などの重要な SAP 共有ファイルシステムが、災害復旧の目的で複製またはバックアップされていることを確認します。
 
 **Resources**
 
@@ -350,7 +350,7 @@ Ensure that critical SAP shared file systems, such as /sapmnt, /usr/trans and /i
 
 **Guidance**
 
-Automate DR infrastructure build (or have pre-deployed DR resources) and SAP service recovery as much as possible.
+DRインフラストラクチャの構築(またはDRリソースの事前デプロイ)とSAPサービスの復旧を可能な限り自動化します。
 
 **Resources**
 
@@ -373,11 +373,11 @@ Automate DR infrastructure build (or have pre-deployed DR resources) and SAP ser
 
 **Guidance**
 
-Create detailed documentation of your DR procedures for each layer of the SAP architecture—database, central services, application servers, and shared file systems. This documentation should include configuration details, failover mechanisms, and step-by-step recovery procedures.
+SAP アーキテクチャの各レイヤー (データベース、セントラル サービス、アプリケーション サーバー、共有ファイル システム) の DR 手順の詳細なドキュメントを作成します。このドキュメントには、構成の詳細、フェールオーバー メカニズム、および段階的な回復手順が含まれている必要があります。
 
-Test a wide range of failure scenarios, including regional outages. Testing should confirm that your DR strategy is robust, meets your RPO and RTO targets, and provides seamless failover across all layers of the SAP architecture.
+リージョンの停止を含む、さまざまな障害シナリオをテストします。テストでは、DR 戦略が堅牢であり、RPO と RTO の目標を満たし、SAP アーキテクチャのすべてのレイヤーでシームレスなフェールオーバーを提供することを確認する必要があります。
 
-This will ensure a comprehensive and resilient DR strategy capable of withstanding regional failures and ensuring business continuity.
+これにより、地域の障害に耐え、事業継続性を確保できる包括的で回復力のあるDR戦略が保証されます。
 
 **Resources**
 
@@ -400,7 +400,7 @@ This will ensure a comprehensive and resilient DR strategy capable of withstandi
 
 **Guidance**
 
-For an SAP solution hosted on Azure, it's imperative to implement a robust monitoring and alerting solution that comprehensively covers DR of each layer of the SAP architecture. Given the complexity of SAP systems, which span multiple layers using diverse technologies and Azure resources, each with potentially distinct DR replication mechanisms, an appropriate monitoring strategy is crucial. The different layers include database, central services, application, and shared file systems.
+Azure でホストされている SAP ソリューションの場合、SAP アーキテクチャの各レイヤーの DR を包括的にカバーする堅牢な監視およびアラート ソリューションを実装することが不可欠です。SAP システムは、さまざまなテクノロジと Azure リソースを使用して複数のレイヤーにまたがり、それぞれが異なる DR レプリケーション メカニズムを持つ可能性があるため、適切な監視戦略が不可欠です。さまざまなレイヤーには、データベース、セントラル サービス、アプリケーション、および共有ファイル システムが含まれます。
 
 **Resources**
 
@@ -423,12 +423,12 @@ For an SAP solution hosted on Azure, it's imperative to implement a robust monit
 
 **Guidance**
 
-Scheduled events is an Azure Metadata Services that provides proactive notifications about upcoming maintenance events (for example, reboot) so that your application can prepare for them and limit disruption. You should configure scheduled events for all your critical Azure VMs.
-Resource agent azure-events-az can also integrate with Pacemaker clusters.
+スケジュールされたイベントは、今後のメンテナンス イベント (再起動など) に関するプロアクティブな通知を提供する Azure Metadata Services であり、アプリケーションがそれらに備え、中断を制限できるようにします。すべての重要な Azure VM に対してスケジュールされたイベントを構成する必要があります。
+リソース エージェント azure-events-az は、Pacemaker クラスターと統合することもできます。
 
-To ensure high availability and service continuity in your Azure VMs, you should configure the azure-events-az resource agent within your Pacemaker clusters. This agent monitors for scheduled Azure maintenance events and can proactively relocate resources for a graceful node shutdown. Configure the agent to monitor specific event types such as Reboot and Redeploy, and enable verbose logging for detailed diagnostics.
+Azure VM の高可用性とサービス継続性を確保するには、Pacemaker クラスター内で azure-events-az リソース エージェントを構成する必要があります。このエージェントは、スケジュールされた Azure メンテナンス イベントを監視し、ノードの正常なシャットダウンのためにリソースを事前に再配置できます。再起動や再デプロイなどの特定のイベントの種類を監視するようにエージェントを構成し、詳細な診断のために詳細ログを有効にします。
 
-In addition, it is also important that you define a procedure on how to react to scheduled events.
+また、スケジュールされたイベントへの対応方法に関する手順を定義することも重要です。
 
 **Resources**
 
@@ -454,7 +454,7 @@ In addition, it is also important that you define a procedure on how to react to
 
 **Guidance**
 
-For the ASCS-Pacemaker (Central Server Instance), ensure that the Pacemaker cluster configuration parameters are correctly set up for SAP ASCS high availability.
+ASCS-Pacemaker (セントラル サーバー インスタンス) の場合は、Pacemaker クラスター構成パラメーターが SAP ASCS の高可用性用に正しく設定されていることを確認します。
 
 **Resources**
 
@@ -480,7 +480,7 @@ For the ASCS-Pacemaker (Central Server Instance), ensure that the Pacemaker clus
 
 **Guidance**
 
-For the ASCS-LB (Central Server Instance), ensure that the load balancer is configured correctly for SAP ASCS high availability.
+ASCS-LB (セントラル サーバー インスタンス) の場合は、ロード バランサーが SAP ASCS 高可用性用に正しく構成されていることを確認します。
 
 **Resources**
 
@@ -506,7 +506,7 @@ For the ASCS-LB (Central Server Instance), ensure that the load balancer is conf
 
 **Guidance**
 
-For the DBHANA-Pacemaker (Database Instance), ensure that the Pacemaker cluster configuration parameters are correctly set up for SAP HANA DB high availability.
+DBHANA-Pacemaker (データベース インスタンス) の場合は、Pacemaker クラスター構成パラメーターが SAP HANA DB の高可用性用に正しく設定されていることを確認します。
 
 **Resources**
 
@@ -532,7 +532,7 @@ For the DBHANA-Pacemaker (Database Instance), ensure that the Pacemaker cluster 
 
 **Guidance**
 
-For the DBHANA-LB (Database Instance), make sure the load balancer is configured correctly for SAP HANA DB high availability.
+DBHANA-LB (データベース インスタンス) の場合は、ロード バランサーが SAP HANA DB の高可用性用に正しく構成されていることを確認します。
 
 **Resources**
 
