@@ -40,7 +40,7 @@ Azure Monitor を使用したルート テーブルの作成や更新などの�
 
 - [Azure activity log - Azure Monitor | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/activity-log?tabs=powershell)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -65,11 +65,11 @@ Azure Monitor を使用したルート テーブルの作成や更新などの�
 
 - [Protect your Azure resources with a lock - Azure Resource Manager | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/lock-resources?toc=%2Fazure%2Fvirtual-network%2Ftoc.json&tabs=json)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
-{{< code lang="powershell" file="code/rt-2/rt-2.ps1" >}} {{< /code >}}
+{{< code lang="sql" file="code/rt-2/rt-2.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 

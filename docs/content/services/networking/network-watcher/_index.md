@@ -40,7 +40,7 @@ Azure Network Watcher には、Azure IaaS (サービスとしてのインフラ�
 
 - [What is Azure Network Watcher?](https://learn.microsoft.com/ja-jp/azure/network-watcher/network-watcher-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -64,7 +64,7 @@ Azure Network Watcher には、Azure IaaS (サービスとしてのインフラ�
 
 - [Manage NSG flow logs using the Azure portal](https://learn.microsoft.com/ja-jp/azure/network-watcher/nsg-flow-logging)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

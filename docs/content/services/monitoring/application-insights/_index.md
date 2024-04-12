@@ -41,7 +41,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Migrate an Application Insights classic resource to a workspace-based resource](https://learn.microsoft.com/ja-jp/azure/azure-monitor/app/convert-classic-resource)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

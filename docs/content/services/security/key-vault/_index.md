@@ -43,7 +43,7 @@ Key Vault の論理的な削除機能を使用すると、論理的な削除と�
 
 - [Azure Key Vault soft-delete overview](https://learn.microsoft.com/ja-jp/azure/key-vault/general/soft-delete-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -67,7 +67,7 @@ Key vault を悪意を持って削除すると、データが完全に失われ�
 
 - [Azure Key Vault purge-protection overview](https://learn.microsoft.com/ja-jp/azure/key-vault/general/soft-delete-overview#purge-protection)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -91,7 +91,7 @@ Azure Private Link サービスを使用すると、仮想ネットワーク内�
 
 - [Azure Key Vault Private Link Service overview](https://learn.microsoft.com/ja-jp/azure/key-vault/general/security-features#network-security)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -115,7 +115,7 @@ Key vaults は、格納されているシークレットのセキュリティ境
 
 - [Azure Key Vault best practices overview](https://learn.microsoft.com/ja-jp/azure/key-vault/general/best-practices#why-we-recommend-separate-key-vaults)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -139,7 +139,7 @@ Key vaults は、格納されているシークレットのセキュリティ境
 
 - [Azure Key Vault logging overview](https://learn.microsoft.com/ja-jp/azure/key-vault/general/logging?tabs=Vault)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

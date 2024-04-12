@@ -43,17 +43,11 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Diagnostic settings in Azure Monitor](https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/diagnostic-settings)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
 {{< code lang="sql" file="code/nsg-1/nsg-1.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="powershell" file="code/nsg-1/nsg-1.ps1" >}} {{< /code >}}
 
 {{< /collapse >}}
 
@@ -73,7 +67,7 @@ Azure Monitor を使用したネットワーク セキュリティ グループ�
 
 - [Azure Monitor activity log](https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/activity-log?tabs=powershell)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -98,17 +92,11 @@ Azure Monitor を使用したネットワーク セキュリティ グループ�
 
 - [Lock your resources to protect your infrastructure](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/lock-resources?toc=%2Fazure%2Fvirtual-network%2Ftoc.json&tabs=json)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
 {{< code lang="sql" file="code/nsg-3/nsg-3.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="powershell" file="code/nsg-3/nsg-3.ps1" >}} {{< /code >}}
 
 {{< /collapse >}}
 
@@ -130,7 +118,7 @@ Azure Monitor を使用したネットワーク セキュリティ グループ�
 
 - [Flow logging for network security groups](https://learn.microsoft.com/ja-jp/azure/network-watcher/network-watcher-nsg-flow-logging-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -154,7 +142,7 @@ Azure ネットワーク セキュリティ グループを使用して、Azure 
 
 - [Security rules](https://learn.microsoft.com/ja-jp/azure/virtual-network/network-security-groups-overview#security-rules)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

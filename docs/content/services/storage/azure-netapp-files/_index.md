@@ -1,9 +1,9 @@
 +++
 title = "Azure NetApp Files"
 description = "Best practices and resiliency recommendations for Azure NetApp Files and associated resources and settings."
-date = "8/30/23"
-author = "maheshbenke"
-msAuthor = "maheshbenke"
+date = "3/26/24"
+author = "seanluce"
+msAuthor = "b-sluce"
 draft = false
 +++
 
@@ -14,14 +14,18 @@ The presented resiliency recommendations in this guidance include Azure NetApp F
 {{< table style="table-striped" >}}
 | Recommendation                                    |  Category                                                               |  Impact         |  State   | ARG Query Available |
 | :------------------------------------------------ | :---------------------------------------------------------------------: | :------:        | :------: | :-----------------: |
-| [ANF-1 - Use the correct service level and volume quota size for the expected performance level](#anf-1---use-the-correct-service-level-and-volume-quota-size-for-the-expected-performance-level) | System Efficiency | High | Preview  |         No         |
-| [ANF-2 - Use standard network features for production in Azure NetApp Files](#anf-2---use-standard-network-features-for-production-in-azure-netapp-files) | Networking | High | Preview  |         Yes         |
-| [ANF-3 - Use availability zones for high availability in Azure NetApp Files](#anf-3---use-availability-zones-for-high-availability-in-azure-netapp-files) | Availability | High | Preview  |         Yes         |
-| [ANF-4 - Use snapshot and backup for in-region data protection in Azure NetApp Files](#anf-4---use-snapshot-and-backup-for-in-region-data-protection-in-azure-netapp-files) | Availability | High | Preview  |         No         |
-| [ANF-5 - Enable Cross-region replication of Azure NetApp Files volumes](#anf-5---enable-cross-region-replication-of-azure-netapp-files-volumes) | Disaster Recovery | High | Preview  |         Yes         |
-| [ANF-6 - Enable Cross-zone replication of Azure NetApp Files volumes](#anf-6---enable-cross-zone-replication-of-azure-netapp-files-volumes) | Availability | High | Preview  |         Yes         |
-| [ANF-7 - Monitor Azure NetApp Files metrics to better understand usage pattern and performance](#anf-7---monitor-azure-netapp-files-metrics-to-better-understand-usage-pattern-and-performance) | Monitoring | Medium | Preview  |         No         |
-| [ANF-8 - Use Azure policy to enforce organizational standards and to assess compliance at-scale in Azure NetApp Files](#anf-8---use-azure-policy-to-enforce-organizational-standards-and-to-assess-compliance-at-scale-in-azure-netapp-files) | Governance | Medium | Preview  |         No         |
+| [ANF-1 - Use the correct service level and volume quota size for the expected performance level](#anf-1---use-the-correct-service-level-and-volume-quota-size-for-the-expected-performance-level) | System Efficiency | Medium | Verified  |         No         |
+| [ANF-2 - Use standard network features for production in Azure NetApp Files](#anf-2---use-standard-network-features-for-production-in-azure-netapp-files) | Networking | High | Verified  |         Yes         |
+| [ANF-3 - Use availability zones for high availability in Azure NetApp Files](#anf-3---use-availability-zones-for-high-availability-in-azure-netapp-files) | Availability | High | Verified  |         Yes         |
+| [ANF-4 - Use snapshots for data protection in Azure NetApp Files](#anf-4---use-snapshots-for-data-protection-in-azure-netapp-files) | Availability | High | Verified  |         Yes         |
+| [ANF-5 - Enable backup for data protection in Azure NetApp Files](#anf-5---enable-backup-for-data-protection-in-azure-netapp-files) | Disaster Recovery | High | Verified  |         Yes         |
+| [ANF-6 - Enable Cross-region replication of Azure NetApp Files volumes](#anf-6---enable-cross-region-replication-of-azure-netapp-files-volumes) | Disaster Recovery | High | Verified  |         Yes         |
+| [ANF-7 - Enable Cross-zone replication of Azure NetApp Files volumes](#anf-7---enable-cross-zone-replication-of-azure-netapp-files-volumes) | Availability | High | Verified  |         Yes         |
+| [ANF-8 - Monitor Azure NetApp Files metrics to better understand usage pattern and performance](#anf-8---monitor-azure-netapp-files-metrics-to-better-understand-usage-pattern-and-performance) | Monitoring | Medium | Verified  |         No         |
+| [ANF-9 - Use Azure policy to enforce organizational standards and to assess compliance at-scale in Azure NetApp Files](#anf-9---use-azure-policy-to-enforce-organizational-standards-and-to-assess-compliance-at-scale-in-azure-netapp-files) | Governance | Medium | Verified  |         No         |
+| [ANF-10 - Restrict default access to Azure NetApp Files volumes](#anf-10---restrict-default-access-to-azure-netapp-files-volumes) | Access & Security | Medium | Verified  |         No         |
+| [ANF-11 - Make use of SMB continuous availability for supported applications](#anf-11---make-use-of-smb-continuous-availability-for-supported-applications) | Application Resilience | Medium | Verified  |         No         |
+| [ANF-12 - Ensure application resilience for service maintenance events](#anf-12---ensure-application-resilience-for-service-maintenance-events) | Application Resilience | Medium | Verified  |         No         |
 {{< /table >}}
 
 {{< alert style="info" >}}
@@ -36,7 +40,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Category: System Efficiency**
 
-**Impact: High**
+**Impact: Medium**
 
 **Guidance**
 
@@ -50,7 +54,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Service levels for Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/azure-netapp-files-service-levels)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -69,13 +73,12 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 **Guidance**
 
 標準ネットワーク機能を使用すると、より高い IP 制限と、委任されたサブネット上のネットワーク セキュリティ グループとユーザー定義ルート、追加の接続パターンなどの標準 VNet 機能が可能になります。
-標準ネットワーク機能の対応地域は [こちら](https://docs.microsoft.com/ja-jp/azure/azure-netapp-files/azure-netapp-files-network-topologies#supported-regions-for-standard-network-feature) を参照ください。
 
 **Resources**
 
 - [Guidelines for Azure NetApp Files network planning | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/azure-netapp-files-network-topologies)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -99,7 +102,7 @@ Azure 可用性ゾーンは、ローカルの障害に耐えられる、サポ�
 
 - [Use availability zones for high availability in Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/use-availability-zones)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -109,7 +112,7 @@ Azure 可用性ゾーンは、ローカルの障害に耐えられる、サポ�
 
 <br><br>
 
-### ANF-4 - Azure NetApp Files でリージョン内データ保護にスナップショットとバックアップを使用します
+### ANF-4 - Azure NetApp Files でのデータ保護にスナップショットを使用します
 
 **Category: Availability**
 
@@ -117,15 +120,13 @@ Azure 可用性ゾーンは、ローカルの障害に耐えられる、サポ�
 
 **Guidance**
 
-Azure NetApp Files スナップショット テクノロジは、パフォーマンスに影響を与えることなく、安定性、スケーラビリティ、迅速な復旧性を提供します。
-Azure NetApp Files は、長期的な復旧、アーカイブ、コンプライアンスのためのフル マネージド バックアップ ソリューションをサポートしています。バックアップは、バックアップと同じリージョン内の新しいボリュームに復元できます。Azure NetApp Files によって作成されたバックアップは、短期的な復旧や複製に使用できるボリューム スナップショットとは無関係に、Azure Storage に格納されます。
+Azure NetApp Files スナップショット テクノロジは、パフォーマンスに影響を与えることなく、安定性、スケーラビリティ、迅速な復旧性を提供します。スナップショット ポリシーを使用して、Azure NetApp Files データのスナップショットを自動的に作成します。
 
 **Resources**
 
-- [Snapshots](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/data-protection-disaster-recovery-options#snapshots)
-- [Backup](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/data-protection-disaster-recovery-options#backups)
+- [How Azure NetApp Files snapshots work | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/snapshots-introduction)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -135,21 +136,21 @@ Azure NetApp Files は、長期的な復旧、アーカイブ、コンプライ�
 
 <br><br>
 
-### ANF-5 - Azure NetApp Files ボリュームのリージョン間レプリケーションを有効にします
+### ANF-5 - Azure NetApp Files でデータ保護のためのバックアップを有効にします
 
-**Category: Disaster Recovery**
+**Category: Availability**
 
 **Impact: High**
 
 **Guidance**
 
-Azure NetApp Files レプリケーション機能は、リージョン間ボリューム レプリケーションによるデータ保護を提供します。あるリージョンの Azure NetApp Files ボリューム (ソース) から、別のリージョンの別の Azure NetApp Files ボリューム (宛先) にデータを非同期的にレプリケートできます。この機能により、リージョン全体の停止や災害が発生した場合に、重要なアプリケーションをフェールオーバーできます。
+Azure NetApp Files は、長期的な復旧、アーカイブ、コンプライアンスのためのフル マネージド バックアップ ソリューションをサポートしています。バックアップは、バックアップと同じリージョン内の新しいボリュームに復元できます。Azure NetApp Files によって作成されたバックアップは、短期的な復旧や複製に使用できるボリューム スナップショットとは無関係に、Azure Storage に格納されます。バックアップ ポリシーを使用して、Azure NetApp Files データのバックアップを自動的に作成します。
 
 **Resources**
 
-- [Cross-zone replication of Azure NetApp Files volumes | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/cross-region-replication-introduction)
+- [Understand Azure NetApp Files backup | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/backup-introduction)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -159,21 +160,23 @@ Azure NetApp Files レプリケーション機能は、リージョン間ボリ�
 
 <br><br>
 
-### ANF-6 - Azure NetApp Files ボリュームのクロスゾーン レプリケーションを有効にします
+### ANF-6 - Azure NetApp Files ボリュームのリージョン間レプリケーションを有効にします
 
-**Category: Availability**
+**Category: Disaster Recovery**
 
 **Impact: High**
 
 **Guidance**
 
-クロスゾーンレプリケーション (CZR) 機能は、異なる可用性ゾーン内のボリューム間のデータ保護を提供します。ある可用性ゾーンの Azure NetApp Files ボリューム (ソース) から、別の可用性の別の Azure NetApp Files ボリューム (宛先) にデータを非同期的にレプリケートできます。この機能により、ゾーン全体の停止や災害が発生した場合に、重要なアプリケーションをフェイルオーバーできます。
+Azure NetApp Files レプリケーション機能は、リージョン間ボリューム レプリケーションによるデータ保護を提供します。あるリージョンの Azure NetApp Files ボリューム (ソース) から、別のリージョンの別の Azure NetApp Files ボリューム (宛先) にデータを非同期的にレプリケートできます。この機能により、リージョン全体の停止や災害が発生した場合に、重要なアプリケーションをフェールオーバーできます。
+
+注: ボリュームは、クロスゾーンレプリケーション (CZR) またはクロスリージョンレプリケーション (CRR) を介してレプリケートできますが、両方を同時にレプリケートすることはできません。
 
 **Resources**
 
-- [Cross-zone replication of Azure NetApp Files volumes | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/cross-zone-replication-introduction)
+- [Cross-region replication of Azure NetApp Files volumes | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/cross-region-replication-introduction)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -183,7 +186,33 @@ Azure NetApp Files レプリケーション機能は、リージョン間ボリ�
 
 <br><br>
 
-### ANF-7 - Azure NetApp Files メトリックを監視して、使用パターンとパフォーマンスをよりよく理解します
+### ANF-7 - Azure NetApp Files ボリュームのゾーン間レプリケーションを有効にします
+
+**Category: Availability**
+
+**Impact: High**
+
+**Guidance**
+
+クロスゾーンレプリケーション (CZR) 機能は、異なる可用性ゾーン内のボリューム間のデータ保護を提供します。ある可用性ゾーンの Azure NetApp Files ボリューム (ソース) から、別の可用性の別の Azure NetApp Files ボリューム (宛先) にデータを非同期的にレプリケートできます。この機能により、ゾーン全体の停止や災害が発生した場合に、重要なアプリケーションをフェイルオーバーできます。
+
+注: ボリュームは、クロスゾーンレプリケーション (CZR) またはクロスリージョンレプリケーション (CRR) を介してレプリケートできますが、両方を同時にレプリケートすることはできません。
+
+**Resources**
+
+- [Cross-zone replication of Azure NetApp Files volumes | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/cross-zone-replication-introduction)
+
+**Resource Graph Query**
+
+{{< collapse title="Show/Hide Query/Script" >}}
+
+{{< code lang="sql" file="code/anf-7/anf-7.kql" >}} {{< /code >}}
+
+{{< /collapse >}}
+
+<br><br>
+
+### ANF-8 - Azure NetApp Files メトリックを監視して、使用パターンとパフォーマンスの理解を深めます
 
 **Category: Monitoring**
 
@@ -197,17 +226,17 @@ Azure NetApp Files では、割り当てられたストレージ、実際のス�
 
 - [Ways to monitor Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/monitor-azure-netapp-files)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
-{{< code lang="sql" file="code/anf-7/anf-7.kql" >}} {{< /code >}}
+{{< code lang="sql" file="code/anf-8/anf-8.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 
 <br><br>
 
-### ANF-8 - Azure Policy を使用して組織標準を適用し、Azure NetApp Files でコンプライアンスを大規模に評価します
+### ANF-9 - Azure Policy を使用して組織の標準を適用し、Azure NetApp Files でコンプライアンスを大規模に評価します
 
 **Category: Governance**
 
@@ -215,17 +244,105 @@ Azure NetApp Files では、割り当てられたストレージ、実際のス�
 
 **Guidance**
 
-Azure NetApp Files は Azure Policy をサポートしています。Azure NetApp Files と Azure Policy を統合するには、[カスタム ポリシー定義の作成](https://learn.microsoft.com/ja-jp/azure/governance/policy/tutorials/create-custom-policy-definition)。例については、[Azure Policy を使用してスナップショット ポリシーを適用する](https://anfcommunity.com/2021/08/30/enforce-snapshot-policies-with-azure-policy/) と [Azure NetApp Files で Azure Policy を使用できるようになりました](https://anfcommunity.com/2021/04/19/azure-policy-now-available-for-azure-netapp-files/) を参照してください。
+Azure NetApp Files では、Azure Policy がサポートされています。Azure NetApp Files を Azure Policy と統合するには、組み込みのポリシー定義を使用するか、カスタム ポリシー定義を作成します。
 
 **Resources**
 
 - [Azure Policy definitions for Azure NetApp Files | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/azure-policy-definitions)
+- [Creating custom policy definitions | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/governance/policy/tutorials/create-custom-policy-definition)
 
 **Resource Graph Query/Scripts**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
-{{< code lang="sql" file="code/anf-8/anf-8.kql" >}} {{< /code >}}
+{{< code lang="sql" file="code/anf-9/anf-9.kql" >}} {{< /code >}}
+
+{{< /collapse >}}
+
+<br><br>
+
+### ANF-10 - Azure NetApp Files ボリュームへの既定のアクセスを制限します
+
+**Category: Access & Security**
+
+**Impact: Medium**
+
+**Guidance**
+
+委任されたサブネットへのアクセスは、可能な限り特定の Azure Virtual Network にのみ付与する必要があります。
+SMB 対応ボリュームの共有アクセス許可は、既定の [すべてのユーザー - フル コントロール] から制限する必要があります。
+NFS対応ボリュームへのアクセスは、エクスポートポリシーやNFSv4.1 ACLを使用して制限する必要があります。
+マウントパスの変更権限は、さらに制限する必要があります。
+
+
+**Resources**
+
+- [Configure network features for an Azure NetApp Files volume](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/configure-network-features)
+- [Manage SMB share ACLs in Azure NetApp Files](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/manage-smb-share-access-control-lists)
+- [Configure export policy for NFS or dual-protocol volumes](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/azure-netapp-files-configure-export-policy)
+- [Configure access control lists on NFSv4.1 volumes for Azure NetApp Files](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/configure-access-control-lists)
+- [Configure Unix permissions and change ownership mode for NFS and dual-protocol volumes](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/configure-unix-permissions-change-ownership-mode)
+
+**Resource Graph Query/Scripts**
+
+{{< collapse title="Show/Hide Query/Script" >}}
+
+{{< code lang="sql" file="code/anf-10/anf-10.kql" >}} {{< /code >}}
+
+{{< /collapse >}}
+
+<br><br>
+
+### ANF-11 - サポートされているアプリケーションでSMBの継続的な可用性を活用します
+
+**Category: Application Resilience**
+
+**Impact: Medium**
+
+**Guidance**
+
+特定の SMB ベースのアプリケーションでは、SMB 透過フェールオーバーが必要です。SMB 透過フェールオーバーを使用すると、SMB ボリュームにデータを格納してアクセスするサーバー アプリケーションへの接続を中断することなく、Azure NetApp Files サービスでのメンテナンス操作が可能になります。特定のアプリケーションに対して SMB 透過フェールオーバーをサポートするために、Azure NetApp Files では SMB 継続的可用性共有オプションがサポートされています。
+
+次の SMB ベースのアプリケーションには、継続的可用性オプションの使用を検討してください。
+- Citrix App Layering
+- FSLogix ユーザー プロファイル コンテナー
+- FSLogix ODFC コンテナー
+- Microsoft SQL Serverの
+- MSIX アプリのアタッチ
+
+**Resources**
+
+- [Do I need to take special precautions for SMB-based applications? | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/faq-application-resilience#do-i-need-to-take-special-precautions-for-smb-based-applications)
+
+**Resource Graph Query/Scripts**
+
+{{< collapse title="Show/Hide Query/Script" >}}
+
+{{< code lang="sql" file="code/anf-11/anf-11.kql" >}} {{< /code >}}
+
+{{< /collapse >}}
+
+<br><br>
+
+### ANF-12 - サービスメンテナンスイベントに対するアプリケーションの回復力を確保します
+
+**Category: Application Resilience**
+
+**Impact: Medium**
+
+**Guidance**
+
+Azure NetApp Files では、計画的なメンテナンス (プラットフォームの更新、サービスやソフトウェアのアップグレードなど) が時折行われる場合があります。そのため、ストレージ サービスのメンテナンス イベントに対処するためのアプリケーションの回復性設定を認識していることを確認してください。
+
+**Resources**
+
+- [What do you recommend for handling potential application disruptions due to storage service maintenance events? | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-netapp-files/faq-application-resilience#what-do-you-recommend-for-handling-potential-application-disruptions-due-to-storage-service-maintenance-events)
+
+**Resource Graph Query/Scripts**
+
+{{< collapse title="Show/Hide Query/Script" >}}
+
+{{< code lang="sql" file="code/anf-12/anf-12.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 

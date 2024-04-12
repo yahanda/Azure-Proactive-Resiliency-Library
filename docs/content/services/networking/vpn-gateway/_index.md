@@ -14,14 +14,15 @@ The presented resiliency recommendations in this guidance include VPN Gateway an
 The below table shows the list of resiliency recommendations for VPN Gateway and associated resources.
 
 {{< table style="table-striped" >}}
-| Recommendation | Category | Impact | State | ARG Query Available |
+| Recommendation                                                                                                                                                      |     Category      | Impact |  State  | ARG Query Available |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:------:|:-------:|:-------------------:|
-| [VPNG-1 - Choose a Zone-redundant gateway](#vpng-1---choose-a-zone-redundant-gateway) | Availability | High | Preview | Yes |
-| [VPNG-2 - Plan for Active-Active mode](#vpng-2---plan-for-active-active-mode) | Availability | High | Preview | Yes |
-| [VPNG-3 - Plan for Site-to-Site VPN and Azure ExpressRoute coexisting connection](#vpng-3---plan-for-site-to-site-vpn-and-azure-expressroute-coexisting-connection) | Disaster Recovery | High | Preview | No |
-| [VPNG-4 - Plan for geo-redundant VPN Connections](#vpng-4---plan-for-geo-redundant-vpn-connections) | Disaster Recovery | High | Preview | No |
-| [VPNG-5 - Monitor connections and gateway health](#vpng-5---monitor-connections-and-gateway-health) | Monitoring | Medium | Preview | No |
-| [VPNG-6 - Enable service health alerts](#vpng-6---enable-service-health-alerts) | Monitoring | Medium | Preview | No |
+| [VPNG-1 - Choose a Zone-redundant gateway](#vpng-1---choose-a-zone-redundant-gateway)                                                                               |   Availability    |  High  | Preview |         Yes         |
+| [VPNG-2 - Plan for Active-Active mode](#vpng-2---plan-for-active-active-mode)                                                                                       |   Availability    |  High  | Preview |         Yes         |
+| [VPNG-4 - Deploy active-active VPN concentrators on your premises for maximum resiliency](#vpng-4---deploy-active-active-vpn-concentrators-on-your-premises-for-maximum-resiliency) | Availability | High | Preview | No |                                                                | Availability |  Medium  | Preview |         No          |
+| [VPNG-5 - Monitor connections and gateway health](#vpng-5---monitor-connections-and-gateway-health)                                                                 |    Monitoring     | Medium | Preview |         No          |
+| [VPNG-6 - Enable service health](#vpng-6---enable-service-health)                                                                                                   |    Monitoring     | Medium | Preview |         No          |
+| [VPNG-7 - Deploy zone-redundant VPN Gateways with zone-redundant Public IP(s)](#vpng-7---deploy-zone-redundant-vpn-gateways-with-zone-redundant-public-ips)         | Availability | Medium | Preview | Yes |                                                                                          |    Availability     | High | Preview |         Yes          |
+
 {{< /table >}}
 
 {{< alert style="info" >}}
@@ -40,15 +41,15 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Azure VPN ゲートウェイは、1 つの可用性ゾーンにデプロイする場合と、2 つ以上の可用性ゾーンにデプロイする場合で、異なる SLA を提供します。すべての Azure SLA の詳細については、「[Azure サービスの SLA の概要](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1)」を参照してください。
-可用性ゾーン間で仮想ネットワーク ゲートウェイを自動的にデプロイするには、ゾーン冗長仮想ネットワーク ゲートウェイを使用します。ゾーン冗長ゲートウェイは、ゾーン回復性の恩恵を受けて、Azure 上のミッション クリティカルでスケーラブルなサービスにアクセスします。
+Azure VPN ゲートウェイは、1 つの可用性ゾーンにデプロイする場合と、2 つの可用性ゾーンにデプロイする場合で、異なる SLA を提供します。可用性ゾーン間で仮想ネットワーク ゲートウェイを自動的にデプロイするには、ゾーン冗長仮想ネットワーク ゲートウェイを使用できます。ゾーン冗長ゲートウェイを使用すると、ゾーン回復性を利用して、Azure 上のミッション クリティカルでスケーラブルなサービスにアクセスできます。
 
 **Resources**
 
 - [Zone redundant Virtual network gateway in availability zone](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/about-zone-redundant-vnet-gateways)
 - [Gateway SKU](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/about-zone-redundant-vnet-gateways#gwskus)
+- [SLA summary for Azure services](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1).
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -66,14 +67,15 @@ Azure VPN ゲートウェイは、1 つの可用性ゾーンにデプロイす�
 
 **Guidance**
 
-アクティブ/アクティブ モードは、Basic を除くすべての SKU で使用できます。Azure VPN ゲートウェイは、アクティブ/アクティブ構成で作成でき、ゲートウェイ VM の両方のインスタンスによって、オンプレミスの VPN デバイスへの S2S VPN トンネルが確立されます。計画メンテナンスまたは計画外のイベントが 1 つのゲートウェイ インスタンスで発生すると、影響を受けるインスタンスからアクティブ インスタンスへの切り替えが自動的に行われます。
+アクティブ/アクティブ モードは、Basic を除くすべての SKU で使用できます。
+アクティブ/アクティブ ゲートウェイには、2 つのゲートウェイ IP 構成と 2 つのパブリック IP アドレスがあります。
 
 **Resources**
 
-- [About Active-Active VPN gateway](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/vpn-gateway-highlyavailable#active-active-vpn-gateways)
-- [Configure Active-active VPN gateway](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/active-active-portal#gateway)
+- [Active-active VPN gateway](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/active-active-portal#gateway)
+- [Gateway SKU](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings#gwsku)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -83,47 +85,22 @@ Azure VPN ゲートウェイは、1 つの可用性ゾーンにデプロイす�
 
 <br><br>
 
-### VPNG-3 - サイト間 VPN と Azure ExpressRoute の共存接続を計画します
+### VPNG-4 - 耐障害性を最大化するためアクティブ/アクティブ VPN コンセントレータをオンプレミスにデプロイします
 
-**Category: Disaster Recovery**
-
-**Impact: High**
-
-**Guidance**
-
-サイト間VPNとExpressRouteを構成できることには、いくつかの利点があります。サイト間VPNをExpressRouteのセキュアなフェイルオーバー・パスとして構成することも、サイト間VPNを使用してExpressRoute経由で接続されていないサイトに接続することもできます。
-
-**Resources**
-
-- [Configure a Site-to-Site VPN as a failover path for ExpressRoute](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-howto-coexist-resource-manager#configuration-designs)
-- [Limit and limitations](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-howto-coexist-resource-manager#limits-and-limitations)
-
-**Resource Graph Query/Scripts**
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="sql" file="code/vpng-3/vpng-3.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-<br><br>
-
-### VPNG-4 - geo 冗長 VPN 接続を計画します
-
-**Category: Disaster Recovery**
+**Category: Availability**
 
 **Impact: High**
 
 **Guidance**
 
-ディザスタ・リカバリを計画するには、複数の場所でサイト間VPNを設定します。同じ都市圏または異なる都市圏で IP Sec 接続を作成し、さまざまなパスに対して異なるサービス プロバイダーと連携することを選択できます。
+アクティブ/アクティブ VPN コンセントレーターをアクティブ/アクティブ Azure VPN Gateway と共にオンプレミスにデプロイすることで、4 つの IPSec トンネルに基づくフルメッシュ トポロジを使用して、回復性と可用性を最大化できます。
 
 **Resources**
 
-- [Highly available cross-premises](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/vpn-gateway-highlyavailable)
-- [About VPN gateway redundancy](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/vpn-gateway-highlyavailable#about-vpn-gateway-redundancy)
+- [Dual-redundancy: active-active VPN gateways for both Azure and on-premises networks](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/vpn-gateway-highlyavailable#dual-redundancy-active-active-vpn-gateways-for-both-azure-and-on-premises-networks)
 
-**Resource Graph Query/Scripts**
+
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -147,7 +124,7 @@ Azure VPN ゲートウェイは、1 つの可用性ゾーンにデプロイす�
 
 - [VPN gateway data reference](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/monitor-vpn-gateway-reference)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -157,7 +134,7 @@ Azure VPN ゲートウェイは、1 つの可用性ゾーンにデプロイす�
 
 <br><br>
 
-### VPNG-6 - Service Health アラートを有効化します
+### VPNG-6 - サービス正常性を有効にします
 
 **Category: Monitoring**
 
@@ -165,14 +142,14 @@ Azure VPN ゲートウェイは、1 つの可用性ゾーンにデプロイす�
 
 **Guidance**
 
-VPN Gateway では、サービス正常性アラートを使用して、計画メンテナンスと計画外のメンテナンスについて通知します。
+VPN Gateway は、サービス正常性を使用して、計画メンテナンスと計画外のメンテナンスについて通知します。サービス正常性を構成すると、VPN 接続に加えられた変更について通知されます。
 
 **Resources**
 
 - [Getting started with Azure Metrics Explorer](hhttps://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/metrics-getting-started)
 - [Monitor VPN gateway](hhttps://learn.microsoft.com/ja-jp/azure/vpn-gateway/monitor-vpn-gateway-reference#metrics)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -181,3 +158,28 @@ VPN Gateway では、サービス正常性アラートを使用して、計画�
 {{< /collapse >}}
 
 <br><br>
+
+### VPNG-7 - Deploy zone-redundant VPN Gateways with zone-redundant Public IP(s)
+
+**Category: Availability**
+
+**Impact: High**
+
+**Guidance**
+
+When using zone-redundant SKUs for VPN Gateways (VpnGw*AZ), make sure that you associate your gateway with zone-redundant Standard SKU public IP addresses. If a VPN gateway is associated with zonal Standard SKU public IP addresses, all the gateway instances are deployed in the same zone as the IP address(es). This recommendation applies to both active-passive gateways (which use a single public IP address) and active-active VPN gateways (which use two public IP addresses).
+
+**Resources**
+
+- [About zone-redundant virtual network gateway in Azure availability zones](https://learn.microsoft.com/azure/vpn-gateway/about-zone-redundant-vnet-gateways)
+
+**Resource Graph Query**
+
+{{< collapse title="Show/Hide Query/Script" >}}
+
+{{< code lang="sql" file="code/vpng-7/vpng-7.kql" >}} {{< /code >}}
+
+{{< /collapse >}}
+
+<br><br>
+

@@ -41,7 +41,7 @@ VM フェールオーバー設定で構成された静的 IP アドレスがフ�
 
 - [Setup network mapping for site recovery](https://learn.microsoft.com/ja-jp/azure/site-recovery/azure-to-azure-network-mapping#set-up-ip-addressing-for-target-vms)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -66,7 +66,7 @@ VM フェールオーバー設定で構成された静的 IP アドレスがフ�
 
 - [Run a test failover](https://learn.microsoft.com/ja-jp/azure/site-recovery/azure-to-azure-tutorial-dr-drill#run-a-test-failover)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

@@ -70,7 +70,7 @@ Azure App Service で実行されている ASP.NET、ASP.NET Core、Java、Node.
 - [Application Insights](https://learn.microsoft.com/ja-jp/azure/application-insights/app-insights-overview)
 - [Application monitoring for Azure App Service](https://learn.microsoft.com/ja-jp/azure/azure-monitor/app/azure-web-apps)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -140,7 +140,7 @@ Azure App Service で実行されている ASP.NET、ASP.NET Core、Java、Node.
 
 - [Set up staging environments in Azure App Service](https://learn.microsoft.com/ja-jp/azure/app-service-web/web-sites-staged-publishing)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

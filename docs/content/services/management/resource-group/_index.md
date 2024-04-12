@@ -40,7 +40,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Azure Resource Manager Overview](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/overview#resource-group-location-alignment)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

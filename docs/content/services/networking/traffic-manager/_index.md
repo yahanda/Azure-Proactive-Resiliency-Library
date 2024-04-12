@@ -14,11 +14,10 @@ The presented resiliency recommendations in this guidance include Azure Traffic 
 {{< table style="table-striped" >}}
 | Recommendation                                                                                                                                            |     Category      | Impact |  State  | ARG Query Available |
 |:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:------:|:-------:|:-------------------:|
-| [TRAF-1 - Traffic Manager Monitor Status Should be Online](#traf-1---traffic-manager-monitor-status-should-be-online)                                     |   Availability    |  High  | Preview |         No          |
-| [TRAF-2 - Traffic manager profiles should have more than one endpoint](#traf-2---traffic-manager-profiles-should-have-more-than-one-endpoint)             |   Availability    |  High  | Preview |         No          |
-| [TRAF-3 - Configure at least one endpoint within a another region](#traf-3---configure-at-least-one-endpoint-within-a-another-region)                     | Disaster Recovery | Medium | Preview |         No          |
-| [TRAF-4 - TTL value of user profiles should be in 60 Seconds](#traf-4---ttl-value-of-user-profiles-should-be-in-60-seconds)                               | System Efficiency | Medium | Preview |         No          |
-| [TRAF-5 - Ensure endpoint configured to (All World) for geographic profiles](#traf-5---ensure-endpoint-configured-to-all-world-for-geographic-profiles) | Disaster Recovery | Medium | Preview |         Yes         |
+| [TRAF-1 - Traffic Manager Monitor Status Should be Online](#traf-1---traffic-manager-monitor-status-should-be-online)                                     |   Availability    |  High  | Preview |         Yes          |
+| [TRAF-2 - Traffic manager profiles should have more than one endpoint](#traf-2---traffic-manager-profiles-should-have-more-than-one-endpoint)             |   Availability    |  High  | Preview |         Yes          |
+| [TRAF-3 - Configure at least one endpoint within a another region](#traf-3---configure-at-least-one-endpoint-within-a-another-region)                     | Disaster Recovery | Medium | Preview |         No        |
+| [TRAF-5 - Ensure endpoint configured to (All World) for geographic profiles](#traf-5---ensure-endpoint-configured-to-all-world-for-geographic-profiles) | Disaster Recovery | Medium | Preview |         No        |
 
 {{< /table >}}
 
@@ -46,7 +45,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [Enable or disable health checks](https://learn.microsoft.com/ja-jp/azure/traffic-manager/traffic-manager-monitoring#enable-or-disable-health-checks-preview)
 - [Troubleshooting degraded state on Azure Traffic Manager](https://learn.microsoft.com/ja-jp/azure/traffic-manager/traffic-manager-troubleshooting-degraded)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 {{< code lang="sql" file="code/traf-1/traf-1.kql" >}} {{< /code >}}
@@ -67,7 +66,7 @@ Azure Traffic Manager を構成するときは、ワークロードを別のイ�
 
 - [Traffic Manager Endpoint Types](https://learn.microsoft.com/ja-jp/azure/traffic-manager/traffic-manager-endpoint-types)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -92,36 +91,11 @@ Azure Traffic Manager を構成するときは、ワークロードを別のイ�
 - [Reliability recommendations
 ](https://learn.microsoft.com/ja-jp/azure/advisor/advisor-reference-reliability-recommendations#add-at-least-one-more-endpoint-to-the-profile-preferably-in-another-azure-region)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
 {{< code lang="sql" file="code/traf-3/traf-3.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-<br><br>
-
-### TRAF-4 - ユーザープロファイルの TTL 値は 60 秒にする必要があります
-
-**Category: System Efficiency**
-
-**Impact: Medium**
-
-**Guidance**
-
-Time to Live (TTL) は、クライアントが Azure Traffic Manager に要求を行ったときに取得する応答の最新度に影響します。TTL 値を減らすと、フェールオーバーの場合に、クライアントは機能しているエンドポイントに高速にルーティングされます。TTL を 60 秒に設定して、トラフィックを正常性エンドポイントにできるだけ早くルーティングします。
-
-**Resources**
-
-- [Configure DNS Time to Live to 60 seconds).](https://learn.microsoft.com/ja-jp/azure/advisor/advisor-reference-performance-recommendations#configure-dns-time-to-live-to-60-seconds)
-- [Traffic Manager profile - ProfileTTL (Configure DNS Time to Live to 60 seconds).](https://aka.ms/Um3xr5)
-
-**Resource Graph Query/Scripts**
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="sql" file="code/traf-4/traf-4.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 
@@ -142,7 +116,7 @@ Time to Live (TTL) は、クライアントが Azure Traffic Manager に要求�
 - [Add an endpoint configured to "All (World)"](https://learn.microsoft.com/ja-jp/azure/advisor/advisor-reference-reliability-recommendations#add-an-endpoint-configured-to-all-world)
 - [Traffic Manager profile - GeographicProfile (Add an endpoint configured to ""All (World)"").](https://aka.ms/Rf7vc5)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

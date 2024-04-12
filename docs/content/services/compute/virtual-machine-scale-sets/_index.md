@@ -14,17 +14,17 @@ The presented resiliency recommendations in this guidance include Virtual Machin
 {{< table style="table-striped" >}}
 | Recommendation | Category | Impact | State | ARG Query Available |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:------:|:-------:|:-------------------:|
-| [VMSS-1 - Deploy VMSS with Flex orchestration mode instead of Uniform](#vmss-1---deploy-vmss-with-flex-orchestration-mode-instead-of-uniform) | System Efficiency | Medium | Preview | Yes |
-| [VMSS-2 - Enable VMSS application health monitoring](#vmss-2---enable-vmss-application-health-monitoring) | Monitoring | Medium | Preview | Yes |
-| [VMSS-3 - Enable Automatic Repair policy](#vmss-3---enable-automatic-repair-policy) | Automation | High | Preview | Yes |
-| [VMSS-4 - Configure VMSS autoscale to custom and configure the scaling metrics](#vmss-4---configure-vmss-autoscale-to-custom-and-configure-the-scaling-metrics) | System Efficiency | High | Preview | Yes |
-| [VMSS-5 - Enable Predictive Autoscale and configure at least for Forecast Only](#vmss-5---enable-predictive-autoscale-and-configure-at-least-for-forecast-only) | System Efficiency | Low | Preview | Yes |
-| [VMSS-6 - Disable Force strictly even balance across zones to avoid scale in and out fail attempts](#vmss-6---disable-force-strictly-even-balance-across-zones-to-avoid-scale-in-and-out-fail-attempts) | Availability | High | Preview | Yes |
+| [VMSS-1 - Deploy VMSS with Flex orchestration mode instead of Uniform](#vmss-1---deploy-vmss-with-flex-orchestration-mode-instead-of-uniform) | System Efficiency | Medium | Verified | Yes |
+| [VMSS-2 - Enable VMSS application health monitoring](#vmss-2---enable-vmss-application-health-monitoring) | Monitoring | Medium | Verified | Yes |
+| [VMSS-3 - Enable Automatic Repair policy](#vmss-3---enable-automatic-repair-policy) | Automation | High | Verified | Yes |
+| [VMSS-4 - Configure VMSS autoscale to custom and configure the scaling metrics](#vmss-4---configure-vmss-autoscale-to-custom-and-configure-the-scaling-metrics) | System Efficiency | High | Verified | Yes |
+| [VMSS-5 - Enable Predictive Autoscale and configure at least for Forecast Only](#vmss-5---enable-predictive-autoscale-and-configure-at-least-for-forecast-only) | System Efficiency | Low | Verified | Yes |
+| [VMSS-6 - Disable Force strictly even balance across zones to avoid scale in and out fail attempts](#vmss-6---disable-force-strictly-even-balance-across-zones-to-avoid-scale-in-and-out-fail-attempts) | Availability | High | Verified | Yes |
 | [VMSS-7 - Configure Allocation Policy Spreading algorithm to Max Spreading](#vmss-7---configure-allocation-policy-spreading-algorithm-to-max-spreading) | System Efficiency | Medium | Preview | Yes |
-| [VMSS-8 - Deploy VMSS across availability zones with VMSS Flex](#vmss-8---deploy-vmss-across-availability-zones-with-vmss-flex) | Availability | High | Preview | Yes |
-| [VMSS-9 - Set Patch orchestration options to Azure-orchestrated](#vmss-9---set-patch-orchestration-options-to-azure-orchestrated) | Automation | Low | Preview | Yes |
-| [VMSS-10 - Upgrade VMSS Image versions scheduled to be deprecated or already retired](#vmss-10---upgrade-vmss-image-versions-scheduled-to-be-deprecated-or-already-retired) | Governance | High | Preview | Yes |
-| [VMSS-11 - Production VMSS instances should be using SSD disks](#vmss-11---production-vmss-instances-should-be-using-ssd-disks) | System Efficiency | High | Preview | Yes |
+| [VMSS-8 - Deploy VMSS across availability zones with VMSS Flex](#vmss-8---deploy-vmss-across-availability-zones-with-vmss-flex) | Availability | High | Verified | Yes |
+| [VMSS-9 - Set Patch orchestration options to Azure-orchestrated](#vmss-9---set-patch-orchestration-options-to-azure-orchestrated) | Automation | Low | Verified | Yes |
+| [VMSS-10 - Upgrade VMSS Image versions scheduled to be deprecated or already retired](#vmss-10---upgrade-vmss-image-versions-scheduled-to-be-deprecated-or-already-retired) | Governance | High | Verified | No |
+| [VMSS-11 - Production VMSS instances should be using SSD disks](#vmss-11---production-vmss-instances-should-be-using-ssd-disks) | System Efficiency | High | Verified | Yes |
 
 {{< /table >}}
 
@@ -51,7 +51,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [When to use VMSS instead of VMs](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview#when-to-use-scale-sets-instead-of-virtual-machines)
 - [Azure Well-Architected Framework review - Virtual Machines and Scale Sets](https://learn.microsoft.com/ja-jp/azure/well-architected/services/compute/virtual-machines/virtual-machines-review)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -75,7 +75,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Using Application Health extension with Virtual Machine Scale Sets](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension?tabs=rest-api)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -101,7 +101,7 @@ Azure Virtual Machine Scale Sets のインスタンスの自動修復を有効�
 
 - [Automatic instance repairs for Azure Virtual Machine Scale Sets](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-instance-repairs#requirements-for-using-automatic-instance-repairs)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -128,7 +128,7 @@ Azure Virtual Machine Scale Sets のインスタンスの自動修復を有効�
 - [Get started with autoscale in Azure](https://learn.microsoft.com/ja-jp/azure/azure-monitor/autoscale/autoscale-get-started?WT.mc_id=Portal-Microsoft_Azure_Monitoring)
 - [Overview of autoscale in Azure](https://learn.microsoft.com/ja-jp/azure/azure-monitor/autoscale/autoscale-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -152,7 +152,7 @@ Azure Virtual Machine Scale Sets のインスタンスの自動修復を有効�
 
 - [Use predictive autoscale to scale out before load demands in virtual machine scale sets](https://learn.microsoft.com/ja-jp/azure/azure-monitor/autoscale/autoscale-predictive)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -182,7 +182,7 @@ Azure VMSS には、回復性を高めるために可用性ゾーン間で VM �
 
 - [Use scale-in policies with Azure Virtual Machine Scale Sets](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-scale-in-policy)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -206,7 +206,7 @@ Azure VMSS には、回復性を高めるために可用性ゾーン間で VM �
 
 - [Availability Considerations](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#availability-considerations)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -231,7 +231,7 @@ VMSS を作成するときは、可用性ゾーンを使用して、データセ
 - [Create a Virtual Machine Scale Set that uses Availability Zones](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones)
 - [Update scale set to add availability zones](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2#update-scale-set-to-add-availability-zones)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -254,8 +254,9 @@ Azure VM の VM ゲストの自動修正プログラム適用を有効にする�
 **Resources**
 
 - [Automatic VM Guest Patching for Azure VMs](https://learn.microsoft.com/ja-jp/azure/virtual-machines/automatic-vm-guest-patching)
+- [Auto OS Image Upgrades](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -273,13 +274,13 @@ Azure VM の VM ゲストの自動修正プログラム適用を有効にする�
 
 **Guidance**
 
-イメージの廃止後の中断を回避するために、イメージの現在のバージョンが使用されていることを確認します。これにより、これらのイメージが非推奨になっても、イメージが非推奨になると追加の VM または VMSS をデプロイできなくなるため、影響を受けません。
+発行元が OS イメージを引き続きサポートし、中断やセキュリティ ギャップを回避します。VM の発行元、オファー、SKU の情報を確認して、サポートされているイメージで実行されていることを確認してください。イメージの廃止に関する通知を受け取るには、ゲストの自動パッチ適用または OS イメージの自動アップグレードを有効にしてください。
 
 **Resources**
 
 - [Deprecated Azure Marketplace images](https://learn.microsoft.com/ja-jp/azure/virtual-machines/deprecated-images)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -303,7 +304,7 @@ Azure VM の VM ゲストの自動修正プログラム適用を有効にする�
 
 - [Disk Comparison](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-types#disk-type-comparison)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

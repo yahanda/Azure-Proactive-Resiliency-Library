@@ -19,26 +19,25 @@ The presented resiliency recommendations in this guidance include Virtual Machin
 | [VM-3 - Migrate VMs using availability sets to VMSS Flex](#vm-3---migrate-vms-using-availability-sets-to-vmss-flex) | Availability | High | Verified | Yes |
 | [VM-4 - Replicate VMs using Azure Site Recovery](#vm-4---replicate-vms-using-azure-site-recovery) | Disaster Recovery | Medium | Verified | Yes |
 | [VM-5 - Use Managed Disks for Virtual Machine disks](#vm-5---use-managed-disks-for-vm-disks) | Availability | High | Verified | Yes |
-| [VM-6 - Host application or database data on a data disk](#vm-6---host-application-or-database-data-on-a-data-disk) | System Efficiency | Low | Verified | Yes |
+| [VM-6 - Host database data on a data disk](#vm-6---host-database-data-on-a-data-disk) | System Efficiency | Low | Verified | Yes |
 | [VM-7 - Enable Backups on your VMs](#vm-7---backup-vms-with-azure-backup-service) | Disaster Recovery | Medium | Verified | Yes |
 | [VM-8 - Production VMs should be using SSD disks](#vm-8---production-vms-should-be-using-ssd-disks) | System Efficiency | High | Verified | Yes |
 | [VM-9 - There are VMs in Stopped state](#vm-9---review-vms-in-stopped-state) | Governance | Low | Verified | Yes |
 | [VM-10 - Accelerated Networking is not enabled](#vm-10---enable-accelerated-networking-accelnet) | System Efficiency | Medium | Verified | Yes |
 | [VM-11 - Accelerated Networking is enabled, make sure you update the GuestOS NIC driver every 6 months](#vm-11---when-accelnet-is-enabled-you-must-manually-update-the-guestos-nic-driver) | Governance | Low | Verified | No |
 | [VM-12 - VMs should not have a Public IP directly associated](#vm-12---vms-should-not-have-a-public-ip-directly-associated) | Access & Security | Medium | Verified | Yes |
-| [VM-13 - VM network interfaces and associated subnets both have a Network Security Group (NSG) associated](#vm-13---vm-network-interfaces-and-associated-subnets-both-have-a-network-security-group-nsg-associated) | Access & Security | Low | Verified | No |
+| [VM-13 - VM network interfaces and associated subnets both have a Network Security Group (NSG) associated](#vm-13---vm-network-interfaces-and-associated-subnets-both-have-a-network-security-group-nsg-associated) | Access & Security | Low | Verified | Yes |
 | [VM-14 - IP Forwarding should only be enabled for Network Virtual Appliances](#vm-14---ip-forwarding-should-only-be-enabled-for-network-virtual-appliances) | Access & Security | Medium | Verified | Yes |
 | [VM-15 - Customer DNS Servers should be configured in the Virtual Network level](#vm-15---customer-dns-servers-should-be-configured-in-the-virtual-network-level) | Networking | Low | Verified | Yes |
 | [VM-16 - Shared disks should only be enabled in Clustered servers](#vm-16---shared-disks-should-only-be-enabled-in-clustered-servers) | Storage | Medium | Verified | Yes |
 | [VM-17 - The Network access to the VM disk is set to Enable Public access from all networks](#vm-17---network-access-to-the-vm-disk-should-be-set-to-disable-public-access-and-enable-private-access) | Access & Security | Low | Verified | Yes |
 | [VM-18 - Virtual Machine is not compliant with Azure Policies](#vm-18---ensure-that-your-vms-are-compliant-with-azure-policies) | Governance | Low | Verified | Yes |
-| [VM-19 - Enable disk encryption, Enable data at rest encryption by default](#vm-19---enable-disk-encryption-and-data-at-rest-encryption-by-default) | Access & Security | Medium | Verified | Yes |
+| [VM-19 - Enable advanced encryption options for your managed disks](#vm-19---enable-advanced-encryption-options-for-your-managed-disks) | Access & Security | Medium | Verified | No |
 | [VM-20 - Enable Insights to get more visibility into the health and performance of your virtual machine](#vm-20---enable-vm-insights) | Monitoring | Low | Verified | Yes |
 | [VM-21 - Configure diagnostic settings for all Azure Virtual Machines](#vm-21---configure-diagnostic-settings-for-all-azure-virtual-machines) | Monitoring | Low | Preview | Yes |
-| [VM-22 - Use maintenance configurations for the Virtual Machine](#vm-22---use-maintenance-configurations-for-the-vms) | Governance | High | Preview | Yes |
-| [VM-23 - Avoid using A or B-Series VM Sku for production VMs that need the full performance of the CPU continuously](#vm-23---avoid-using-a-or-b-series-vm-sku-for-production-vms-that-need-the-full-performance-of-the-cpu-continuously) | System Efficiency | High | Preview | Yes |
-| [VM-24 - Mission Critical Workloads should be using Premium or Ultra Disks](#vm-24---mission-critical-workloads-should-be-using-premium-or-ultra-disks) | System Efficiency | High | Preview | Yes |
-| [VM-26 - Ensure all VMs part of a SQL Always-on cluster have the same specifications and configurations](#vm-26---ensure-all-vms-part-of-a-sql-always-on-cluster-have-the-same-specifications-and-configurations) | Application Resiliency | High | Preview | No |
+| [VM-22 - Use maintenance configurations for the Virtual Machine](#vm-22---use-maintenance-configurations-for-the-vms) | Governance | High | Verified | Yes |
+| [VM-23 - Avoid using A or B-Series VM Sku for production VMs that need the full performance of the CPU continuously](#vm-23---avoid-using-a-or-b-series-vm-sku-for-production-vms-that-need-the-full-performance-of-the-cpu-continuously) | System Efficiency | High | Verified | Yes |
+| [VM-24 - Mission Critical Workloads should be using Premium or Ultra Disks](#vm-24---mission-critical-workloads-should-be-using-premium-or-ultra-disks) | System Efficiency | High | Verified | Yes |
 | [VM-27 - Use Azure Boost VMs for Maintenance sensitive workload](#vm-27---use-azure-boost-vms-for-maintenance-sensitive-workload) | Availability | Medium | Preview | No |
 | [VM-28 - Enable Scheduled Events for Maintenance sensitive workload VMs](#vm-28---enable-scheduled-events-for-maintenance-sensitive-workload-vms) | Availability | Medium | Preview | No |
 
@@ -67,7 +66,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [What has changed with Flexible orchestration mode](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes#what-has-changed-with-flexible-orchestration-mode)
 - [Attach or detach a Virtual Machine to or from a Virtual Machine Scale Set](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-attach-detach-vm?branch=main&tabs=portal-1%2Cportal-2%2Cportal-3)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -91,7 +90,7 @@ Azure Availability Zones は、各 Azure リージョン内の物理的に分離
 
 - [Create virtual machines in an availability zone using the Azure portal](https://learn.microsoft.com/ja-jp/azure/virtual-machines/create-portal-availability-zone?tabs=standard)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -120,7 +119,7 @@ N 層アプリケーションでは、各アプリケーション層を独自の
 
 - [Resiliency checklist for Virtual Machines](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#virtual-machines)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -145,7 +144,7 @@ Site Recovery を使用して Azure VM をレプリケートすると、すべ�
 - [Resiliency checklist for Virtual Machines](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#virtual-machines)
 - [Run a test failover (disaster recovery drill) to Azure](https://learn.microsoft.com/ja-jp/azure/site-recovery/site-recovery-test-failover-to-azure)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -171,7 +170,7 @@ Azure アンマネージド ディスクは、2025 年 9 月 30 日に完全に�
 - [Migrate Windows VM from unmanaged disks to managed disks](https://learn.microsoft.com/ja-jp/azure/virtual-machines/windows/convert-unmanaged-to-managed-disks)
 - [Migrate Linux VM from unmanaged disks to managed disks](https://learn.microsoft.com/ja-jp/azure/virtual-machines/linux/convert-unmanaged-to-managed-disks)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -181,7 +180,7 @@ Azure アンマネージド ディスクは、2025 年 9 月 30 日に完全に�
 
 <br><br>
 
-### VM-6 - データ ディスク上にアプリケーションまたはデータベース データをホストします
+### VM-6 - データベース データをデータ ディスクにホストします
 
 **Category: System Efficiency**
 
@@ -189,13 +188,15 @@ Azure アンマネージド ディスクは、2025 年 9 月 30 日に完全に�
 
 **Guidance**
 
-データ ディスクは、アプリケーション データや保持する必要があるその他のデータを格納するために仮想マシンに接続されるマネージド ディスクです。データ ディスクは SCSI ドライブとして登録され、選択した文字でラベル付けされます。また、データ ディスクでデータをホストすると、データのバックアップや復元の柔軟性が高まり、仮想マシンとオペレーティング システム全体を移行することなくディスクを移行できます。また、要件を満たすさまざまな種類、サイズ、パフォーマンスの別のディスク SKU を選択することもできます。
+データベース データを OS ディスクではなくデータ ディスクでホストします。
+データ ディスクは、保持する必要があるデータを格納するために仮想マシンに接続されるマネージド ディスクです。データ ディスクは SCSI ドライブとして登録され、選択した文字でラベル付けされます。データ ディスクでデータをホストすると、データのバックアップや復元の柔軟性が高まり、仮想マシンとオペレーティング システム全体を移行することなくディスクを移行できます。要件を満たす、さまざまな種類、サイズ、パフォーマンスの別のディスク SKU を選択できます。
 
 **Resources**
 
 - [Introduction to Azure managed disks - Data disks](https://learn.microsoft.com/ja-jp/azure/virtual-machines/managed-disks-overview#data-disk)
+- [Azure managed disk types](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-types)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -219,7 +220,7 @@ Azure アンマネージド ディスクは、2025 年 9 月 30 日に完全に�
 
 - [What is the Azure Backup service?](https://learn.microsoft.com/ja-jp/azure/backup/backup-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -249,11 +250,12 @@ Standard HDD から Premium SSD ディスクにアップグレードする場合
 - アップグレードには VM の再起動が必要であり、このプロセスは完了するまでに 3 分から 5 分かかります。
 - VM がミッション クリティカルな運用 VM の場合は、Premium ディスクのコストに対して可用性の向上を評価します。
 
+This does not apply to ephemeral disks
 **Resources**
 
 - [Azure managed disk types](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-types#premium-ssd)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -277,7 +279,7 @@ Azure Virtual Machines (VM) インスタンスは、さまざまな状態を経�
 
 - [States and billing status of Azure Virtual Machines](https://learn.microsoft.com/ja-jp/azure/virtual-machines/states-billing?context=%2Ftroubleshoot%2Fazure%2Fvirtual-machines%2Fcontext%2Fcontext#power-states-and-billing)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -303,7 +305,7 @@ Azure Virtual Machines (VM) インスタンスは、さまざまな状態を経�
 
 - [Accelerated Networking (AccelNet) overview](https://learn.microsoft.com/ja-jp/azure/virtual-network/accelerated-networking-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -327,7 +329,7 @@ Azure Virtual Machines (VM) インスタンスは、さまざまな状態を経�
 
 - [Accelerated Networking (AccelNet) overview](https://learn.microsoft.com/ja-jp/azure/virtual-network/accelerated-networking-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -351,7 +353,7 @@ Azure Virtual Machines (VM) インスタンスは、さまざまな状態を経�
 
 - [Use Source Network Address Translation (SNAT) for outbound connections](https://learn.microsoft.com/ja-jp/azure/load-balancer/load-balancer-outbound-connections)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -375,7 +377,7 @@ Azure Virtual Machines (VM) インスタンスは、さまざまな状態を経�
 
 - [How network security groups filter network traffic](https://learn.microsoft.com/ja-jp/azure/virtual-network/network-security-group-how-it-works#intra-subnet-traffic)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -405,7 +407,7 @@ IP 転送により、仮想マシンのネットワーク インターフェイ�
 
 - [Enable or disable IP forwarding](https://learn.microsoft.com/ja-jp/azure/virtual-network/virtual-network-network-interface?tabs=network-interface-portal#enable-or-disable-ip-forwarding)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -429,7 +431,7 @@ IP 転送により、仮想マシンのネットワーク インターフェイ�
 
 - [Name resolution for resources in Azure virtual networks](https://learn.microsoft.com/ja-jp/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -451,9 +453,10 @@ Azure 共有ディスクは、マネージド ディスクを複数の仮想マ�
 
 **Resources**
 
-- [Azure Shared Disks](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-shared-enable?tabs=azure-portal)
+- [Azure Shared Disk Introduction](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-shared)
+- [Enable Shared Disks](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-shared-enable?tabs=azure-portal)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -471,13 +474,13 @@ Azure 共有ディスクは、マネージド ディスクを複数の仮想マ�
 
 **Guidance**
 
-「パブリック・アクセスを無効にしてプライベート・アクセスを有効にする」に変更し、プライベート・エンドポイントを作成することをお勧めします
+「パブリック アクセスを無効にしてプライベート アクセスを有効にする」に変更し、プライベート・エンドポイントを作成することをお勧めします。
 
 **Resources**
 
 - [Restrict import/export access for managed disks using Azure Private Link](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-enable-private-links-for-import-export-portal)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -502,7 +505,7 @@ Azure 共有ディスクは、マネージド ディスクを複数の仮想マ�
 - [Policy-driven governance](https://learn.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/landing-zone/design-principles#policy-driven-governance)
 - [Azure Policy Regulatory Compliance controls for Azure Virtual Machines](https://learn.microsoft.com/ja-jp/azure/virtual-machines/security-policy)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -512,7 +515,7 @@ Azure 共有ディスクは、マネージド ディスクを複数の仮想マ�
 
 <br><br>
 
-### VM-19 - ディスクの暗号化と保存データの暗号化を既定で有効にします
+### VM-19 - マネージド ディスクの高度な暗号化オプションを有効にします
 
 **Category: Access & Security**
 
@@ -520,18 +523,18 @@ Azure 共有ディスクは、マネージド ディスクを複数の仮想マ�
 
 **Guidance**
 
-マネージド ディスクで使用できる暗号化には、Azure Disk Encryption (ADE)、サーバー側暗号化 (SSE)、ホストでの暗号化など、いくつかの種類があります。
+Azure Disk Storage サーバー側の暗号化 (保存時の暗号化または Azure Storage 暗号化とも呼ばれます) は、ストレージ クラスターに保持されるときに、Azure マネージド ディスク (OS およびデータ ディスク) に格納されているデータを自動的に暗号化します。マネージド ディスクで使用できる高度な暗号化オプションには、Azure Disk Encryption (ADE)、ホストでの暗号化、機密ディスクの暗号化など、いくつかの種類があります。
 
-- Azure Disk Encryption は、組織のセキュリティとコンプライアンスのコミットメントを満たすために、データを保護および保護するのに役立ちます。
-- Azure Disk Storage サーバー側の暗号化 (保存時の暗号化または Azure Storage 暗号化とも呼ばれます) は、ストレージ クラスターに保持されるときに、Azure マネージド ディスク (OS およびデータ ディスク) に格納されているデータを自動的に暗号化します。
+- ADE は、Linux の DM-Crypt 機能または Windows の BitLocker 機能を使用して、VM 内の Azure 仮想マシン (VM) のディスクを暗号化します。
 - ホストでの暗号化により、VM をホストしている VM ホストに格納されているデータが保存時に暗号化され、暗号化されたストレージ クラスターに流れるようになります。
 - 機密ディスクの暗号化は、ディスク暗号化キーを仮想マシンの TPM にバインドし、保護されたディスク コンテンツに VM からのみアクセスできるようにします。
+
 
 **Resources**
 
 - [Overview of managed disk encryption options](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disk-encryption-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -556,7 +559,7 @@ VM insights は、仮想マシンと仮想マシン スケール セットのパ
 - [Overview of VM insights](https://learn.microsoft.com/ja-jp/azure/azure-monitor/vm/vminsights-overview)
 - [Did the extension install properly?](https://learn.microsoft.com/ja-jp/azure/azure-monitor/vm/vminsights-troubleshoot#did-the-extension-install-properly)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -591,7 +594,7 @@ VM insights は、仮想マシンと仮想マシン スケール セットのパ
 
 - [Diagnostic settings in Azure Monitor](https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -615,7 +618,7 @@ VM insights は、仮想マシンと仮想マシン スケール セットのパ
 
 - [Use maintenance configurations to control and manage the VM updates](https://learn.microsoft.com/ja-jp/azure/virtual-machines/maintenance-configurations)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -641,7 +644,7 @@ B シリーズの VM は、Web サーバー、概念実証、小規模なデー�
 
 - [B-series burstable virtual machine sizes](https://learn.microsoft.com/ja-jp/azure/virtual-machines/sizes-b-series-burstable)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -669,35 +672,11 @@ Azure Ultra Disks は、Azure 仮想マシン (VM) 向けの最高パフォー�
 
 - [Disk type comparison and decision tree](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-types#disk-type-comparison)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
 {{< code lang="sql" file="code/vm-24/vm-24.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-<br><br>
-
-### VM-26 - SQL Always-on クラスターのすべての VM の仕様と構成が同じであることを確認します
-
-**Category: Availability**
-
-**Impact: High**
-
-**Guidance**
-
-メンバーまたは SQL Always-on クラスターであるすべての VM は、同じ VM SKU、同じ数のデータ ディスク、同じディスク SKU、同じ数のネットワーク インターフェイス、同じ VM 拡張機能などを使用する必要があります。
-
-**Resources**
-
-- [Prerequisites, restrictions, and recommendations for Always On availability groups](https://learn.microsoft.com/ja-jp/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-ver16)
-
-**Resource Graph Query/Scripts**
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="sql" file="code/vm-26/vm-26.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 
@@ -718,7 +697,7 @@ Azure Ultra Disks は、Azure 仮想マシン (VM) 向けの最高パフォー�
 - [Microsoft Azure Boost](https://learn.microsoft.com/ja-jp/azure/azure-boost/overview)
 - [Announcing the general availability of Azure Boost](https://aka.ms/AzureBoostGABlog)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -744,7 +723,7 @@ Azure Ultra Disks は、Azure 仮想マシン (VM) 向けの最高パフォー�
 - [Azure Metadata Service: Scheduled Events for Linux VMs](https://learn.microsoft.com/ja-jp/azure/virtual-machines/linux/scheduled-events)
 - [Azure Metadata Service: Scheduled Events for Windows VMs](https://learn.microsoft.com/ja-jp/azure/virtual-machines/windows/scheduled-events)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

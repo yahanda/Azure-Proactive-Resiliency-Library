@@ -45,7 +45,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Active Geo Replication](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/active-geo-replication-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -70,7 +70,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [AutoFailover Groups](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/auto-failover-group-overview?tabs=azure-powershell)
 - [DR Design](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/designing-cloud-solutions-for-disaster-recovery)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -94,7 +94,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 -[Zone Redundant Databases](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/high-availability-sla)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -118,7 +118,7 @@ Azure SQL Database は、推移的なインフラストラクチャの障害に�
 
 - [How to Implement Retry Logic](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/troubleshoot-common-connectivity-issues)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -144,7 +144,7 @@ Azure SQL Database は、推移的なインフラストラクチャの障害に�
 - [Azure SQL Database Monitoring](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/monitoring-sql-database-azure-monitor)
 - [Monitoring SQL Database Reference](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/monitoring-sql-database-azure-monitor-reference)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -169,7 +169,7 @@ Azure Key Vault (AKV) を使用して、Always Encrypted 構成に関連する�
 - [Azure Key Vault](https://learn.microsoft.com/ja-jp/azure/key-vault/general/overview)
 - [Getting Started with Always Encrypted](https://learn.microsoft.com/ja-jp/azure/azure-sql/database/always-encrypted-landing?view=azuresql)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

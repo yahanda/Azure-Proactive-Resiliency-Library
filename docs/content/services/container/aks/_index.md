@@ -21,13 +21,13 @@ The presented resiliency recommendations in this guidance include Aks and associ
 | [AKS-5 - Enable the cluster auto-scaler on an existing cluster](#aks-5---enable-the-cluster-auto-scaler-on-an-existing-cluster)                                                                                             | System Efficiency |  High   | Preview |         Yes         |
 | [AKS-6 - Back up Azure Kubernetes Service](#aks-6---back-up-azure-kubernetes-service)                                                                                                                                       | Disaster Recovery |   Low   | Preview |         No          |
 | [AKS-7 - Plan an AKS version upgrade](#aks-7---plan-an-aks-version-upgrade)                                                                                                                                                 |    Compliance     |  High   | Preview |         No          |
-| [AKS-8 - Ensure that Persistent Volumes in storage account are redundant for Pods with stateful applications](#aks-8---ensure-that-persistent-volumes-in-storage-account-are-redundant-for-pods-with-stateful-applications) |   Availability    |   Low   | Preview |         No          |
-| [AKS-9 - Upgrade Persistent Volumes with deprecated version to Azure CSI drivers](#aks-9---upgrade-persistent-volumes-with-deprecated-version-to-azure-csi-drivers)                                                         |   Storage  | High   | Preview |   No    |
+| [AKS-8 - Use zone-redundant storage for persistent volumes when running multi-zone AKS](#aks-8---use-zone-redundant-storage-for-persistent-volumes-when-running-multi-zone-aks) |   Availability    |   Low   | Verified |         No          |
+| [AKS-9 - Upgrade Persistent Volumes using in-tree drivers to Azure CSI drivers](#aks-9---upgrade-persistent-volumes-using-in-tree-drivers-to-azure-csi-drivers)                                                         |   Storage  | High   | Verified |   No    |
 | [AKS-10 - Implement Resource Quota to ensure that Kubernetes resources do not exceed hard resource limits.](#aks-10---implement-resource-quota-to-ensure-that-kubernetes-resources-do-not-exceed-hard-resource-limits)      | System Efficiency |   Low   | Preview |         No          |
 | [AKS-11 - Attach Virtual Nodes (ACI) to the AKS cluster](#aks-11---attach-virtual-nodes-aci-to-the-aks-cluster)                                                                                                             | System Efficiency |   Low   | Preview |         No          |
 | [AKS-12 - Update AKS tier to Standard](#aks-12---update-aks-tier-to-standard)                                                                                                                                               |   Availability   |  High   | Preview |         Yes         |
 | [AKS-13 - Enable AKS Monitoring](#aks-13---enable-aks-monitoring)                                                                                                                                                           |    Monitoring     |  High   | Preview |         Yes         |
-| [AKS-14 - Use Ephemeral Disks on AKS clusters](#aks-14---use-ephemeral-disks-on-aks-clusters)                                                                                                                               | System Efficiency | Medium  | Preview |         No          |
+| [AKS-14 - Use Ephemeral OS disks on AKS clusters](#aks-14---use-ephemeral-os-disks-on-aks-clusters)                                                                                                                               | System Efficiency | Medium  | Verified |         No          |
 | [AKS-15 - Enable and remediate Azure Policies configured for AKS](#aks-15---enable-and-remediate-azure-policies-configured-for-aks)                                                                                         |    Governance     |   Low   | Preview |         No          |
 | [AKS-16 - Enable GitOps when using DevOps frameworks](#aks-16---enable-gitops-when-using-devops-frameworks)                                                                                                                 |    Automation     |   Low   | Preview |         Yes         |
 | [AKS-17 - Configure affinity or anti-affinity rules based on application requirements](#aks-17---configure-affinity-or-anti-affinity-rules-based-on-application-requirements)                                               |   Availability    |  High   | Preview |         No          |
@@ -36,7 +36,7 @@ The presented resiliency recommendations in this guidance include Aks and associ
 | [AKS-20 - Configure system nodepool count](#aks-20---configure-system-nodepool-count)                                         |   Availability    |  High   | Preview |         Yes          |
 | [AKS-21 - Configure user nodepool count](#aks-21---configure-user-nodepool-count)                                         |   Availability    |  High   | Preview |         Yes          |
 | [AKS-22 - Configure pod disruption budgets (PDBs)](#aks-22---configure-pod-disruption-budgets-pdbs)                                         |   Availability    |  Medium   | Preview |         No          |
-| [AKS-23 - Nodepool subnet size needs to accommodate maximum auto-scale settings](#aks-23---nodepool-subnet-size-needs-to-accommodate-maximum-auto-scale-settings)                                         |   Availability    |  High   | Preview |         No          |
+| [AKS-23 - Nodepool subnet size needs to accommodate maximum auto-scale settings](#aks-23---nodepool-subnet-size-needs-to-accommodate-maximum-auto-scale-settings)                                         |   Availability    |  High   | Preview |         Yes          |
 | [AKS-24 - Enforce resource quotas at the namespace level](#aks-24---enforce-resource-quotas-at-the-namespace-level)                                         |   Availability    |  High   | Preview |         No          |
 
 {{< /table >}}
@@ -66,7 +66,7 @@ aks クラスター、仮想マシン、ストレージ、データベースな�
 - [AKS Availability Zones](https://learn.microsoft.com/ja-jp/azure/aks/availability-zones)
 - [Zone Balancing](https://learn.microsoft.com/ja-jp/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#zone-balancing)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -92,7 +92,7 @@ AKS では、システム ノード プール内のノードに kubernetes.azure
 
 - [System and user node pools](https://learn.microsoft.com/ja-jp/azure/aks/use-system-pools?tabs=azure-cli#system-and-user-node-pools)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -118,7 +118,7 @@ AKS では、システム ノード プール内のノードに kubernetes.azure
 - [Use Azure role-based access control for AKS](https://learn.microsoft.com/ja-jp/azure/aks/manage-azure-rbac?source=recommendations)
 - [Manage AKS local accounts](https://learn.microsoft.com/ja-jp/azure/aks/manage-local-accounts-managed-azure-ad?source=recommendations)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -143,7 +143,7 @@ Azure CNI ネットワーク ソリューションには、ポッドへの IP �
 - [Configure Azure CNI networking](https://learn.microsoft.com/ja-jp/azure/aks/configure-azure-cni-dynamic-ip-allocation)
 - [Configure Azure CNI Overlay networking](https://learn.microsoft.com/ja-jp/azure/aks/azure-cni-overlay)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -176,7 +176,7 @@ Azure CNI ネットワーク ソリューションには、ポッドへの IP �
 - [Node pool scaling considerations and best practices](https://learn.microsoft.com/ja-jp/azure/aks/best-practices-performance-scale-large#node-pool-scaling)
 - [Best practices for basic scheduler features](https://learn.microsoft.com/ja-jp/azure/aks/operator-best-practices-scheduler)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -201,7 +201,7 @@ AKS は、バックアップ戦略を必要とするステートフル アプリ
 - [AKS Backups](https://learn.microsoft.com/ja-jp/azure/backup/azure-kubernetes-service-cluster-backup)
 - [Best Practices for AKS Backups](https://learn.microsoft.com/ja-jp/azure/aks/operator-best-practices-storage)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -228,7 +228,7 @@ AKS は、バックアップ戦略を必要とするステートフル アプリ
 - [Upgrade cluster](https://learn.microsoft.com/ja-jp/azure/aks/upgrade-cluster?tabs=azure-cli)
 - [Auto-upgrading cluster](https://learn.microsoft.com/ja-jp/azure/aks/auto-upgrade-cluster)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -238,7 +238,7 @@ AKS は、バックアップ戦略を必要とするステートフル アプリ
 
 <br><br>
 
-### AKS-8 - ストレージ アカウント内の永続ボリュームがステートフル アプリケーションを含むポッドに対して冗長であることを確認します
+### AKS-8 - マルチゾーン AKS の実行時に永続ボリュームにゾーン冗長ストレージを使用します
 
 **Category: Availability**
 
@@ -246,19 +246,25 @@ AKS は、バックアップ戦略を必要とするステートフル アプリ
 
 **Guidance**
 
-Azure Storage アカウント内のデータは、常にプライマリ リージョンで 3 回レプリケートされます。Azure Storage for Persistent Volumes には、プライマリ リージョンまたはペア リージョンでデータをレプリケートする方法に関する他のオプションが用意されています。
+ゾーンの停止から保護するために可用性ゾーン間でデータをレプリケーションする必要があるアプリケーションの場合、お客様はマルチゾーン AKS クラスターでゾーン冗長ストレージ (ZRS) を活用する必要があります。ZRS は、プライマリ リージョン内の 3 つの Azure 可用性ゾーン間でデータを同期的にレプリケートします。
 
-- LRS は、1 つの物理的な場所でデータを 3 回同期的にレプリケートします。レプリケーションは最もコストがかかりませんが、高可用性と持続性を備えたアプリにはお勧めしません。LRS は イレブン ナイン の耐久性を提供します。
-- ZRS は、プライマリ リージョンの 3 つの可用性ゾーン間でデータを同期的にコピーします。ZRS は、ゾーン間で高可用性を必要とするアプリに推奨されます。ZRS は トゥエルブ ナイン の耐久性を提供します。
-
-AKS では、Premium_ZRS と StandardSSD_ZRS のディスクの種類がサポートされています。ZRS ディスクは、特定のノードと同じゾーンにディスク ボリュームを併置する必要があるという制限なしに、ゾーン ノードまたは非ゾーン ノードでスケジュールできます。
+- Azure ディスク: ストレージ クラスでディスク SKU を StandardSSD_ZRS または Premium_ZRS に設定して、ZRS ディスクを使用します。また、AKS v1.29 以降、マルチゾーン AKS クラスターには、ZRS ディスクを使用する既定のストレージ クラスがあります。
+- Azure Container Storage: お客様は、ストレージ プールを作成し、SKU として StandardSSD_ZRS または Premium_ZRSを指定することで、Azure Container Storage で ZRS ディスクを活用できます。また、マルチゾーンストレージプールを作成して、合計ストレージ容量をゾーンに分散させることもできます。
+- Azure Files: ストレージ クラスで SKU を Standard_ZRS または Premium_ZRS に設定して、ZRS ファイルを使用します。
+- Azure BLOB: ストレージ クラスで SKU を Standard_ZRS または Premium_ZRS に設定して、ZRS BLOB を使用します。
 
 **Resources**
 
-- [Azure Disk CSI Driver](https://learn.microsoft.com/ja-jp/azure/aks/azure-disk-csi#azure-disk-csi-driver-features)
-- [Virtual Machine Disk Redundancy](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-redundancy)
+- [Availability zones overview](https://learn.microsoft.com/ja-jp/azure/reliability/availability-zones-overview?tabs=azure-cli)
+- [Zone-redundant storage](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-redundancy#zone-redundant-storage)
+- [ZRS disks](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-redundancy#zone-redundant-storage-for-managed-disks)
+- [Convert a disk from LRS to ZRS](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-migrate-lrs-zrs)
+- [Enable multi-zone storage redundancy in Azure Container Storage](https://learn.microsoft.com/ja-jp/azure/storage/container-storage/enable-multi-zone-redundancy)
+- [ZRS files](https://learn.microsoft.com/ja-jp/azure/storage/files/files-redundancy#zone-redundant-storage)
+- [Change the redundancy configuration for a storage account](https://learn.microsoft.com/ja-jp/azure/storage/common/redundancy-migration)
 
-**Resource Graph Query/Scripts**
+
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -268,7 +274,7 @@ AKS では、Premium_ZRS と StandardSSD_ZRS のディスクの種類がサポ�
 
 <br><br>
 
-### AKS-9 - 非推奨バージョンの永続ボリュームを Azure CSI ドライバーにアップグレードします
+### AKS-9 - ツリー内ドライバーを使用した永続ボリュームを Azure CSI ドライバーにアップグレードします
 
 **Category: Storage**
 
@@ -276,14 +282,14 @@ AKS では、Premium_ZRS と StandardSSD_ZRS のディスクの種類がサポ�
 
 **Guidance**
 
-Kubernetes バージョン 1.26 以降、ツリー内の永続ボリュームの種類 kubernetes.io/azure-disk と kubernetes.io/azure-file は非推奨となり、サポートされなくなります。廃止後にこれらのドライバーを削除する予定はありませんが、対応する CSI ドライバーに disks.csi.azure.com および file.csi.azure.com 移行する必要があります。
+Kubernetes バージョン 1.26 以降では、Kubernetes コミュニティによるツリー内ストレージ ドライバーの非推奨化により、Azure ディスクと Azure File のツリー内ドライバー (プロビジョナーが kubernetes.io/azure-disk と kubernetes.io/azure-file の永続ボリュームの種類) はサポートされなくなりました。Azure Storage は、Azure ディスクおよびファイル CSI ドライバーによって提供されるようになりました。ツリー内ドライバーを使用する既存の展開が中断されることは予想されていませんが、これらはテストされなくなったため、CSI ドライバーを使用するように更新する必要があります。また、新しいストレージ機能 (新しい SKU、機能など) を活用するには、CSI ドライバーを使用する必要があります。
 
 **Resources**
 
 - [CSI Storage Drivers](https://learn.microsoft.com/ja-jp/azure/aks/csi-storage-drivers)
 - [CSI Migrate in Tree Volumes](https://learn.microsoft.com/ja-jp/azure/aks/csi-migrate-in-tree-volumes)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -307,7 +313,7 @@ Kubernetes バージョン 1.26 以降、ツリー内の永続ボリュームの
 
 - [Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -336,7 +342,7 @@ AKS クラスター内のアプリケーション ワークロードを迅速に
 - [Virtual Nodes](https://learn.microsoft.com/ja-jp/azure/aks/virtual-nodes)
 - [Azure Container Instances](https://learn.microsoft.com/ja-jp/azure/container-instances/container-instances-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -361,7 +367,7 @@ AKS クラスター内のアプリケーション ワークロードを迅速に
 - [Pricing Tiers](https://learn.microsoft.com/ja-jp/azure/aks/free-standard-pricing-tiers)
 - [AKS Baseline Architecture](https://learn.microsoft.com/ja-jp/azure/architecture/reference-architectures/containers/aks/baseline-aks?toc=https%3A%2F%2Flearn.microsoft.com%2Fja-jp%2Fazure%2Faks%2Ftoc.json&bc=https%3A%2F%2Flearn.microsoft.com%2Fja-jp%2Fazure%2Fbread%2Ftoc.json#kubernetes-api-server-sla)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -385,7 +391,7 @@ Azure Monitor は、イベントを収集し、コンテナー ログをキャ�
 
 - [Monitor AKS](https://learn.microsoft.com/ja-jp/azure/aks/monitor-aks)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -395,7 +401,7 @@ Azure Monitor は、イベントを収集し、コンテナー ログをキャ�
 
 <br><br>
 
-### AKS-14 - AKS クラスターでエフェメラル ディスクを使用します
+### AKS-14 - AKS クラスターでエフェメラル OS ディスクを使用します
 
 **Category: System Efficiency**
 
@@ -403,13 +409,16 @@ Azure Monitor は、イベントを収集し、コンテナー ログをキャ�
 
 **Guidance**
 
-エフェメラル OS ディスクはローカルに接続され、マネージド ディスクとしてレプリケートされないため、AKS エージェント ノードの OS ディスクでの読み取り/書き込み待機時間が短くなります。また、再イメージ化と起動時間の短縮により、スケーリングやアップグレードなどのクラスター操作も高速化されます。
+エフェメラル ディスクは、IO インシデントを減らすことでパフォーマンスと信頼性を向上させるため、ステートレス アプリケーションの OS ディスクとして理想的です。さらに、お客様は OS の追加ストレージ コストを負担することはなく、再イメージ化と起動時間の短縮により、スケーリングやアップグレードなどのクラスター操作を高速化できます。AKS では、お客様が OS の Azure マネージド ディスクを明示的に要求しない場合、ノード プール用に選択された VM SKU でエフェメラル ディスクが使用可能な場合、既定でエフェメラル ディスクが OS ディスクとして使用されます。
 
 **Resources**
 
-- [AKS Ephemeral OS Disk](https://learn.microsoft.com/samples/azure-samples/aks-ephemeral-os-disk/aks-ephemeral-os-disk/)
+- [Ephemeral OS disk](https://learn.microsoft.com/ja-jp/azure/aks/concepts-storage#ephemeral-os-disk)
+- [Configure an AKS cluster](https://learn.microsoft.com/ja-jp/azure/aks/cluster-configuration)
+- [Everything you want to know about ephemeral OS disks and AKS](https://learn.microsoft.com/ja-jp/samples/azure-samples/aks-ephemeral-os-disk/aks-ephemeral-os-disk/)
 
-**Resource Graph Query/Scripts**
+
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -434,7 +443,7 @@ Azure ポリシーを使用すると、企業は、セキュリティ、認証�
 - [AKS Baseline - Policy Management](https://learn.microsoft.com/ja-jp/azure/architecture/reference-architectures/containers/aks/baseline-aks?toc=https%3A%2F%2Flearn.microsoft.com%2Fja-jp%2Fazure%2Faks%2Ftoc.json&bc=https%3A%2F%2Flearn.microsoft.com%2Fja-jp%2Fazure%2Fbread%2Ftoc.json#policy-management)
 - [Built-in Policy Definitions for AKS](https://learn.microsoft.com/ja-jp/azure/aks/policy-reference)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -459,7 +468,7 @@ GitOps は、アプリケーションと宣言型インフラストラクチャ 
 - [GitOps with AKS](https://learn.microsoft.com/ja-jp/azure/architecture/guide/aks/aks-cicd-github-actions-and-gitops)
 - [GitOps for AKS - Reference Architecture](https://learn.microsoft.com/ja-jp/azure/architecture/example-scenario/gitops-aks/gitops-blueprint-aks)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -484,7 +493,7 @@ Topology Spread Constraintsを設定して、リージョン、ゾーン、ノ�
 - [Topology Spread Constraints](https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/)
 - [Assign Pod Node](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -509,7 +518,7 @@ AKS kubelet コントローラーでは、Liveness Probe を使用してコン�
 - [Configure probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 - [Assign Pod Node](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -533,7 +542,7 @@ PodまたはDeploymentマニフェストでReplicaSetを設定して、安定し
 
 - [Replica Sets](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -557,7 +566,7 @@ PodまたはDeploymentマニフェストでReplicaSetを設定して、安定し
 
 - [System nodepools](https://learn.microsoft.com/ja-jp/azure/aks/use-system-pools?tabs=azure-cli)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -581,7 +590,7 @@ PodまたはDeploymentマニフェストでReplicaSetを設定して、安定し
 
 - [Azure Well-Architected Framework review for Azure Kubernetes Service (AKS)](https://learn.microsoft.com/ja-jp/azure/well-architected/service-guides/azure-kubernetes-service#design-checklist)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -606,7 +615,7 @@ Pod Disruption Budget (PDB) は、メンテナンスやスケーリング イベ
 - [Configure PDBs](https://kubernetes.io/docs/tasks/run-application/configure-pdb/)
 - [Plan availability using PDBs](https://learn.microsoft.com/ja-jp/azure/aks/operator-best-practices-scheduler#plan-for-availability-using-pod-disruption-budgets)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -630,7 +639,7 @@ Pod Disruption Budget (PDB) は、メンテナンスやスケーリング イベ
 
 - [AKS Networking](https://learn.microsoft.com/ja-jp/azure/aks/concepts-network)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -654,7 +663,7 @@ Pod Disruption Budget (PDB) は、メンテナンスやスケーリング イベ
 
 - [Resource quotas](https://learn.microsoft.com/ja-jp/azure/aks/operator-best-practices-scheduler#enforce-resource-quotas)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

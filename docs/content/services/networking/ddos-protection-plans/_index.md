@@ -44,7 +44,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Monitoring Azure DDoS Protection](https://learn.microsoft.com/ja-jp/azure/ddos-protection/monitor-ddos-protection-reference)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

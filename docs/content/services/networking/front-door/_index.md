@@ -16,21 +16,21 @@ The below table shows the list of resiliency recommendations for Front Door and 
 {{< table style="table-striped" >}}
 | Recommendation                                                                                                                                                      |     Category      | Impact |  State  | ARG Query Available |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:------:|:-------:|:-------------------:|
-| [AFD-1 - Avoid combining Traffic Manager and Front Door](#afd-1---avoid-combining-traffic-manager-and-front-door)                                                   |    Networking     |  High  | Preview |         No          |
-| [AFD-2 - Restrict traffic to your origins](#afd-2---restrict-traffic-to-your-origins)                                                                               | Access & Security |  High  | Preview |         No          |
-| [AFD-3 - Use the latest API version and SDK version](#afd-3---use-the-latest-api-version-and-sdk-version)                                                           |    Networking     | Medium | Preview |         No          |
-| [AFD-4 - Configure logs](#afd-4---configure-logs)                                                                                                                   |    Monitoring     | Medium | Preview |         No          |
-| [AFD-5 - Use end-to-end TLS](#afd-5---use-end-to-end-tls)                                                                                                           |     Security      |  High  | Preview |         No          |
-| [AFD-6 - Use HTTP to HTTPS redirection](#afd-6---use-http-to-https-redirection)                                                                                     | Access & Security |  High  | Preview |         No          |
-| [AFD-7 - Use managed TLS certificates](#afd-7---use-managed-tls-certificates)                                                                                       | Access & Security | Medium | Preview |         No          |
-| [AFD-8 - Use latest version for customer-managed certificates](#afd-8---use-latest-version-for-customer-managed-certificates)                                       | Access & Security | Medium | Preview |         No          |
-| [AFD-9 - Use the same domain name on Front Door and your origin](#afd-9---use-the-same-domain-name-on-front-door-and-your-origin)                                   |    Networking     | Medium | Preview |         No          |
-| [AFD-10 - Enable the WAF](#afd-10---enable-the-waf)                                                                                                                 | Access & Security | Medium | Preview |         No          |
-| [AFD-11 - Disable health probes when there is only one origin in an origin group](#afd-11---disable-health-probes-when-there-is-only-one-origin-in-an-origin-group) |   Availability    |  Low   | Preview |         No          |
-| [AFD-12 - Select good health probe endpoints](#afd-12---select-good-health-probe-endpoints)                                                                         |   Availability    | Medium | Preview |         No          |
-| [AFD-13 - Use HEAD health probes](#afd-13---use-head-health-probes)                                                                                                 | System Efficiency | Medium | Preview |         No          |
-| [AFD-14 - Use geo-filtering in Azure Front Door](#afd-14---use-geo-filtering-in-azure-front-door)                                                                   | Access & Security | Medium | Preview |         No          |
-| [AFD-15 - Secure your Origin with Private Link in Azure Front Door](#afd-15---secure-your-origin-with-private-link-in-azure-front-door)                             | Access & Security | Medium | Preview |         No          |
+| [AFD-1 - Avoid combining Traffic Manager and Front Door](#afd-1---avoid-combining-traffic-manager-and-front-door)                                                   |    Networking     |  High  | Verified |         Yes        |
+| [AFD-2 - Restrict traffic to your origins](#afd-2---restrict-traffic-to-your-origins)                                                                               | Access & Security |  High  | Verified |         No          |
+| [AFD-3 - Use the latest API version and SDK version](#afd-3---use-the-latest-api-version-and-sdk-version)                                                           |    Networking     | Medium | Verified |         No          |
+| [AFD-4 - Configure logs](#afd-4---configure-logs)                                                                                                                   |    Monitoring     | Medium | Verified |         No          |
+| [AFD-5 - Use end-to-end TLS](#afd-5---use-end-to-end-tls)                                                                                                           |     Security      |  High  | Verified |         No          |
+| [AFD-6 - Use HTTP to HTTPS redirection](#afd-6---use-http-to-https-redirection)                                                                                     | Access & Security |  High  | Verified |         No          |
+| [AFD-7 - Use managed TLS certificates](#afd-7---use-managed-tls-certificates)                                                                                       | Access & Security |  High  | Verified |         No          |
+| [AFD-8 - Use latest version for customer-managed certificates](#afd-8---use-latest-version-for-customer-managed-certificates)                                       | Access & Security | Medium | Verified |         No          |
+| [AFD-9 - Use the same domain name on Front Door and your origin](#afd-9---use-the-same-domain-name-on-front-door-and-your-origin)                                   |    Networking     | Medium | Verified |         No          |
+| [AFD-10 - Enable the WAF](#afd-10---enable-the-waf)                                                                                                                 | Access & Security | Medium | Verified |         No          |
+| [AFD-11 - Disable health probes when there is only one origin in an origin group](#afd-11---disable-health-probes-when-there-is-only-one-origin-in-an-origin-group) |   Availability    |  Low   | Verified |         Yes         |
+| [AFD-12 - Select good health probe endpoints](#afd-12---select-good-health-probe-endpoints)                                                                         |   Availability    | Medium | Verified |         Yes         |
+| [AFD-13 - Use HEAD health probes](#afd-13---use-head-health-probes)                                                                                                 | System Efficiency | Medium | Verified |         No          |
+| [AFD-14 - Use geo-filtering in Azure Front Door](#afd-14---use-geo-filtering-in-azure-front-door)                                                                   | Access & Security | Medium | Verified |         No          |
+| [AFD-15 - Secure your Origin with Private Link in Azure Front Door](#afd-15---secure-your-origin-with-private-link-in-azure-front-door)                             | Access & Security | Medium | Verified |         No          |
 {{< /table >}}
 
 {{< alert style="info" >}}
@@ -64,7 +64,7 @@ Azure Front Door の背後に Azure Traffic Manager を配置しないでくだ�
 - [Azure Front Door](https://learn.microsoft.com/azure/frontdoor/front-door-overview)
 - [Mission-critical global content delivery](https://learn.microsoft.com/ja-jp/azure/architecture/guide/networking/global-web-applications/mission-critical-content-delivery)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -88,7 +88,7 @@ Front Door の機能は、トラフィックが Front Door のみを通過する
 
 - [Secure traffic to Azure Front Door origins](https://learn.microsoft.com/ja-jp/azure/frontdoor/origin-security?tabs=app-service-functions&pivots=front-door-standard-premium)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -114,7 +114,7 @@ API、ARM テンプレート、Bicep、または Azure SDK を使用して Front
 - [Client library for Java](https://learn.microsoft.com/java/api/overview/azure/resourcemanager-frontdoor-readme?view=azure-java-preview)
 - [SDK for Python](https://learn.microsoft.com/python/api/overview/azure/front-door?view=azure-python)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -140,7 +140,7 @@ Front Door は、すべての要求に関する広範なテレメトリを追跡
 - [WAF logs](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/afds/waf-front-door-monitor?pivots=front-door-standard-premium#waf-logs)
 - [Configure Azure Front Door logs](https://learn.microsoft.com/ja-jp/azure/frontdoor/standard-premium/how-to-logs)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -164,7 +164,7 @@ Front Door は、クライアントからの TCP 接続と TLS 接続を終了�
 
 - [End-to-end TLS with Azure Front Door](https://learn.microsoft.com/ja-jp/azure/frontdoor/end-to-end-tls?pivots=front-door-standard-premium)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -190,7 +190,7 @@ HTTPS プロトコルを使用するように HTTP 要求を自動的にリダ�
 
 - [Create HTTP to HTTPS redirect rule](https://learn.microsoft.com/ja-jp/azure/frontdoor/front-door-how-to-redirect-https#create-http-to-https-redirect-rule)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -204,7 +204,7 @@ HTTPS プロトコルを使用するように HTTP 要求を自動的にリダ�
 
 **Category: Access & Security**
 
-**Impact: Medium**
+**Impact: High**
 
 **Guidance**
 
@@ -214,7 +214,7 @@ Front Door で TLS 証明書を管理すると、運用コストが削減され�
 
 - [Configure HTTPS on an Azure Front Door custom domain using the Azure portal](https://learn.microsoft.com/ja-jp/azure/frontdoor/standard-premium/how-to-configure-https-custom-domain?tabs=powershell)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -238,7 +238,7 @@ Front Door で TLS 証明書を管理すると、運用コストが削減され�
 
 - [Select the certificate for Azure Front Door to deploy](https://learn.microsoft.com/ja-jp/azure/frontdoor/standard-premium/how-to-configure-https-custom-domain?tabs=powershell#select-the-certificate-for-azure-front-door-to-deploy)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -264,7 +264,7 @@ Front Door では、受信要求の Host ヘッダーを書き換えることが
 
 - [Preserve the original HTTP host name between a reverse proxy and its back-end web application](https://learn.microsoft.com/ja-jp/azure/architecture/best-practices/host-name-preservation)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -288,7 +288,7 @@ Front Door では、受信要求の Host ヘッダーを書き換えることが
 
 - [https://learn.microsoft.com/ja-jp/azure/frontdoor/web-application-firewall](https://learn.microsoft.com/ja-jp/azure/frontdoor/web-application-firewall)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -314,7 +314,7 @@ Front Door の正常性プローブは、配信元が使用できない、また
 
 - [Health probes](https://learn.microsoft.com/ja-jp/azure/frontdoor/health-probes)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -338,7 +338,7 @@ Front Door の正常性プローブに監視するように指示する場所を
 
 - [Health Endpoint Monitoring pattern](https://learn.microsoft.com/ja-jp/azure/architecture/patterns/health-endpoint-monitoring)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -362,7 +362,7 @@ Front Door の正常性プローブに監視するように指示する場所を
 
 - [Supported HTTP methods for health probes](https://learn.microsoft.com/ja-jp/azure/frontdoor/health-probes#supported-http-methods-for-health-probes)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -389,7 +389,7 @@ WAFポリシーには、一連のカスタム・ルールが含まれていま�
 
 - [Geo filter WAF policy - GeoMatch](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/afds/waf-front-door-geo-filtering)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -415,7 +415,7 @@ Azure Front Door Premium では、Private Link を使用して配信元に接続
 
 - [Private link for Azure Front Door](https://learn.microsoft.com/ja-jp/azure/frontdoor/private-link)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

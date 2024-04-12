@@ -46,7 +46,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Container Registry Best Practices](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -70,7 +70,7 @@ Azure Container Registry では、オプションのゾーン冗長性がサポ�
 
 - [Registry best practices - Enable zone redundancy](https://review.learn.microsoft.com/ja-jp/azure/container-registry/zone-redundancy?toc=%2Fazure%2Freliability%2Ftoc.json&bc=%2Fazure%2Freliability%2Fbreadcrumb%2Ftoc.json&branch=main)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -97,7 +97,7 @@ geo レプリケーションは、Premium レジストリで使用できます�
 - [Registry best practices - Enable geo-replication](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-best-practices#geo-replicate-multi-region-deployments)
 - [Geo-Replicate Container Registry](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-geo-replication)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -121,7 +121,7 @@ geo レプリケーションは、Premium レジストリで使用できます�
 
 - [Registry best practices - use repository namespaces](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-best-practices#repository-namespaces)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -146,7 +146,7 @@ Azure Container Instances などの特定のホストの種類を試すことも
 
 - [Registry best practices - Use dedicated resource group](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-best-practices#dedicated-resource-group)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -171,7 +171,7 @@ Azure Container Instances などの特定のホストの種類を試すことも
 - [Registry best practices - Manage registry size](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-best-practices#manage-registry-size)
 - [Retention Policy](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-retention-policy#about-the-retention-policy)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -195,7 +195,7 @@ Azure Container Instances などの特定のホストの種類を試すことも
 
 - [Enable anonymous pull access](https://learn.microsoft.com/ja-jp/azure/container-registry/anonymous-pull-access#about-anonymous-pull-access)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -220,7 +220,7 @@ Azure Container Instances などの特定のホストの種類を試すことも
 - [Monitoring Azure Container Registry data reference - Resource Logs](https://learn.microsoft.com/ja-jp/azure/container-registry/monitor-service-reference#resource-logs)
 - [Monitor Azure Container Registry - Enable diagnostic logs](https://learn.microsoft.com/ja-jp/azure/container-registry/monitor-service#collection-and-routing)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -244,7 +244,7 @@ Azure リソースに依存する重要なアプリケーションやビジネ�
 - [Monitoring Azure Container Registry data reference](https://learn.microsoft.com/ja-jp/azure/container-registry/monitor-service-reference#metrics)
 - [Monitor Azure Container Registry](https://learn.microsoft.com/ja-jp/azure/container-registry/monitor-service)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -268,7 +268,7 @@ Azure リソースに依存する重要なアプリケーションやビジネ�
 
 - [Enable soft delete policy](https://learn.microsoft.com/ja-jp/azure/container-registry/container-registry-soft-delete-policy)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

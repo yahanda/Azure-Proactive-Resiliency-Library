@@ -151,18 +151,15 @@ hugo new --kind service-bundle services/compute/virtual-machines
 │       │       │
 │       │       └───code
 │       │           ├───cm-1
-│       │           │       cm-1.azcli
 │       │           │       cm-1.kql
-│       │           │       cm-1.ps1
+│       │           │
 │       │           │
 │       │           └───cm-2
-│       │                   cm-2.azcli
 │       │                   cm-2.kql
-│       │                   cm-2.ps1
 {{< /code >}}
 4. Open `_index.md` in VS Code and make relevant changes
     - You can copy the recommendations labelled `CM-1` or `CM-2` multiple times to create more recommendations
-5. Update Azure Resource Graph queries, PowerShell, AZCLI scripts in the `code` folder within `virtual-machines`
+5. Update Azure Resource Graph queries in the `code` folder within `virtual-machines`
     - You will see there is a folder, e.g. `cm-1`, `cm-2`, per recommendation to help with file structure organization
 6. Ensure you use the correct Azure resource abbreviations provided within our Cloud Adoption Framework (CAF) documentation [here](https://docs.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations). For example, use `vm` for Virtual Machines.
 7. Save, commit and push your changes to your branch and repo
@@ -231,57 +228,6 @@ NOTE: 列名は、リストされている順序で、完全に一致する必�
 
 {{< alert style="info" >}}
 クエリの検証に関するサポートが必要な場合は、[APRL GitHub General Question/Feedback Form](https://github.com/Azure/Azure-Proactive-Resiliency-Library/issues/new?assignees=&labels=feedback%2C+question&projects=&template=general-question-feedback----.md&title=%E2%9D%93%F0%9F%91%82+Question%2FFeedback+-+PLEASE+CHANGE+ME+TO+SOMETHING+DESCRIPTIVE) から APRL チームにお問い合わせください。
-{{< /alert >}}
-
-### Azure PowerShell スクリプト
-
-1. すべての PowerShell スクリプトには、スクリプトの上部に 2 つのコメント (1 つは "Azure PowerShell スクリプト" を示すコメント、もう 1 つは返されたスクリプト結果の説明を提供するコメント) が必要です。例えば：
-
-    ```powershell
-    # Azure PowerShell script
-    # Provides a list of Azure Container Registry resources that do not have soft delete enabled
-    ```
-
-1. スクリプトは、APRL の推奨事項に準拠していないリソースのみを返す必要があります。たとえば、Azure コンテナー レジストリの論理的な削除を有効にすることが推奨される場合、関連付けられているスクリプトは、論理的な削除が有効になっていない Azure Container Registry リソースのみを返す必要があります。
-
-1. スクリプトには、APRL勧告に準拠していないリソースを取得するためのコードのみを含める必要があります。Azure サインイン ([Connect-AzAccount](https://learn.microsoft.com/ja-jp/powershell/module/az.accounts/connect-azaccount), Login-AzAccount) やサブスクリプションの選択 ([Set-AzContext](https://learn.microsoft.com/ja-jp/powershell/module/az.accounts/set-azcontext), Select-AzSubscription) などのサポート コードを含めることはできません。これらのコマンドレットは、APRL レコメンデーション PowerShell スクリプトとは別に実行します。
-
-1. スクリプトは、結果を 'PSCustomObject' データ型の配列として返し、各結果オブジェクトには次のプロパティのみを含める必要があります。
-
-    {{< alert style="info" >}}
-NOTE: プロパティ名は、リストされている順序で、正確に一致している必要があります。
-{{< /alert >}}
-
-    | Property Name | Data Type | Required | Information Returned (Example) | Description |
-    |:---:|:---:|:---:|:---:|---|
-    | recommendationId | string | Yes | aks-1 | The acronym of the Azure service that the query is returning results for, followed by the APRL recommendation number. |
-    | name | string | Yes | test-aks | The resource name of the Azure resource that does not adher to the APRL recommendation. |
-    | id | string | Yes | /subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/test-resource-group/providers/Microsoft.ContainerService/managedClusters/test-aks | The resource ID of the Azure resource that does not adhere to the APRL recommendation. |
-    | tags | PSCustomObject | No | {"Environment":"Test","Department":"IT"} | Any relevant tags associated to the resource that does not adhere to the APRL recommendation. The data type should match the data type of `tags` in the result of ARG queries by [Search-AzGraph](https://learn.microsoft.com/ja-jp/powershell/module/az.resourcegraph/search-azgraph). If not set tags, set `$null`. |
-    | param1 | string | No | networkProfile:kubenet | Any additional information that is necessary to provide clarification for the APRL recommendation. |
-    | param2 | string | No | networkProfile:kubenet | Any additional information that is necessary to provide clarification for the APRL recommendation. |
-    | param3 | string | No | networkProfile:kubenet | Any additional information that is necessary to provide clarification for the APRL recommendation. |
-    | param4 | string | No | networkProfile:kubenet | Any additional information that is necessary to provide clarification for the APRL recommendation. |
-    | param5 | string | No | networkProfile:kubenet | Any additional information that is necessary to provide clarification for the APRL recommendation. |
-
-    Below is a sample code to return a result that aligned to the above standards.
-
-    ```powershell
-    [PSCustomObject] @{
-        recommendationId = 'aks-1'
-        name             = $resource.Name
-        id               = $resource.Id
-        tags             = if ($resource.Tags) { [PSCustomObject] ([Hashtable] $resource.Tags) } else { $null }
-        param1           = 'networkProfile:kubenet'
-        param2           = 'networkProfile:kubenet'
-        param3           = 'networkProfile:kubenet'
-        param4           = 'networkProfile:kubenet'
-        param5           = 'networkProfile:kubenet'
-    }
-    ```
-
-{{< alert style="info" >}}
-スクリプトの検証に関するサポートが必要な場合は、[APRL GitHub General Question/Feedback Form](https://github.com/Azure/Azure-Proactive-Resiliency-Library/issues/new?assignees=&labels=feedback%2C+question&projects=&template=general-question-feedback----.md&title=%E2%9D%93%F0%9F%91%82+Question%2FFeedback+-+PLEASE+CHANGE+ME+TO+SOMETHING+DESCRIPTIVE)からAPRLチームに連絡してください。
 {{< /alert >}}
 
 ## サービスの推奨事項ページの更新

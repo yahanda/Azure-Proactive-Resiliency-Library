@@ -14,8 +14,8 @@ The presented resiliency recommendations in this guidance include DB for MySQL a
 {{< table style="table-striped" >}}
 | Recommendation                                    |                                Category                                 |     Impact      |      State       | ARG Query Available |
 |:--------------------------------------------------|:-----------------------------------------------------------------------:|:---------------:|:----------------:|:-------------------:|
-| [MYSQL-1 - Enable HA with zone redundancy](#mysql-1---enable-ha-with-zone-redundancy) | Availability | High | Preview |         Yes         |
-| [MYSQL-2 - Enable custom maintenance schedule](#mysql-2---enable-custom-maintenance-schedule) |     System Efficiency      | High | Preview |         Yes          |
+| [MYSQL-1 - Enable HA with zone redundancy](#mysql-1---enable-ha-with-zone-redundancy) | Availability | High | Verified |         Yes         |
+| [MYSQL-2 - Enable custom maintenance schedule](#mysql-2---enable-custom-maintenance-schedule) |     System Efficiency      | High | Verified |         Yes          |
 {{< /table >}}
 
 {{< alert style="info" >}}
@@ -40,7 +40,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [High availability concepts in Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/ja-jp/azure/mysql/flexible-server/concepts-high-availability)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -64,7 +64,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Scheduled maintenance in Azure Database for MySQL - Flexible Server](https://learn.microsoft.com/ja-jp/azure/mysql/flexible-server/concepts-maintenance)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

@@ -41,7 +41,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [Azure Service Bus Geo-disaster recovery](https://learn.microsoft.com/ja-jp/azure/service-bus-messaging/service-bus-geo-dr#availability-zones)
 - [Insulate Azure Service Bus applications against outages and disasters](https://learn.microsoft.com/ja-jp/azure/service-bus-messaging/service-bus-outages-disasters)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

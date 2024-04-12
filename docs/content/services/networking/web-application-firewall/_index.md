@@ -44,7 +44,7 @@ WAFは、ブロックすべきではない正当なリクエスト(誤検知)を
 - [Web Application Firewall exclusion lists](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/ag/application-gateway-waf-configuration?tabs=portal)
 - [Fixing a false positive](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/ag/web-application-firewall-troubleshoot#fixing-false-positives)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -69,7 +69,7 @@ WAFは、ブロックすべきではない正当なリクエスト(誤検知)を
 - [Azure Web Application Firewall Monitoring and Logging](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/ag/application-gateway-waf-metrics#logs-and-diagnostics)
 - [Diagnostic logs](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/ag/web-application-firewall-logs#diagnostic-logs)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -94,7 +94,7 @@ WAFとWAFが保護するアプリケーションの正常性を監視するこ�
 - [WAF monitoring](https://learn.microsoft.com/ja-jp/azure/web-application-firewall/ag/ag-overview#waf-monitoring)
 - [Azure Monitor Workbook for WAF](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20WAF/Workbook%20-%20WAF%20Monitor%20Workbook)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

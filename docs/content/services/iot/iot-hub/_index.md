@@ -48,7 +48,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [Import and export IoT Hub device identities in bulk](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-bulk-identity-mgmt)
 - [IoT Hub high availability and disaster recovery](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-ha-dr#manual-failover)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -72,7 +72,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Choose the right IoT Hub tier and size for your solution](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-scaling)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -96,7 +96,7 @@ IoT Hub の Availability Zones をサポートするリージョンでは、こ�
 
 - [Azure IoT Hub high availability and disaster recovery](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-ha-dr#availability-zones)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -124,7 +124,7 @@ Device Provisioning Service に関連付けられている IoT Hub でも、デ�
 - [Best practices for large-scale IoT device deployments](https://learn.microsoft.com/ja-jp/azure/iot-dps/concepts-deploy-at-scale)
 - [IoT Hub Device Provisioning Service high availability and disaster recovery](https://learn.microsoft.com/ja-jp/azure/iot-dps/iot-dps-ha-dr)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -151,7 +151,7 @@ Device Provisioning Service に関連付けられている IoT Hub でも、デ�
 
 - [IoT Hub high availability and disaster recovery](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-ha-dr)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -175,7 +175,7 @@ Device Provisioning Service に関連付けられている IoT Hub でも、デ�
 
 - [Use message routing - Fallback route](https://learn.microsoft.com/ja-jp/azure/iot-hub/iot-hub-devguide-messages-d2c#fallback-route)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

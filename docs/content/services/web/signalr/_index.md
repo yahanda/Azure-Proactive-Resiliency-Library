@@ -39,7 +39,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Availability zones support in Azure SignalR Service](https://learn.microsoft.com/ja-jp/azure/azure-signalr/availability-zones)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

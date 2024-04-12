@@ -39,7 +39,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Private endpoint connections](https://learn.microsoft.com/ja-jp/azure/private-link/manage-private-endpoint?tabs=manage-private-link-powershell#private-endpoint-connections)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

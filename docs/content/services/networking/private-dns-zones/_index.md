@@ -42,7 +42,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Protecting private DNS Zones and Records - Azure DNS](https://learn.microsoft.com/ja-jp/azure/dns/dns-protect-private-zones-recordsets)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -66,7 +66,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Scenarios for Azure Private DNS zones](https://learn.microsoft.com/ja-jp/azure/dns/private-dns-scenarios)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -90,7 +90,7 @@ Azure プライベート DNS は、カスタム DNS ソリューションを追�
 
 - [Scenarios for Azure Private DNS zones](https://learn.microsoft.com/ja-jp/azure/dns/private-dns-scenarios)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

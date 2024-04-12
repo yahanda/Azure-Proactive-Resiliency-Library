@@ -46,7 +46,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [Can I associate a network security group (NSG) to the RouteServerSubnet?](https://learn.microsoft.com/ja-jp/azure/route-server/route-server-faq#can-i-associate-a-network-security-group-nsg-to-the-routeserversubnet)
 - [Are Network Security Groups (NSGs) supported on the AzureFirewallSubnet?](https://learn.microsoft.com/ja-jp/azure/firewall/firewall-faq#are-network-security-groups--nsgs--supported-on-the-azurefirewallsubnet)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -70,7 +70,7 @@ Azure DDoS Protection は、アプリケーション設計のベスト プラク
 
 - [Reliability and Azure Virtual Network - Microsoft Azure Well-Architected Framework | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/architecture/framework/services/networking/azure-virtual-network/reliability)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -96,7 +96,7 @@ Azure DDoS Protection は、アプリケーション設計のベスト プラク
 - [Reliability and Network connectivity - Microsoft Azure Well-Architected Framework | Microsoft LearnNetworking Reliability](https://learn.microsoft.com/ja-jp/azure/architecture/framework/services/networking/network-connectivity/reliability)
 - [Azure Private Link availability](https://learn.microsoft.com/ja-jp/azure/private-link/availability)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

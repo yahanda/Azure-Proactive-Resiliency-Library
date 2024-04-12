@@ -43,7 +43,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [Migrate App Service to availability zone support](https://learn.microsoft.com/ja-jp/azure/reliability/migrate-app-service)
 - [High availability enterprise deployment using App Service Environment](https://learn.microsoft.com/ja-jp/azure/architecture/reference-architectures/enterprise-integration/ase-high-availability-deployment)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -67,7 +67,7 @@ Azure App Service プランの Standard または Premium レベルの使用は�
 
 - [Resiliency checklist for specific Azure services](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#app-service)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -91,7 +91,7 @@ Azure App Service インスタンスを頻繁にスケールアップまたは�
 
 - [Resiliency checklist for specific Azure services](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#app-service)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -115,7 +115,7 @@ Azure App Service インスタンスを頻繁にスケールアップまたは�
 
 - [Resiliency checklist for specific Azure services](https://learn.microsoft.com/ja-jp/azure/architecture/checklist/resiliency-per-service#app-service)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -140,7 +140,7 @@ Azure App Service の自動スケーリング/自動スケーリングを有効�
 - [Automatic scaling in Azure App Service](https://learn.microsoft.com/ja-jp/azure/app-service/manage-automatic-scaling?tabs=azure-portal)
 - [Auto Scale Web Apps](https://learn.microsoft.com/ja-jp/azure/azure-monitor/autoscale/autoscale-get-started)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

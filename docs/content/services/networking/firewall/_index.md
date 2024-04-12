@@ -14,10 +14,13 @@ The presented resiliency recommendations in this guidance include Firewall and a
 {{< table style="table-striped" >}}
 | Recommendation | Category | Impact | State | ARG Query Available |
 |:--------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:------:|:-------:|:-------------------:|
-| [AFW-1 - Deploy Azure Firewall across multiple availability zones](#afw-1---deploy-azure-firewall-across-multiple-availability-zones) | Availability | High | Preview | Yes |
-| [AFW-2 - Monitor Azure Firewall metrics](#afw-2---monitor-azure-firewall-metrics) | Monitoring | Medium | Preview | Yes |
-| [AFW-3 - Configure DDoS Protection on the Azure Firewall VNet](#afw-3---configure-ddos-protection-on-the-azure-firewall-vnet) | Access & Security | High | Preview | Yes |
-| [AFW-4 - Leverage Azure Policy inheritance model](#afw-4---leverage-azure-policy-inheritance-model) | Governance | Medium | Preview | No |
+| [AFW-1 - Deploy Azure Firewall across multiple availability zones](#afw-1---deploy-azure-firewall-across-multiple-availability-zones) | Availability | High | Verified | Yes |
+| [AFW-2 - Monitor Azure Firewall metrics](#afw-2---monitor-azure-firewall-metrics) | Monitoring | Medium | Verified | Yes |
+| [AFW-3 - Configure DDoS Protection on the Azure Firewall VNet](#afw-3---configure-ddos-protection-on-the-azure-firewall-vnet) | Access & Security | High | Verified | Yes |
+| [AFW-4 - Leverage Azure Policy inheritance model](#afw-4---leverage-azure-policy-inheritance-model) | Governance | Medium | Verified | No |
+| [AFW-5 - Configure 2-4 PIPs for SNAT Port utilization](#afw-5---configure-2-4-pips-for-snat-port-utilization) | Availability | Medium | Preview | No |
+| [AFW-6 - Monitor AZFW Latency Probes metric](#afw-6---monitor-azfw-latency-probes-metric) | Monitoring | Medium | Preview | No |
+
 {{< /table >}}
 
 {{< alert style="info" >}}
@@ -43,7 +46,7 @@ Azure Firewall は、1 つの可用性ゾーンにデプロイする場合と、
 - [Azure Well Architected Framework - Azure Firewall](https://learn.microsoft.com/ja-jp/azure/architecture/framework/services/networking/azure-firewall)
 - [Deploy Azure Firewall across multiple availability zones](https://learn.microsoft.com/ja-jp/azure/firewall/deploy-availability-zone-powershell)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -72,7 +75,7 @@ Azure Firewall は、1 つの可用性ゾーンにデプロイする場合と、
 - [Azure Firewall metrics supported in Azure Monitor](https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/metrics-supported#microsoftnetworkazurefirewalls)
 - [Azure Firewall performance](https://learn.microsoft.com/ja-jp/azure/firewall/firewall-performance)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -96,7 +99,7 @@ DDoS 保護プランを Azure Firewall をホストしている仮想ネット�
 
 - [Azure DDoS Protection overview](https://learn.microsoft.com/ja-jp/azure/ddos-protection/ddos-protection-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -120,7 +123,7 @@ Azure Firewall ポリシーを使用すると、ルール階層を定義し、�
 
 - [Azure Firewall Policy hierarchy](https://learn.microsoft.com/ja-jp/azure/firewall-manager/rule-hierarchy)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -129,3 +132,50 @@ Azure Firewall ポリシーを使用すると、ルール階層を定義し、�
 {{< /collapse >}}
 
 <br><br>
+
+### AFW-5 - Configure 2-4 PIPs for SNAT Port utilization
+
+**Category: Availability**
+
+**Impact: Medium**
+
+**Guidance**
+
+Configure a minimum of two to four public IP addresses per Azure Firewall to avoid SNAT exhaustion. Azure Firewall provides SNAT capability for all outbound traffic traffic to public IP addresses. Azure Firewall provides 2,496 SNAT ports per each additional PIP.
+
+**Resources**
+
+- [Azure Well-Architected Framework review - Azure Firewall](https://learn.microsoft.com/en-us/azure/well-architected/service-guides/azure-firewall#recommendations)
+
+**Resource Graphy Query/Scripts**
+
+{{< collapse title="Show/Hide Query/Script" >}}
+
+{{< code lang="sql" file="code/afw-5/afw-5.kql" >}} {{< /code >}}
+
+{{< /collapse >}}
+
+<br><br>
+
+### AFW-6 - Monitor AZFW Latency Probes metric
+
+**Category: Monitoring**
+
+**Impact: Medium**
+
+**Guidance**
+
+Create the metric to monitor latency probes 20ms over a long period of time ( > 30mins ). When the latency probe is over a long period of time, it means the firewall instance CPUs are stressed and could possible be causing issues.
+
+**Resources**
+
+- [Azure Well-Architected Framework review - Azure Firewall](https://learn.microsoft.com/azure/well-architected/service-guides/azure-firewall#recommendations)
+- [Azure Firewall metrics overview](https://learn.microsoft.com/azure/firewall/metrics)
+
+**Resource Graphy Query/Scripts**
+
+{{< collapse title="Show/Hide Query/Script" >}}
+
+{{< code lang="sql" file="code/afw-6/afw-6.kql" >}} {{< /code >}}
+
+{{< /collapse >}}

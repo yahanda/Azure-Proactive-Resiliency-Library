@@ -39,7 +39,7 @@ Azure Cache for Redis では、Premium レベルと Enterprise レベルでゾ�
 
 - [Enable zone redundancy for Azure Cache for Redis](https://learn.microsoft.com/ja-jp/azure/azure-cache-for-redis/cache-how-to-zone-redundancy)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

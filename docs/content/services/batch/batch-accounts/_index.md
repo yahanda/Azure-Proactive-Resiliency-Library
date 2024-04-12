@@ -14,8 +14,8 @@ The presented resiliency recommendations in this guidance include Batch Accounts
 {{< table style="table-striped" >}}
 | Recommendation | Impact | Design Area | State | ARG Query Available |
 |:--------------------------------------------------------------------------------------------------------------------------|:------:|:------------:|:-------:|:-------------------:|
-| [BA-1 Monitor Batch account quota](#ba-1---monitor-batch-account-quota) | Medium | Monitoring | Preview | No |
-| [BA-3 Create an Azure Batch pool across Availability Zones](#ba-3---create-an-azure-batch-pool-across-availability-zones) | High | Availability | Preview | No |
+| [BA-1 - Monitor Batch account quota](#ba-1---monitor-batch-account-quota) | Medium | Monitoring | Preview | No |
+| [BA-3 - Create an Azure Batch pool across Availability Zones](#ba-3---create-an-azure-batch-pool-across-availability-zones) | High | Availability | Preview | No |
 
 {{< /table >}}
 
@@ -41,7 +41,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Learn More](https://learn.microsoft.com/ja-jp/azure/reliability/reliability-batch#cross-region-disaster-recovery-and-business-continuity)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -66,7 +66,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Learn More](https://learn.microsoft.com/ja-jp/azure/batch/create-pool-availability-zones)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

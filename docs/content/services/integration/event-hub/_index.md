@@ -40,7 +40,7 @@ Event Hubs は Availability Zones をサポートしており、Azure リージ�
 
 - [Azure Event Hubs - Geo-disaster recovery](https://learn.microsoft.com/ja-jp/azure/event-hubs/event-hubs-geo-dr?tabs=portal#availability-zones)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -64,7 +64,7 @@ Event Hub Standard レベルの名前空間で自動インフレを有効にし�
 
 - [Azure Event Hubs - Automatically scale throughput units](https://learn.microsoft.com/ja-jp/azure/event-hubs/event-hubs-auto-inflate)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

@@ -14,12 +14,12 @@ The presented resiliency recommendations in this guidance include ExpressRoute G
 {{< table style="table-striped" >}}
 | Recommendation | Category | Impact | State | ARG Query Available |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------:|:------:|:-------:|:-------------------:|
-| [ERGW-1 - Connect the ExpressRoute Gateway to two or more circuits from different peering locations for higher resiliency](#ergw-1---connect-the-expressroute-gateway-to-two-or-more-circuits-from-different-peering-locations-for-higher-resiliency) | Availability | High | Preview | No |
-| [ERGW-2 - Use Zone-redundant gateway SKUs](#ergw-2---use-zone-redundant-gateway-skus) | Availability | High | Preview | Yes |
-| [ERGW-3 - Configure an Azure Resource lock for ExpressRoute Gateway to prevent accidental deletion](#ergw-3---configure-an-azure-resource-lock-for-expressroute-gateway-to-prevent-accidental-deletion) | Availability | Medium | Preview | No |
-| [ERGW-4 - Monitor gateway health](#ergw-4---monitor-gateway-health) | Monitoring | High | Preview | No |
-| [ERGW-6 - Avoid using ExpressRoute circuits for VNet to VNet communication](#ergw-6---avoid-using-expressroute-circuits-for-vnet-to-vnet-communication) | Networking | Medium | Preview | No |
-| [ERGW-7 - Configure customer-controlled gateway maintenance - In Preview](#ergw-7---configure-customer-controlled-gateway-maintenance---in-preview) | Networking | High | Preview | No |
+| [ERGW-1 - Connect the ExpressRoute Gateway to two or more circuits from different peering locations for higher resiliency](#ergw-1---connect-the-expressroute-gateway-to-two-or-more-circuits-from-different-peering-locations-for-higher-resiliency) | Availability | High | Verified | No |
+| [ERGW-2 - Use Zone-redundant gateway SKUs](#ergw-2---use-zone-redundant-gateway-skus) | Availability | High | Verified | Yes |
+| [ERGW-3 - Configure an Azure Resource lock for ExpressRoute Gateway to prevent accidental deletion](#ergw-3---configure-an-azure-resource-lock-for-expressroute-gateway-to-prevent-accidental-deletion) | Availability | Medium | Verified | No |
+| [ERGW-4 - Monitor gateway health](#ergw-4---monitor-gateway-health) | Monitoring | High | Verified | No |
+| [ERGW-6 - Avoid using ExpressRoute circuits for VNet to VNet communication](#ergw-6---avoid-using-expressroute-circuits-for-vnet-to-vnet-communication) | Networking | Medium | Verified | No |
+| [ERGW-7 - Configure customer-controlled gateway maintenance - In Preview](#ergw-7---configure-customer-controlled-gateway-maintenance---in-preview) | Networking | High | Verified | No |
 {{< /table >}}
 
 {{< alert style="info" >}}
@@ -44,7 +44,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Designing for disaster recovery with ExpressRoute private peering](https://learn.microsoft.com/ja-jp/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -70,7 +70,7 @@ Azure ExpressRoute ゲートウェイは、1 つの可用性ゾーンにデプ�
 - [About zone-redundant virtual network gateway in Azure availability zones](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/about-zone-redundant-vnet-gateways)
 - [Create a zone-redundant virtual network gateway in Azure Availability Zones](https://learn.microsoft.com/ja-jp/azure/vpn-gateway/create-zone-redundant-vnet-gateway)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -94,7 +94,7 @@ ExpressRoute ゲートウェイの Azure リソース ロックを構成して�
 
 - [Protect your Azure resources with a lock - Azure Resource Manager | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/lock-resources?tabs=json)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -125,7 +125,7 @@ ExpressRoute ゲートウェイの可用性、パフォーマンス、スケー�
 - [ExpressRoute monitoring, metrics, and alerts | ExpressRoute gateways](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-monitoring-metrics-alerts#expressroute-gateways)
 - [Azure ExpressRoute Insights using Network Insights](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-network-insights)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -151,7 +151,7 @@ ExpressRoute 経由の VNet 間接続が推奨されない理由の詳細につ�
 
 - [About ExpressRoute virtual network gateways - VNet-to-VNet connectivity](https://learn.microsoft.com/ja-jp/azure/expressroute/expressroute-about-virtual-network-gateways#vnet-to-vnet-connectivity)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -175,7 +175,7 @@ ExpressRoute 仮想ネットワーク ゲートウェイは、機能、信頼性
 
 - [Configure customer-controlled maintenance for your virtual network gateway - ExpressRoute | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/expressroute/customer-controlled-gateway-maintenance#azure-portal-steps)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

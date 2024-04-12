@@ -41,6 +41,8 @@ The presented resiliency recommendations in this guidance include Azure Databric
 | [DBW-26 - Isolate each workspace in its own Vnet](#dbw-26---isolate-each-workspace-in-its-own-vnet)                                                                                                                           |   System Efficiency    |  High  | Preview  |         No          |
 | [DBW-27 - Do not Store any Production Data in Default DBFS Folders](#dbw-27---do-not-store-any-production-data-in-default-dbfs-folders)                                                                                       |      Availability      |  High  | Preview  |         No          |
 | [DBW-28 - Do not use Azure Sport VMs for critical Production workloads](#dbw-28---do-not-use-azure-sport-vms-for-critical-production-workloads)                                                                               |      Availability      |  High  | Preview  |         No          |
+| [DBW-29 - Migrate Legacy Workspaces](#dbw-29---migrate-legacy-workspaces)                                                                               |      Availability      |  High  | Preview  |         No          |
+| [DBW-30 - Define alternate VM SKUs](#dbw-30---define-alternate-vm-skus)                                                                               |      System Efficiency      |  Medium  | Preview  |         No          |
 {{< /table >}}
 
 {{< alert style="info" >}}
@@ -70,7 +72,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Databricks runtime support lifecycles](https://learn.microsoft.com/ja-jp/azure/databricks/release-notes/runtime/databricks-runtime-ver)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -94,7 +96,7 @@ Databricks プールはサービスの標準機能であり、VM をオンデマ
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -124,7 +126,7 @@ Standard SSD は、一部の運用ワークロードでも使用できます。
 
 - [Azure managed disk types](https://learn.microsoft.com/ja-jp/azure/virtual-machines/disks-types#premium-ssd)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -150,7 +152,7 @@ Standard SSD は、一部の運用ワークロードでも使用できます。
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#enable-autoscaling-for-batch-workloadss)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -176,7 +178,7 @@ SQL ウェアハウスのスケーリング パラメーターは、ウェアハ
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#enable-autoscaling-for-sql-warehouse)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -194,13 +196,14 @@ SQL ウェアハウスのスケーリング パラメーターは、ウェアハ
 
 **Guidance**
 
-データ ディスクは、アプリケーション データや保持する必要があるその他のデータを格納するために仮想マシンに接続されるマネージド ディスクです。データ ディスクは SCSI ドライブとして登録され、選択した文字でラベル付けされます。また、データ ディスクでデータをホストすると、データのバックアップや復元の柔軟性が高まり、仮想マシンとオペレーティング システム全体を移行することなくディスクを移行できます。また、要件を満たすさまざまな種類、サイズ、パフォーマンスの別のディスク SKU を選択することもできます。
+Databricks の拡張自動スケーリングでは、パイプラインのデータ処理待機時間への影響を最小限に抑えながら、ワークロード ボリュームに基づいてクラスター リソースを自動的に割り当てることで、クラスターの使用率を最適化します。
 
 **Resources**
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
+- [Databricks enhanced autoscaling](https://learn.microsoft.com/ja-jp/azure/databricks/delta-live-tables/settings#use-autoscaling-to-increase-efficiency-and-reduce-resource-usage)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -226,7 +229,7 @@ SQL ウェアハウスのスケーリング パラメーターは、ウェアハ
 
 - [Best practices for reliability?](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -252,7 +255,7 @@ SQL ウェアハウスのスケーリング パラメーターは、ウェアハ
 
 - [Create a cluster](https://learn.microsoft.com/ja-jp/azure/databricks/clusters/configure#cluster-log-delivery)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -276,7 +279,7 @@ Delta Lake は、データ レイクに信頼性をもたらすオープン ソ�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -302,7 +305,7 @@ Databricks レイクハウスでは、完全に C++ で記述されたネイテ�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#use-apache-spark-or-photon-for-distributed-compute)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -329,7 +332,7 @@ Databricks レイクハウスでは、完全に C++ で記述されたネイテ�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -354,7 +357,7 @@ Databricks レイクハウスでは、完全に C++ で記述されたネイテ�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -379,7 +382,7 @@ Databricks レイクハウスでは、完全に C++ で記述されたネイテ�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -411,7 +414,7 @@ Databricks レイクハウスでは、完全に C++ で記述されたネイテ�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -435,7 +438,7 @@ Databricks レイクハウスでは、完全に C++ で記述されたネイテ�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -462,7 +465,7 @@ Databricks レイクハウスでは、完全に C++ で記述されたネイテ�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -488,7 +491,7 @@ Delta テーブルでは、テーブルに追加されるデータの品質と�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#use-constraints-and-data-expectations)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -512,7 +515,7 @@ Delta テーブルでは、テーブルに追加されるデータの品質と�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#create-regular-backups)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -536,7 +539,7 @@ Delta テーブルでは、テーブルに追加されるデータの品質と�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#recover-from-structured-streaming-query-failures)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -560,7 +563,7 @@ Delta テーブルでは、テーブルに追加されるデータの品質と�
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices#recover-etl-jobs-based-on-delta-time-travel)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -584,7 +587,7 @@ Databricks ワークフローは復旧用に構築されています。マルチ
 
 - [Best practices for reliability](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/reliability/best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -608,7 +611,7 @@ Databricks ワークフローは復旧用に構築されています。マルチ
 
 - [Azure Databricks Best Practices](https://github.com/Azure/AzureDatabricksBestPractices/tree/master)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -632,7 +635,7 @@ Databricks Terraform プロバイダーは、柔軟で強力なツールを使�
 
 - [Best practices for operational excellence](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/operational-excellence/best-practices#2-automate-deployments-and-workloads)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -656,7 +659,7 @@ Databricks Terraform プロバイダーは、柔軟で強力なツールを使�
 
 - [Best practices for operational excellence](https://learn.microsoft.com/ja-jp/azure/databricks/lakehouse-architecture/operational-excellence/best-practices#system-monitoring)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -680,7 +683,7 @@ Customers commonly partition workspaces based on teams or departments and arrive
 
 - [Azure Databricks Best Practices](https://github.com/Azure/AzureDatabricksBestPractices/blob/master/toc.md#deploy-workspaces-in-multiple-subscriptions-to-honor-azure-capacity-limits)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -704,7 +707,7 @@ Customers commonly partition workspaces based on teams or departments and arrive
 
 - [Azure Databricks Best Practices](https://github.com/Azure/AzureDatabricksBestPractices/blob/master/toc.md#consider-isolating-each-workspace-in-its-own-vnet)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -731,7 +734,7 @@ Customers commonly partition workspaces based on teams or departments and arrive
 
 - [Azure Databricks Best Practices](https://github.com/Azure/AzureDatabricksBestPractices/blob/master/toc.md#do-not-store-any-production-data-in-default-dbfs-foldersr)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -755,11 +758,79 @@ Azure スポット VM は、高可用性と信頼性を必要とする重要な�
 
 - [Use Azure Spot Virtual Machines](https://learn.microsoft.com/ja-jp/azure/virtual-machines/spot-vms)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
 {{< code lang="sql" file="code/dbw-28/dbw-28.kql" >}} {{< /code >}}
+
+{{< /collapse >}}
+
+<br><br>
+
+### DBW-29 - Migrate Legacy Workspaces
+
+**Category: Availability**
+
+**Impact: High**
+
+**Guidance**
+
+Azure Databricks initially launched with shared control plane, where some regions shared control plane resources with another region. This shared control plane model then evolved to dedicated in-region control planes (e.g. North Europe, Central US, East US) to ensure a regional outage does not impact customer workspaces in other regions.
+
+Regions that now have their dedicated control plane have workspaces running in two configurations:
+
+- Legacy Workspaces - these are workspaces created before the dedicated control plane was available.
+- Workspaces - these are workspaces created after the dedicated control plane was available.
+
+The path for migrating legacy workspaces to use the in-region control plane is to **redeploy**.
+
+Review the list of network addresses used in each region in the Microsoft documentation and determine which regions are sharing a control plane. For example, we can look up Canada East in the table and see that the address for its SCC relay is "tunnel.canadacentral.azuredatabricks.net". Since the relay address is in Canada Central, we know that "Canada East" is using the control plane in another region.
+
+Some regions list two different addresses in the Azure Databricks Control plane networking table. For example, North Europe lists both "tunnel.westeurope.azuredatabricks.net" and "tunnel.northeuropec2.azuredatabricks.net" for the SCC relay address. This is because North Europe once shared the West Europe control plane, but it now has its own independent control plane. There are still some old, legacy workspaces in North Europe tied to the old control plane, but all workspaces created since the switch-over will be using the new control plane.
+
+Once a new Azure Databricks workspace is created, it should be configured to match the original legacy workspace.  Databricks, Inc.
+recommends that customers use the Databricks Terraform Exporter for both the initial copy and for maintaining the workspace. However, this exporter is still in the experimental phase. For customers that do not trust experimental projects or for customers that do not want to use Terraform, they can use the "Migrate" tool that Databricks, Inc. maintains with GitHub. This is a collection of scripts that will export all of the objects (notebooks, cluster definitions, metadata, *etc.*) from one workspace and then import them to another workspace.  Customers can use the "Migrate" tool to initially populate the new
+workspace and then use their CI/CD deployment process to keep the workspace in sync.
+
+Pro Tip: If you need to determine where the control plane is located for a particular Databricks workspace, you can use the "nslookup" console command on Windows or Linux with the workspace address.  The result will tell you where the control plane is located.
+
+**Resources**
+
+- [Azure Databricks regions - IP addresses and domains](https://learn.microsoft.com/azure/databricks/resources/supported-regions#--ip-addresses-and-domains)
+- [Migrate - maintained by Databricks Inc.](https://github.com/databrickslabs/migrate)
+- [Databricks Terraform Exporter - maintained by Databricks Inc. (Experimental)](https://registry.terraform.io/providers/databricks/databricks/latest/docs/guides/experimental-exporter)
+
+<br><br>
+
+### DBW-30 - Define alternate VM SKUs
+
+**Category: System Efficiency**
+
+**Impact: Medium**
+
+**Guidance**
+
+Azure Databricks availability planning should include plans for swapping VM SKUs based on capacity constraints.
+
+Azure Databricks creates its VMs as regional VMs and depends on Azure to choose the best availability zone for the VM.  In the past, there have been rare instances where compute can not be allocated due to zonal or regional VM constraints.  Thus, resulting in a "CLOUD PROVIDER" error.
+
+In these situations, customers have two options:
+
+- Use Databricks Pools.  To manage costs, customers should be careful when selecting the size of their pools. They will have to pay for the Azure VMs even when they are idle in the pool.  Databricks pool can contain only one SKU of VMs; you cannot mix multiple SKUs in the same pool. To reduce the number of pools that customers need to manage, they should settle on a few SKUs that will service their jobs instead of using a different VM
+SKU for each job.
+- Plan for alternative SKUs in their preferred region(s).
+
+**Resources**
+
+- [Compute configuration best practices](https://learn.microsoft.com/azure/databricks/compute/cluster-config-best-practices)
+- [GPU-enabled compute](https://learn.microsoft.com/azure/databricks/compute/gpu)
+
+**Resource Graph Query**
+
+{{< collapse title="Show/Hide Query/Script" >}}
+
+{{< code lang="sql" file="code/dbw-30/dbw-30.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 

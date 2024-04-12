@@ -1,5 +1,5 @@
 +++
-title = "Storage Account"
+title = "Storage Accounts (Blob/Azure Data Lake Storage Gen2)"
 description = "Best practices and resiliency recommendations for Storage Account and associated resources."
 date = "4/13/23"
 author = "dost"
@@ -16,15 +16,14 @@ The below table shows the list of resiliency recommendations for Storage Account
 {{< table style="table-striped" >}}
 | Recommendation                                                                                                                                                                                |     Category      | Impact |  State  | ARG Query Available |
 |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:------:|:-------:|:--------------------:|
-| [ST-1 - Ensure that Storage Account configuration is at least Zone redundant](#st-1---ensure-that-storage-account-configuration-is-at-least-zone-redundant)                                   |   Availability    |  High  | Preview |          Yes         |
-| [ST-2 - Do not use classic storage account](#st-2---do-not-use-classic-storage-account)                                                                                                       |    Governance     |  High  | Preview |         Yes          |
-| [ST-3 - Ensure Performance tier is set as per workload](#st-3---ensure-performance-tier-is-set-as-per-workload)                                                                               | System Efficiency | Medium | Preview |          No          |
-| [ST-4 - Choose right blob type for workload](#st-4---choose-right-blob-type-for-workload)                                                                                                     | System Efficiency | Medium | Preview |          No          |
-| [ST-5 - Enable soft delete for recovery of data](#st-5---enable-soft-delete-for-recovery-of-data)                                                                                             | Disaster Recovery | Medium | Preview |          No          |
-| [ST-6 - Enable version for accidental modification and keep the number of versions below 1000](#st-6---enable-version-for-accidental-modification-and-keep-the-number-of-versions-below-1000) | Disaster Recovery | Medium | Preview |          No          |
-| [ST-7 - Enable point and time restore for containers for recovery](#st-7---enable-point-and-time-restore-for-containers-for-recovery)                                                         | Disaster Recovery |  Low   | Preview |          No          |
-| [ST-8 - Configure Diagnostic Settings for all storage accounts](#st-8---configure-diagnostic-settings-for-all-storage-accounts)                                                               |    Monitoring     |  Low   | Preview |          No          |
-| [ST-9 - Upgrade legacy storage accounts to v2 storage accounts](#st-9---upgrade-legacy-storage-accounts-to-v2-storage-accounts)                                                               | System Efficiency | Medium | Preview |         Yes          |
+| [ST-1 - Ensure that storage accounts are zone or region redundant](#st-1---ensure-that-storage-accounts-are-zone-or-region-redundant)                                   |   Availability    |  High  | Verified |          Yes         |
+| [ST-2 - Do not use classic storage accounts](#st-2---do-not-use-classic-storage-accounts)                                                                                                       |    Governance     |  High  | Verified |         Yes          |
+| [ST-3 - Ensure performance tier is set as per workload](#st-3---ensure-performance-tier-is-set-as-per-workload)                                                                               | System Efficiency | Medium | Verified |          No          |
+| [ST-5 - Enable soft delete for recovery of data](#st-5---enable-soft-delete-for-recovery-of-data)                                                                                             | Disaster Recovery | Medium | Verified |          No          |
+| [ST-6 - Enable versioning for accidental modification and keep the number of versions below 1000](#st-6---enable-versioning-for-accidental-modification-and-keep-the-number-of-versions-below-1000) | Disaster Recovery | Low | Verified |          No          |
+| [ST-7 - Consider enabling point-in-time restore for standard general purpose v2 accounts with flat namespace](#st-7---consider-enabling-point-in-time-restore-for-standard-general-purpose-v2-accounts-with-flat-namespace)                                                         | Disaster Recovery |  Low   | Verified |          No          |
+| [ST-8 - Monitor all blob storage accounts](#st-8---monitor-all-blob-storage-accounts)                                                               |    Monitoring     |  Low   | Verified |          No          |
+| [ST-9 - Consider upgrading legacy storage accounts to v2 storage accounts](#st-9---consider-upgrading-legacy-storage-accounts-to-v2-storage-accounts)                                                               | System Efficiency | Low | Verified |         Yes          |
 
 {{< /table >}}
 
@@ -36,7 +35,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 ## Recommendations Details
 
-### ST-1 - ストレージ アカウントの構成がゾーン冗長以上であることを確認します
+### ST-1 - ストレージ アカウントがゾーンまたはリージョン冗長であることを確認します
 
 **Category: Availability**
 
@@ -44,18 +43,16 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 **Guidance**
 
-Azure Storage アカウント内のデータは、常にプライマリ リージョンで 3 回レプリケートされます。Azure Storage には、プライマリ リージョンまたはペア リージョンでデータをレプリケートする方法に関する他のオプションが用意されています。
+冗長性により、ストレージ アカウントは、障害が発生した場合でも可用性と持続性の目標を確実に満たすことができます。シナリオに最適な冗長性オプションを決定するときは、コストの削減と可用性の向上のトレードオフを考慮してください。
+ローカル冗長ストレージ (LRS) は、最も低コストの冗長性オプションであり、他のオプションと比較して持続性が最も低くなります。Microsoft では、ゾーン冗長ストレージ (ZRS)、geo 冗長ストレージ (GRS)、または geo ゾーン冗長ストレージ (GZRS) を使用して、可用性ゾーンまたはリージョンが使用できなくなった場合にストレージ アカウントを使用できるようにすることをお勧めします。
 
-- LRS は、1 つの物理的な場所でデータを 3 回同期的にレプリケートします。レプリケーションは最もコストがかかりませんが、高可用性と持続性を備えたアプリにはお勧めしません。LRS は イレブンナイン の耐久性を提供します。
-- ZRS は、プライマリ リージョンの 3 つの可用性ゾーン間でデータを同期的にコピーします。ZRS は、ゾーン間で高可用性を必要とするアプリに推奨されます。ZRS は トゥエルブ ナイン の耐久性を提供します。
-- GRS は、追加の 3 つのコピーをセカンダリ リージョンにレプリケートし、シックスティーン ナイン の可用性を提供します。
-- GZRS は、geo レプリケーション全体で高可用性と冗長性の両方を提供します。1年間で シックスティーン ナイン の耐久性を提供します。
 
 **Resources**
 
 - [Azure Storage redundancy](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-redundancy)
+- [Change the redundancy configuration for a storage account](https://learn.microsoft.com/ja-jp/azure/storage/common/redundancy-migration)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -73,14 +70,14 @@ Azure Storage アカウント内のデータは、常にプライマリ リー�
 
 **Guidance**
 
-Azure クラシック ストレージ アカウントは、2024 年 8 月 31 日に廃止されます。そのため、すべてのワークロードをクラシック ストレージ アカウントから Azure Resource Manager ストレージ アカウントに移行します。
+クラシック ストレージ アカウントは、2024 年 8 月 31 日に完全に廃止されます。クラシック ストレージ アカウントをお持ちの場合は、今すぐ移行の計画を開始してください。
 
 **Resources**
 
-- [Azure classic storage accounts retirement announcement](https://azure.microsoft.com/updates/classic-azure-storage-accounts-will-be-retired-on-31-august-2024/)
+- [Azure classic storage accounts retirement announcement](https://azure.microsoft.com/ja-jp/updates/classic-azure-storage-accounts-will-be-retired-on-31-august-2024/)
 - [Migrate your classic storage accounts to Azure Resource Manager](https://learn.microsoft.com/ja-jp/azure/storage/common/classic-account-migration-overview)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -109,44 +106,12 @@ Azure クラシック ストレージ アカウントは、2024 年 8 月 31 日
 - [Premium block blob storage accounts](https://learn.microsoft.com/ja-jp/azure/storage/blobs/storage-blob-block-blob-premium)
 - [Scalability targets for premium block blob storage accounts](https://learn.microsoft.com/ja-jp/azure/storage/blobs/scalability-targets-premium-block-blobs)
 - [Scalability and performance targets for premium page blob storage accounts](https://learn.microsoft.com/ja-jp/azure/storage/blobs/scalability-targets-premium-page-blobs)
-- [Azure Files scalability and performance targets](https://learn.microsoft.com/ja-jp/azure/storage/files/storage-files-scale-targets)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
 {{< code lang="sql" file="code/st-3/st-3.kql" >}} {{< /code >}}
-
-{{< /collapse >}}
-
-<br><br>
-
-### ST-4 - ワークロードに適した BLOB の種類を選択します
-
-**Category: System Efficiency**
-
-**Impact: Medium**
-
-**Guidance**
-
-ストレージ サービスには、ブロック BLOB、追加 BLOB、ページ BLOB の 3 種類の BLOB が用意されています。BLOB の種類は、BLOB を作成するときに指定します。
-
-ブロック BLOB は、大量のデータを効率的にアップロードするために最適化されています。ブロック BLOB はブロックで構成され、各ブロックはブロック ID で識別されます。ブロック BLOB には、最大 50,000 個のブロックを含めることができます。
-
-追加 BLOB はブロックで構成され、追加操作用に最適化されています。追加 BLOB を変更すると、ブロックは BLOB の末尾にのみ追加されます。既存のブロックの更新や削除はサポートされていません。ブロック BLOB とは異なり、追加 BLOB ではブロック ID は公開されません。
-
-ページ BLOB は、ランダムな読み取りおよび書き込み操作用に最適化された 512 バイトのページのコレクションです。ページ BLOB を作成するには、ページ BLOB を初期化し、ページ BLOB が拡張する最大サイズを指定します。ページ BLOB の内容を追加または更新するには、オフセットと範囲の両方が 512 バイトのページ境界に揃えられるように指定して、ページを書き込みます。
-
-**Resources**
-
-- [Understanding block blobs, append blobs, and page blobs](https://learn.microsoft.com/ja-jp/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs)
-- [Scalability and performance targets for Blob storage](https://learn.microsoft.com/ja-jp/azure/storage/blobs/scalability-targets)
-
-**Resource Graph Query/Scripts**
-
-{{< collapse title="Show/Hide Query/Script" >}}
-
-{{< code lang="sql" file="code/st-4/st-4.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 
@@ -170,7 +135,7 @@ Azure クラシック ストレージ アカウントは、2024 年 8 月 31 日
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
-{{< code lang="powershell" file="code/st-5/st-5.ps1" >}} {{< /code >}}
+{{< code lang="sql" file="code/st-5/st-5.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 
@@ -180,11 +145,11 @@ Azure クラシック ストレージ アカウントは、2024 年 8 月 31 日
 
 **Category: Disaster Recovery**
 
-**Impact: Medium**
+**Impact: Low**
 
 **Guidance**
 
-誤って変更または削除したデータを回復するには、バージョン管理を有効にします。
+偶発的な変更や削除からデータを回復するために、バージョン管理を有効にすることを検討してください。
 BLOB あたりのバージョン数が多いと、BLOB の一覧表示操作の待機時間が長くなる可能性があります。Microsoft では、BLOB あたり 1,000 未満のバージョンを維持することをお勧めします。ライフサイクル管理を使用して、古いバージョンを自動的に削除できます。
 
 **Resources**
@@ -195,13 +160,13 @@ BLOB あたりのバージョン数が多いと、BLOB の一覧表示操作の�
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
-{{< code lang="powershell" file="code/st-6/st-6.ps1" >}} {{< /code >}}
+{{< code lang="sql" file="code/st-6/st-6.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 
 <br><br>
 
-### ST-7 - リカバリ用コンテナのポイントアンドタイムリストアを有効にします
+### ST-7 - フラットな名前空間を持つ標準の汎用 v2 アカウントに対してポイントインタイム リストアを有効にすることを検討してください
 
 **Category: Disaster Recovery**
 
@@ -209,24 +174,24 @@ BLOB あたりのバージョン数が多いと、BLOB の一覧表示操作の�
 
 **Guidance**
 
-ポイントインタイム リストアを使用すると、ブロック BLOB の 1 つ以上のセットを以前の状態に復元できます。
-ポイント アンド タイム リストアでは、Standard パフォーマンス レベルで汎用 v2 アカウントがサポートされます。データを保護するためのメカニズムです。
+フラットな名前空間を持つ標準の汎用 v2 アカウントに対してポイントインタイム リストアを有効にすることを検討してください。ポイントインタイム リストアは、ブロック BLOB データを以前の状態に復元できるようにすることで、偶発的な削除や破損から保護します。
 
 **Resources**
 
-- [Restore overview](https://learn.microsoft.com/ja-jp/azure/storage/blobs/point-in-time-restore-manage?tabs=portal)
+- [Point-in-time restore for block blobs](https://learn.microsoft.com/ja-jp/azure/storage/blobs/point-in-time-restore-overview)
+- [Perform a point-in-time restore on block blob data](https://learn.microsoft.com/ja-jp/azure/storage/blobs/point-in-time-restore-manage?tabs=portal)
 
 **Script**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
-{{< code lang="powershell" file="code/st-7/st-7.ps1" >}} {{< /code >}}
+{{< code lang="sql" file="code/st-7/st-7.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 
 <br><br>
 
-### ST-8 - すべてのストレージ アカウントの診断設定を構成します
+### ST-8 - すべての BLOB ストレージ アカウントを監視します
 
 **Category: Monitoring**
 
@@ -234,31 +199,34 @@ BLOB あたりのバージョン数が多いと、BLOB の一覧表示操作の�
 
 **Guidance**
 
-診断設定を有効にすると、診断情報をキャプチャして表示し、障害のトラブルシューティングを行うことができます。
+Azure リソースに依存する重要なアプリケーションやビジネス プロセスがある場合は、システムを監視してアラートを取得する必要があります。
+リソース ログは、診断設定を作成し、ログを 1 つ以上の場所にルーティングするまで収集および保存されません。診断設定を作成するときは、収集するログのカテゴリを指定します。
 
 **Resources**
 
-- [Diagnostic Setting for Storage Account](https://learn.microsoft.com/ja-jp/azure/storage/blobs/monitor-blob-storage)
+- [Monitor Azure Blob Storage](https://learn.microsoft.com/ja-jp/azure/storage/blobs/monitor-blob-storage)
+- [Best practices for monitoring Azure Blob Storage](https://learn.microsoft.com/ja-jp/azure/storage/blobs/blob-storage-monitoring-scenarios)
 
 **Script**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
-{{< code lang="powershell" file="code/st-8/st-8.ps1" >}} {{< /code >}}
+{{< code lang="sql" file="code/st-8/st-8.kql" >}} {{< /code >}}
 
 {{< /collapse >}}
 
 <br><br>
 
-### ST-9 - レガシ ストレージ アカウントを v2 ストレージ アカウントにアップグレードします
+### ST-9 - レガシ ストレージ アカウントを v2 ストレージ アカウントにアップグレードすることを検討します
 
 **Category: System Efficiency**
 
-**Impact: Medium**
+**Impact: Low**
 
 **Guidance**
 
-汎用 v2 ストレージ アカウントは、最新の Azure Storage 機能をサポートし、汎用 v1 アカウントと Blob ストレージ アカウントのすべての機能が組み込まれています。汎用 v2 アカウントは、ほとんどのストレージ シナリオに推奨されます。汎用 v2 アカウントは、Azure Storage のギガバイトあたりの容量価格が最も低く、業界で競争力のあるトランザクション価格を提供します。汎用 v2 アカウントでは、ホットまたはクールの既定のアカウント アクセス層と、ホット、クール、またはアーカイブ間の BLOB レベルの階層化がサポートされています。
+汎用 v2 アカウントは、最新の機能またはギガバイトあたりの最低価格を備えたほとんどのストレージ シナリオに推奨されます。レガシ アカウントの種類 (Standard 汎用 v1 と Blob Storage) は Microsoft では推奨されていませんが、特定のシナリオで使用される場合があります。
+ドキュメントに記載されているシナリオ (クラシック互換性、トランザクション集中型など) を考慮し、該当する場合はレガシ ストレージ アカウントを v2 ストレージ アカウントにアップグレードしてください。
 
 汎用 v1 または Blob ストレージ アカウントから汎用 v2 ストレージ アカウントへのアップグレードは簡単です。汎用 v2 ストレージ アカウントへのアップグレードに関連するダウンタイムやデータ損失のリスクはありません。汎用 v1 または Blob Storage アカウントから汎用 v2 へのアップグレードは永続的であり、元に戻すことはできません。
 

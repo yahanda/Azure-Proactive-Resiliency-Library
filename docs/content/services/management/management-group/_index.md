@@ -43,7 +43,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [Management group recommendations](https://learn.microsoft.com/ja-jp/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-management-groups#management-group-recommendations)
 - [Root management group for each directory](https://learn.microsoft.com/ja-jp/azure/governance/management-groups/overview#root-management-group-for-each-directory)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

@@ -12,11 +12,11 @@ The presented resiliency recommendations in this guidance include Compute Galler
 ## Summary of Recommendations
 
 {{< table style="table-striped" >}}
-| Recommendation                                                                                                                                                      |   Category   | Impact |  State  | ARG Query Available |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------:|:------:|:-------:|:-------------------:|
-| [CG-1 - A minimum of three replicas should be kept for production image versions](#cg-1---a-minimum-of-three-replicas-should-be-kept-for-production-image-versions) | Availability | Medium | Preview |         Yes         |
-| [CG-2 - Zone redundant storage should be used for image versions](#cg-2---zone-redundant-storage-should-be-used-for-image-versions)                                 | Availability | Medium | Preview |         Yes         |
-| [CG-3 - Consider using hyper-V generation version 2 images where possible](#cg-3---consider-using-hyper-v-generation-version-2-images-where-possible)               | Availability |  Low   | Preview |         Yes         |
+| Recommendation                                                                                                                                                      |   Category   | Impact |  State   | ARG Query Available |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------:|:------:|:--------:|:-------------------:|
+| [CG-1 - A minimum of three replicas should be kept for production image versions](#cg-1---a-minimum-of-three-replicas-should-be-kept-for-production-image-versions) | Availability | Medium | Verified |         Yes         |
+| [CG-2 - Zone redundant storage should be used for image versions](#cg-2---zone-redundant-storage-should-be-used-for-image-versions)                                 | Availability | Medium | Verified |         Yes         |
+| [CG-3 - Consider creating TrustedLaunchSupported images where possible](#cg-3---consider-creating-trustedlaunchsupported-images-where-possible)        | Availability |  Low   | Verified |         Yes         |
 {{< /table >}}
 
 {{< alert style="info" >}}
@@ -41,7 +41,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 - [Compute Gallery best practices](https://learn.microsoft.com/ja-jp/azure/virtual-machines/azure-compute-gallery#best-practices)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -67,7 +67,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [Compute Gallery best practices](https://learn.microsoft.com/ja-jp/azure/virtual-machines/azure-compute-gallery#best-practices)
 - [Zone-redundant storage](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-redundancy#zone-redundant-storage)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -77,15 +77,15 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 
 <br><br>
 
-### CG-3 - 可能な場合は、Hyper-V 第 2 世代のイメージの使用を検討してください
+### CG-3 - 可能な場合は、TrustedLaunchSupported イメージの作成を検討してください
 
-**Category: Availability**
+**Category: Access & Security**
 
 **Impact: Low**
 
 **Guidance**
 
-第 2 世代仮想マシンを作成して、セキュア ブート、vTPM、トラステッド起動 VM、大容量ブート ボリュームなどの機能を利用することをお勧めします。第 1 世代と第 2 世代のどちらの仮想マシンを作成するかは、インストールするゲスト OS と、仮想マシンの展開に使用する起動方法によって異なります。仮想マシンの作成後に仮想マシンの世代を変更することはできません。したがって、最初に[考慮事項](https://learn.microsoft.com/ja-jp/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v#which-guest-operating-systems-are-supported)を確認することをお勧めします。
+セキュア ブート、vTPM、トラステッド起動 VM、大容量ブート ボリュームなどの機能を利用するために、トラステッド起動でサポートされているイメージを作成することをお勧めします。トラステッド起動でサポートされるイメージは、デフォルトで Gen 2 イメージです。仮想マシンの作成後に仮想マシンの世代を変更することはできません。したがって、最初に[考慮事項](https://learn.microsoft.com/ja-jp/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v#which-guest-operating-systems-are-supported)を確認することをお勧めします。
 
 **Resources**
 
@@ -93,7 +93,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [Generation 1 vs Generation 2 in Hyper-V](https://learn.microsoft.com/ja-jp/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v)
 - [Images in Compute gallery](https://learn.microsoft.com/ja-jp/azure/virtual-machines/shared-image-galleries?tabs=azure-cli)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

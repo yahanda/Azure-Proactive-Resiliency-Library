@@ -43,7 +43,7 @@ Definitions of states can be found [here]({{< ref "../../../_index.md#definition
 - [Configure Resource Health alerts in the Azure portal](https://learn.microsoft.com/ja-jp/azure/service-health/resource-health-alert-monitor-guide#create-a-resource-health-alert-rule-in-the-azure-portal)
 - [Alerts Health](https://learn.microsoft.com/ja-jp/azure/service-health/alerts-activity-log-service-notifications-portal)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 

@@ -14,15 +14,15 @@ The presented resiliency recommendations in this guidance include Cosmos DB and 
 {{< table style="table-striped" >}}
 | Recommendation                                                                                                                                                                                  |        Category        | Impact |  State  | ARG Query Available |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------:|:------:|:-------:|:-------------------:|
-| [COSMOS-1 – Configure at least two regions for high availability](#cosmos-1---configure-at-least-two-regions-for-high-availability)                                                             |      Availability      |  High  | Preview |         Yes         |
-| [COSMOS-2 – Enable service-managed failover for multi-region accounts with single write region](#cosmos-2---enable-service-managed-failover-for-multi-region-accounts-with-single-write-region) |   Disaster Recovery    |  High  | Preview |         Yes          |
-| [COSMOS-3 – Evaluate multi-region write capability](#cosmos-3---evaluate-multi-region-write-capability)                                                                                         |   Disaster Recovery    |  High  | Preview |         Yes         |
-| [COSMOS-4 – Choose appropriate consistency mode reflecting data durability requirements](#cosmos-4---choose-appropriate-consistency-mode-reflecting-data-durability-requirements)               |   Disaster Recovery    |  High  | Preview |         No          |
-| [COSMOS-5 – Configure continuous backup mode](#cosmos-5---configure-continuous-backup-mode)                                                                                                     |   Disaster Recovery    |  High  | Preview |         Yes         |
-| [COSMOS-6 – Ensure query results are fully drained](#cosmos-6---ensure-query-results-are-fully-drained)                                                                                         |   System Efficiency    |  High  | Preview |         No          |
-| [COSMOS-7 – Maintain singleton pattern in your client](#cosmos-7---maintain-singleton-pattern-in-your-client)                                                                                   |   System Efficiency    | Medium | Preview |         No          |
-| [COSMOS-8 – Implement retry logic in your client](#cosmos-8---implement-retry-logic-in-your-client)                                                                                             | Application Resilience | Medium | Preview |         No          |
-| [COSMOS-9 – Monitor Cosmos DB health and set up alerts](#cosmos-9---monitor-cosmos-db-health-and-set-up-alerts)                                                                                 |       Monitoring       | Medium | Preview |         No          |
+| [COSMOS-1 - Configure at least two regions for high availability](#cosmos-1---configure-at-least-two-regions-for-high-availability)                                                             |      Availability      |  High  | Verified |         Yes         |
+| [COSMOS-2 - Enable service-managed failover for multi-region accounts with single write region](#cosmos-2---enable-service-managed-failover-for-multi-region-accounts-with-single-write-region) |   Disaster Recovery    |  High  | Verified |         Yes          |
+| [COSMOS-3 - Evaluate multi-region write capability](#cosmos-3---evaluate-multi-region-write-capability)                                                                                         |   Disaster Recovery    |  High  | Verified |         Yes         |
+| [COSMOS-4 - Choose appropriate consistency mode reflecting data durability requirements](#cosmos-4---choose-appropriate-consistency-mode-reflecting-data-durability-requirements)               |   Disaster Recovery    |  High  | Preview |         No          |
+| [COSMOS-5 - Configure continuous backup mode](#cosmos-5---configure-continuous-backup-mode)                                                                                                     |   Disaster Recovery    |  High  | Verified |         Yes         |
+| [COSMOS-6 - Ensure query results are fully drained](#cosmos-6---ensure-query-results-are-fully-drained)                                                                                         |   System Efficiency    |  High  | Verified |         No          |
+| [COSMOS-7 - Maintain singleton pattern in your client](#cosmos-7---maintain-singleton-pattern-in-your-client)                                                                                   |   System Efficiency    | Medium | Verified |         No          |
+| [COSMOS-8 - Implement retry logic in your client](#cosmos-8---implement-retry-logic-in-your-client)                                                                                             | Application Resilience | Medium | Verified |         No          |
+| [COSMOS-9 - Monitor Cosmos DB health and set up alerts](#cosmos-9---monitor-cosmos-db-health-and-set-up-alerts)                                                                                 |       Monitoring       | Medium | Verified |         No          |
 {{< /table >}}
 
 {{< alert style="info" >}}
@@ -48,7 +48,7 @@ Azure では、ラック、DC、ゾーン、リージョンの分離レベルに
 - [Distribute data globally with Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/distribute-data-globally)
 - [Tips for building highly available applications | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/high-availability#tips-for-building-highly-available-applications)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -72,7 +72,7 @@ Cosmos DB は、非常に高いアップタイムと回復性を備えた実証�
 
 - [Manage an Azure Cosmos DB account by using the Azure portal | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/how-to-manage-database-account#automatic-failover)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -97,7 +97,7 @@ Cosmos DB は、非常に高いアップタイムと回復性を備えた実証�
 - [Distribute data globally with Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/distribute-data-globally)
 - [Conflict resolution types and resolution policies in Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/conflict-resolution-policies)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -121,7 +121,7 @@ Cosmos DB は、非常に高いアップタイムと回復性を備えた実証�
 
 - [Consistency level choices - Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/consistency-levels)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -145,7 +145,7 @@ Cosmos DB によってデータが自動的にバックアップされるため�
 
 - [Continuous backup with point in time restore feature in Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/continuous-backup-restore-introduction)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -169,7 +169,7 @@ Cosmos DB では、1 つの応答が 4 MB に制限されています。クエ�
 
 - [Pagination in Azure Cosmos DB | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/nosql/query/pagination#handling-multiple-pages-of-results)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -192,7 +192,7 @@ Cosmos DB では、1 つの応答が 4 MB に制限されています。クエ�
 **Resources**
 
 - [Designing resilient applications with Azure Cosmos DB SDKs | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/nosql/conceptual-resilient-sdk-applications)
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -216,7 +216,7 @@ Cosmos DB では、1 つの応答が 4 MB に制限されています。クエ�
 
 - [Designing resilient applications with Azure Cosmos DB SDKs | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/nosql/conceptual-resilient-sdk-applications)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
@@ -240,7 +240,7 @@ Azure Cosmos DB リソースの可用性と応答性を監視し、予期しな�
 
 - [Create alerts for Azure Cosmos DB using Azure Monitor | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/cosmos-db/create-alerts)
 
-**Resource Graph Query/Scripts**
+**Resource Graph Query**
 
 {{< collapse title="Show/Hide Query/Script" >}}
 
