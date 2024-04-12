@@ -330,14 +330,14 @@ FSLogix ストレージ アカウントでバックアップを有効にする�
 
 <br><br>
 
-### AVD-13 - Validate AVD Session Host Connectivity to the AVD Control Plane and UDP Ports open if in use
+### AVD-13 - AVD コントロール プレーンへの AVD セッション ホストの接続を検証し、使用中の場合は UDP ポートが開いていることを確認します
 
 **Category: Networking**
 
 **Impact: Medium**
 
 **Guidance:**
-Ensure that AVD session hosts can effectively communicate with the AVD control plane and that UDP ports are open if UDP is utilized. Validate the connectivity of VMs to the AVD Control Plane and confirm the accessibility of UDP TURN ports. Whitelist global URLs and ensure that UDP/TURN ports are open and accessible to facilitate smooth user connections. Proper connectivity validation guarantees optimal performance and user experience within the AVD environment.
+AVD セッション ホストが AVD コントロール プレーンと効果的に通信できること、および UDP が使用されている場合は UDP ポートが開いていることを確認します。VM の AVD コントロール プレーンへの接続を検証し、UDP TURN ポートのアクセシビリティを確認します。グローバルURLをホワイトリストに登録し、UDP/TURNポートが開いてアクセス可能であることを確認して、スムーズなユーザー接続を促進します。適切な接続検証により、AVD 環境内で最適なパフォーマンスとユーザー エクスペリエンスが保証されます。
 
 **Resources:**
 
@@ -353,15 +353,15 @@ Ensure that AVD session hosts can effectively communicate with the AVD control p
 
 <br><br>
 
-### AVD-14 - Ensure Secondary Entra ID connect synchronization server
+### AVD-14 - セカンダリ Entra ID が同期サーバーに接続されていることを確認します
 
 **Category: Access & Security**
 
 **Impact: Low**
 
 **Guidance:**
-Hybrid - Entra ID Connect best to run in Azure but can be hosted on-prem. Secondary or more VMs should be setup in staging mode in event of failover.
-Set up secondary server in staging mode for Entra Connect for syncing to Entra in case of primary server outage.
+ハイブリッド - Entra ID Connect は Azure での実行に最適ですが、オンプレミスでホストできます。セカンダリ以上の VM は、フェールオーバーが発生した場合にステージング モードでセットアップする必要があります。
+プライマリ サーバーが停止した場合に Entra と同期するために、Entra Connect のステージング モードでセカンダリ サーバーを設定します。
 
 **Resources:**
 
@@ -377,15 +377,15 @@ Set up secondary server in staging mode for Entra Connect for syncing to Entra i
 
 <br><br>
 
-### AVD-15 - Deploy paired Domain Controllers in the same region as AVD session hosts
+### AVD-15 - ペアのドメイン コントローラを AVD セッション ホストと同じリージョンにデプロイします
 
 **Category: Disaster Recovery**
 
 **Impact: High**
 
 **Guidance:**
-Ensure each region with session hosts has multiple domain controllers in the same region to support high availability with regards to identity.
-For a hybrid scenario, each Azure region with AVD session hosts should have Active Directory Domain Controllers in Azure and use Availability Zones or Availability Sets for resilience within the region. This also mitigates dependency on ER/VPN/Inter-Azure dependencies.
+セッション ホストを持つ各リージョンに、ID に関する高可用性をサポートするために、同じリージョンに複数のドメイン コントローラーがあることを確認します。
+ハイブリッド シナリオでは、AVD セッション ホストを持つ各 Azure リージョンには、Azure に Active Directory ドメイン コントローラーがあり、リージョン内の回復性のために可用性ゾーンまたは可用性セットを使用する必要があります。これにより、ER/VPN/Azure 間の依存関係への依存関係も軽減されます。
 
 **Resources:**
 
@@ -401,14 +401,14 @@ For a hybrid scenario, each Azure region with AVD session hosts should have Acti
 
 <br><br>
 
-### AVD-16 - Ensure DNS regions are replicated to avoid single point of failure
+### AVD-16 - 単一障害点を回避するために DNS リージョンがレプリケートされていることを確認します
 
 **Category: Networking**
 
 **Impact: Medium**
 
 **Guidance:**
-Active Directory Domain Services (AD DS) integrated DNS/other should target Secondary/Tertiary customer DNS across multi-region zones. If using custom DNS, ensure there are redundant DNS servers to avoid a single point of failure.
+Active Directory Domain Services (AD DS) に統合された DNS/その他は、マルチリージョン ゾーン間で第二/第三のお客様 DNS をターゲットにする必要があります。カスタム DNS を使用する場合は、単一障害点を回避するために、冗長な DNS サーバーがあることを確認します。
 
 **Resources:**
 
@@ -424,14 +424,14 @@ Active Directory Domain Services (AD DS) integrated DNS/other should target Seco
 
 <br><br>
 
-### AVD-17 - Capacity Planning for AVD Resources
+### AVD-17 - AVD リソースのキャパシティ プランニングをします
 
 **Category: Disaster Recovery**
 
 **Impact: Low**
 
 **Guidance:**
-Monitor and plan for subscription limits and API throttling limits. Closely monitor your Azure Virtual Desktop deployments and keep track of resource usage within your subscription. By proactively monitoring capacity, you can identify potential challenges early on, and you can take suitable actions to avoid reaching limits. Consider scaling across multiple subscriptions if further scaling is required, or work with Azure support to adjust limits based on your business requirements. To handle a large number of users, consider scaling horizontally by creating multiple host pools.
+サブスクリプションの制限と API の調整制限を監視して計画します。Azure Virtual Desktop のデプロイを綿密に監視し、サブスクリプション内のリソースの使用状況を追跡します。容量をプロアクティブに監視することで、潜在的な課題を早期に特定し、制限に達しないように適切なアクションを実行できます。さらにスケーリングが必要な場合は、複数のサブスクリプションにまたがってスケーリングすることを検討するか、Azure サポートと連携して、ビジネス要件に基づいて制限を調整してください。多数のユーザーを処理するには、複数のホスト プールを作成して水平方向にスケーリングすることを検討してください。
 
 **Resources:**
 
@@ -447,15 +447,14 @@ Monitor and plan for subscription limits and API throttling limits. Closely moni
 
 <br><br>
 
-### AVD-18 - Create updated image version and replace session hosts rather than updating host directly
+### AVD-18 - ホストを直接更新するのではなく、更新されたイメージ バージョンを作成し、セッション ホストを置き換えます
 
 **Category: Governance**
 
 **Impact: Low**
 
 **Guidance:**
-Establish a systematic process for handling image updates within your Azure Virtual Desktop environment. Instead of directly updating individual session hosts, create a new version of the updated image. This process involves creating and configuring a golden image with the necessary updates and configurations. Once the new image is prepared, replace existing session hosts with instances using the updated image. This approach ensures consistency across all session hosts and minimizes the risk of configuration drift. Additionally, it enables quick rollback to a previous image version in case of any issues with the update. Implementing this process helps streamline maintenance activities and ensures that all session hosts are up-to-date with the latest configurations and updates.
-has context menu
+Azure Virtual Desktop 環境内でイメージの更新を処理するための体系的なプロセスを確立します。個々のセッション ホストを直接更新する代わりに、更新されたイメージの新しいバージョンを作成します。このプロセスには、必要な更新と設定を含むゴールド イメージの作成と設定が含まれます。新しいイメージの準備ができたら、既存のセッション ホストを、更新されたイメージを使用するインスタンスに置き換えます。このアプローチにより、すべてのセッション ホスト間で一貫性が確保され、構成のずれのリスクが最小限に抑えられます。さらに、更新で問題が発生した場合に、以前のイメージ バージョンにすばやくロールバックできます。このプロセスを実装すると、メンテナンス作業が合理化され、すべてのセッション ホストが最新の構成と更新プログラムで最新の状態に保たれます。
 
 **Resources:**
 
@@ -471,17 +470,17 @@ has context menu
 
 <br><br>
 
-### AVD-19 - [Pooled] Create a validation pool for testing of planned updates
+### AVD-19 - [Pooled] 計画された更新プログラムをテストするための検証プールを作成します
 
 **Category: Governance**
 
 **Impact: Medium**
 
 **Guidance:**
-At least one Validation Pool to have early warning if a planned update to AVD causes an issue. support to adjust limits based on your business requirements. To handle a large number of users, consider scaling horizontally by creating multiple host pools.
-Also check that the host pool has been used regularly to test planned updates.
-Host pools are a collection of one or more identical virtual machines within Azure Virtual Desktop environment. We highly recommend you create a validation host pool where service updates are applied first. Validation host pools let you monitor service updates before the service applies them to your standard or non-validation environment. Without a validation host pool, you may not discover changes that introduce errors, which could result in downtime for users in your standard environment.
-To ensure your apps work with the latest updates, the validation host pool should be as similar to host pools in your non-validation environment as possible. Users should connect as frequently to the validation host pool as they do to the standard host pool. If you have automated testing on your host pool, you should include automated testing on the validation host pool.
+少なくとも 1 つの検証プールで、AVD の計画された更新によって問題が発生した場合に早期に警告します。ビジネス要件に基づいて制限を調整するためのサポート。多数のユーザーを処理するには、複数のホスト プールを作成して水平方向にスケーリングすることを検討してください。
+また、計画された更新プログラムをテストするためにホスト プールが定期的に使用されていることも確認します。
+ホスト プールは、Azure Virtual Desktop 環境内の 1 つ以上の同一の仮想マシンのコレクションです。サービスの更新が最初に適用される検証ホスト プールを作成することを強くお勧めします。検証ホスト プールを使用すると、サービスが標準環境または非検証環境に適用する前に、サービスの更新を監視できます。検証ホスト プールがないと、エラーの原因となる変更が検出されず、標準環境のユーザーにダウンタイムが発生する可能性があります。
+アプリが最新の更新プログラムで動作するようにするには、検証ホスト プールを、検証されていない環境のホスト プールとできるだけ類似させる必要があります。ユーザーは、標準ホスト プールに接続するのと同じ頻度で検証ホスト プールに接続する必要があります。ホスト プールで自動テストを行っている場合は、検証ホスト プールで自動テストを含める必要があります。
 
 **Resources:**
 
@@ -497,15 +496,15 @@ To ensure your apps work with the latest updates, the validation host pool shoul
 
 <br><br>
 
-### AVD-20 - [Pooled] Configure scheduled agent updates
+### AVD-20 - [Pooled] スケジュールされたエージェントの更新を構成します
 
 **Category: System Efficiency**
 
 **Impact: Medium**
 
 **Guidance:**
-Ensure schedules have been created to provide maintenance windows for AVD agent updates.
-The Scheduled Agent Updates feature lets you create up to two maintenance windows for the Azure Virtual Desktop agent, side-by-side stack, and Geneva Monitoring agent to get updated so that updates don't happen during peak business hours.
+AVD エージェントの更新のメンテナンス期間を提供するスケジュールが作成されていることを確認します。
+スケジュールされたエージェントの更新機能を使用すると、Azure Virtual Desktop エージェント、サイド バイ サイド スタック、Geneva Monitoring エージェントのメンテナンス期間を最大 2 つ作成して更新し、営業時間のピーク時に更新が行われないようにすることができます。
 
 **Resources:**
 
@@ -521,16 +520,16 @@ The Scheduled Agent Updates feature lets you create up to two maintenance window
 
 <br><br>
 
-### AVD-21 - [Personal] Create a validation pool for testing of planned updates
+### AVD-21 - [Personal] 計画された更新プログラムをテストするための検証プールを作成します
 
 **Category: Governance**
 
 **Impact: Low**
 
 **Guidance:**
-At least one Validation Pool to have early warning if a planned update to AVD causes an issue. Also check that the host pool has been used regularly to test planned updates.
-Host pools are a collection of one or more identical virtual machines within Azure Virtual Desktop environment. We highly recommend you create a validation host pool where service updates are applied first. Validation host pools let you monitor service updates before the service applies them to your standard or non-validation environment. Without a validation host pool, you may not discover changes that introduce errors, which could result in downtime for users in your standard environment.
-To ensure your apps work with the latest updates, the validation host pool should be as similar to host pools in your non-validation environment as possible. Users should connect as frequently to the validation host pool as they do to the standard host pool. If you have automated testing on your host pool, you should include automated testing on the validation host pool.
+少なくとも 1 つの検証プールで、AVD の計画された更新によって問題が発生した場合に早期に警告します。また、計画された更新プログラムをテストするためにホスト プールが定期的に使用されていることも確認します。
+ホスト プールは、Azure Virtual Desktop 環境内の 1 つ以上の同一の仮想マシンのコレクションです。サービスの更新が最初に適用される検証ホスト プールを作成することを強くお勧めします。検証ホスト プールを使用すると、サービスが標準環境または非検証環境に適用する前に、サービスの更新を監視できます。検証ホスト プールがないと、エラーの原因となる変更が検出されず、標準環境のユーザーにダウンタイムが発生する可能性があります。
+アプリが最新の更新プログラムで動作するようにするには、検証ホスト プールを、検証されていない環境のホスト プールとできるだけ類似させる必要があります。ユーザーは、標準ホスト プールに接続するのと同じ頻度で検証ホスト プールに接続する必要があります。ホスト プールで自動テストを行っている場合は、検証ホスト プールで自動テストを含める必要があります。
 
 **Resources:**
 
@@ -546,14 +545,14 @@ To ensure your apps work with the latest updates, the validation host pool shoul
 
 <br><br>
 
-### AVD-22 - Use Azure Site Recovery or Backups on VMs supporting personal desktops
+### AVD-22 - 個人用デスクトップをサポートする VM で Azure Site Recovery またはバックアップを使用します
 
 **Category: Disaster Recovery**
 
 **Impact: Medium**
 
 **Guidance:**
-Leverage Azure Site Recovery (ASR) or implement Azure Backup for personal host pools for seamless failover and failback capabilities, enabling the replication of VMs supporting personal desktops to a secondary Azure region. In the event of a disaster or unexpected outage, this ensures the recovery of these VMs from a known-state.
+Azure Site Recovery (ASR) を活用するか、個人用ホスト プールに Azure Backup を実装してシームレスなフェールオーバーとフェールバック機能を実現し、個人用デスクトップをサポートする VM をセカンダリ Azure リージョンにレプリケーションできるようにします。これにより、災害や予期しない停止が発生した場合に、これらの VM が既知の状態から確実に復旧されます。
 
 **Resources:**
 
@@ -569,15 +568,15 @@ Leverage Azure Site Recovery (ASR) or implement Azure Backup for personal host p
 
 <br><br>
 
-### AVD-23 - Ensure a unique OU when deploying VMs to Domain
+### AVD-23 - VM をドメインにデプロイするときに一意の OU を確保します
 
 **Category: Governance**
 
 **Impact: Medium**
 
 **Guidance:**
-Hybrid VMs should be in a unique OU.
-When using AD-joined session hosts will benefit from using a unique OU to target specific AVD configurations per hostpool. Examples include Fslogix, time out limits, session controls, and much more. It’s also important to segment Prod and DR organization units to ensure resources are configured per environment.
+ハイブリッド VM は、一意の OU 内に存在する必要があります。
+AD に参加しているセッションを使用する場合、ホストは一意の OU を使用して、ホストプールごとに特定の AVD 構成をターゲットにすることでメリットが得られます。例としては、Fslogix、タイムアウト制限、セッション制御などがあります。また、運用と DR の組織単位をセグメント化して、リソースが環境ごとに構成されるようにすることも重要です。
 
 **Resources:**
 
@@ -593,14 +592,14 @@ When using AD-joined session hosts will benefit from using a unique OU to target
 
 <br><br>
 
-### AVD-24 - Ensure the standard FSLogix configuration is deployed
+### AVD-24 - 標準の FSLogix 構成がデプロイされていることを確認します
 
 **Category: Storage**
 
 **Impact: High**
 
 **Guidance:**
-Ensure all session hosts have the standard FSLogix configuration deployed. Regularly validate settings for consistency and alignment with best practices.
+すべてのセッション ホストに標準の FSLogix 構成がデプロイされていることを確認します。設定の一貫性とベストプラクティスとの整合性を定期的に検証します。
 
 **Resources:**
 
@@ -616,14 +615,14 @@ Ensure all session hosts have the standard FSLogix configuration deployed. Regul
 
 <br><br>
 
-### AVD-25 - Ensure user permissions are set correctly on SMB shares
+### AVD-25 - SMB共有でユーザー権限が正しく設定されていることを確認します
 
 **Category: Storage**
 
 **Impact: High**
 
 **Guidance:**
-Verify user permissions are correctly set on SMB shares so that users have appropriate access to only their own profile and not other user profiles, while administrators have full access at the root volume. Also ensure secondary storage path permissions are set in case of a DR event.
+SMB共有にユーザー権限が正しく設定されていることを確認して、ユーザーが自分のプロファイルにのみ適切なアクセス権を持ち、他のユーザープロファイルにはアクセスできず、管理者がルートボリュームにフルアクセスできるようにします。また、DR イベントが発生した場合に 2 次ストレージ・パスの権限が設定されていることを確認します。
 
 **Resources:**
 
@@ -639,14 +638,14 @@ Verify user permissions are correctly set on SMB shares so that users have appro
 
 <br><br>
 
-### AVD-26 - Configure Diagnostic Settings for FSLogix logs and enable review for accounts
+### AVD-26 - FSLogix ログの診断設定を構成し、アカウントのレビューを有効にします
 
 **Category: Storage**
 
 **Impact: Medium**
 
 **Guidance:**
-Regularly review FSLogix logs for errors and issues related to login and mounting the profile. Events can be reviewed by looking locally inside the Session Host and also in Log Analytics when the Azure Monitor Agent is used.
+FSLogix ログを定期的に確認して、ログインとプロファイルのマウントに関連するエラーと問題を確認します。イベントは、セッション ホスト内をローカルに確認し、Azure Monitor エージェントが使用されている場合は Log Analytics で確認することもできます。
 
 **Resources:**
 
@@ -662,14 +661,14 @@ Regularly review FSLogix logs for errors and issues related to login and mountin
 
 <br><br>
 
-### AVD-27 - Manually update new FSLogix image when available
+### AVD-27 - 使用可能な場合は、新しい FSLogix イメージを手動で更新します
 
 **Category: Governance**
 
 **Impact: Low**
 
 **Guidance:**
-Ensure a process is in place to regularly check for FSLogix agent upgrades and maintain FSLogix up to date. We recommend customers upgrade to the latest version of FSLogix as quickly as their deployment process can allow. FSLogix will provide hotfix releases which address current and potential bugs that impact customer deployments. Additionally, it is the first requirement when opening any support case.
+FSLogix エージェントのアップグレードを定期的にチェックし、FSLogix を最新の状態に維持するプロセスが整っていることを確認します。お客様には、デプロイ プロセスが許す限り迅速に最新バージョンの FSLogix にアップグレードすることをお勧めします。FSLogix は、お客様の展開に影響を与える現在および潜在的なバグに対処する修正プログラム リリースを提供します。さらに、これはサポートケースを開くときの最初の要件です。
 
 **Resources:**
 
@@ -685,7 +684,7 @@ Ensure a process is in place to regularly check for FSLogix agent upgrades and m
 
 <br><br>
 
-### AVD-28 - Turn on Continuous Availability for ANF if using App Attach
+### AVD-28 - App Attach を使用している場合は、ANF の継続的な可用性を有効にします
 
 **Category: Availability**
 
@@ -693,9 +692,9 @@ Ensure a process is in place to regularly check for FSLogix agent upgrades and m
 
 **Guidance**
 
-Turn on Continuous Availability if using Azure Netapp Files.
+Azure NetApp Files を使用している場合は、継続的可用性を有効にします。
 
-Verify the number of users connecting to each file share to make sure the SMB path can handle the number of file connections. Currently, Azure Files supports up to 10k handles per root directory.
+各ファイル共有に接続しているユーザーの数を確認して、SMB パスがファイル接続の数を処理できることを確認します。現在、Azure Files では、ルート ディレクトリごとに最大 10k のハンドルがサポートされています。
 
 **Resources**
 
@@ -711,7 +710,7 @@ Verify the number of users connecting to each file share to make sure the SMB pa
 
 <br><br>
 
-### AVD-29 - App attach should be placed in separate file share and Disaster recovery plan should include App attach storage
+### AVD-29 - アプリのアタッチは別のファイル共有に配置する必要があり、ディザスター リカバリー プランにはアプリアタッチ ストレージを含める必要があります
 
 **Category: Storage**
 
@@ -719,11 +718,11 @@ Verify the number of users connecting to each file share to make sure the SMB pa
 
 **Guidance**
 
-App Attach packages should be on a separate share from profiles. And App Attach files should be backed up.
+アプリ添付パッケージは、プロファイルとは別の共有に配置する必要があります。また、アプリの添付ファイルはバックアップする必要があります。
 
-Best practice is to separate App Attach VHD files in a separate file share away from user profiles, both for performance and scalability purposes. Requirements can vary greatly depending on how many packaged applications are stored in an image, and you need to test your applications to understand your requirements.
+ベスト プラクティスは、パフォーマンスとスケーラビリティの両方の目的で、アプリ アタッチ VHD ファイルをユーザー プロファイルから離れた別のファイル共有に分離することです。要件は、イメージに格納されているパッケージ化されたアプリケーションの数によって大きく異なる場合があり、要件を理解するにはアプリケーションをテストする必要があります。
 
-Your file share should be in the same Azure region as your session hosts.
+ファイル共有は、セッション ホストと同じ Azure リージョンに存在する必要があります。
 
 **Resources**
 
@@ -739,7 +738,7 @@ Your file share should be in the same Azure region as your session hosts.
 
 <br><br>
 
-### AVD-30 - Ensure virtual networks have route tables/route server configured for all regions
+### AVD-30 - 仮想ネットワークに、すべてのリージョンに対してルート テーブル/ルート サーバーが構成されていることを確認します
 
 **Category: Networking**
 
@@ -747,7 +746,7 @@ Your file share should be in the same Azure region as your session hosts.
 
 **Guidance**
 
-For high availability connections back to on-premises datacenters should consider backup paths across the regions that have been utilized. Ensure redundancy in routing by having a secondary route table in the secondary region.
+高可用性を実現するには、オンプレミスのデータセンターへの接続で、使用されているリージョン間のバックアップ パスを考慮する必要があります。セカンダリ リージョンにセカンダリ ルート テーブルを配置することで、ルーティングの冗長性を確保します。
 
 **Resources**
 
@@ -763,7 +762,7 @@ For high availability connections back to on-premises datacenters should conside
 
 <br><br>
 
-### AVD-31 - Ensure virtual networks isolation with separate IP space and NSGs for Prod and DR
+### AVD-31 - 運用環境と DR 用に個別の IP 空間と NSG を使用して仮想ネットワークを分離します
 
 **Category: Networking**
 
@@ -771,9 +770,9 @@ For high availability connections back to on-premises datacenters should conside
 
 **Guidance**
 
-NSG and ASG per AVD persona and IP space per Prod/DR regions.
+AVD ペルソナごとの NSG と ASG、および Prod/DR リージョンごとの IP スペース。
 
-It's important your organization plans for IP addressing in Azure. Planning ensures the IP address space doesn't overlap across on-premises locations and Azure regions. Overlapping IP address spaces across on-premises and Azure regions create major contention challenges.
+組織が Azure での IP アドレス指定を計画することが重要です。計画により、IP アドレス空間がオンプレミスの場所と Azure リージョン間で重複しないようにします。オンプレミスと Azure リージョン間で IP アドレス空間が重複すると、競合に関する大きな課題が生じます。
 
 **Resources**
 
@@ -789,7 +788,7 @@ It's important your organization plans for IP addressing in Azure. Planning ensu
 
 <br><br>
 
-### AVD-33 - Ensure route tables accommodate failover
+### AVD-33 - ルートテーブルがフェイルオーバーに対応していることを確認します
 
 **Category: Disaster Recovery**
 
@@ -797,9 +796,9 @@ It's important your organization plans for IP addressing in Azure. Planning ensu
 
 **Guidance**
 
-Ensure Route Tables that force tunnel traffic to FW/NVA have failover considerations evaluated and won't fail or trigger next-gen FW protections.
+FW/NVA へのトンネル トラフィックを強制するルート テーブルでフェールオーバーに関する考慮事項が評価され、失敗したり、次世代の FW 保護がトリガーされたりしないようにします。
 
-AVD workload teams should collaborate with centralized teams that manage the shared infrastructure, like networking, to ensure that both Production and DR workloads have the appropriate route tables in place for failover of routing to perform as expected.
+AVD ワークロード チームは、ネットワークなどの共有インフラストラクチャを管理する一元化されたチームと協力して、ルーティングのフェールオーバーが期待どおりに実行されるように、運用ワークロードと DR ワークロードの両方に適切なルート テーブルがあることを確認する必要があります。
 
 **Resources**
 
@@ -815,14 +814,14 @@ AVD workload teams should collaborate with centralized teams that manage the sha
 
 <br><br>
 
-### AVD-34 - Provision Secondary Key Vault for Disaster Recovery
+### AVD-34 - ディザスター リカバリーのためセカンダリ Key Vault をプロビジョニングします
 
 **Category: Disaster Recovery**
 
 **Impact: High**
 
 **Guidance:**
-To ensure continuous availability and disaster recovery readiness, it is recommended to provision a secondary Key Vault in a secondary region. In the event of a primary region failure, this secondary Key Vault will ensure that critical secrets are accessible for use in deployments in the secondary region.
+継続的な可用性とディザスター リカバリーの準備を確実にするために、セカンダリ リージョンにセカンダリ Key Vault をプロビジョニングすることをお勧めします。プライマリ リージョンで障害が発生した場合、このセカンダリ Key Vault により、セカンダリ リージョンでのデプロイで使用するために重要なシークレットにアクセスできるようになります。
 
 **Resources:**
 
@@ -836,7 +835,7 @@ To ensure continuous availability and disaster recovery readiness, it is recomme
 
 {{< /collapse >}}
 
-### AVD-35 - Configure AVD Insights Workbook
+### AVD-35 - AVD Insights Workbook を構成します
 
 **Category: Monitoring**
 
@@ -844,7 +843,7 @@ To ensure continuous availability and disaster recovery readiness, it is recomme
 
 **Guidance**
 
-AVD Insights is an Azure Workbook template provided by the AVD product team. It is highly recommended in order to monitor and troubleshoot AVD workloads across metrics, logs, events, and more. Both Production and DR workloads should be enabled with AVD Insights.
+AVD Insights は、AVD 製品チームが提供する Azure Workbook テンプレートです。これは、メトリクス、ログ、イベントなどにわたる AVD ワークロードのモニタリングとトラブルシューティングを行うために強くお勧めします。運用環境と DR の両方のワークロードは、AVD Insights で有効にする必要があります。
 
 **Resources**
 
@@ -860,7 +859,7 @@ AVD Insights is an Azure Workbook template provided by the AVD product team. It 
 
 <br><br>
 
-### AVD-36 - Ensure separate log analytics workspaces for Prod and DR
+### AVD-36 - 運用環境と DR 用に個別のログ分析ワークスペースを確保します
 
 **Category: Disaster Recovery**
 
@@ -868,7 +867,7 @@ AVD Insights is an Azure Workbook template provided by the AVD product team. It 
 
 **Guidance**
 
-Having separate Log Analytics ensures that your DR environment is fully operational for visibility of the metrics, performance, and other auditing tools your workload teams will rely on in the event of an incident.
+個別の Log Analytics を使用すると、DR 環境が完全に機能し、ワークロード チームがインシデントが発生した場合に依存するメトリック、パフォーマンス、その他の監査ツールを可視化できます。
 
 **Resources**
 
@@ -884,7 +883,7 @@ Having separate Log Analytics ensures that your DR environment is fully operatio
 
 <br><br>
 
-### AVD-37 - Organize AVD resources using the AVD Scale unit model described by the AVD Landing Zone Methodology
+### AVD-37 - AVD ランディング ゾーンの方法論で記述されている AVD スケール ユニット モデルを使用して AVD リソースを整理します
 
 **Category: Governance**
 
@@ -892,7 +891,7 @@ Having separate Log Analytics ensures that your DR environment is fully operatio
 
 **Guidance**
 
-Follow AVD Landing Zone best practices using multiple resource groups based on resource type and associated shared resources for AVD workloads.
+AVD ワークロードのリソースタイプと関連する共有リソースに基づいて複数のリソースグループを使用して、AVD ランディングゾーンのベストプラクティスに従います。
 
 **Resources**
 
