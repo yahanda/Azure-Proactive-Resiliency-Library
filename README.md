@@ -5,7 +5,7 @@
 > 現在のAPRLリポジトリは、4 月 8 日から 4 月 12 日まで**読み取り専用**モードになります。
 > 4 月 5 日以降、新しいプルリクエストは受け付けられません。
 >
-> **新しいリポジトリ:** [https://github.com/Azure/Azure-Proactive-Resiliency-Library-v2](https://github.com/Azure/Azure-Proactive-Resiliency-Library-v2)
+> **新しいリポジトリ:** [https://github.com/yahanda/Azure-Proactive-Resiliency-Library-v2](https://github.com/yahanda/Azure-Proactive-Resiliency-Library-v2)
 >
 > **[aka.ms/aprl](https://aka.ms/aprl)** は 4 月 15 日から新しい Web サイトにリダイレクトされます
 
